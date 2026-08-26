@@ -1,0 +1,263 @@
+[
+  {
+    "term_id": 49,
+    "name": "کفش مجلسی",
+    "slug": "high-heels",
+    "taxonomy": "product_cat",
+    "parent": 47,
+    "count": 26,
+    "description": ""
+  },
+  {
+    "term_id": 40,
+    "name": "اکسسوری",
+    "slug": "aksesori",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "count": 23,
+    "description": ""
+  },
+  {
+    "term_id": 57,
+    "name": "لوفر و موکازین",
+    "slug": "loafer-mocassin-shoes",
+    "taxonomy": "product_cat",
+    "parent": 54,
+    "count": 19,
+    "description": ""
+  },
+  {
+    "term_id": 48,
+    "name": "کفش تخت",
+    "slug": "flat-shoe",
+    "taxonomy": "product_cat",
+    "parent": 47,
+    "count": 15,
+    "description": ""
+  },
+  {
+    "term_id": 56,
+    "name": "بوت",
+    "slug": "boot-shoe-%d9%85%d8%b1%d8%af%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_cat",
+    "parent": 54,
+    "count": 11,
+    "description": ""
+  },
+  {
+    "term_id": 62,
+    "name": "کیف دستی",
+    "slug": "handbag",
+    "taxonomy": "product_cat",
+    "parent": 59,
+    "count": 10,
+    "description": ""
+  },
+  {
+    "term_id": 91,
+    "name": "راحتی",
+    "slug": "%d8%b1%d8%a7%d8%ad%d8%aa%db%8c-shoe-%d9%85%d8%b1%d8%af%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_cat",
+    "parent": 54,
+    "count": 8,
+    "description": ""
+  },
+  {
+    "term_id": 60,
+    "name": "کیف اداری",
+    "slug": "office-bag-bag-%d9%85%d8%b1%d8%af%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_cat",
+    "parent": 59,
+    "count": 7,
+    "description": ""
+  },
+  {
+    "term_id": 58,
+    "name": "اسنیکر",
+    "slug": "sneaker",
+    "taxonomy": "product_cat",
+    "parent": 54,
+    "count": 5,
+    "description": ""
+  },
+  {
+    "term_id": 55,
+    "name": "کفش مجلسی",
+    "slug": "mens-shoe",
+    "taxonomy": "product_cat",
+    "parent": 54,
+    "count": 5,
+    "description": ""
+  },
+  {
+    "term_id": 51,
+    "name": "صندل",
+    "slug": "sandal",
+    "taxonomy": "product_cat",
+    "parent": 47,
+    "count": 3,
+    "description": ""
+  },
+  {
+    "term_id": 50,
+    "name": "بوت",
+    "slug": "boot",
+    "taxonomy": "product_cat",
+    "parent": 47,
+    "count": 2,
+    "description": ""
+  },
+  {
+    "term_id": 42,
+    "name": "کیف دسته دار",
+    "slug": "bag-with-handle",
+    "taxonomy": "product_cat",
+    "parent": 46,
+    "count": 2,
+    "description": ""
+  },
+  {
+    "term_id": 41,
+    "name": "کیف دوشی",
+    "slug": "shoulder-bags",
+    "taxonomy": "product_cat",
+    "parent": 46,
+    "count": 2,
+    "description": ""
+  },
+  {
+    "term_id": 64,
+    "name": "کیف مجلسی",
+    "slug": "purse",
+    "taxonomy": "product_cat",
+    "parent": 46,
+    "count": 2,
+    "description": ""
+  },
+  {
+    "term_id": 15,
+    "name": "بدون دسته‌بندی",
+    "slug": "%d8%a8%d8%af%d9%88%d9%86-%d8%af%d8%b3%d8%aa%d9%87%e2%80%8c%d8%a8%d9%86%d8%af%db%8c",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 18,
+    "name": "زنانه",
+    "slug": "%d8%b2%d9%86%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 19,
+    "name": "مردانه",
+    "slug": "men",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 47,
+    "name": "کفش",
+    "slug": "shoe",
+    "taxonomy": "product_cat",
+    "parent": 18,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 54,
+    "name": "کفش",
+    "slug": "shoe-%d9%85%d8%b1%d8%af%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_cat",
+    "parent": 19,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 53,
+    "name": "کمربندزنانه",
+    "slug": "womens-belt",
+    "taxonomy": "product_cat",
+    "parent": 18,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 44,
+    "name": "کوله پشتی",
+    "slug": "backpack",
+    "taxonomy": "product_cat",
+    "parent": 46,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 63,
+    "name": "کوله پشتی",
+    "slug": "backpack-bag-%d9%85%d8%b1%d8%af%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_cat",
+    "parent": 59,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 46,
+    "name": "کیف",
+    "slug": "bag",
+    "taxonomy": "product_cat",
+    "parent": 18,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 59,
+    "name": "کیف",
+    "slug": "bag-%d9%85%d8%b1%d8%af%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_cat",
+    "parent": 19,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 45,
+    "name": "کیف اداری",
+    "slug": "office-bag",
+    "taxonomy": "product_cat",
+    "parent": 46,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 61,
+    "name": "کیف دوشی",
+    "slug": "shoulder-bags-bag-%d9%85%d8%b1%d8%af%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_cat",
+    "parent": 59,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 52,
+    "name": "کیف پول زنانه",
+    "slug": "ladies-money-purse",
+    "taxonomy": "product_cat",
+    "parent": 18,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 43,
+    "name": "کیف کمری",
+    "slug": "waist-bag",
+    "taxonomy": "product_cat",
+    "parent": 46,
+    "count": 0,
+    "description": ""
+  }
+]

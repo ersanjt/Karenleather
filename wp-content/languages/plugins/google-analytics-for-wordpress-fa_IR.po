@@ -1,0 +1,1876 @@
+# Translation of Plugins - MonsterInsights &#8211; Google Analytics Dashboard for WordPress (Website Stats Made Easy) - Stable (latest release) in Persian
+# This file is distributed under the same license as the Plugins - MonsterInsights &#8211; Google Analytics Dashboard for WordPress (Website Stats Made Easy) - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-03-05 16:41:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: fa\n"
+"Project-Id-Version: Plugins - MonsterInsights &#8211; Google Analytics Dashboard for WordPress (Website Stats Made Easy) - Stable (latest release)\n"
+
+#: languages/vue.php:4252
+msgid "Top Page Views"
+msgstr "برترین پیج مشاهده شده"
+
+#: languages/vue.php:2762
+msgid "Number of Clicks"
+msgstr "تعداد کلیک"
+
+#: languages/vue.php:3221
+msgid "Publish Times"
+msgstr "زمان انتشار"
+
+#: languages/vue.php:3599
+msgid "SEO Scores"
+msgstr "امتیازات سئو"
+
+#: languages/vue.php:3910
+msgid "Tag Tracking"
+msgstr "ردیابی برچسب"
+
+#: languages/vue.php:3156
+msgid "Post Types"
+msgstr "انواع نوشته"
+
+#: languages/vue.php:4200
+msgid "Top Cities"
+msgstr "برترین شهرها"
+
+#: languages/vue.php:4210
+msgid "Top Countries"
+msgstr "برترین کشورها"
+
+#: languages/vue.php:1718
+msgid "Focus Keywords"
+msgstr "کلمات کلیدی کانونی"
+
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-topinterests.php:58
+#: languages/vue.php:730
+msgid "Categories"
+msgstr "دسته‌بندی‌ها"
+
+#: languages/gutenberg.php:23 languages/vue.php:2148
+#: assets/gutenberg/js/editor.js:2567
+msgid "Install Now"
+msgstr "هم‌اکنون نصب کنید"
+
+#: languages/vue.php:4326
+msgid "Traffic"
+msgstr "ترافیک"
+
+#: languages/vue.php:2681
+msgid "New Customers"
+msgstr "مشتری‌های جدید"
+
+#: languages/vue.php:2202
+msgid "Installing. Please wait.."
+msgstr "در حال نصب... لطفاً منتظر بمانید."
+
+#: languages/vue.php:1235
+msgid "Dismissed"
+msgstr "رد شده"
+
+#: languages/vue.php:1231
+msgid "Dismiss All"
+msgstr "رد کردن همه"
+
+#: languages/vue.php:4654
+msgid "View Dismissed"
+msgstr "مشاهدۀ رد شده‌ها"
+
+#: includes/admin/licensing/autoupdate.php:64
+msgid "Manage auto-updates"
+msgstr "مدیریت به‌روزرسانی‌‌های خودکار"
+
+#: includes/admin/licensing/autoupdate.php:58
+msgid "Enable the MonsterInsights PRO plugin to manage auto-updates"
+msgstr "MonsterInsights PRO را فعال کنید تا بتوانید به‌روزرسانی خودکار را مدیریت کنید."
+
+#: includes/gutenberg/headline-tool/headline-tool.php:1020
+msgid "more"
+msgstr "بیشتر"
+
+#: languages/vue.php:574
+msgid "Back to Overview Report"
+msgstr "بازگشت به گزارش اجمالی"
+
+#: languages/vue.php:3202
+msgid "Pro Tip:"
+msgstr "نکتۀ در مورد افزونۀ حرفه‌ای:"
+
+#: languages/vue.php:4464
+msgid "Upgrade to Pro »"
+msgstr "ارتقا به نسخۀ حرفه‌ای »"
+
+#: languages/vue.php:3478
+msgid "See All Reports"
+msgstr "دیدن همۀ گزارش‌ها"
+
+#: languages/vue.php:1869
+msgid "Go to the Analytics Dashboard"
+msgstr "برو به پیشخوان تجزیه و تحلیل"
+
+#: languages/vue.php:3495
+msgid "See all your important store metrics in one place with Enhanced Ecommerce Tracking."
+msgstr "با ردیابی بهبودیافتۀ تجارت الکترونیک، تمام معیارهای مهم فروشگاه خود را در یک مکان مشاهده کنید."
+
+#: languages/vue.php:1227
+msgid "Dismiss"
+msgstr "رد کردن"
+
+#: languages/vue.php:2977
+msgid "Overview Reports for the last 30 days."
+msgstr "گزارش‌های اجمالی برای 30 روز اخیر."
+
+#. Translators: Number of days.
+#: languages/vue.php:4711
+msgid "vs. Previous Day"
+msgid_plural "sprintf('vs. Previous %s Days', this.days)"
+msgstr[0] "نسبت به دیروز"
+
+#: languages/vue.php:3311
+msgid "Recommended Plugin: %s"
+msgstr "افزونۀ پیشنهادی: %s"
+
+#: languages/vue.php:2971
+msgid "Overview Report"
+msgstr "گزارش اجمالی"
+
+#: languages/vue.php:3717
+msgid "Show Overview Reports"
+msgstr "نمایش گزارش‌های اجمالی"
+
+#: includes/admin/pages/settings.php:121
+msgid "Resolve This Issue"
+msgstr "حل این مسئله"
+
+#: includes/admin/pages/settings.php:131
+msgid "View supported browsers"
+msgstr "مشاهدۀ مرورگرهای پشتیبانی‌شده"
+
+#: includes/admin/pages/settings.php:128
+msgid "You are using a browser which is no longer supported by MonsterInsights. Please update or use another browser in order to access the plugin settings."
+msgstr "شما از مرورگری استفاده می کنید که دیگر توسط MonsterInsights پشتیبانی نمی‌شود. لطفاً برای دسترسی به تنظیمات افزونه، مرورگر را به‌روزرسانی کنید یا از از مرورگر دیگری استفاده کنید."
+
+#: includes/admin/pages/settings.php:126
+msgid "Your browser version is not supported"
+msgstr "نسخۀ مرورگر شما پشتیبانی نمی‌شود"
+
+#: includes/admin/pages/settings.php:117
+msgid "Copy the error message above and paste it in a message to the MonsterInsights support team."
+msgstr "پیام خطای بالا را کپی کنید و آن را در یک پیام به گروه پشتیبانی MonsterInsights ارسال کنید."
+
+#: includes/admin/pages/settings.php:95
+msgid "Ooops! It Appears JavaScript Didn’t Load"
+msgstr "وای! این نشان می دهد که جاوا اسکریپت بارگزاری نشده است"
+
+#: languages/vue.php:3667
+msgid "Settings Updated"
+msgstr "تنظیمات بروزرسانی شد"
+
+#: includes/admin/ajax.php:56
+msgid "You are not allowed to install plugins"
+msgstr "شما مجاز به نصب افزونه نیستید"
+
+#: languages/vue.php:2452
+msgid "Loading Settings"
+msgstr "بارگذاری تنظیمات"
+
+#: languages/vue.php:2449
+msgid "Loading settings"
+msgstr "بارگذاری تنظیمات"
+
+#: languages/vue.php:1009
+msgid "Could Not Save Changes"
+msgstr "نتوانستیم تغییرات را ذخیره کنیم"
+
+#: languages/vue.php:3425
+msgid "Saving Changes..."
+msgstr "در حال ذخیره‌سازی تغییرات..."
+
+#: languages/vue.php:2384
+msgid "Learn more about updating WordPress"
+msgstr "آموزش بیشتر دربارۀ به‌روزرسانی وردپرس"
+
+#: languages/vue.php:2380
+msgid "Learn more about updating PHP"
+msgstr "آموزش بیشتر درباره  بروزرسانی PHP"
+
+#: languages/vue.php:4891
+msgid "Yikes! WordPress Update Required"
+msgstr "بله! به‌روزرسانی وردپرس ضروری است"
+
+#: languages/vue.php:4887
+msgid "Yikes! PHP Update Required"
+msgstr "بله! بروزرسانی PHP ضروری است"
+
+#: languages/vue.php:954
+msgid "Continue & Install WPForms"
+msgstr "ادامه و نصب WPForms"
+
+#: languages/vue.php:3774
+msgid "Skip this Step"
+msgstr "از این مرحله بگذر"
+
+#: languages/vue.php:1349
+msgid "Ecommerce"
+msgstr "تجارت الکترونیک"
+
+#: languages/vue.php:641
+msgid "Business Website"
+msgstr "وب سایت کسب و کار"
+
+#: languages/vue.php:3417
+msgid "Save and Continue"
+msgstr "ذخیره و ادامه"
+
+#: languages/vue.php:4788
+msgid "Which category best describes your website?"
+msgstr "کدام دسته به بهترین شکل وب سایت شما را توصیف می کند؟"
+
+#: languages/vue.php:4773
+msgid "Welcome to MonsterInsights!"
+msgstr "به MonsterInsights خوش آمدید!"
+
+#: languages/vue.php:763
+msgid "Checking your website..."
+msgstr "درحال بررسی وبگاه شما..."
+
+#: languages/vue.php:1706
+msgid "Finish Setup & Exit Wizard"
+msgstr "پایان راه‌اندازی و خروج از نصب‌کننده"
+
+#: languages/vue.php:4794
+msgid "Who Can See Reports"
+msgstr "چه کسی می‌تواند گزارش‌ها را ببیند"
+
+#: languages/vue.php:362
+msgid "Affiliate Link Tracking"
+msgstr "ردیابی وابستۀ لینک"
+
+#: languages/vue.php:1929
+msgid "Helps you increase affiliate revenue."
+msgstr "کمک می‌کند درآمد وابسته را افزایش دهید."
+
+#: languages/vue.php:1688
+msgid "File Download Tracking"
+msgstr "ردیابی دانلود فایل"
+
+#: languages/vue.php:1932
+msgid "Helps you see file downloads data."
+msgstr "به شما کمک می‌کند اطلاعات بارگیری فایل را مشاهده کنید"
+
+#: languages/vue.php:2166
+msgid "Install Updates Automatically"
+msgstr "به‌روزرسانی‌ها را به‌صورت خودکار نصب کن"
+
+#: languages/vue.php:1843
+msgid "Get the latest features, bug fixes, and security updates as they are released."
+msgstr "جدیدترین ویژگی‌ها، رفع اشکالات و به‌روزرسانی‌های امنیتی را به‌محش منتشر شدن، دریافت کنید"
+
+#: languages/vue.php:2036
+msgid "Improves the accuracy of your In-Page Analytics."
+msgstr "دقت در تجزیه و تحلیل درون‌صفحۀ شما را بهبود می‌بخشد."
+
+#: includes/admin/admin.php:482 includes/admin/common.php:649
+#: includes/admin/common.php:675 includes/admin/common.php:708
+#: includes/admin/notifications/notification-audience.php:55
+#: includes/admin/notifications/notification-bounce-rate.php:52
+#: includes/admin/notifications/notification-headline-analyzer.php:39
+#: includes/admin/notifications/notification-mobile-device-low-traffic.php:41
+#: includes/admin/notifications/notification-returning-visitors.php:43
+#: includes/admin/notifications/notification-traffic-dropping.php:43
+#: languages/vue.php:2373
+msgid "Learn More"
+msgstr "اطلاعات بیشتر"
+
+#: languages/vue.php:3492
+msgid "See All Your Important Store Metrics in One Place"
+msgstr "تمام معیارهای مهم فروشگاه خود را در یک مکان مشاهده کنید."
+
+#: includes/helpers.php:602
+msgid "Macedonia (FYROM)"
+msgstr "مقدونیه (یمن)"
+
+#: includes/api-request.php:469
+msgid "Reason: The API was unreachable because no external hosts are allowed on this site."
+msgstr "دلیل: API غیر قابل دسترس بود زیرا هیچ میزبان خارجی در این سایت مجاز نیست."
+
+#: includes/api-request.php:464 includes/api-request.php:486
+msgid "Reason: The API was unreachable because the call to Google failed."
+msgstr "دلیل: API غیرقابل دسترسی بود زیرا تماس با گوگل شکست خورد."
+
+#: includes/api-request.php:449
+msgid "Reason: The API was unreachable because the API url is on the WP HTTP blocklist."
+msgstr "دلیل: API غیرقابل دسترسی بود زیرا آدرس API در فهرست بلاک WP HTTP قرار دارد."
+
+#. Translators: Placeholder gets replaced with the error message.
+#: includes/api-request.php:192
+msgid "The firewall of your server is blocking outbound calls. Please contact your hosting provider to fix this issue. %s"
+msgstr "فایروال سرور شما تماس‌های خارجی را مسدود می‌کند. لطفا با تامین‌کننده میزبان خود تماس بگیرید تا این موضوع را حل کنید. %s"
+
+#: lite/includes/admin/reports/report-realtime.php:22
+msgid "Real Time"
+msgstr "زمان واقعی"
+
+#: languages/vue.php:3708
+msgid "Show in full-width mode"
+msgstr "نمایش در حالت تمام صفحه"
+
+#: languages/vue.php:4689
+msgid "Visit addons page"
+msgstr "صفحه افزونه ها را ببینید"
+
+#. Plugin URI of the plugin
+#: googleanalytics.php
+msgid "https://www.monsterinsights.com/?utm_source=liteplugin&utm_medium=pluginheader&utm_campaign=pluginurl&utm_content=7%2E0%2E0"
+msgstr "https://www.monsterinsights.com/?utm_source=liteplugin&utm_medium=pluginheader&utm_campaign=pluginurl&utm_content=7%2E0%2E0"
+
+#: includes/admin/review.php:157
+msgid "I already did"
+msgstr "من قبلا انجام دادم"
+
+#: includes/admin/review.php:149
+msgid "Nope, maybe later"
+msgstr "نه، شاید بعدا"
+
+#: includes/admin/review.php:141
+msgid "Ok, you deserve it"
+msgstr "باشه، لیاقتش رو داری"
+
+#: languages/vue.php:1953
+msgid "Hide Announcements"
+msgstr "مخفی کردن اطلاعیه‌ها"
+
+#: languages/vue.php:1963
+msgid "Hides plugin announcements and update details. This includes critical notices we use to inform about deprecations and important required configuration changes."
+msgstr "مخفی کردن اعلامیه های افزونه و جزئیات به روزرسانی. این شامل اطلاعیه های مهم است که ما برای اطلاع رسانی در مورد تخفیف و تغییرات مهم پیکربندی مورد نیاز استفاده می کنیم."
+
+#: languages/vue.php:1584
+msgid "EU Compliance"
+msgstr "مطابق با اتحادیه اروپا"
+
+#: includes/gutenberg/site-insights/templates/graph/class-graph-sessions.php:36
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-age.php:60
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-gender.php:60
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-sessions.php:27
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-top10countries.php:56
+#: languages/vue.php:3622
+#: lite/includes/emails/templates/body-summaries-test.php:316
+#: lite/includes/emails/templates/body-summaries.php:129
+msgid "Sessions"
+msgstr "جلسات"
+
+#: languages/vue.php:3453 lite/includes/admin/reports/report-queries.php:22
+msgid "Search Console"
+msgstr "کنسول جستجو"
+
+#: languages/vue.php:3237 lite/includes/admin/reports/report-publisher.php:22
+msgid "Publishers"
+msgstr "ناشران"
+
+#: languages/vue.php:1204 lite/includes/admin/reports/report-dimensions.php:22
+msgid "Dimensions"
+msgstr "ابعاد"
+
+#: includes/frontend/tracking/class-tracking-gtag.php:200
+msgid "Note: The site owner has disabled Google Analytics tracking for your user role."
+msgstr "توجه: صاحب سایت گوگل ردیابی گوگل آنالیتیکس را برای نقش کاربر خود غیرفعال کرده است."
+
+#: includes/frontend/tracking/class-tracking-gtag.php:194
+msgid "Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel."
+msgstr "توجه: افزونه در حال حاضر در این سایت پیکربندی نشده است. صاحب سایت باید گوگل آنالیتیکس را در پانل تنظیمات افزونه تأیید کند."
+
+#: includes/api-request.php:194
+msgid "The firewall of your server is blocking outbound calls. Please contact your hosting provider to fix this issue."
+msgstr "فایروال سرور شما مسدود کردن تماس های خروجی است. برای حل این مشکل لطفا با ارائه دهنده خدمات میزبانی خود تماس بگیرید."
+
+#: languages/vue.php:3699
+msgid "Show"
+msgstr "نمایش"
+
+#: languages/vue.php:4088
+msgid "This list shows the most viewed posts and pages on your website."
+msgstr "این لیست بیشترین بازدید ها و صفحات را در وب سایت شما نشان می دهد."
+
+#: languages/vue.php:4644
+msgid "View All Referral Sources"
+msgstr "مشاهده تمام منابع ارجاع"
+
+#: lite/includes/emails/templates/body-summaries-test.php:296
+msgid "Referrals"
+msgstr "ارجاعات"
+
+#: languages/vue.php:4103
+msgid "This list shows the top countries your website visitors are from."
+msgstr "این فهرست کشورهای برتر بازدید کنندگان وب سایت شما را نشان می‌دهد."
+
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-top10countries.php:55
+#: languages/vue.php:4182
+msgid "Top 10 Countries"
+msgstr "۱۰ کشور برتر"
+
+#: languages/vue.php:3906
+msgid "Tablet"
+msgstr "تبلت"
+
+#: languages/vue.php:1173
+msgid "Desktop"
+msgstr "دسکتاپ"
+
+#: languages/vue.php:4072
+msgid "This graph shows what percent of your visitor sessions are done using a traditional computer or laptop, tablet or mobile device to view your site."
+msgstr "این نمودار نشان می دهد که چه میزان از جلسات بازدید کننده شما با استفاده از یک رایانه یا لپ تاپ، تبلت یا دستگاه تلفن همراه برای مشاهده سایت شما انجام می شود."
+
+#: languages/vue.php:2558
+msgid "Mobile"
+msgstr "تلفن همراه"
+
+#: languages/vue.php:3382
+msgid "Returning"
+msgstr "بازگشت"
+
+#: languages/vue.php:2678
+msgid "New"
+msgstr "جدید"
+
+#: languages/vue.php:4068
+msgid "This graph shows what percent of your user sessions come from new versus repeat visitors."
+msgstr "این نمودار نشان می‌دهد که چه درصد از جلسات کاربری شما از بازدید کننده‌های جدید در مقابل بازدیدکنندگان تکرار می‌شود."
+
+#: languages/vue.php:3041
+msgid "Percentage of single page visits (or web sessions). It is the number of visits in which a person leaves your website from the landing page without browsing any further."
+msgstr "درصد بازدیدهای یک صفحه (یا جلسات وب). این تعداد بازدیدکنندهایی است که یک نفر وب سایت شما را از صفحه ورود بیرون می آورد بدون آنکه مرور کند."
+
+#: languages/vue.php:4284
+msgid "Total duration of all sessions (in seconds) / number of sessions."
+msgstr "طول مدت کلیه جلسات (در ثانیه) / تعداد جلسات."
+
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-pageviews.php:27
+#: languages/vue.php:564
+msgid "Avg. Session Duration"
+msgstr "میانگین مدت جلسه"
+
+#: languages/vue.php:163
+msgid "A pageview is defined as a view of a page on your site that is being tracked by the Analytics tracking code. Each refresh of a page is also a new pageview."
+msgstr "یک صفحه نمایش به عنوان یک نمایه از یک صفحه در سایت شما تعریف شده است که توسط کد ردیابی آنالیتیکس دنبال می شود. هر تازه سازی یک صفحه نیز یک صفحه نمایش جدید است."
+
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-sessions.php:36
+#: languages/vue.php:3012
+#: lite/includes/emails/templates/body-summaries-test.php:163
+#: lite/includes/emails/templates/body-summaries-test.php:249
+msgid "Pageviews"
+msgstr "بازدید صفحات"
+
+#: languages/vue.php:2708
+msgid "No change"
+msgstr "بدون تغییر"
+
+#: languages/vue.php:167
+msgid "A session is the browsing session of a single user to your site."
+msgstr "میزان جلسه مرور تنها یک کاربر در سایت شما."
+
+#: includes/gutenberg/site-insights/templates/graph/class-graph-device.php:41
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-device.php:33
+#: languages/vue.php:1183
+msgid "Device Breakdown"
+msgstr "به تفکیک دستگاه"
+
+#: languages/vue.php:4259
+msgid "Top Posts/Pages"
+msgstr "نوشته‌ها یا برگه‌های برتر"
+
+#: languages/vue.php:2692
+msgid "New vs. Returning Visitors"
+msgstr "مقایسۀ بازدیدکنندگان جدید و بازدیدکنندگان تکراری"
+
+#: languages/vue.php:4657
+msgid "View Full Posts/Pages Report"
+msgstr "مشاهده کامل گزارش نوشته / برگه"
+
+#: includes/gutenberg/headline-tool/headline-tool.php:711
+msgid "unique"
+msgstr "منحصر به فرد"
+
+#: languages/vue.php:4650
+msgid "View Countries Report"
+msgstr "مشاهدۀ گزارش کشورها"
+
+#: languages/vue.php:4124
+msgid "This list shows the top websites that send your website traffic, known as referral traffic."
+msgstr "این فهرست برترین سایت‌هایی را نشان می‌دهد که ترافیک سایت شما را ارسال می‌کنند و به‌عنوان «ترافیک مراجعه» شناخته می‌شود."
+
+#: includes/admin/reports/abstract-report.php:443
+#: includes/admin/reports/abstract-report.php:466
+msgid "If you have any questions, don't hesitate to reach out. We're here to help."
+msgstr "اگر سوالی دارید، دریغ نکنید. ما برای کمک اینجا هستیم."
+
+#: includes/admin/reports/abstract-report.php:419
+msgid "(And Crush Your Competition?)"
+msgstr "(و رقابت شما را تسخیر می کند؟)"
+
+#: includes/admin/reports/abstract-report.php:417
+msgid "Ready to Get Analytics Super-Powers?"
+msgstr "آماده دریافت تجزیه و تحلیل قدرت فوق العاده؟"
+
+#: includes/admin/reports/abstract-report.php:137
+msgid "No data found"
+msgstr "داده ای یافت نشد"
+
+#: includes/admin/notification-event.php:256
+#: lite/includes/emails/summaries.php:481
+msgid "You don't have permission to view MonsterInsights reports."
+msgstr "شما اجازه مشاهده گزارش افزونه را ندارید."
+
+#: languages/vue.php:4594
+msgid "Verify Credentials"
+msgstr "تأیید مجوزها"
+
+#: languages/vue.php:3885
+msgid "Success"
+msgstr "موفقیت"
+
+#: languages/vue.php:2443
+msgid "Loading new report data..."
+msgstr "بارگیری داده‌های گزارش جدید ..."
+
+#: languages/vue.php:3337
+msgid "Refreshing Report"
+msgstr "تازه کردن گزارش"
+
+#: languages/vue.php:5001
+msgid "Your site is connected to MonsterInsights!"
+msgstr "سایت شما به افزونه گوگل آنالیتیکس متصل است!"
+
+#: languages/vue.php:4969
+msgid "You've disconnected your site from MonsterInsights. Your site is no longer being tracked by Google Analytics and you won't see reports anymore."
+msgstr "شما سایت خود را از افزونه گوگل آنالیتیکس قطع کرده اید. سایت شما دیگر توسط گوگل آنالیز ردیابی نمی شود و دیگر گزارش ها را نخواهید دید."
+
+#: includes/admin/api-auth.php:482
+msgid "Successfully verified."
+msgstr "تایید با موفقیت انجام شد."
+
+#: includes/admin/admin.php:237 includes/admin/admin.php:239
+msgid "Network Settings:"
+msgstr "تنظیمات شبکه:"
+
+#: includes/admin/admin.php:49 includes/admin/admin.php:55
+#: includes/admin/admin.php:241
+msgid "General Reports:"
+msgstr "گزارشات عمومی:"
+
+#: includes/admin/admin.php:43
+msgid "General:"
+msgstr "عمومی:"
+
+#. Translators: Placeholders add a link to the MonsterInsights website.
+#: includes/admin/admin.php:678 includes/admin/admin.php:728
+msgid "%1$sGet MonsterInsights Pro%2$s"
+msgstr "%1$sدریافت نسخه حرفه‌ای افزونه%2$s"
+
+#: languages/vue.php:506
+msgid "Automatic Updates"
+msgstr "بروزرسانی‌های خودکار"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:299
+msgid "Quick Feedback"
+msgstr "بازخورد سریع"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:290
+msgid "Other"
+msgstr "دیگر"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:287
+msgid "It's a temporary deactivation"
+msgstr "این غیر فعال کردن موقت است"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:281
+msgid "Please share which plugin"
+msgstr "لطفا این افزونه را به اشتراک بگذارید"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:277
+msgid "I no longer need the plugin"
+msgstr "من دیگر به این افزونه نیاز ندارم"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:141
+msgid "Please select an option"
+msgstr "لطفا یک گزینه را انتخاب کنید"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:284
+msgid "I couldn't get the plugin to work"
+msgstr "من نمی‌توانم از افزونه استفاده کنم"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:280
+msgid "I'm switching to a different plugin"
+msgstr "من از افزونه دیگری استفاده می‌کنم"
+
+#. Translators: Adds an ampersand.
+#: assets/lib/pandora/class-am-deactivation-survey.php:337
+msgid "Skip %s Deactivate"
+msgstr "رد شدن %s غیرفعال کردن"
+
+#. Translators: Adds an ampersand.
+#: assets/lib/pandora/class-am-deactivation-survey.php:331
+msgid "Submit %s Deactivate"
+msgstr "ارسال %s غیرفعال کردن"
+
+#: assets/lib/pandora/class-am-deactivation-survey.php:291
+msgid "Please share the reason"
+msgstr "لطفا دلیل را به اشتراک بگذارید"
+
+#: languages/vue.php:2422
+msgid "Link Attribution"
+msgstr "مجوز پیوند"
+
+#: languages/vue.php:1872
+msgid "Google AMP"
+msgstr "گوگل AMP"
+
+#: lite/includes/admin/tools.php:13
+msgid "Click here to Upgrade"
+msgstr "برای ارتقا اینجا کلیک کنید"
+
+#: languages/vue.php:2009
+msgid "Import/Export"
+msgstr "درون‌ریز/برون‌بر"
+
+#: includes/helpers.php:531
+msgid "Czechia"
+msgstr "چک"
+
+#: languages/vue.php:2003
+msgid "Import Settings"
+msgstr "تنظیمات درون‌ریز"
+
+#: languages/vue.php:1636
+msgid "Export"
+msgstr "برون‌بر"
+
+#: includes/admin/routes.php:982
+msgid "Please upload a valid .json file"
+msgstr "لطفا یک فایل .json معتبر آپلود کنید"
+
+#: languages/vue.php:1652
+msgid "Export Settings"
+msgstr "برون‌ریزی تنظیمات"
+
+#: languages/vue.php:4492
+msgid "URL Builder"
+msgstr "سازنده آدرس"
+
+#: languages/vue.php:1996
+msgid "Import"
+msgstr "درون‌ریز"
+
+#: includes/admin/admin.php:82
+msgid "Tools"
+msgstr "ابزارها"
+
+#: includes/admin/admin.php:82
+msgid "Tools:"
+msgstr "ابزارها:"
+
+#: languages/vue.php:1000
+msgid "Copy to Clipboard"
+msgstr "کپی به کلیپ بورد"
+
+#. Plugin Name of the plugin
+#: googleanalytics.php
+msgid "Google Analytics for WordPress by MonsterInsights"
+msgstr "گوگل آنالیتیکس برای وردپرس"
+
+#. Description of the plugin
+#: googleanalytics.php
+msgid "The best Google Analytics plugin for WordPress. See how visitors find and use your website, so you can keep them coming back."
+msgstr "بهترین افزونه گوگل آنالیتیکس برای وردپرس. ببینید که چگونه بازدیدکنندگان وب‌سایت شما را پیدا کرده و از آن استفاده می‌کنند بنابراین شما می‌توانید آن‌ها را برای بازگشت نگه دارید."
+
+#: includes/helpers.php:721 includes/helpers.php:2043
+msgid "Zimbabwe"
+msgstr "زیمبابوه"
+
+#: includes/helpers.php:720 includes/helpers.php:2042
+msgid "Zambia"
+msgstr "زامبیا"
+
+#: includes/helpers.php:719
+msgid "Yemen"
+msgstr "یمن"
+
+#: includes/helpers.php:718
+msgid "Western Samoa"
+msgstr "غربی ساموآ"
+
+#: includes/helpers.php:717
+msgid "Western Sahara"
+msgstr "صحرای غربی"
+
+#: includes/helpers.php:716
+msgid "Wallis and Futuna Islands"
+msgstr "جزایر والیس و فونتانا"
+
+#: includes/helpers.php:715
+msgid "Virgin Islands (USA)"
+msgstr "جزایر ویرجین (ایالات متحده آمریکا)"
+
+#: includes/helpers.php:714
+msgid "Virgin Islands (British)"
+msgstr "جزایر ویرجین (بریتانیایی)"
+
+#: includes/helpers.php:713
+msgid "Vietnam"
+msgstr "ویتنام"
+
+#: includes/helpers.php:712
+msgid "Venezuela"
+msgstr "ونزوئلا"
+
+#: includes/helpers.php:711 includes/helpers.php:2041
+msgid "Vanuatu"
+msgstr "وانواتو"
+
+#: includes/helpers.php:710
+msgid "Uzbekistan"
+msgstr "ازبکستان"
+
+#: includes/helpers.php:709
+msgid "US Minor Outlying Islands"
+msgstr "جزایر کوچک جزایر کوچک ایالات متحده"
+
+#: includes/helpers.php:708
+msgid "Uruguay"
+msgstr "اروگوئه"
+
+#: includes/helpers.php:707
+msgid "United Arab Emirates"
+msgstr "امارات متحده عربی"
+
+#: includes/helpers.php:706
+msgid "Ukraine"
+msgstr "اوکراین"
+
+#: includes/helpers.php:705 includes/helpers.php:2040
+msgid "Uganda"
+msgstr "اوگاندا"
+
+#: includes/helpers.php:704 includes/helpers.php:2037
+msgid "Tuvalu"
+msgstr "توووالو"
+
+#: includes/helpers.php:703
+msgid "Turks and Caicos Islands"
+msgstr "جزایر ترکس و کایکوس"
+
+#: includes/helpers.php:702
+msgid "Turkmenistan"
+msgstr "ترکمنستان"
+
+#: includes/helpers.php:700
+msgid "Tunisia"
+msgstr "تونس"
+
+#: includes/helpers.php:699 includes/helpers.php:2033
+msgid "Trinidad and Tobago"
+msgstr "ترینیداد و توباگو"
+
+#: includes/helpers.php:698 includes/helpers.php:2036
+msgid "Tonga"
+msgstr "تونگا"
+
+#: includes/helpers.php:697
+msgid "Tokelau"
+msgstr "توکلو"
+
+#: includes/helpers.php:694
+msgid "Thailand"
+msgstr "تایلند"
+
+#: includes/helpers.php:693 includes/helpers.php:2035
+msgid "Tanzania"
+msgstr "تانزانیا"
+
+#: includes/helpers.php:692
+msgid "Tajikistan"
+msgstr "تاجیکستان"
+
+#: includes/helpers.php:691
+msgid "Taiwan"
+msgstr "تایوان"
+
+#: includes/helpers.php:690
+msgid "Syrian Arab Republic"
+msgstr "جمهوری عربی سوریه"
+
+#: includes/helpers.php:689
+msgid "Switzerland"
+msgstr "سوئیس"
+
+#: includes/helpers.php:688
+msgid "Sweden"
+msgstr "سوئد"
+
+#: includes/helpers.php:687 includes/helpers.php:2025
+msgid "Swaziland"
+msgstr "سوازیلند"
+
+#: includes/helpers.php:686
+msgid "Svalbard and Jan Mayen Islands"
+msgstr "جزایر اسلوبرد و جان ماین"
+
+#: includes/helpers.php:685
+msgid "Suriname"
+msgstr "سورینام"
+
+#: includes/helpers.php:684 includes/helpers.php:2032
+msgid "Sudan"
+msgstr "سودان"
+
+#: includes/helpers.php:683
+msgid "Sri Lanka"
+msgstr "سری لانکا"
+
+#: includes/helpers.php:682
+msgid "Spain"
+msgstr "اسپانیا"
+
+#: includes/helpers.php:681 includes/helpers.php:2031
+msgid "South Sudan"
+msgstr "سودان جنوبی"
+
+#: includes/helpers.php:680
+msgid "South Korea"
+msgstr "کره جنوبی"
+
+#: includes/helpers.php:679
+msgid "South Georgia"
+msgstr "جنوب گرجستان"
+
+#: includes/helpers.php:678 includes/helpers.php:2030
+msgid "South Africa"
+msgstr "آفریقای جنوبی"
+
+#: includes/helpers.php:677
+msgid "Somalia"
+msgstr "سومالی"
+
+#: includes/helpers.php:675
+msgid "Slovenia"
+msgstr "اسلوونی"
+
+#: includes/helpers.php:674
+msgid "Slovak Republic"
+msgstr "جمهوری اسلواکی"
+
+#: includes/helpers.php:673 includes/helpers.php:2021
+msgid "Singapore"
+msgstr "سنگاپور"
+
+#: includes/helpers.php:672 includes/helpers.php:2028
+msgid "Sierra Leone"
+msgstr "سیرا لئون"
+
+#: includes/helpers.php:671 includes/helpers.php:2027
+msgid "Seychelles"
+msgstr "سیشل"
+
+#: includes/helpers.php:670
+msgid "Serbia"
+msgstr "صربستان"
+
+#: includes/helpers.php:669
+msgid "Senegal"
+msgstr "سنگال"
+
+#: includes/helpers.php:668
+msgid "Saudi Arabia"
+msgstr "عربستان سعودی"
+
+#: includes/helpers.php:666
+msgid "San Marino"
+msgstr "سان مارینو"
+
+#: includes/helpers.php:665
+msgid "Saint Vincent and the Grenadines"
+msgstr "سنت وینسنت و گرنادین"
+
+#: includes/helpers.php:664
+msgid "Saint Pierre and Miquelon"
+msgstr "سنت پیر و میکلون"
+
+#: includes/helpers.php:663
+msgid "Saint Martin (Dutch)"
+msgstr "سنت مارتین (هلندی)"
+
+#: includes/helpers.php:662
+msgid "Saint Martin (French)"
+msgstr "سنت مارتین (فرانسوی)"
+
+#: includes/helpers.php:661
+msgid "Saint Lucia"
+msgstr "سنت لوسیا"
+
+#: includes/helpers.php:660
+msgid "Saint Kitts and Nevis"
+msgstr "سنت کیتس و نویس"
+
+#: includes/helpers.php:659
+msgid "Saint Helena"
+msgstr "سنت هلن"
+
+#: includes/helpers.php:657 includes/helpers.php:2020
+msgid "Rwanda"
+msgstr "رواندا"
+
+#: includes/helpers.php:656
+msgid "Russian Federation"
+msgstr "فدراسیون روسیه"
+
+#: includes/helpers.php:655
+msgid "Romania"
+msgstr "رومانی"
+
+#: includes/helpers.php:654
+msgid "Reunion Island"
+msgstr "جزیره رونیون"
+
+#: includes/helpers.php:653
+msgid "Republic of Kosovo"
+msgstr "جمهوری کوزوو"
+
+#: includes/helpers.php:652
+msgid "Qatar"
+msgstr "قطر"
+
+#: includes/helpers.php:651
+msgid "Puerto Rico"
+msgstr "پورتوریکو"
+
+#: includes/helpers.php:650
+msgid "Portugal"
+msgstr "کشور پرتغال"
+
+#: includes/helpers.php:649
+msgid "Poland"
+msgstr "لهستان"
+
+#: includes/helpers.php:648
+msgid "Pitcairn Island"
+msgstr "جزیره پیتکارین"
+
+#: includes/helpers.php:647 includes/helpers.php:2019
+msgid "Philippines"
+msgstr "فیلیپین"
+
+#: includes/helpers.php:646
+msgid "Peru"
+msgstr "پرو"
+
+#: includes/helpers.php:645
+msgid "Paraguay"
+msgstr "پاراگوئه"
+
+#: includes/helpers.php:644 includes/helpers.php:2018
+msgid "Papua New Guinea"
+msgstr "پاپوآ گینه نو"
+
+#: includes/helpers.php:643
+msgid "Panama"
+msgstr "پاناما"
+
+#: includes/helpers.php:642
+msgid "Palestinian Territories"
+msgstr "سرزمین های فلسطینی"
+
+#: includes/helpers.php:641 includes/helpers.php:2017
+msgid "Palau"
+msgstr "پالائو"
+
+#: includes/helpers.php:640 includes/helpers.php:2016
+msgid "Pakistan"
+msgstr "پاکستان"
+
+#: includes/helpers.php:639
+msgid "Oman"
+msgstr "عمان"
+
+#: includes/helpers.php:638
+msgid "Norway"
+msgstr "نروژ"
+
+#: includes/helpers.php:637
+msgid "Northern Mariana Islands"
+msgstr "جزایر ماریانای شمالی"
+
+#: includes/helpers.php:636
+msgid "North Korea"
+msgstr "کره شمالی"
+
+#: includes/helpers.php:635
+msgid "Norfolk Island"
+msgstr "جزیره نورفولک"
+
+#: includes/helpers.php:634
+msgid "Niue"
+msgstr "نیو"
+
+#: includes/helpers.php:633 includes/helpers.php:2015
+msgid "Nigeria"
+msgstr "نیجریه"
+
+#: includes/helpers.php:632
+msgid "Niger"
+msgstr "نیجر"
+
+#: includes/helpers.php:631
+msgid "Nicaragua"
+msgstr "نیکاراگوئه"
+
+#: includes/helpers.php:630 includes/helpers.php:2012
+msgid "New Zealand"
+msgstr "نیوزلند"
+
+#: includes/helpers.php:629
+msgid "New Caledonia"
+msgstr "کالدونیای جدید"
+
+#: includes/helpers.php:628
+msgid "Netherlands Antilles"
+msgstr "آنتیل هلند"
+
+#: includes/helpers.php:627
+msgid "Netherlands"
+msgstr "هلند"
+
+#: includes/helpers.php:626
+msgid "Nepal"
+msgstr "نپال"
+
+#: includes/helpers.php:625 includes/helpers.php:2014
+msgid "Nauru"
+msgstr "نائورو"
+
+#: includes/helpers.php:624 includes/helpers.php:2013
+msgid "Namibia"
+msgstr "نامیبیا"
+
+#: includes/helpers.php:623
+msgid "Myanmar"
+msgstr "میانمار"
+
+#: includes/helpers.php:622
+msgid "Mozambique"
+msgstr "موزامبیک"
+
+#: includes/helpers.php:621
+msgid "Morocco"
+msgstr "مراکش"
+
+#: includes/helpers.php:620
+msgid "Montserrat"
+msgstr "مونتسرات"
+
+#: includes/helpers.php:619
+msgid "Montenegro"
+msgstr "مونته نگرو"
+
+#: includes/helpers.php:618
+msgid "Mongolia"
+msgstr "مغولستان"
+
+#: includes/helpers.php:617
+msgid "Monaco"
+msgstr "موناکو"
+
+#: includes/helpers.php:616
+msgid "Moldova, Republic of"
+msgstr "مولداوی، جمهوری"
+
+#: includes/helpers.php:615 includes/helpers.php:2011
+msgid "Micronesia"
+msgstr "میکرونزی"
+
+#: includes/helpers.php:614
+msgid "Mexico"
+msgstr "مکزیک"
+
+#: includes/helpers.php:613
+msgid "Mayotte"
+msgstr "مایوت"
+
+#: includes/helpers.php:612 includes/helpers.php:2010
+msgid "Mauritius"
+msgstr "موریس"
+
+#: includes/helpers.php:611
+msgid "Mauritania"
+msgstr "موریتانی"
+
+#: includes/helpers.php:610
+msgid "Martinique"
+msgstr "مارتینیک"
+
+#: includes/helpers.php:609 includes/helpers.php:2009
+msgid "Marshall Islands"
+msgstr "جزایر مارشال"
+
+#: includes/helpers.php:608 includes/helpers.php:2008
+msgid "Malta"
+msgstr "مالت"
+
+#: includes/helpers.php:607
+msgid "Mali"
+msgstr "مالزی"
+
+#: includes/helpers.php:606
+msgid "Maldives"
+msgstr "مالدیو"
+
+#: includes/helpers.php:605
+msgid "Malaysia"
+msgstr "مالزی"
+
+#: includes/helpers.php:604 includes/helpers.php:2007
+msgid "Malawi"
+msgstr "مالاوی"
+
+#: includes/helpers.php:603
+msgid "Madagascar"
+msgstr "ماداگاسکار"
+
+#: includes/helpers.php:601
+msgid "Macau"
+msgstr "ماکائو"
+
+#: includes/helpers.php:600
+msgid "Luxembourg"
+msgstr "لوکزامبورگ"
+
+#: includes/helpers.php:599
+msgid "Lithuania"
+msgstr "لیتوانی"
+
+#: includes/helpers.php:598
+msgid "Liechtenstein"
+msgstr "لیختن اشتاین"
+
+#: includes/helpers.php:597
+msgid "Libyan Arab Jamahiriya"
+msgstr "لیبی عربستان جماهیریا"
+
+#: includes/helpers.php:596 includes/helpers.php:2006
+msgid "Liberia"
+msgstr "لیبریا"
+
+#: includes/helpers.php:595 includes/helpers.php:2005
+msgid "Lesotho"
+msgstr "لسوتو"
+
+#: includes/helpers.php:594
+msgid "Lebanon"
+msgstr "لبنان"
+
+#: includes/helpers.php:593
+msgid "Latvia"
+msgstr "لتونی"
+
+#: includes/helpers.php:592
+msgid "Lao People's Democratic Republic"
+msgstr "جمهوری دموکراتیک خلق لائوس"
+
+#: includes/helpers.php:591
+msgid "Kyrgyzstan"
+msgstr "قرقیزستان"
+
+#: includes/helpers.php:590
+msgid "Kuwait"
+msgstr "کویت"
+
+#: includes/helpers.php:589 includes/helpers.php:2004
+msgid "Kiribati"
+msgstr "کیریباتی"
+
+#: includes/helpers.php:588 includes/helpers.php:2003
+msgid "Kenya"
+msgstr "کنیا"
+
+#: includes/helpers.php:587
+msgid "Kazakhstan"
+msgstr "قزاقستان"
+
+#: includes/helpers.php:586
+msgid "Jordan"
+msgstr "اردن"
+
+#: includes/helpers.php:585
+msgid "Jersey"
+msgstr "جرسی"
+
+#: includes/helpers.php:584
+msgid "Japan"
+msgstr "ژاپن"
+
+#: includes/helpers.php:583 includes/helpers.php:2002
+msgid "Jamaica"
+msgstr "جامائیکا"
+
+#: includes/helpers.php:582
+msgid "Italy"
+msgstr "ایتالیا"
+
+#: includes/helpers.php:581
+msgid "Israel"
+msgstr "اسرائيل"
+
+#: includes/helpers.php:580
+msgid "Isle of Man"
+msgstr "جزیره من"
+
+#: includes/helpers.php:579 includes/helpers.php:2000
+msgid "Ireland"
+msgstr "ایرلند"
+
+#: includes/helpers.php:578
+msgid "Iraq"
+msgstr "عراق"
+
+#: includes/helpers.php:577
+msgid "Iran"
+msgstr "ایران"
+
+#: includes/helpers.php:576
+msgid "Indonesia"
+msgstr "اندونزی"
+
+#: includes/helpers.php:575 includes/helpers.php:2001
+msgid "India"
+msgstr "هندوستان"
+
+#: includes/helpers.php:574
+msgid "Iceland"
+msgstr "ایسلند"
+
+#: includes/helpers.php:573
+msgid "Hungary"
+msgstr "مجارستان"
+
+#: includes/helpers.php:572
+msgid "Hong Kong"
+msgstr "هنگ کنگ"
+
+#: includes/helpers.php:571
+msgid "Honduras"
+msgstr "هندوراس"
+
+#: includes/helpers.php:570
+msgid "Holy See (City Vatican State)"
+msgstr "واتیکان"
+
+#: includes/helpers.php:568
+msgid "Haiti"
+msgstr "هائیتی"
+
+#: includes/helpers.php:567 includes/helpers.php:1997
+msgid "Guyana"
+msgstr "گایانا"
+
+#: includes/helpers.php:566
+msgid "Guinea-Bissau"
+msgstr "گینه بیسائو"
+
+#: includes/helpers.php:565
+msgid "Guinea"
+msgstr "گینه"
+
+#: includes/helpers.php:564
+msgid "Guernsey"
+msgstr "گورنسی"
+
+#: includes/helpers.php:563
+msgid "Guatemala"
+msgstr "گواتمالا"
+
+#: includes/helpers.php:562
+msgid "Guam"
+msgstr "گوام"
+
+#: includes/helpers.php:561
+msgid "Guadeloupe"
+msgstr "گوادلوپ"
+
+#: includes/helpers.php:560 includes/helpers.php:1996
+msgid "Grenada"
+msgstr "گرانادا"
+
+#: includes/helpers.php:559
+msgid "Greenland"
+msgstr "گرینلند"
+
+#: includes/helpers.php:558
+msgid "Gibraltar"
+msgstr "جبل الطارق"
+
+#: includes/helpers.php:557 includes/helpers.php:1999
+msgid "Ghana"
+msgstr "غنا"
+
+#: includes/helpers.php:556
+msgid "Greece"
+msgstr "یونان"
+
+#: includes/helpers.php:555
+msgid "Germany"
+msgstr "آلمان"
+
+#: includes/helpers.php:554
+msgid "Georgia"
+msgstr "جورجیا"
+
+#: includes/helpers.php:553 includes/helpers.php:1998
+msgid "Gambia"
+msgstr "گامبیا"
+
+#: includes/helpers.php:552
+msgid "Gabon"
+msgstr "گابن"
+
+#: includes/helpers.php:551
+msgid "French Southern Territories"
+msgstr "مناطق جنوبی فرانسه"
+
+#: includes/helpers.php:550
+msgid "French Polynesia"
+msgstr "پلینزی فرانسه"
+
+#: includes/helpers.php:549
+msgid "French Guiana"
+msgstr "گویان فرانسه"
+
+#: includes/helpers.php:548
+msgid "France"
+msgstr "فرانسه"
+
+#: includes/helpers.php:547
+msgid "Finland"
+msgstr "فنلاند"
+
+#: includes/helpers.php:546 includes/helpers.php:1995
+msgid "Fiji"
+msgstr "فیجی"
+
+#: includes/helpers.php:545
+msgid "Faroe Islands"
+msgstr "جزایر فارو"
+
+#: includes/helpers.php:544
+msgid "Falkland Islands"
+msgstr "جزایر فالکلند"
+
+#: includes/helpers.php:543
+msgid "Ethiopia"
+msgstr "اتیوپی"
+
+#: includes/helpers.php:542
+msgid "Estonia"
+msgstr "استونی"
+
+#: includes/helpers.php:541
+msgid "Eritrea"
+msgstr "اریتره"
+
+#: includes/helpers.php:540
+msgid "El Salvador"
+msgstr "السالوادور"
+
+#: includes/helpers.php:539
+msgid "Equatorial Guinea"
+msgstr "گینه استوایی"
+
+#: includes/helpers.php:538
+msgid "Egypt"
+msgstr "مصر"
+
+#: includes/helpers.php:537
+msgid "Ecuador"
+msgstr "اکوادور"
+
+#: includes/helpers.php:536
+msgid "East Timor"
+msgstr "تیمور شرقی"
+
+#: includes/helpers.php:535
+msgid "Dominican Republic"
+msgstr "جمهوری دومینیکن"
+
+#: includes/helpers.php:534 includes/helpers.php:1994
+msgid "Dominica"
+msgstr "دومینیکا"
+
+#: includes/helpers.php:533
+msgid "Djibouti"
+msgstr "جیبوتی"
+
+#: includes/helpers.php:532
+msgid "Denmark"
+msgstr "دانمارک"
+
+#: includes/helpers.php:530
+msgid "Cyprus"
+msgstr "قبرس"
+
+#: includes/helpers.php:528
+msgid "Cuba"
+msgstr "کوبا"
+
+#: includes/helpers.php:527
+msgid "Croatia/Hrvatska"
+msgstr "کرواسی / هراتسکا"
+
+#: includes/helpers.php:526
+msgid "Cote d'Ivoire"
+msgstr "ساحل عاج"
+
+#: includes/helpers.php:525
+msgid "Costa Rica"
+msgstr "کاستاریکا"
+
+#: includes/helpers.php:524
+msgid "Cook Islands"
+msgstr "جزایر کوک"
+
+#: includes/helpers.php:523
+msgid "Congo, Republic of"
+msgstr "کنگو جمهوری"
+
+#: includes/helpers.php:522
+msgid "Congo, Democratic People's Republic"
+msgstr "کنگو، جمهوری خلق دموکراتیک"
+
+#: includes/helpers.php:521
+msgid "Comoros"
+msgstr "کومور"
+
+#: includes/helpers.php:520
+msgid "Colombia"
+msgstr "کلمبیا"
+
+#: includes/helpers.php:519
+msgid "Cocos Islands"
+msgstr "جزایر کوکوس"
+
+#: includes/helpers.php:518
+msgid "Christmas Island"
+msgstr "جزیره کریسمس"
+
+#: includes/helpers.php:517
+msgid "China"
+msgstr "چين"
+
+#: includes/helpers.php:516
+msgid "Chile"
+msgstr "شیلی"
+
+#: includes/helpers.php:515
+msgid "Chad"
+msgstr "چاد"
+
+#: includes/helpers.php:514
+msgid "Central African Republic"
+msgstr "جمهوری آفریقای مرکزی"
+
+#: includes/helpers.php:513
+msgid "Cayman Islands"
+msgstr "جزایر کیمن"
+
+#: includes/helpers.php:512
+msgid "Cape Verde"
+msgstr "کیپ ورد"
+
+#: includes/helpers.php:511 includes/helpers.php:1992
+msgid "Cameroon"
+msgstr "کامرون"
+
+#: includes/helpers.php:510
+msgid "Cambodia"
+msgstr "کامبوج"
+
+#: includes/helpers.php:509 includes/helpers.php:1991
+msgid "Burundi"
+msgstr "بوروندی"
+
+#: includes/helpers.php:508
+msgid "Burkina Faso"
+msgstr "بورکینافاسو"
+
+#: includes/helpers.php:507
+msgid "Bulgaria"
+msgstr "بلغارستان"
+
+#: includes/helpers.php:506
+msgid "Brunei Darrussalam"
+msgstr "برونئی دارالسلام"
+
+#: includes/helpers.php:505
+msgid "British Indian Ocean Territory"
+msgstr "قلمرو اقیانوس هند بریتانیا"
+
+#: includes/helpers.php:504
+msgid "Brazil"
+msgstr "برزیل"
+
+#: includes/helpers.php:502 includes/helpers.php:1990
+msgid "Botswana"
+msgstr "بوتسوانا"
+
+#: includes/helpers.php:501
+msgid "Bosnia and Herzegovina"
+msgstr "بوسنی و هرزگوین"
+
+#: includes/helpers.php:500
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr "بونیر، سنت اواستیاوس و صبا"
+
+#: includes/helpers.php:499
+msgid "Bolivia"
+msgstr "بولیوی"
+
+#: includes/helpers.php:498
+msgid "Bhutan"
+msgstr "بوتان"
+
+#: includes/helpers.php:497
+msgid "Bermuda"
+msgstr "برمودا"
+
+#: includes/helpers.php:496
+msgid "Benin"
+msgstr "بنین"
+
+#: includes/helpers.php:495 includes/helpers.php:1989
+msgid "Belize"
+msgstr "بلیز"
+
+#: includes/helpers.php:494
+msgid "Belgium"
+msgstr "بلژیک"
+
+#: includes/helpers.php:493
+msgid "Belarus"
+msgstr "بلاروس"
+
+#: includes/helpers.php:492 includes/helpers.php:1988
+msgid "Barbados"
+msgstr "باربادوس"
+
+#: includes/helpers.php:491
+msgid "Bangladesh"
+msgstr "بنگلادش"
+
+#: includes/helpers.php:490
+msgid "Bahrain"
+msgstr "بحرین"
+
+#: includes/helpers.php:489
+msgid "Bahamas"
+msgstr "باهاما"
+
+#: includes/helpers.php:488
+msgid "Azerbaijan"
+msgstr "آذربایجان"
+
+#: includes/helpers.php:487
+msgid "Austria"
+msgstr "اتریش"
+
+#: includes/helpers.php:486 includes/helpers.php:1987
+msgid "Australia"
+msgstr "استرالیا"
+
+#: includes/helpers.php:485
+msgid "Aruba"
+msgstr "آروبا"
+
+#: includes/helpers.php:484
+msgid "Armenia"
+msgstr "ارمنستان"
+
+#: includes/helpers.php:483
+msgid "Argentina"
+msgstr "آرژانتین"
+
+#: includes/helpers.php:482 includes/helpers.php:1986
+msgid "Antigua and Barbuda"
+msgstr "آنتیگوا و باربودا"
+
+#: includes/helpers.php:481
+msgid "Antarctica"
+msgstr "قطب جنوب"
+
+#: includes/helpers.php:480
+msgid "Anguilla"
+msgstr "آنگویلا"
+
+#: includes/helpers.php:479
+msgid "Angola"
+msgstr "آنگولا"
+
+#: includes/helpers.php:478
+msgid "Andorra"
+msgstr "آندورا"
+
+#: includes/helpers.php:477
+msgid "American Samoa"
+msgstr "ساموای آمریکایی"
+
+#: includes/helpers.php:476
+msgid "Algeria"
+msgstr "الجزایر"
+
+#: includes/helpers.php:475
+msgid "Albania"
+msgstr "آلبانی"
+
+#: includes/helpers.php:473
+msgid "Afghanistan"
+msgstr "افغانستان"
+
+#: includes/helpers.php:472 includes/helpers.php:2038
+msgid "United Kingdom"
+msgstr "انگلستان"
+
+#: includes/helpers.php:471 includes/helpers.php:1993
+msgid "Canada"
+msgstr "کانادا"
+
+#: includes/helpers.php:470
+msgid "United States"
+msgstr "ایالات متحده"
+
+#: includes/helpers.php:701
+msgid "Turkey"
+msgstr "ترکیه"
+
+#: includes/helpers.php:696
+msgid "Togo"
+msgstr "رفتن"
+
+#: includes/helpers.php:503
+msgid "Bouvet Island"
+msgstr "جزیره بووت"
+
+#: includes/admin/tracking.php:245
+msgid "Once Weekly"
+msgstr "یکبار هفتگی"
+
+#: languages/vue.php:1892
+msgid "Google Authentication"
+msgstr "تایید هویت گوگل"
+
+#: languages/vue.php:1143
+msgid "Deauthenticating"
+msgstr "لغو تایید اعتبار"
+
+#: languages/vue.php:2702
+msgid "No"
+msgstr "نه"
+
+#: languages/vue.php:3053
+msgid "Permissions"
+msgstr "مجوزها"
+
+#: languages/vue.php:2755
+msgid "Notifications"
+msgstr "اطلاعیه"
+
+#: languages/vue.php:3050
+msgid "Performance"
+msgstr "کارایی"
+
+#: languages/vue.php:1691
+msgid "File Downloads"
+msgstr "دانلود فایل"
+
+#: languages/vue.php:1165
+msgid "Demographics"
+msgstr "جمعیت شناسی"
+
+#: includes/admin/notice.php:238
+msgid "Dismiss this notice"
+msgstr "رد این اطلاعیه"
+
+#: languages/vue.php:1548
+msgid "Error"
+msgstr "خطا"
+
+#: languages/vue.php:1734 lite/includes/admin/reports/report-forms.php:22
+msgid "Forms"
+msgstr "فرم‌ها"
+
+#: languages/vue.php:1346 lite/includes/admin/reports/report-ecommerce.php:22
+msgid "eCommerce"
+msgstr "تجارت الکترونیک"
+
+#: languages/vue.php:366
+msgid "Affiliate Links"
+msgstr "پیوندهای وابسته"
+
+#: languages/vue.php:1482
+msgid "Engagement"
+msgstr "تعامل"
+
+#: includes/admin/notifications/notification-upgrade-for-form-conversion.php:31
+#: includes/admin/notifications/notification-upgrade-for-search-console.php:32
+#: includes/admin/reports/abstract-report.php:472 languages/vue.php:4431
+#: lite/includes/admin/woocommerce-marketing.php:79
+msgid "Upgrade Now"
+msgstr "هم اکنون ارتقا دهید"
+
+#: includes/gutenberg/headline-tool/headline-tool.php:1018
+msgid "social"
+msgstr "اجتماعی"
+
+#: includes/gutenberg/headline-tool/headline-tool.php:1014
+msgid "media"
+msgstr "رسانه"
+
+#: languages/vue.php:3211
+msgid "Proceed"
+msgstr "ادامه دهید"
+
+#: languages/vue.php:2208
+msgid "Installing..."
+msgstr "درحال نصب ..."
+
+#: languages/vue.php:2112
+msgid "Install"
+msgstr "نصب"
+
+#: languages/vue.php:1140
+msgid "Deactivating..."
+msgstr "غیر فعال کردن ..."
+
+#: languages/vue.php:1136
+msgid "Deactivate"
+msgstr "غیرفعال کردن"
+
+#: languages/vue.php:256
+msgid "Activating..."
+msgstr "فعال‌سازی ..."
+
+#: languages/vue.php:215
+msgid "Activate"
+msgstr "فعال‌سازی"
+
+#: includes/admin/admin.php:334 includes/admin/admin.php:337
+#: languages/vue.php:3891
+msgid "Support"
+msgstr "پشتیبانی"
+
+#: includes/admin/admin.php:329
+msgid "Documentation"
+msgstr "مستندات"
+
+#: includes/admin/admin.php:239 includes/admin/admin.php:342
+msgid "Network Settings"
+msgstr "تنظیمات شبکه"
+
+#: includes/admin/admin.php:87 includes/admin/admin.php:252
+msgid "Addons"
+msgstr "افزودنی‌ها"
+
+#: includes/admin/admin.php:87 includes/admin/admin.php:252
+msgid "Addons:"
+msgstr "افزودنی‌ها:"
+
+#: includes/admin/admin.php:351
+#: includes/admin/notifications/notification-upgrade-eu-traffic.php:86
+#: includes/admin/notifications/notification-upgrade-for-custom-dimensions.php:31
+#: includes/admin/notifications/notification-upgrade-for-email-summaries.php:36
+#: includes/admin/notifications/notification-upgrade-for-events-reporting.php:31
+#: includes/admin/notifications/notification-upgrade-for-post-templates.php:31
+#: includes/admin/reports/abstract-report.php:475 languages/vue.php:1801
+msgid "Get MonsterInsights Pro"
+msgstr "دریافت نسخه حرفه‌ای افزونه"
+
+#. Author of the plugin
+#: googleanalytics.php includes/admin/admin.php:37 includes/admin/admin.php:40
+#: includes/admin/admin.php:52 includes/admin/eea-compliance.php:208
+#: includes/admin/wp-site-health.php:35 includes/emails/class-emails.php:255
+#: lite/includes/admin/dashboard-widget.php:99
+#: lite/includes/admin/wp-site-health.php:231
+#: lite/includes/admin/wp-site-health.php:283
+#: lite/includes/admin/wp-site-health.php:310
+#: lite/includes/admin/wp-site-health.php:348
+#: lite/includes/admin/wp-site-health.php:375
+#: lite/includes/admin/wp-site-health.php:400
+#: lite/includes/admin/wp-site-health.php:439
+msgid "MonsterInsights"
+msgstr "گوگل آنالیتیکس"
+
+#: includes/admin/admin.php:37 includes/admin/admin.php:43
+#: includes/admin/admin.php:55 includes/admin/admin.php:199
+#: includes/admin/admin.php:202 includes/admin/admin.php:237
+#: languages/vue.php:2100
+msgid "Insights"
+msgstr "گوگل آنالیتیکس"
+
+#: languages/vue.php:2407
+msgid "License Key"
+msgstr "کلید لایسنس"
+
+#: languages/vue.php:1434
+msgid "Enable Demographics and Interests Reports for Remarketing and Advertising"
+msgstr "فعال‌سازی گزارشات جمعیت‌شناسی و علایق برای  بازاریابی و تبلیغات"
+
+#: languages/vue.php:3021
+msgid "Paste your license key here"
+msgstr "کلید لایسنس خودتان را در اینجا جایگذاری کنید"
+
+#: languages/vue.php:3279
+msgid "Reactivate License"
+msgstr "فعال‌سازی مجدد لایسنس"
+
+#: includes/admin/admin.php:40 includes/admin/admin.php:52
+#: includes/admin/admin.php:344 languages/vue.php:3656
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: languages/vue.php:2695
+msgid "Next"
+msgstr "پسین"
+
+#: languages/vue.php:1082
+msgid "Custom Dimensions"
+msgstr "ابعاد سفارشی"
+
+#: languages/vue.php:331
+msgid "Advanced"
+msgstr "پیشرفته"
+
+#: includes/gutenberg/headline-tool/headline-tool.php:323
+#: languages/vue.php:1771
+msgid "General"
+msgstr "عمومی"
+
+#: includes/gutenberg/headline-tool/headline-tool.php:1005
+msgid "first"
+msgstr "اولین"
+
+#: languages/vue.php:3422
+msgid "Save Changes"
+msgstr "ذخیره تغییرات"
+
+#: includes/admin/reports/overview.php:34 languages/vue.php:2964
+msgid "Overview"
+msgstr "نمای کلی"
+
+#: includes/admin/admin.php:49 includes/admin/admin.php:241
+#: languages/vue.php:3356
+msgid "Reports"
+msgstr "گزارش‌ها"
+
+#: includes/gutenberg/site-insights/templates/scorecard/class-scorecard-pageviews.php:36
+#: languages/vue.php:620 assets/gutenberg/js/editor.js:2715
+msgid "Bounce Rate"
+msgstr "سرعت برگشتن"

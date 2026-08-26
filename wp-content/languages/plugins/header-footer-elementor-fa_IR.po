@@ -1,0 +1,1941 @@
+# Translation of Plugins - Ultimate Addons for Elementor - Stable (latest release) in Persian
+# This file is distributed under the same license as the Plugins - Ultimate Addons for Elementor - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-12-04 00:00:05+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: fa\n"
+"Project-Id-Version: Plugins - Ultimate Addons for Elementor - Stable (latest release)\n"
+
+#: inc/widgets-manager/widgets/counter/counter.php:225
+msgid "Space"
+msgstr "فاصله"
+
+#: inc/widgets-manager/widgets/counter/counter.php:224
+msgid "Dot"
+msgstr "نقطه"
+
+#: inc/widgets-manager/widgets/counter/counter.php:226
+msgid "Underscore"
+msgstr "زیرخط"
+
+#: inc/widgets-manager/widgets/counter/counter.php:223
+msgid "Comma"
+msgstr "کاما"
+
+#: inc/widgets-manager/widgets/counter/counter.php:219
+msgid "Digit Separator"
+msgstr "جداکننده رقم"
+
+#: inc/widgets-manager/widgets/counter/counter.php:208
+#: inc/widgets-manager/widgets/counter/counter.php:728
+msgid "Suffix"
+msgstr "پسوند"
+
+#: inc/widgets-manager/widgets/counter/counter.php:197
+#: inc/widgets-manager/widgets/counter/counter.php:671
+msgid "Prefix"
+msgstr "پیشوند"
+
+#: inc/widgets-manager/base/widgets-config.php:1221
+msgid "OttoKit"
+msgstr "OttoKit"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:342
+msgid "Show Add to Cart"
+msgstr "نمایش افزودن به سبد خرید"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:330
+msgid "Show Short Description"
+msgstr "نمایش توضیح کوتاه"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:318
+msgid "Show Price"
+msgstr "نمایش قیمت"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:377
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:780
+msgid "Price"
+msgstr "قیمت"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:263
+msgid "Content"
+msgstr "محتوا"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:270
+msgid "Show Image"
+msgstr "نمایش تصویر"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:282
+msgid "Show Category"
+msgstr "نمایش دسته"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:306
+msgid "Show Rating"
+msgstr "نمایش امتیاز"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:241
+msgid "Products Per Page"
+msgstr "محصولات در هر برگه"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:1171
+msgid "No products found."
+msgstr "هیچ محصولی یافت نشد."
+
+#: inc/widgets-manager/widgets/basic-posts/template.php:78
+msgid "1 Comment"
+msgstr "1 دیدگاه"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:442
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:821
+msgid "Excerpt"
+msgstr "چکیده"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:450
+msgid "Show Excerpt"
+msgstr "نمایش چکیده"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:462
+msgid "Excerpt Length"
+msgstr "طول چکیده"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:420
+msgid "Meta Separator"
+msgstr "جداکنندۀ متا"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:405
+msgid "Show Comments Count"
+msgstr "نمایش تعداد دیدگاه‌ها"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:390
+msgid "Show Author"
+msgstr "نمایش نویسنده"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:375
+msgid "Show Date"
+msgstr "نمایش تاریخ"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:230
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:218
+msgid "Columns"
+msgstr "ستون‌ها"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:219
+msgid "Posts Per Page"
+msgstr "نوشته‌ها در هر برگه"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:167
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:380
+msgid "Random"
+msgstr "تصادفی"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:176
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:388
+msgid "Order"
+msgstr "ترتیب"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:180
+msgid "ASC"
+msgstr "صعودی"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:181
+msgid "DESC"
+msgstr "نزولی"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:313
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:294
+msgid "Show Title"
+msgstr "نمایش عنوان"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:160
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:371
+msgid "Order By"
+msgstr "ترتیب بر اساس"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:152
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:364
+msgid "Query"
+msgstr "کوئری"
+
+#: admin/class-hfe-admin.php:607 build/main.js:2 build/main.js:26553
+msgid "Header & Footer"
+msgstr "سربرگ و پابرگ"
+
+#: inc/widgets-manager/widgets/counter/counter.php:170
+#: inc/widgets-manager/widgets/infocard/infocard.php:847
+msgid "p"
+msgstr "p"
+
+#: inc/widgets-manager/widgets/counter/counter.php:168
+#: inc/widgets-manager/widgets/infocard/infocard.php:846
+msgid "div"
+msgstr "div"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:913
+msgid "Description Color"
+msgstr "رنگ توضیح"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:591
+msgid "Colors"
+msgstr "رنگ‌ها"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:540
+msgid "Click Here"
+msgstr "اینجا کلیک کنید"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:156
+#: inc/widgets-manager/widgets/infocard/infocard.php:889
+msgid "Description"
+msgstr "توضیح"
+
+#. Plugin URI of the plugin
+#: header-footer-elementor.php
+msgid "https://wordpress.org/plugins/header-footer-elementor/"
+msgstr "https://wordpress.org/plugins/header-footer-elementor/"
+
+#: admin/class-hfe-admin.php:544 inc/class-hfe-settings-page.php:513
+msgid "View All"
+msgstr "مشاهده همه"
+
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:896
+msgid "Add to Cart"
+msgstr "افزودن به سبد خرید"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:407
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:445
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:1017
+msgid "Image"
+msgstr "تصویر"
+
+#: inc/class-hfe-settings-page.php:618
+msgid "This method hides your theme's header & footer template with CSS and displays custom templates from the plugin."
+msgstr "این روش با استفاده از CSS، سربرگ و پابرگ قالب شما را مخفی می‌کند و قالب‌های سفارشی از افزونه را نمایش می‌دهد."
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:595
+#: inc/widgets-manager/widgets/search-button/search-button.php:694
+#: inc/widgets-manager/widgets/search-button/search-button.php:747
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:548
+msgid "Background"
+msgstr "پس‌زمینه"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:274
+msgid "Hide + & - Sign"
+msgstr "مخفی + و - امضا نمودن"
+
+#: inc/class-hfe-settings-page.php:161
+msgid "Ultimate Addons for Elementor"
+msgstr "افزودنی‌های مکمل المنتور"
+
+#: inc/widgets-manager/base/widgets-config.php:1182
+msgid "Starter Templates"
+msgstr "قالب‌های آماده"
+
+#: inc/class-hfe-settings-page.php:852
+msgid "Go to UAE Settings page"
+msgstr "رفتن به برگۀ تنظیمات UAE"
+
+#: inc/class-hfe-settings-page.php:500
+msgid "Already Exists."
+msgstr "از قبل وجود دارد."
+
+#: inc/class-hfe-settings-page.php:499
+msgid "Download"
+msgstr "دریافت"
+
+#: inc/class-hfe-settings-page.php:498
+msgid "Plugin Installed"
+msgstr "افزونه نصب شد"
+
+#: inc/class-hfe-settings-page.php:497
+msgid "Theme Installed"
+msgstr "پوسته نصب شد"
+
+#: inc/class-hfe-settings-page.php:496 build/main.js:2 build/main.js:28981
+#: build/main.js:35937
+msgid "Install"
+msgstr "نصب‌کردن"
+
+#: inc/class-hfe-settings-page.php:495
+msgid "Inactive"
+msgstr "غیر فعال"
+
+#: inc/class-hfe-settings-page.php:494
+msgid "Deactivate"
+msgstr "غیرفعال‌سازی"
+
+#: inc/class-hfe-settings-page.php:492 build/main.js:2 build/main.js:172
+#: build/main.js:29037 build/main.js:35981
+msgid "Activated"
+msgstr "فعال‌شده"
+
+#: inc/class-hfe-settings-page.php:491 build/main.js:2 build/main.js:172
+#: build/main.js:28973 build/main.js:29061 build/main.js:29177
+#: build/main.js:35932 build/main.js:35998
+msgid "Activate"
+msgstr "فعال‌سازی"
+
+#: admin/bsf-analytics/class-bsf-analytics.php:325 build/main.js:172
+#: build/main.js:37054 build/main.js:37501
+msgid "Skip"
+msgstr "پرش"
+
+#: inc/class-hfe-settings-page.php:504
+msgid "Encountered an error while performing your request."
+msgstr "هنگام انجام درخواست شما با خطایی مواجه شد."
+
+#: inc/class-hfe-settings-page.php:503
+msgid "Your details are submitted successfully."
+msgstr "جزئیات شما با موفقیت ارسال شد."
+
+#: inc/class-hfe-settings-page.php:502
+msgid "Could not install. Please download from WordPress.org and install manually."
+msgstr "نصب نشد. لطفاً از WordPress.org دریافت و به‌صورت دستی نصب نمایید."
+
+#: inc/class-hfe-settings-page.php:501
+msgid "Visit Website"
+msgstr "بازدید وب‌سایت"
+
+#: admin/class-hfe-admin.php:548
+msgid "No Templates found in Trash."
+msgstr "هیچ الگویی در زباله‌دان یافت نشد."
+
+#: admin/class-hfe-admin.php:547
+msgid "No Templates found."
+msgstr "هیچ الگویی یافت نشد."
+
+#: admin/class-hfe-addons-actions.php:528
+msgid "Theme Activated."
+msgstr "پوسته فعال شده است."
+
+#: admin/class-hfe-addons-actions.php:519
+msgid "Theme activation is disabled for you on this site."
+msgstr "فعال‌سازی پوسته برای شما در این سایت غیرفعال است."
+
+#: admin/class-hfe-addons-actions.php:508
+msgid "Plugin Activated."
+msgstr "افزونه فعال شده است."
+
+#: admin/class-hfe-addons-actions.php:499
+msgid "Plugin activation is disabled for you on this site."
+msgstr "فعال‌سازی افزونه برای شما در این سایت غیرفعال است."
+
+#: admin/class-hfe-addons-actions.php:537
+msgid "Could not activate theme. Please activate from the Themes page."
+msgstr "نمی‌توان پوسته را فعال کرد. لطفاً از برگۀ پوسته‌ها فعال نمایید."
+
+#: admin/class-hfe-addons-actions.php:535
+msgid "Could not activate plugin. Please activate from the Plugins page."
+msgstr "نمی‌توان افزونه را فعال کرد. لطفاً از برگۀ افزونه‌ها فعال نمایید."
+
+#: admin/class-hfe-admin.php:546
+msgid "Parent Templates:"
+msgstr "قالب‌های والد:"
+
+#: admin/class-hfe-admin.php:545
+msgid "Search Templates"
+msgstr "جستجوی قالب‌ها"
+
+#: admin/class-hfe-admin.php:543
+msgid "View Template"
+msgstr "‫مشاهدۀ قالب"
+
+#: admin/class-hfe-admin.php:542
+msgid "Edit Template"
+msgstr "‫ویرایش قالب"
+
+#: admin/class-hfe-admin.php:541
+msgid "New Template"
+msgstr "قالب تازه"
+
+#: admin/class-hfe-admin.php:636
+msgid "Elementor Header & Footer Builder Options"
+msgstr "گزینه‌های سربرگ و پابرگ ساز المنتور"
+
+#: admin/class-hfe-admin.php:535 admin/class-hfe-admin.php:536
+#: admin/class-hfe-admin.php:537 admin/class-hfe-admin.php:538
+msgid "Elementor Header & Footer Builder"
+msgstr "سربرگ و پابرگ ساز المنتور"
+
+#: inc/class-header-footer-elementor.php:410
+msgid "Update Elementor"
+msgstr "به‌روزرسانی المنتور"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:489
+msgid "Redirect To Self Link"
+msgstr "ارجاع به خود پیوند"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:488
+msgid "Open Submenu"
+msgstr "بازکردن زیرمنو"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:486
+msgid "For Horizontal layout, this will affect on the selected breakpoint"
+msgstr "برای چیدمان افقی، این بر نقطه شکست انتخاب‌شده تأثیر می‌گذارد."
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:483
+msgid "Action On Menu Click"
+msgstr "عمل بر روی کلیک فهرست"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:257
+msgid "Enable Schema Support"
+msgstr "فعالسازی پشتیبانی اسکیما"
+
+#: inc/widgets-manager/base/widgets-config.php:241
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:319
+#: inc/widgets-manager/widgets/search-button/search-button.php:1035
+#: build/main.js:172 build/main.js:34853
+msgid "Search"
+msgstr "جستجو"
+
+#: inc/widgets-manager/widgets/search-button/search-button.php:223
+msgid "Input"
+msgstr "ورودی"
+
+#: inc/widgets-manager/widgets/search-button/search-button.php:431
+msgid "Focus"
+msgstr "تمرکز"
+
+#: inc/widgets-manager/widgets/search-button/search-button.php:295
+#: inc/widgets-manager/widgets/search-button/search-button.php:456
+msgid "Placeholder Color"
+msgstr "نگهدارندۀ مکان رنگ"
+
+#: inc/widgets-manager/widgets/search-button/search-button.php:177
+msgid "Placeholder"
+msgstr "نگهدارندۀ مکان"
+
+#: inc/widgets-manager/widgets/search-button/search-button.php:165
+msgid "Input Box"
+msgstr "جعبۀ ورودی"
+
+#: inc/widgets-manager/widgets/search-button/search-button.php:154
+msgid "Search Box"
+msgstr "جعبۀ جستجو"
+
+#: inc/widgets-manager/widgets/search-button/search-button.php:179
+msgid "Type & Hit Enter"
+msgstr "بنویسید و Enter را بزنید"
+
+#: inc/widgets-manager/widgets/search-button/search-button.php:167
+msgid "Input Box With Button"
+msgstr "جعبۀ ورودی با دکمه"
+
+#. translators: %1$s doc link
+#: inc/widgets-manager/widgets/page-title/page-title.php:130
+msgid "<b>Note:</b> Archive page title will be visible on frontend."
+msgstr "<b>یادداشت:</b> عنوان برگۀ بایگانی در نمای جلو قابل مشاهده خواهد بود."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:556
+msgid "Learn More."
+msgstr "بیشتر بدانید."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:551
+msgid " This will be applicable for all sites from the network."
+msgstr " این مورد برای همۀ وب‌سایت‌های شبکه اعمال خواهد شد."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:503
+msgid "Usage Tracking"
+msgstr "پیگیری استفاده"
+
+#: admin/bsf-analytics/class-bsf-analytics.php:280
+msgid "This will be applicable for all sites from the network."
+msgstr "این مورد برای همۀ سایت‌های شبکه اعمال خواهد شد."
+
+#: inc/class-header-footer-elementor.php:379
+#: inc/class-header-footer-elementor.php:415
+msgid "Install Elementor"
+msgstr "نصب المنتور"
+
+#: inc/class-header-footer-elementor.php:374
+msgid "Activate Elementor"
+msgstr "فعالسازی المنتور"
+
+#: admin/class-hfe-admin.php:747
+msgid "Add locations for where this template should not appear."
+msgstr "مکان‌هایی که این قالب نباید در آن‌ها نمایش داده شود را اضافه نمایید."
+
+#. Description of the plugin
+#: header-footer-elementor.php
+msgid "Ultimate Addons is a powerful plugin allows you to create custom headers and footers with Elementor and display them in selected locations. You can also create custom Elementor blocks and place them anywhere on your website using a shortcode."
+msgstr "این افزونۀ قدرتمند اجازه می‌دهد تا یک سربرگ و پابرگ سفارشی با المنتور بسازید و آن‌ها را در مکان‌های انتخاب‌شده نمایش دهید. همچنین می‌توانید بلوک‌های المنتور سفارشی ایجاد نمایید و آن‌ها را در هرجایی از وب‌سایت با یک کد کوتاه قرار دهید."
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:613
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:442
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:631
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1764
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:476
+msgid "Border"
+msgstr "مرز"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:515
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:245
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1690
+#: inc/widgets-manager/widgets/search-button/search-button.php:661
+msgid "Button"
+msgstr "دکمه"
+
+#: inc/widgets-manager/widgets/cart/cart.php:521
+msgid "Distance"
+msgstr "فاصله"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:710
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:779
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:847
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:926
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:433
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:566
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:622
+#: inc/widgets-manager/widgets/infocard/infocard.php:819
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1702
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:790
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:848
+msgid "Typography"
+msgstr "تایپوگرافی"
+
+#: inc/widgets-manager/widgets/cart/cart.php:169
+msgid "Bubble"
+msgstr "حباب"
+
+#: inc/widgets-manager/widgets/cart/cart.php:139
+#: inc/widgets-manager/widgets/post-info/post-info.php:173
+#: inc/widgets-manager/widgets/post-info/post-info.php:190
+#: inc/widgets-manager/widgets/post-info/post-info.php:228
+#: inc/widgets-manager/widgets/post-info/post-info.php:359
+#: inc/widgets-manager/widgets/post-info/post-info.php:405
+msgid "Custom"
+msgstr "سفارسی"
+
+#: inc/widgets-manager/widgets/cart/cart.php:127
+#: inc/widgets-manager/widgets/cart/cart.php:252
+msgid "Menu Cart"
+msgstr "فهرست سبد خرید"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:241
+msgid "Last Menu Item"
+msgstr "آخرین گزینۀ فهرست"
+
+#: inc/widgets-manager/base/widgets-config.php:162
+#: inc/widgets-manager/class-widgets-loader.php:367
+#: inc/widgets-manager/widgets/cart/cart.php:663 build/main.js:172
+#: build/main.js:34820
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: inc/widgets-manager/widgets/cart/cart.php:134
+#: inc/widgets-manager/widgets/infocard/infocard.php:508
+#: inc/widgets-manager/widgets/post-info/post-info.php:164
+msgid "Type"
+msgstr "نوع"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:471
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1829
+msgid "Border Hover Color"
+msgstr "رنگ هاور حاشیه"
+
+#: inc/widgets-manager/widgets/cart/cart.php:165
+#: inc/widgets-manager/widgets/cart/cart.php:508
+msgid "Items Count"
+msgstr "تعداد موارد"
+
+#: inc/widgets-manager/widgets/cart/cart.php:204
+msgid "This will hide the items count until the cart is empty"
+msgstr "با این کار تعداد آیتم‌ها مخفی می‌شود تا زمانی که سبد خرید خالی باشد"
+
+#: inc/widgets-manager/widgets/cart/cart.php:198
+msgid "Hide Empty"
+msgstr "مخفی‌کردن خالی"
+
+#: inc/widgets-manager/widgets/cart/cart.php:182
+msgid "Show Total Price"
+msgstr "نمایش دادن قیمت کل"
+
+#: inc/widgets-manager/widgets/cart/cart.php:152
+msgid "Bag Solid"
+msgstr "کیسۀ یکپارچه"
+
+#: inc/widgets-manager/widgets/cart/cart.php:151
+msgid "Bag Medium"
+msgstr "کیسۀ میانه"
+
+#: inc/widgets-manager/widgets/cart/cart.php:150
+msgid "Bag Light"
+msgstr "کیسۀ روشن"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:211
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:152
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:358
+#: inc/widgets-manager/widgets/counter/counter.php:142
+#: inc/widgets-manager/widgets/infocard/infocard.php:137
+#: inc/widgets-manager/widgets/post-info/post-info.php:134
+#: inc/widgets-manager/widgets/site-title/site-title.php:124
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:211
+msgid "General"
+msgstr "عمومی"
+
+#: inc/widgets-manager/base/widgets-config.php:93 build/main.js:172
+#: build/main.js:34850
+msgid "Site Title"
+msgstr "عنوان سایت"
+
+#: inc/widgets-manager/widgets/post-info/post-info.php:539
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:119
+msgid "Style"
+msgstr "سبک"
+
+#: inc/widgets-manager/extensions/class-reading-progress-bar-settings.php:99
+#: inc/widgets-manager/extensions/class-reading-progress-bar.php:169
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:128
+#: inc/widgets-manager/extensions/class-scroll-to-top.php:327
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:192
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:273
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:316
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:366
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:378
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:393
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:408
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:453
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:497
+#: inc/widgets-manager/widgets/cart/cart.php:185
+#: inc/widgets-manager/widgets/cart/cart.php:201
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:260
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:277
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:569
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:156
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:220
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:284
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:273
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:285
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:297
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:309
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:321
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:333
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:345
+msgid "No"
+msgstr "خیر"
+
+#: inc/widgets-manager/extensions/class-reading-progress-bar-settings.php:98
+#: inc/widgets-manager/extensions/class-reading-progress-bar.php:168
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:127
+#: inc/widgets-manager/extensions/class-scroll-to-top.php:326
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:191
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:272
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:315
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:365
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:377
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:392
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:407
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:452
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:496
+#: inc/widgets-manager/widgets/cart/cart.php:184
+#: inc/widgets-manager/widgets/cart/cart.php:200
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:259
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:276
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:568
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:155
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:221
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:283
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:272
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:284
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:296
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:308
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:320
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:332
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:344
+#: build/main.js:2 build/main.js:172 build/main.js:29129 build/main.js:36128
+msgid "Yes"
+msgstr "بله"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:565
+msgid "Full Width"
+msgstr "تمام عرض"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:207
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:217
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:2047
+msgid "Menu"
+msgstr "فهرست"
+
+#: inc/widgets-manager/widgets/counter/counter.php:167
+#: inc/widgets-manager/widgets/infocard/infocard.php:845
+#: inc/widgets-manager/widgets/page-title/page-title.php:228
+#: inc/widgets-manager/widgets/site-title/site-title.php:237
+msgid "H6"
+msgstr "H6"
+
+#: inc/widgets-manager/widgets/counter/counter.php:166
+#: inc/widgets-manager/widgets/infocard/infocard.php:844
+#: inc/widgets-manager/widgets/page-title/page-title.php:227
+#: inc/widgets-manager/widgets/site-title/site-title.php:236
+msgid "H5"
+msgstr "H5"
+
+#: inc/widgets-manager/widgets/counter/counter.php:165
+#: inc/widgets-manager/widgets/infocard/infocard.php:843
+#: inc/widgets-manager/widgets/page-title/page-title.php:226
+#: inc/widgets-manager/widgets/site-title/site-title.php:235
+msgid "H4"
+msgstr "H4"
+
+#: inc/widgets-manager/widgets/counter/counter.php:164
+#: inc/widgets-manager/widgets/infocard/infocard.php:842
+#: inc/widgets-manager/widgets/page-title/page-title.php:225
+#: inc/widgets-manager/widgets/site-title/site-title.php:234
+msgid "H3"
+msgstr "H3"
+
+#: inc/widgets-manager/widgets/counter/counter.php:163
+#: inc/widgets-manager/widgets/infocard/infocard.php:841
+#: inc/widgets-manager/widgets/page-title/page-title.php:224
+#: inc/widgets-manager/widgets/site-title/site-title.php:233
+msgid "H2"
+msgstr "H2"
+
+#: inc/widgets-manager/widgets/counter/counter.php:162
+#: inc/widgets-manager/widgets/infocard/infocard.php:840
+#: inc/widgets-manager/widgets/page-title/page-title.php:223
+#: inc/widgets-manager/widgets/site-title/site-title.php:232
+msgid "H1"
+msgstr "H1"
+
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:662
+msgid "Spacing"
+msgstr "فاصله‌گذاری"
+
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:313
+msgid "Site logo"
+msgstr "لوگو سایت"
+
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:295
+msgid "View"
+msgstr "نمایش"
+
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:278
+msgid "Lightbox"
+msgstr "لایت باکس"
+
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:253
+msgid "Media File"
+msgstr "پروندهٔ رسانه"
+
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:233
+msgid "Enter caption"
+msgstr "زیرنویس را وارد نمایید"
+
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:165
+msgid "Add Image"
+msgstr "افزودن تصویر"
+
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:153
+msgid "Custom Image"
+msgstr "تصویر سفارشی"
+
+#: inc/widgets-manager/base/widgets-config.php:215
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:146 build/main.js:172
+#: build/main.js:34849
+msgid "Site Logo"
+msgstr "لوگو سایت"
+
+#: inc/widgets-manager/base/widgets-config.php:80 build/main.js:172
+#: build/main.js:34854
+msgid "Site Tagline"
+msgstr "شعار سایت"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1668
+msgid "Close Icon Size"
+msgstr "اندازۀ آیکون بستن"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1650
+msgid "Close Icon Color"
+msgstr "رنگ آیکون بستن"
+
+#: inc/widgets-manager/widgets/cart/cart.php:462
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1601
+#: inc/widgets-manager/widgets/search-button/search-button.php:764
+#: inc/widgets-manager/widgets/search-button/search-button.php:871
+msgid "Icon Size"
+msgstr "اندازهٔ آیکون"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1524
+msgid "Menu Trigger & Close Icon"
+msgstr "فهرست محرک و آیکون بستن"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1450
+msgid "Divider"
+msgstr "جداکننده"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1428
+msgid "Top Distance"
+msgstr "فاصلۀ بالا"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1354
+msgid "Dropdown Width (px)"
+msgstr "عرض کشویی (پیکسل)"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1136
+msgid "Dropdown"
+msgstr "کشویی"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:411
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:461
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:237
+#: inc/widgets-manager/widgets/infocard/infocard.php:514
+#: inc/widgets-manager/widgets/infocard/infocard.php:523
+#: inc/widgets-manager/widgets/infocard/infocard.php:538
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:861
+#: inc/widgets-manager/widgets/post-info/post-info.php:727
+msgid "Text"
+msgstr "متن"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:860
+msgid "Framed"
+msgstr "قاب‌بندی‌شده"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:859
+msgid "Double Line"
+msgstr "دو خط"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:858
+msgid "Overline"
+msgstr "رو خط دار"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:857
+msgid "Underline"
+msgstr "زیرخط دار"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:852
+msgid "Link Hover Effect"
+msgstr "افکت هاور پیوند"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:816
+msgid "Menu Item Top Spacing"
+msgstr "فاصلۀ بالای گزینۀ فهرست"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:795
+msgid "Row Spacing"
+msgstr "فاصلۀ ردیف"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:768
+#: inc/widgets-manager/widgets/post-info/post-info.php:480
+msgid "Space Between"
+msgstr "فاصلۀ بین"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:746
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1402
+msgid "Vertical Padding"
+msgstr "حاشیهٔ داخلی عمودی"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:720
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1379
+msgid "Horizontal Padding"
+msgstr "حاشیهٔ داخلی افقی"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:657
+msgid "Main Menu"
+msgstr "فهرست اصلی"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:615
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:631
+#: inc/widgets-manager/widgets/search-button/search-button.php:896
+msgid "Close Icon"
+msgstr "آیکون بستن"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:584
+msgid "Menu Icon"
+msgstr "آیکون فهرست"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:510
+msgid "Breakpoint"
+msgstr "نقطۀ شکست"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:499
+msgid "Responsive"
+msgstr "واکنش‌گرا"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:471
+msgid "Slide Up"
+msgstr "بالا کشیدن"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:466
+msgid "Submenu Animation"
+msgstr "انیمیشن زیرمنو"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:457
+msgid "Classic"
+msgstr "کلاسیک"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:456
+msgid "Plus Sign"
+msgstr "علامت به‌علاوه"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:455
+msgid "Arrows"
+msgstr "فلش‌ها"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:451
+msgid "Submenu Icon"
+msgstr "آیکون زیرمنو"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:414
+msgid "Menu Items Align"
+msgstr "چینش آیتم‌های فهرست"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:377
+msgid "Hamburger Align"
+msgstr "چینش همبرگری"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:365
+msgid "Push"
+msgstr "فشار دادن"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:364
+msgid "Slide"
+msgstr "اسلاید"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:328
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:430
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:194
+#: inc/widgets-manager/widgets/site-title/site-title.php:262
+msgid "Justify"
+msgstr "ترازبندی"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:302
+msgid "Vertical"
+msgstr "عمودی"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:301
+msgid "Horizontal"
+msgstr "افقی"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:528
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:290
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:297
+#: inc/widgets-manager/widgets/post-info/post-info.php:141
+#: inc/widgets-manager/widgets/search-button/search-button.php:161
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:414
+msgid "Layout"
+msgstr "طرح‌بندی"
+
+#: inc/widgets-manager/base/widgets-config.php:202
+#: inc/widgets-manager/base/widgets-config.php:620
+#: inc/widgets-manager/class-widgets-loader.php:305 build/main.js:172
+#: build/main.js:34851 build/main.js:34874 build/main.js:34876
+#: build/main.js:34884 build/main.js:34886
+msgid "Navigation Menu"
+msgstr "فهرست ناوبری"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:440
+#: inc/widgets-manager/widgets/page-title/page-title.php:395
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:252
+#: inc/widgets-manager/widgets/site-title/site-title.php:386
+msgid "Icon Hover Color"
+msgstr "رنگ آیکون هنگام هاور"
+
+#: inc/widgets-manager/widgets/cart/cart.php:367
+#: inc/widgets-manager/widgets/cart/cart.php:423
+#: inc/widgets-manager/widgets/infocard/infocard.php:306
+#: inc/widgets-manager/widgets/page-title/page-title.php:377
+#: inc/widgets-manager/widgets/search-button/search-button.php:681
+#: inc/widgets-manager/widgets/search-button/search-button.php:721
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:234
+#: inc/widgets-manager/widgets/site-title/site-title.php:368
+msgid "Icon Color"
+msgstr "رنگ آیکون"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:105
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:403
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:428
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:238
+#: inc/widgets-manager/widgets/cart/cart.php:147
+#: inc/widgets-manager/widgets/infocard/infocard.php:206
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:600
+#: inc/widgets-manager/widgets/page-title/page-title.php:366
+#: inc/widgets-manager/widgets/post-info/post-info.php:400
+#: inc/widgets-manager/widgets/post-info/post-info.php:672
+#: inc/widgets-manager/widgets/search-button/search-button.php:166
+#: inc/widgets-manager/widgets/search-button/search-button.php:816
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:150
+#: inc/widgets-manager/widgets/site-title/site-title.php:153
+#: inc/widgets-manager/widgets/site-title/site-title.php:358
+msgid "Icon"
+msgstr "آیکون"
+
+#: inc/widgets-manager/extensions/class-reading-progress-bar-settings.php:157
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:547
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:604
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:684
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:763
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:832
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:900
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:407
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:473
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:533
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:597
+#: inc/widgets-manager/widgets/counter/counter.php:397
+#: inc/widgets-manager/widgets/counter/counter.php:618
+#: inc/widgets-manager/widgets/counter/counter.php:682
+#: inc/widgets-manager/widgets/counter/counter.php:739
+#: inc/widgets-manager/widgets/infocard/infocard.php:871
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1541
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1573
+#: inc/widgets-manager/widgets/page-title/page-title.php:314
+#: inc/widgets-manager/widgets/post-info/post-info.php:644
+#: inc/widgets-manager/widgets/post-info/post-info.php:680
+#: inc/widgets-manager/widgets/search-button/search-button.php:836
+#: inc/widgets-manager/widgets/search-button/search-button.php:856
+#: inc/widgets-manager/widgets/search-button/search-button.php:940
+#: inc/widgets-manager/widgets/search-button/search-button.php:965
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:218
+#: inc/widgets-manager/widgets/site-title/site-title.php:306
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:739
+msgid "Color"
+msgstr "رنگ"
+
+#: inc/widgets-manager/widgets/page-title/page-title.php:338
+#: inc/widgets-manager/widgets/site-title/site-title.php:330
+msgid "Blend Mode"
+msgstr "حالت ترکیب"
+
+#: inc/widgets-manager/widgets/page-title/page-title.php:270
+msgid "Justified"
+msgstr "تراز شده"
+
+#: inc/widgets-manager/widgets/page-title/page-title.php:246
+#: inc/widgets-manager/widgets/site-title/site-title.php:221
+msgid "XXL"
+msgstr "دوایکس‌لارج"
+
+#: inc/widgets-manager/widgets/page-title/page-title.php:245
+#: inc/widgets-manager/widgets/site-title/site-title.php:220
+msgid "XL"
+msgstr "ایکس‌لارج"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:579
+#: inc/widgets-manager/widgets/page-title/page-title.php:244
+#: inc/widgets-manager/widgets/site-title/site-title.php:219
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:1032
+msgid "Large"
+msgstr "بزرگ"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:578
+#: inc/widgets-manager/widgets/page-title/page-title.php:243
+#: inc/widgets-manager/widgets/site-title/site-title.php:218
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:1031
+msgid "Medium"
+msgstr "متوسط"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:577
+#: inc/widgets-manager/widgets/page-title/page-title.php:242
+#: inc/widgets-manager/widgets/site-title/site-title.php:217
+msgid "Small"
+msgstr "کوچک"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:476
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:546
+#: inc/widgets-manager/widgets/cart/cart.php:273
+#: inc/widgets-manager/widgets/infocard/infocard.php:226
+#: inc/widgets-manager/widgets/infocard/infocard.php:572
+#: inc/widgets-manager/widgets/page-title/page-title.php:237
+#: inc/widgets-manager/widgets/post-info/post-info.php:293
+#: inc/widgets-manager/widgets/post-info/post-info.php:693
+#: inc/widgets-manager/widgets/search-button/search-button.php:189
+#: inc/widgets-manager/widgets/search-button/search-button.php:907
+#: inc/widgets-manager/widgets/site-title/site-title.php:212
+msgid "Size"
+msgstr "اندازه"
+
+#: inc/widgets-manager/widgets/page-title/page-title.php:220
+#: inc/widgets-manager/widgets/site-title/site-title.php:229
+msgid "HTML Tag"
+msgstr "برچسب HTML"
+
+#: inc/widgets-manager/widgets/cart/cart.php:138
+#: inc/widgets-manager/widgets/infocard/infocard.php:654
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:244
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:470
+#: inc/widgets-manager/widgets/page-title/page-title.php:192
+#: inc/widgets-manager/widgets/page-title/page-title.php:241
+#: inc/widgets-manager/widgets/post-info/post-info.php:150
+#: inc/widgets-manager/widgets/post-info/post-info.php:404
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:251
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:282
+#: inc/widgets-manager/widgets/site-title/site-title.php:185
+#: inc/widgets-manager/widgets/site-title/site-title.php:216
+msgid "Default"
+msgstr "پیش‌فرض"
+
+#: inc/widgets-manager/widgets/cart/cart.php:484
+#: inc/widgets-manager/widgets/page-title/page-title.php:169
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:159
+#: inc/widgets-manager/widgets/site-title/site-title.php:162
+msgid "Icon Spacing"
+msgstr "فاصلۀ آیکون"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:213
+#: inc/widgets-manager/widgets/page-title/page-title.php:160
+msgid "Select Icon"
+msgstr "انتخاب آیکون"
+
+#: inc/widgets-manager/widgets/page-title/page-title.php:149
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:138
+#: inc/widgets-manager/widgets/site-title/site-title.php:142
+msgid "After Title Text"
+msgstr "بعد از متن عنوان"
+
+#: inc/widgets-manager/widgets/page-title/page-title.php:138
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:126
+#: inc/widgets-manager/widgets/site-title/site-title.php:131
+msgid "Before Title Text"
+msgstr "قبل از متن عنوان"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:165
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:305
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:673
+#: inc/widgets-manager/widgets/counter/counter.php:149
+#: inc/widgets-manager/widgets/counter/counter.php:452
+#: inc/widgets-manager/widgets/infocard/infocard.php:144
+#: inc/widgets-manager/widgets/infocard/infocard.php:827
+#: inc/widgets-manager/widgets/page-title/page-title.php:121
+#: inc/widgets-manager/widgets/page-title/page-title.php:295
+#: inc/widgets-manager/widgets/site-title/site-title.php:289
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:376
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:659
+msgid "Title"
+msgstr "عنوان"
+
+#: inc/widgets-manager/base/widgets-config.php:67 build/main.js:172
+#: build/main.js:34852
+msgid "Page Title"
+msgstr "عنوان برگه"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:872
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:914
+msgid "Animation"
+msgstr "انیمیشن"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1144
+msgid "<b>Note:</b> On desktop, below style options will apply to the submenu. On mobile, this will apply to the entire menu."
+msgstr "<b>توجه:</b> در دسکتاپ، گزینه‌های سبک زیر در زیرمنو اعمال می‌شود. در موبایل، این خواسته برای کل فهرست اعمال خواهد شد."
+
+#: inc/class-hfe-settings-page.php:493
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1064
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1247
+msgid "Active"
+msgstr "فعال"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1039
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1100
+msgid "Link Hover Effect Color"
+msgstr "رنگ افکت هاور پیوند"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:893
+msgid "Frame Animation"
+msgstr "انیمیشن چهارچوب"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:304
+msgid "Flyout"
+msgstr "Flyout"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:696
+msgid "Flyout Box Padding"
+msgstr "فاصلۀ داخلی جعبۀ Flyout"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:668
+msgid "Flyout Box Width"
+msgstr "عرض جعبۀ Flyout"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:343
+msgid "Flyout Orientation"
+msgstr "جهت Flyout"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:566
+msgid "Enable this option to stretch the Sub Menu to Full Width."
+msgstr "این گزینه را فعال نمایید تا فهرست فرعی تمام عرض کشیده شود."
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:546
+msgid "This is the alignement of menu icon on selected responsive breakpoints."
+msgstr "این هم‌ترازی آیکون فهرست در نقاط شکست واکنش‌گرا انتخاب شده است."
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:515
+msgid "Tablet (1025px >)"
+msgstr "تبلت (< ۱۰۲۵پیکسل)"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:514
+msgid "Mobile (768px >)"
+msgstr "موبایل (< ۷۶۸پیکسل)"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:359
+msgid "Appear Effect"
+msgstr "افکت نمایش داده شدن"
+
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:303
+msgid "Expanded"
+msgstr "گسترده"
+
+#. translators: %s Nav menu URL
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:232
+msgid "<strong>There are no menus in your site.</strong><br>Go to the <a href=\"%s\" target=\"_blank\">Menus screen</a> to create one."
+msgstr "<strong>هیچ فهرستی در سایت شما وجود ندارد.</strong><br>جهت ایجاد یک فهرست به <a href=\"%s\" target=\"_blank\">برگۀ فهرست‌ها</a> بروید."
+
+#. translators: %s Nav menu URL
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:223
+msgid "Go to the <a href=\"%s\" target=\"_blank\">Menus screen</a> to manage your menus."
+msgstr "به <a href=\"%s\" target=\"_blank\">برگۀ فهرست‌ها</a> برای مدیریت فهرست‌ها بروید."
+
+#: admin/class-hfe-admin.php:778
+msgid "Add User Rule"
+msgstr "افزودن نقش کاربر"
+
+#: admin/class-hfe-admin.php:775
+#: inc/widgets-manager/widgets/counter/counter.php:151
+msgid "Users"
+msgstr "کاربران"
+
+#: admin/class-hfe-admin.php:767
+msgid "User Roles"
+msgstr "نقش‌های کاربری"
+
+#: admin/class-hfe-admin.php:445
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:164
+#: inc/widgets-manager/widgets/post-info/post-info.php:170
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:375
+msgid "Date"
+msgstr "تاریخ"
+
+#: inc/class-header-footer-elementor.php:689 build/main.js:172
+#: build/main.js:30696 build/main.js:32620
+msgid "Theme Support"
+msgstr "پشتیبانی پوسته"
+
+#: inc/class-hfe-settings-page.php:695 inc/class-hfe-settings-page.php:696
+#: inc/class-hfe-settings-page.php:853
+#: inc/widgets-manager/base/widgets-config.php:362
+#: inc/widgets-manager/base/widgets-config.php:418
+#: inc/widgets-manager/base/widgets-config.php:501
+#: inc/widgets-manager/base/widgets-config.php:567
+#: inc/widgets-manager/base/widgets-config.php:582
+#: inc/widgets-manager/base/widgets-config.php:693
+#: inc/widgets-manager/base/widgets-config.php:763
+#: inc/widgets-manager/base/widgets-config.php:779
+#: inc/widgets-manager/base/widgets-config.php:924 build/main.js:2
+#: build/main.js:172 build/main.js:26585 build/main.js:31814
+#: build/main.js:32114
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: inc/class-hfe-settings-page.php:614
+msgid "Method 2"
+msgstr "روش ۲"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:674
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:779
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:1084
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:1114
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:1577
+msgid "Select"
+msgstr "انتخاب"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:636
+msgid "No results found"
+msgstr "نتیجه‌ای یافت نشد"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:634
+msgid "item"
+msgstr "مورد"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:215
+#: build/main.js:172 build/main.js:32320
+msgid "All"
+msgstr "همه"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:145
+msgid "All Archives"
+msgstr "همهٔ بایگانی‌ها"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:143
+#: inc/widgets-manager/extensions/class-reading-progress-bar-settings.php:112
+msgid "Entire Website"
+msgstr "کل وب‌سایت"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:141
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:213
+#: build/main.js:172 build/main.js:34879 build/main.js:34888
+msgid "Basic"
+msgstr "پایه"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:136
+msgid "WooCommerce Shop Page"
+msgstr "برگۀ فروشگاه ووکامرس"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:132
+msgid "Author Archive"
+msgstr "بایگانی نویسنده"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:128
+msgid "Search Page"
+msgstr "برگۀ جستجو"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:127
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:332
+msgid "404 Page"
+msgstr "برگهٔ ۴۰۴"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:643
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:385
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:653
+#: inc/widgets-manager/widgets/cart/cart.php:331
+#: inc/widgets-manager/widgets/infocard/infocard.php:731
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1712
+#: inc/widgets-manager/widgets/retina/retina.php:585
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:650
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:905
+msgid "Padding"
+msgstr "فاصلۀ داخلی"
+
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:420
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:486
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:609
+#: inc/widgets-manager/widgets/cart/cart.php:381
+#: inc/widgets-manager/widgets/cart/cart.php:437
+#: inc/widgets-manager/widgets/cart/cart.php:568
+#: inc/widgets-manager/widgets/cart/cart.php:605
+#: inc/widgets-manager/widgets/infocard/infocard.php:325
+#: inc/widgets-manager/widgets/infocard/infocard.php:629
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:837
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:979
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1021
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1084
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1185
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1228
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1271
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1553
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1586
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1747
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1813
+#: inc/widgets-manager/widgets/retina/retina.php:555
+#: inc/widgets-manager/widgets/search-button/search-button.php:313
+#: inc/widgets-manager/widgets/search-button/search-button.php:473
+#: inc/widgets-manager/widgets/search-button/search-button.php:540
+#: inc/widgets-manager/widgets/search-button/search-button.php:732
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:393
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:620
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:946
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:983
+msgid "Background Color"
+msgstr "رنگ پس‌زمینه"
+
+#: inc/widgets-manager/widgets/retina/retina.php:499
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:547
+msgid "Transition Duration"
+msgstr "مدت زمان انتقال"
+
+#: inc/widgets-manager/widgets/retina/retina.php:492
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:572
+msgid "Hover Animation"
+msgstr "انیمیشن هاور"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:594
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:466
+#: inc/widgets-manager/widgets/cart/cart.php:405
+#: inc/widgets-manager/widgets/cart/cart.php:584
+#: inc/widgets-manager/widgets/infocard/infocard.php:430
+#: inc/widgets-manager/widgets/infocard/infocard.php:748
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:996
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1204
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1566
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1794
+#: inc/widgets-manager/widgets/retina/retina.php:460
+#: inc/widgets-manager/widgets/search-button/search-button.php:714
+#: inc/widgets-manager/widgets/search-button/search-button.php:849
+#: inc/widgets-manager/widgets/search-button/search-button.php:958
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:524
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:964
+msgid "Hover"
+msgstr "هاور"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:377
+#: inc/widgets-manager/widgets/retina/retina.php:432
+#: inc/widgets-manager/widgets/retina/retina.php:466
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:496
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:530
+msgid "Opacity"
+msgstr "شفافیت"
+
+#: inc/widgets-manager/widgets/cart/cart.php:292
+#: inc/widgets-manager/widgets/infocard/infocard.php:383
+#: inc/widgets-manager/widgets/infocard/infocard.php:686
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1497
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1620
+#: inc/widgets-manager/widgets/retina/retina.php:359
+#: inc/widgets-manager/widgets/search-button/search-button.php:381
+#: inc/widgets-manager/widgets/search-button/search-button.php:612
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:423
+msgid "Border Width"
+msgstr "ضخامت حاشیه"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:352
+#: inc/widgets-manager/widgets/infocard/infocard.php:658
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1468
+#: inc/widgets-manager/widgets/post-info/post-info.php:545
+#: inc/widgets-manager/widgets/retina/retina.php:349
+#: inc/widgets-manager/widgets/search-button/search-button.php:348
+#: inc/widgets-manager/widgets/search-button/search-button.php:582
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:413
+msgid "Dashed"
+msgstr "خط فاصله‌دار"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:351
+#: inc/widgets-manager/widgets/infocard/infocard.php:657
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1467
+#: inc/widgets-manager/widgets/post-info/post-info.php:544
+#: inc/widgets-manager/widgets/retina/retina.php:348
+#: inc/widgets-manager/widgets/search-button/search-button.php:347
+#: inc/widgets-manager/widgets/search-button/search-button.php:581
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:412
+msgid "Dotted"
+msgstr "نقطه‌ای"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:537
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:400
+#: inc/widgets-manager/widgets/cart/cart.php:349
+#: inc/widgets-manager/widgets/cart/cart.php:547
+#: inc/widgets-manager/widgets/infocard/infocard.php:297
+#: inc/widgets-manager/widgets/infocard/infocard.php:605
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:957
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1161
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1534
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1727
+#: inc/widgets-manager/widgets/page-title/page-title.php:341
+#: inc/widgets-manager/widgets/retina/retina.php:425
+#: inc/widgets-manager/widgets/search-button/search-button.php:268
+#: inc/widgets-manager/widgets/search-button/search-button.php:674
+#: inc/widgets-manager/widgets/search-button/search-button.php:829
+#: inc/widgets-manager/widgets/search-button/search-button.php:934
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:489
+#: inc/widgets-manager/widgets/site-title/site-title.php:333
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:926
+msgid "Normal"
+msgstr "عادی"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:652
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:621
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:452
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:641
+#: inc/widgets-manager/widgets/cart/cart.php:311
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1319
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1637
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1772
+#: inc/widgets-manager/widgets/retina/retina.php:399
+#: inc/widgets-manager/widgets/search-button/search-button.php:404
+#: inc/widgets-manager/widgets/search-button/search-button.php:635
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:463
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:484
+msgid "Border Radius"
+msgstr "انحنای مرز"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:577
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:634
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:498
+#: inc/widgets-manager/widgets/cart/cart.php:392
+#: inc/widgets-manager/widgets/cart/cart.php:448
+#: inc/widgets-manager/widgets/infocard/infocard.php:365
+#: inc/widgets-manager/widgets/infocard/infocard.php:671
+#: inc/widgets-manager/widgets/infocard/infocard.php:790
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1480
+#: inc/widgets-manager/widgets/retina/retina.php:381
+#: inc/widgets-manager/widgets/search-button/search-button.php:362
+#: inc/widgets-manager/widgets/search-button/search-button.php:506
+#: inc/widgets-manager/widgets/search-button/search-button.php:596
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:445
+msgid "Border Color"
+msgstr "رنگ حاشیه"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:350
+#: inc/widgets-manager/widgets/infocard/infocard.php:656
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1466
+#: inc/widgets-manager/widgets/post-info/post-info.php:543
+#: inc/widgets-manager/widgets/retina/retina.php:347
+#: inc/widgets-manager/widgets/search-button/search-button.php:346
+#: inc/widgets-manager/widgets/search-button/search-button.php:580
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:411
+msgid "Double"
+msgstr "دوبل"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:349
+#: inc/widgets-manager/widgets/infocard/infocard.php:655
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1465
+#: inc/widgets-manager/widgets/post-info/post-info.php:542
+#: inc/widgets-manager/widgets/retina/retina.php:346
+#: inc/widgets-manager/widgets/search-button/search-button.php:345
+#: inc/widgets-manager/widgets/search-button/search-button.php:579
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:410
+msgid "Solid"
+msgstr "یکپارچه"
+
+#: inc/widgets-manager/widgets/infocard/infocard.php:343
+#: inc/widgets-manager/widgets/infocard/infocard.php:648
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1459
+#: inc/widgets-manager/widgets/retina/retina.php:340
+#: inc/widgets-manager/widgets/search-button/search-button.php:339
+#: inc/widgets-manager/widgets/search-button/search-button.php:573
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:404
+msgid "Border Style"
+msgstr "سبک حاشیه"
+
+#: inc/widgets-manager/widgets/retina/retina.php:303
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:357
+msgid "Max Width"
+msgstr "حداکثر عرض"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:333
+#: inc/widgets-manager/widgets/post-info/post-info.php:585
+#: inc/widgets-manager/widgets/retina/retina.php:266
+#: inc/widgets-manager/widgets/search-button/search-button.php:242
+#: inc/widgets-manager/widgets/search-button/search-button.php:791
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:321
+msgid "Width"
+msgstr "عرض"
+
+#: inc/widgets-manager/widgets/page-title/page-title.php:191
+#: inc/widgets-manager/widgets/post-info/post-info.php:386
+#: inc/widgets-manager/widgets/retina/retina.php:226
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:254
+#: inc/widgets-manager/widgets/site-title/site-title.php:184
+msgid "Custom URL"
+msgstr "آدرس سفارشی"
+
+#: inc/widgets-manager/widgets/retina/retina.php:597
+msgid "Caption Top Spacing"
+msgstr "فاصلۀ بالای زیرنویس"
+
+#: inc/widgets-manager/widgets/retina/retina.php:207
+msgid "Enter your image caption"
+msgstr "زیرنویس تصویر را وارد نمایید"
+
+#: inc/widgets-manager/widgets/retina/retina.php:195
+#: inc/widgets-manager/widgets/retina/retina.php:204
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:230
+msgid "Custom Caption"
+msgstr "زیرنویس سفارشی"
+
+#: inc/widgets-manager/widgets/retina/retina.php:191
+#: inc/widgets-manager/widgets/retina/retina.php:529
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:217
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:594
+msgid "Caption"
+msgstr "زیرنویس"
+
+#: inc/widgets-manager/widgets/basic-posts/basic-posts.php:282
+#: inc/widgets-manager/widgets/retina/retina.php:157
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:183
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:1026
+msgid "Image Size"
+msgstr "اندازهٔ تصویر"
+
+#: inc/widgets-manager/widgets/cart/cart.php:168
+#: inc/widgets-manager/widgets/counter/counter.php:222
+#: inc/widgets-manager/widgets/infocard/infocard.php:348
+#: inc/widgets-manager/widgets/infocard/infocard.php:513
+#: inc/widgets-manager/widgets/infocard/infocard.php:653
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:516
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:856
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1464
+#: inc/widgets-manager/widgets/page-title/page-title.php:193
+#: inc/widgets-manager/widgets/post-info/post-info.php:403
+#: inc/widgets-manager/widgets/retina/retina.php:194
+#: inc/widgets-manager/widgets/retina/retina.php:225
+#: inc/widgets-manager/widgets/retina/retina.php:345
+#: inc/widgets-manager/widgets/search-button/search-button.php:344
+#: inc/widgets-manager/widgets/search-button/search-button.php:578
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:252
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:409
+msgid "None"
+msgstr "هیچ"
+
+#: inc/widgets-manager/widgets/retina/retina.php:130
+msgid "Choose Default Image"
+msgstr "تصویر پیش‌فرض را انتخاب نمایید"
+
+#: inc/widgets-manager/widgets/cart/cart.php:356
+#: inc/widgets-manager/widgets/cart/cart.php:412
+#: inc/widgets-manager/widgets/cart/cart.php:554
+#: inc/widgets-manager/widgets/cart/cart.php:591
+#: inc/widgets-manager/widgets/copyright/copyright.php:169
+#: inc/widgets-manager/widgets/infocard/infocard.php:614
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:964
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1003
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1071
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1168
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1211
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1254
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1734
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:1801
+#: inc/widgets-manager/widgets/post-info/post-info.php:756
+#: inc/widgets-manager/widgets/retina/retina.php:540
+#: inc/widgets-manager/widgets/search-button/search-button.php:278
+#: inc/widgets-manager/widgets/search-button/search-button.php:441
+#: inc/widgets-manager/widgets/search-button/search-button.php:525
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:605
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:601
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:668
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:798
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:856
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:933
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:971
+msgid "Text Color"
+msgstr "رنگ متن"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:277
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:201
+#: inc/widgets-manager/widgets/cart/cart.php:227
+#: inc/widgets-manager/widgets/copyright/copyright.php:155
+#: inc/widgets-manager/widgets/counter/counter.php:304
+#: inc/widgets-manager/widgets/counter/counter.php:340
+#: inc/widgets-manager/widgets/counter/counter.php:491
+#: inc/widgets-manager/widgets/counter/counter.php:523
+#: inc/widgets-manager/widgets/counter/counter.php:552
+#: inc/widgets-manager/widgets/infocard/infocard.php:182
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:324
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:348
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:390
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:426
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:541
+#: inc/widgets-manager/widgets/page-title/page-title.php:266
+#: inc/widgets-manager/widgets/retina/retina.php:176
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:202
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:190
+#: inc/widgets-manager/widgets/site-title/site-title.php:258
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:534
+msgid "Right"
+msgstr "راست"
+
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:197
+#: inc/widgets-manager/widgets/cart/cart.php:223
+#: inc/widgets-manager/widgets/copyright/copyright.php:151
+#: inc/widgets-manager/widgets/counter/counter.php:300
+#: inc/widgets-manager/widgets/counter/counter.php:336
+#: inc/widgets-manager/widgets/counter/counter.php:519
+#: inc/widgets-manager/widgets/counter/counter.php:548
+#: inc/widgets-manager/widgets/infocard/infocard.php:178
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:320
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:386
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:422
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:537
+#: inc/widgets-manager/widgets/page-title/page-title.php:262
+#: inc/widgets-manager/widgets/post-info/post-info.php:508
+#: inc/widgets-manager/widgets/retina/retina.php:172
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:198
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:186
+#: inc/widgets-manager/widgets/site-title/site-title.php:254
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:530
+msgid "Center"
+msgstr "وسط"
+
+#: inc/widgets-manager/widgets/copyright/copyright.php:136
+#: inc/widgets-manager/widgets/page-title/page-title.php:204
+#: inc/widgets-manager/widgets/retina/retina.php:239
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:267
+#: inc/widgets-manager/widgets/site-title/site-title.php:196
+msgid "https://your-link.com"
+msgstr "https://your-link.com"
+
+#: inc/widgets-manager/widgets/copyright/copyright.php:134
+#: inc/widgets-manager/widgets/infocard/infocard.php:553
+#: inc/widgets-manager/widgets/page-title/page-title.php:188
+#: inc/widgets-manager/widgets/page-title/page-title.php:202
+#: inc/widgets-manager/widgets/post-info/post-info.php:374
+#: inc/widgets-manager/widgets/retina/retina.php:221
+#: inc/widgets-manager/widgets/retina/retina.php:234
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:247
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:262
+#: inc/widgets-manager/widgets/site-title/site-title.php:181
+#: inc/widgets-manager/widgets/site-title/site-title.php:194
+msgid "Link"
+msgstr "پیوند"
+
+#: inc/widgets-manager/widgets/copyright/copyright.php:122
+msgid "Copyright Text"
+msgstr "متن حق ‌نشر"
+
+#: inc/widgets-manager/base/widgets-config.php:175
+#: inc/widgets-manager/widgets/copyright/copyright.php:115 build/main.js:172
+#: build/main.js:34855
+msgid "Copyright"
+msgstr "حق نشر"
+
+#: inc/widgets-manager/extensions/class-scroll-to-top-settings.php:243
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:193
+#: inc/widgets-manager/widgets/cart/cart.php:219
+#: inc/widgets-manager/widgets/copyright/copyright.php:147
+#: inc/widgets-manager/widgets/counter/counter.php:296
+#: inc/widgets-manager/widgets/counter/counter.php:332
+#: inc/widgets-manager/widgets/counter/counter.php:487
+#: inc/widgets-manager/widgets/counter/counter.php:515
+#: inc/widgets-manager/widgets/counter/counter.php:544
+#: inc/widgets-manager/widgets/infocard/infocard.php:174
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:316
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:347
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:382
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:418
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:533
+#: inc/widgets-manager/widgets/page-title/page-title.php:258
+#: inc/widgets-manager/widgets/retina/retina.php:168
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:194
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:182
+#: inc/widgets-manager/widgets/site-title/site-title.php:250
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:526
+msgid "Left"
+msgstr "چپ"
+
+#: inc/widgets-manager/widgets/breadcrumbs-widget/breadcrumbs-widget.php:188
+#: inc/widgets-manager/widgets/cart/cart.php:215
+#: inc/widgets-manager/widgets/copyright/copyright.php:143
+#: inc/widgets-manager/widgets/counter/counter.php:328
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:312
+#: inc/widgets-manager/widgets/navigation-menu/navigation-menu.php:529
+#: inc/widgets-manager/widgets/page-title/page-title.php:254
+#: inc/widgets-manager/widgets/post-info/post-info.php:500
+#: inc/widgets-manager/widgets/retina/retina.php:164
+#: inc/widgets-manager/widgets/site-logo/site-logo.php:190
+#: inc/widgets-manager/widgets/site-tagline/site-tagline.php:178
+#: inc/widgets-manager/widgets/site-title/site-title.php:246
+#: inc/widgets-manager/widgets/woo-product-grid/woo-product-grid.php:522
+msgid "Alignment"
+msgstr "چیدمان"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:629
+msgid "Please delete"
+msgstr "لطفاً حذف نمایید"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:222
+#: build/main.js:172 build/main.js:34878 build/main.js:34889
+msgid "Advanced"
+msgstr "پیشرفته"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:217
+msgid "Logged Out"
+msgstr "خارج شده"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:216
+msgid "Logged In"
+msgstr "وارد شده"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:150
+msgid "Special Pages"
+msgstr "برگه‌های ویژه"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:191
+msgid "Specific Target"
+msgstr "هدف خاص"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:193
+msgid "Specific Pages / Posts / Taxonomies, etc."
+msgstr "برگه‌های ویژه / نوشته‌ها / طبقه‌بندی‌ها و غیره."
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:144
+msgid "All Singulars"
+msgstr "همۀ تکی‌ها"
+
+#: admin/class-hfe-admin.php:754
+msgid "Exclude On"
+msgstr "نادیده گرفتن در"
+
+#: admin/class-hfe-admin.php:745
+msgid "Do Not Display On"
+msgstr "نمایش داده نشود در"
+
+#: admin/class-hfe-admin.php:736
+msgid "Add Display Rule"
+msgstr "افزودن قانون نمایش"
+
+#: admin/class-hfe-admin.php:723
+#: inc/widgets-manager/extensions/class-reading-progress-bar-settings.php:125
+msgid "Display On"
+msgstr "نمایش در"
+
+#: admin/class-hfe-admin.php:444 admin/class-hfe-admin.php:732
+#: build/main.js:172 build/main.js:31812
+msgid "Display Rules"
+msgstr "قوانین نمایش"
+
+#: admin/class-hfe-admin.php:725
+msgid "Add locations for where this template should appear."
+msgstr "مکان‌هایی را برای جایی که این قالب باید نمایش داده شود اضافه نمایید."
+
+#: inc/class-hfe-settings-page.php:577
+msgid "Add Theme Support"
+msgstr "افزودن پشتیبانی پوسته"
+
+#: admin/class-hfe-admin.php:768
+msgid "Display custom template based on user role."
+msgstr "نمایش قالب سفارشی براساس نقش کاربر."
+
+#. translators: %s post title.
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:1518
+msgid "The same display setting is already exist in %s post/s."
+msgstr "همان تنظیم نمایش در حال حاضر در %s نوشته/ها وجود دارد."
+
+#: admin/class-hfe-admin.php:757
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:851
+msgid "Add Exclusion Rule"
+msgstr "افزودن قانون محرومیت"
+
+#. translators: %s post label
+#. translators: %s taxonomy label
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:729
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:738
+msgid "All %s Archive"
+msgstr "همۀ %s بایگانی"
+
+#. translators: %s post label
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:724
+msgid "All %s"
+msgstr "همۀ %s"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:658
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:1068
+msgid "Add Rule"
+msgstr "افزودن نقش"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:639
+msgid "Search pages / post / categories"
+msgstr "برگه‌های جستجو / نوشته / دسته‌بندی‌ها"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:638
+msgid "The results could not be loaded."
+msgstr "نتایج قابل بارگیری نیست."
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:637
+msgid "Searching…"
+msgstr "در حال جستجو…"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:635
+msgid "s"
+msgstr "s"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:633
+msgid "You can only select"
+msgstr "شما فقط می‌توانید انتخاب نمایید"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:632
+msgid "Loading more results…"
+msgstr "بارگذاری نتایج بیشتر..."
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:631
+msgid "character"
+msgstr "کاراکتر"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:630
+msgid "or more characters"
+msgstr "یا کاراکترهای بیشتر"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:628
+msgid "Please enter"
+msgstr "لطفاً وارد نمایید"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:131
+msgid "Date Archive"
+msgstr "بایگانی تاریخ"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:130
+msgid "Front Page"
+msgstr "برگهٔ نخست"
+
+#: inc/lib/target-rule/class-astra-target-rules-fields.php:129
+msgid "Blog / Posts Page"
+msgstr "بلاگ / برگۀ نوشته‌ها"
+
+#. translators: %1$s doc link
+#: inc/widgets-manager/widgets/retina/retina.php:641
+msgid "%1$s Getting started article » %2$s"
+msgstr "%1$s مقالۀ شروع به کار » %2$s"
+
+#: inc/widgets-manager/widgets/retina/retina.php:632
+msgid "Helpful Information"
+msgstr "اطلاعات مفید"
+
+#: inc/widgets-manager/widgets/retina/retina.php:143
+msgid "Choose Retina Image"
+msgstr "تصویر رتینا را انتخاب نمایید"
+
+#: inc/widgets-manager/base/widgets-config.php:674
+#: inc/widgets-manager/class-widgets-loader.php:310
+#: inc/widgets-manager/widgets/retina/retina.php:124
+#: inc/widgets-manager/widgets/retina/retina.php:258 build/main.js:172
+#: build/main.js:34783
+msgid "Retina Image"
+msgstr "تصویر رتینا"
+
+#: inc/widgets-manager/widgets/copyright/copyright.php:127
+msgid "Copyright © [hfe_current_year] [hfe_site_title] | Powered by [hfe_site_title]"
+msgstr "حق نشر © [hfe_current_year] [hfe_site_title] | با نیروی [hfe_site_title]"
+
+#: inc/class-hfe-settings-page.php:611
+msgid "This method replaces your theme's header (header.php) & footer (footer.php) template with plugin's custom templates."
+msgstr "این روش قالب سربرگ (header.php) و پابرگ (footer.php) پوستۀ شما را با قالب‌های سفارشی افزونه جایگزین می‌کند."
+
+#: admin/class-hfe-admin.php:681 admin/class-hfe-admin.php:931
+#: build/main.js:172 build/main.js:31815
+msgid "Shortcode"
+msgstr "کد کوتاه"
+
+#: admin/class-hfe-admin.php:673
+#: inc/abilities/handlers/templates/class-hfe-template-get-handler.php:151
+#: inc/abilities/handlers/templates/class-hfe-template-list-handler.php:193
+msgid "Custom Block"
+msgstr "بلوک سفارشی"
+
+#: admin/class-hfe-admin.php:665
+msgid "Type of Template"
+msgstr "نوع قالب"
+
+#: admin/class-hfe-admin.php:682
+msgid "Copy this shortcode and paste it into your post, page, or text widget content."
+msgstr "این کد کوتاه را کپی کرده و آن را در نوشته، برگه، یا محتوای ابزارک متنی خود بچسبانید."
+
+#: admin/class-hfe-admin.php:671
+#: inc/abilities/handlers/templates/class-hfe-template-get-handler.php:150
+#: inc/abilities/handlers/templates/class-hfe-template-list-handler.php:192
+msgid "Before Footer"
+msgstr "پیش از پابرگ"
+
+#: admin/class-hfe-admin.php:670
+#: inc/abilities/handlers/templates/class-hfe-template-get-handler.php:148
+#: inc/abilities/handlers/templates/class-hfe-template-list-handler.php:190
+msgid "Header"
+msgstr "سربرگ"
+
+#: admin/class-hfe-admin.php:669
+msgid "Select Option"
+msgstr "گزینه را انتخاب نمایید"
+
+#: admin/class-hfe-admin.php:672
+#: inc/abilities/handlers/templates/class-hfe-template-get-handler.php:149
+#: inc/abilities/handlers/templates/class-hfe-template-list-handler.php:191
+msgid "Footer"
+msgstr "پابرگ"
+
+#: admin/class-hfe-admin.php:696
+msgid "Enabling this option will display this layout on pages using Elementor Canvas Template."
+msgstr "با فعال‌کردن این گزینه، این طرح در برگه‌هایی که از قالب Canvas المنتور استفاده می‌کنند، نمایش داده خواهد شد."
+
+#: admin/class-hfe-admin.php:694
+msgid "Enable Layout for Elementor Canvas Template?"
+msgstr "طرح برای قالب Canvas المنتور فعال شود؟"
+
+#. Translators: Post title, Template Location
+#: admin/class-hfe-admin.php:859
+msgid "Template %1$s is already assigned to the location %2$s"
+msgstr "قالب %1$s در حال حاضر به مکان %2$s تخصیص داده شده است"
+
+#. Author URI of the plugin
+#: header-footer-elementor.php
+msgid "https://www.brainstormforce.com/"
+msgstr "https://www.brainstormforce.com/"
+
+#: admin/class-hfe-admin.php:539 admin/class-hfe-admin.php:540
+msgid "Add New"
+msgstr "افزودن تازه"

@@ -1,0 +1,38 @@
+{
+  "site": {
+    "name": "karenleathergroup",
+    "tagline": "کیف چرم|کفش چرم|دستبندچرم|کمربندچرم",
+    "url": "https://karenleather.com",
+    "currency": "IRT",
+    "address": {
+      "line1": "",
+      "line2": "",
+      "city": "",
+      "country": "GB",
+      "postcode": ""
+    },
+    "whatsapp": {
+      "scb_button_target": "_blank",
+      "scb_whatsapp_chat_text": "سلام",
+      "scb_button_status": "1",
+      "scb_button_text": "سوالی ندارید؟",
+      "scb_button_position": "right",
+      "scb_desktop_link_type": "web",
+      "scb_desktop_bottom_margin": "20",
+      "scb_tablet_bottom_margin": "20",
+      "scb_mobile_bottom_margin": "20",
+      "scb_whatsapp_number": "00989144199935"
+    },
+    "front_page_id": "12",
+    "shop_page_id": "1535"
+  },
+  "counts": {
+    "pages": 17,
+    "products": 116,
+    "product_categories": 29,
+    "tags": 32,
+    "attachments": 639,
+    "elementor_templates": 7,
+    "nav_items": 60
+  }
+}

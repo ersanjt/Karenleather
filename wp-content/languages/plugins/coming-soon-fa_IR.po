@@ -1,0 +1,208 @@
+# Translation of Plugins - Website Builder by SeedProd — Theme Builder, Landing Page Builder, Coming Soon Page, Maintenance Mode - Stable (latest release) in Persian
+# This file is distributed under the same license as the Plugins - Website Builder by SeedProd — Theme Builder, Landing Page Builder, Coming Soon Page, Maintenance Mode - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-02-09 07:55:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: fa\n"
+"Project-Id-Version: Plugins - Website Builder by SeedProd — Theme Builder, Landing Page Builder, Coming Soon Page, Maintenance Mode - Stable (latest release)\n"
+
+#: app/functions-utils.php:472
+msgid "Login Form"
+msgstr "فرم ورود"
+
+#: resources/views/debug.php:27
+msgid "Debug Tools"
+msgstr "ابزارهای اشکال زدایی"
+
+#: app/routes.php:207 app/routes.php:208
+msgid "Debug"
+msgstr "اشکال زدایی"
+
+#: app/routes.php:198 app/routes.php:199
+msgid "Import/Export"
+msgstr "درون ریزی/برون ریزی"
+
+#: app/routes.php:189 app/routes.php:190
+msgid "Builder"
+msgstr "سازنده"
+
+#: app/routes.php:129 app/routes.php:130 languages/seedprod-lite.php:50
+msgid "About Us"
+msgstr "درباره ما"
+
+#: app/functions-addons.php:214 app/functions-addons.php:283
+#: languages/seedprod-lite.php:244
+msgid "Inactive"
+msgstr "غیرفعال"
+
+#: app/settings.php:67
+msgid "Settings Updated"
+msgstr "تنظیمات بروزرسانی شد"
+
+#: app/functions-addons.php:111
+msgid "Plugin deactivated."
+msgstr "افزونه غیرفعال شد."
+
+#: app/lpage.php:203 app/lpage.php:205 app/setup-wizard.php:197
+#: app/setup-wizard.php:199
+msgid "New Page"
+msgstr "برگه‌ی تازه"
+
+#: app/license.php:17
+msgid "Upgrade PHP"
+msgstr "ارتقا PHP"
+
+#: languages/seedprod-lite.php:568
+msgid "License"
+msgstr "اجازه‌نامه"
+
+#: languages/seedprod-lite.php:583
+msgid "License Key"
+msgstr "کلید لایسنس"
+
+#: app/routes.php:111 app/routes.php:112 languages/seedprod-lite.php:121
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: app/routes.php:91 app/routes.php:92 app/subscriber.php:69
+#: languages/seedprod-lite.php:103
+msgid "Subscribers"
+msgstr "مشترکین"
+
+#: languages/seedprod-lite.php:2935
+msgid "Contain"
+msgstr "Contain"
+
+#: app/class-seedprod-review.php:118
+msgid "Nope, maybe later"
+msgstr "نه، شاید بعدا"
+
+#: app/class-seedprod-review.php:117
+msgid "Ok, you deserve it"
+msgstr "باشه، سزاوار این کار هستی"
+
+#: app/class-seedprod-review.php:119
+msgid "I already did"
+msgstr "من قبلا این کار انجام دادم"
+
+#: app/functions-utils.php:234
+msgid "Custom HTML"
+msgstr "سفارشی سازی  اچ تی ام ال"
+
+#: languages/seedprod-lite.php:2960
+msgid "Dim Background"
+msgstr "پس‌زمینه کم نور"
+
+#: app/class-seedprod-review.php:102 languages/seedprod-lite.php:648
+msgid "Yes"
+msgstr "بله"
+
+#: app/functions-utils.php:145 languages/seedprod-lite.php:1253
+msgid "Text"
+msgstr "متن"
+
+#: languages/seedprod-lite.php:7239
+msgid "Custom CSS"
+msgstr "CSS سفارشی"
+
+#: languages/seedprod-lite.php:1217
+msgid "Text Color"
+msgstr "رنگ متن"
+
+#: languages/seedprod-lite.php:7773
+msgid "Design"
+msgstr "طراحی"
+
+#: languages/seedprod-lite.php:7724
+msgid "Favicon"
+msgstr "فاوآیکون"
+
+#: languages/seedprod-lite.php:3608
+msgid "Message"
+msgstr "پیغام"
+
+#: languages/seedprod-lite.php:497
+msgid "Status"
+msgstr "وضعیت"
+
+#: languages/seedprod-lite.php:559
+msgid "General"
+msgstr "همگانی"
+
+#: languages/seedprod-lite.php:1004
+msgid "Content"
+msgstr "محتوا"
+
+#: languages/seedprod-lite.php:7749
+msgid "Scripts"
+msgstr "اسکریپت‌ها"
+
+#: languages/seedprod-lite.php:1074
+msgid "Advanced"
+msgstr "پیشرفته"
+
+#: languages/seedprod-lite.php:2884
+msgid "Background Image"
+msgstr "تصویر پس‌زمینه"
+
+#: languages/seedprod-lite.php:1371
+msgid "Background Color"
+msgstr "رنگ پس‌زمینه"
+
+#: languages/seedprod-lite.php:3276
+msgid "Background"
+msgstr "پس‌زمینه"
+
+#: languages/seedprod-lite.php:7718
+msgid "SEO Title"
+msgstr "عنوان سئو"
+
+#: app/admin-bar-menu.php:51
+msgid "Maintenance Mode Active"
+msgstr "حالت تعمیر فعال است"
+
+#: languages/seedprod-lite.php:2860
+msgid "Background Position"
+msgstr "موقعیت پس‌زمینه"
+
+#: app/backwards/csp4-functions.php:10
+msgid "Please enter your settings."
+msgstr "لطفا تنظیمات خود را وارد کنید."
+
+#: app/functions-utils.php:133 languages/seedprod-lite.php:4689
+msgid "Headline"
+msgstr "عنوان"
+
+#: app/admin-bar-menu.php:49
+msgid "Coming Soon Mode Active"
+msgstr "حالت به زودی فعال است"
+
+#: languages/seedprod-lite.php:2906
+msgid "Scroll"
+msgstr "Scroll"
+
+#: languages/seedprod-lite.php:2910
+msgid "Fixed"
+msgstr "Fixed"
+
+#: languages/seedprod-lite.php:2301
+msgid "Center Center"
+msgstr "Center Center"
+
+#. Author of the plugin
+#: coming-soon.php app/routes.php:53
+msgid "SeedProd"
+msgstr "SeedProd"
+
+#: app/routes.php:180 app/routes.php:181 languages/seedprod-lite.php:1972
+msgid "Templates"
+msgstr "قالب‌ها"
+
+#: languages/seedprod-lite.php:3586
+msgid "End Date"
+msgstr "تاریخ پایان"

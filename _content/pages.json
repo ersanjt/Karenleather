@@ -1,0 +1,387 @@
+[
+  {
+    "id": 8,
+    "title": "فروشگاه",
+    "slug": "shop",
+    "url": "/shop/",
+    "content_text": "دسته بندی",
+    "elementor": [
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2023/02/jia-ye-erHlzWCN6zQ-unsplash.jpg",
+        "text": ""
+      },
+      {
+        "widget": "heading",
+        "text": "دسته بندی"
+      }
+    ],
+    "modified": "2023-03-02 07:43:30"
+  },
+  {
+    "id": 9,
+    "title": "سبد خرید",
+    "slug": "cart",
+    "url": "/cart/",
+    "content_text": "[woocommerce_cart]",
+    "elementor": [],
+    "modified": "2021-02-08 13:37:27"
+  },
+  {
+    "id": 10,
+    "title": "پرداخت",
+    "slug": "checkout",
+    "url": "/checkout/",
+    "content_text": "[woocommerce_checkout]",
+    "elementor": [],
+    "modified": "2021-02-08 13:37:27"
+  },
+  {
+    "id": 11,
+    "title": "حساب کاربری من",
+    "slug": "my-account",
+    "url": "/my-account/",
+    "content_text": "[woocommerce_my_account]",
+    "elementor": [],
+    "modified": "2021-02-08 13:37:27"
+  },
+  {
+    "id": 12,
+    "title": "چرم کارن",
+    "slug": "home",
+    "url": "/home/",
+    "content_text": "با خیال راحت خرید کنید \n \n فروشگاه چرم کارن باسابقه درخشان در حوزه تولید و طراحی محصولات چرمی توانسته است تحولی عظیم در محصولات چرمی با کیفیت بالا ایجاد کند\n \n \n ضمانت \n \n\n \n تمامی محصولات ما اصل بوده و با گارانتی 2 ساله بفروش میرسد \n\n \n رایگان \n \n\n \n ارسال رایگان خرید های بالای 1 میلیون تومان \n\n \n پشتیبانی \n \n\n \n پشتیبانی آنلاین 24 ساعته مخصوص خرید از فروشگاه \n\n \n \n \n \n [product_categories number=\"5\" columns=\"5\" hide_empty=\"0\" orderby=\"name\" order=\"desc\"]",
+    "elementor": [
+      {
+        "widget": "divider",
+        "text": "جداکننده"
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2025/03/logo-pnz.png",
+        "text": ""
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.17-PM-1.jpeg",
+        "text": ""
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.21-PM.jpeg",
+        "text": ""
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.17-PM.jpeg",
+        "text": ""
+      },
+      {
+        "widget": "section",
+        "image": "https://karenleather.com/wp-content/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.24-PM-1.jpeg",
+        "text": ""
+      },
+      {
+        "widget": "background",
+        "image": "https://karenleather.com/wp-content/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.24-PM-1.jpeg"
+      },
+      {
+        "widget": "heading",
+        "text": "با خیال راحت خرید کنید"
+      },
+      {
+        "widget": "text-editor",
+        "text": "فروشگاه چرم کارن باسابقه درخشان در حوزه تولید و طراحی محصولات چرمی توانسته است تحولی عظیم در محصولات چرمی با کیفیت بالا ایجاد کند"
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/2-4-scaled.jpg",
+        "text": ""
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2023/01/msg59263463-649732.jpg",
+        "text": ""
+      }
+    ],
+    "modified": "2025-03-10 13:24:20"
+  },
+  {
+    "id": 239,
+    "title": "",
+    "slug": "representation",
+    "url": "/representation/",
+    "content_text": "فرم شرایط اخذ نمایندگی\n \n برند کارن، منسوجات چرمی اصیل را با طراحی های لوکس و منحصربه‌فرد تولید می‌نماید از این رو شرکت چرم کارن افق نو\nتحت شرایط خاص اقدام به اعطای نمایندگی میکند.\n \n \n مزیت های اخذ نمایندگی\n \n کاهش هزینه‌های تبلیغات\nدسترسی به بازار فروش مطمئن\nافتتاح و راه اندازی فروشگاه، دراختیار داشتن ست فروشگاهی با رنگ‌بندی شرکتی و نرم‌افزار یکپارچه فروش\n \n حداقل شرایط اخذ نمایندگی\n \n ملک حداقل 20 متر\nموقعیت ملک واقع در خیابان اصلی و مناطقی مناسب و در شأن مخاطبان چرم کارن\nوضعیت مالکیت: سند شش دانگ به‌نام متقاضی و یا اجاره نامه یک ساله\nدارا بودن سرمایه کافی برای تجهیز دکوراسیون و خرید کالا\nدریافت ضمانت نامه بانکی مورد تایید بانک\n10% خربد اولیه اختصاص دارد به دکوراسیون فروشگاه \nامکان خرید به صورت شرایطی نصف به صورت نقدی و مابقی 10 فقره چک در 10 ماه \nخرید ماهانه 20 - 30 میلیون تومان برای تکمیل ظرفیت فروشگاه و فعال بودن نمایندگی فروش شامل شرایط ذکر شده در فوق می‌باشد.\nدر صورت عدم خرید ماهانه در 6 ماه نمایندگی از حالت فعال خارج گشته و امتیاز نمایندگی سلب میگردد.\nبازدید ماهانه کارشناسان شرکت از شعب به دلیل صحت عدم وجود محصول دیگر غیر از چرم کارن.\nبا تشکر\nمدیرعامل شرکت صنایع چرم کارن افق نو\nهادی مولائی قاضی جهانی",
+    "elementor": [
+      {
+        "widget": "heading",
+        "text": "فرم شرایط اخذ نمایندگی"
+      },
+      {
+        "widget": "text-editor",
+        "text": "برند کارن، منسوجات چرمی اصیل را با طراحی های لوکس و منحصربه‌فرد تولید می‌نماید از این رو شرکت چرم کارن افق نو\nتحت شرایط خاص اقدام به اعطای نمایندگی میکند."
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/کارن-لوگو.png",
+        "text": ""
+      },
+      {
+        "widget": "heading",
+        "text": "مزیت های اخذ نمایندگی"
+      },
+      {
+        "widget": "text-editor",
+        "text": "کاهش هزینه‌های تبلیغات\nدسترسی به بازار فروش مطمئن\nافتتاح و راه اندازی فروشگاه، دراختیار داشتن ست فروشگاهی با رنگ‌بندی شرکتی و نرم‌افزار یکپارچه فروش"
+      },
+      {
+        "widget": "heading",
+        "text": "حداقل شرایط اخذ نمایندگی"
+      },
+      {
+        "widget": "text-editor",
+        "text": "ملک حداقل 20 متر\nموقعیت ملک واقع در خیابان اصلی و مناطقی مناسب و در شأن مخاطبان چرم کارن\nوضعیت مالکیت: سند شش دانگ به‌نام متقاضی و یا اجاره نامه یک ساله\nدارا بودن سرمایه کافی برای تجهیز دکوراسیون و خرید کالا\nدریافت ضمانت نامه بانکی مورد تایید بانک\n10% خربد اولیه اختصاص دارد به دکوراسیون فروشگاه \nامکان خرید به صورت شرایطی نصف به صورت نقدی و مابقی 10 فقره چک در 10 ماه \nخرید ماهانه 20 - 30 میلیون تومان برای تکمیل ظرفیت فروشگاه و فعال بودن نمایندگی فروش شامل شرایط ذکر شده در فوق می‌باشد.\nدر صورت عدم خرید ماهانه در 6 ماه نمایندگی از حالت فعال خارج گشته و امتیاز نمایندگی سلب میگردد.\nبازدید ماهانه کارشناسان شرکت از شعب به دلیل صحت عدم وجود محصول دیگر غیر از چرم کارن."
+      },
+      {
+        "widget": "text-editor",
+        "text": "با تشکر\nمدیرعامل شرکت صنایع چرم کارن افق نو\nهادی مولائی قاضی جهانی"
+      }
+    ],
+    "modified": "2023-02-10 12:15:00"
+  },
+  {
+    "id": 1378,
+    "title": "",
+    "slug": "darbarema",
+    "url": "/darbarema/",
+    "content_text": "درباره ما\n\r\nشرکت صنایع چرم کارن افق نو\r\n\r\nاز سال 1394 به صورت رسمی فعالیت خود را در صنعت چرمی کشور آغاز کرد. تولید پوشاک، انواع کیف، کفش و کمربند هایی تولید شده با چرم طبیعی و استاندارد با عنایت به شناخت الگوی رفتاری جامعه ایرانی و اعتقاد به اصل رقابت سالم و تولید خلاقانه خط مشی سازمانی این شرکت بوده است.\r\n\r\n\r\n\r\n\r\nاین مجموعه افتخار دارد فعالیت های خود را در راستای تبلیغ و فرهنگ سازی استفاده از محصولات ایرانی پایه گذاری کرده است و محصولاتی با کیفیت رقابتی و طراحی منحصربفرد روانه بازار ایران کند.\r\n\r\nچرم کارن اینک با بهره گیری از مواد استاندارد و استفاده از چرم مرغوب شتر مرغ و راه اندازی خط تولید مجزای مصولاتی با سومین چرم تزئینی جهان و پرطرفدار شتر مرغ در عرصه تولید، با احترام به حق مشتریان گرامی به ارائه خدمات پس از فروش در دفتر مرکزی و تمام فروشگاه های خود و با عنایت به گذرندان فراز و نشیب های بسیار در بازار رقابتی چرم کشور توانست موقعیت خود را با نام تجاری \" شرکت صنایع چرم کارن افق نو \" تثبیت کند.\r\n\r\n\r\n\r\n\r\nبه‌کار گیری همکاران جوان دانش‌آموخته و اهل فن، طراحی و تولید محصولاتی با رعایت استاندارد های بین المللی و رنگرزی های کاملا گیاهی که نشان دهنده فرهنگ غنی ایرانی از یک سو و برخورداری از مشتریانی با سلیقه و خوش ذوق از سوی دیگر و اعتقاد به اصل مشتری مداری و اینکه مشتری ولی نعمت ماست، از طریق ارائه محصولات متنوع با کیفیت بالا و قیمت قابل قبول و برخورداری از شبکه خدمات پس از فروش گسترده و آموزش دیده متناسب با حجم فعالیت های شرکت از افتخارات چرم کارن محسوب میشوند.\r\n\r\nمجموعه تولیدی چرم کارن، با ایجاد بستری مناسب و محیط فعالیت پویا، در جهت حفظ روحیه برتری سازمان توسط همکاران، خود را متعهد به کلیه اهداف و اصول فوق دانسته و همواره فعالیت ها و استراتژی های نیل به اهداف فوق توسط همکاران را مورد کنترل و بازنگری قرار می‌دهد.",
+    "elementor": [
+      {
+        "widget": "heading",
+        "text": "درباره ما"
+      },
+      {
+        "widget": "text-editor",
+        "text": "شرکت صنایع چرم کارن افق نو\nاز سال 1394 به صورت رسمی فعالیت خود را در صنعت چرمی کشور آغاز کرد. تولید پوشاک، انواع کیف، کفش و کمربند هایی تولید شده با چرم طبیعی و استاندارد با عنایت به شناخت الگوی رفتاری جامعه ایرانی و اعتقاد به اصل رقابت سالم و تولید خلاقانه خط مشی سازمانی این شرکت بوده است."
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/کارن-لوگو.png",
+        "text": ""
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/Untitled-1-2.jpg",
+        "text": ""
+      },
+      {
+        "widget": "text-editor",
+        "text": "این مجموعه افتخار دارد فعالیت های خود را در راستای تبلیغ و فرهنگ سازی استفاده از محصولات ایرانی پایه گذاری کرده است و محصولاتی با کیفیت رقابتی و طراحی منحصربفرد روانه بازار ایران کند."
+      },
+      {
+        "widget": "text-editor",
+        "text": "چرم کارن اینک با بهره گیری از مواد استاندارد و استفاده از چرم مرغوب شتر مرغ و راه اندازی خط تولید مجزای مصولاتی با سومین چرم تزئینی جهان و پرطرفدار شتر مرغ در عرصه تولید، با احترام به حق مشتریان گرامی به ارائه خدمات پس از فروش در دفتر مرکزی و تمام فروشگاه های خود و با عنایت به گذرندان فراز و نشیب های بسیار در بازار رقابتی چرم کشور توانست موقعیت خود را با نام تجاری \" شرکت صنایع چرم کارن افق نو \" تثبیت کند."
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/Untitled-1-2.jpg",
+        "text": ""
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/Untitled-1-2.jpg",
+        "text": ""
+      },
+      {
+        "widget": "text-editor",
+        "text": "به‌کار گیری همکاران جوان دانش‌آموخته و اهل فن، طراحی و تولید محصولاتی با رعایت استاندارد های بین المللی و رنگرزی های کاملا گیاهی که نشان دهنده فرهنگ غنی ایرانی از یک سو و برخورداری از مشتریانی با سلیقه و خوش ذوق از سوی دیگر و اعتقاد به اصل مشتری مداری و اینکه مشتری ولی نعمت ماست، از طریق ارائه محصولات متنوع با کیفیت بالا و قیمت قابل قبول و برخورداری از شبکه خدمات پس از فروش گسترده و آموزش دیده متناسب با حجم فعالیت های شرکت از افتخارات چرم کارن محسوب میشوند."
+      },
+      {
+        "widget": "text-editor",
+        "text": "مجموعه تولیدی چرم کارن، با ایجاد بستری مناسب و محیط فعالیت پویا، در جهت حفظ روحیه برتری سازمان توسط همکاران، خود را متعهد به کلیه اهداف و اصول فوق دانسته و همواره فعالیت ها و استراتژی های نیل به اهداف فوق توسط همکاران را مورد کنترل و بازنگری قرار می‌دهد."
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/Untitled-1.jpg",
+        "text": ""
+      }
+    ],
+    "modified": "2023-02-10 20:01:59"
+  },
+  {
+    "id": 1385,
+    "title": "تماس با ما",
+    "slug": "contact-us",
+    "url": "/contact-us/",
+    "content_text": "ارتباط با ما\n \n \n آدرس دفتر مرکزی:\n \n تبریز، باغمیشه میدان ارغوان جنب بانک ملی\n \n آدرس فروشگاه:\n \n تبریز، اول جاده شاهگلی، لابی هتل شهریار\n \n اینستاگرام\n \n \n ورود به اینستاگرام چرم کارن\n \n واتس‌اپ\n \n \n ارتباط با واتس‌اپ چرم کارن\n \n شماره تماس:\n \n 00989144199935",
+    "elementor": [
+      {
+        "widget": "heading",
+        "text": "ارتباط با ما"
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/cropped-کارن-لوگو-1.png",
+        "text": ""
+      },
+      {
+        "widget": "heading",
+        "text": "آدرس دفتر مرکزی:"
+      },
+      {
+        "widget": "text-editor",
+        "text": "تبریز، باغمیشه میدان ارغوان جنب بانک ملی"
+      },
+      {
+        "widget": "heading",
+        "text": "آدرس فروشگاه:"
+      },
+      {
+        "widget": "text-editor",
+        "text": "تبریز، اول جاده شاهگلی، لابی هتل شهریار"
+      },
+      {
+        "widget": "heading",
+        "text": "اینستاگرام"
+      },
+      {
+        "widget": "button",
+        "text": "ورود به اینستاگرام چرم کارن"
+      },
+      {
+        "widget": "heading",
+        "text": "واتس‌اپ"
+      },
+      {
+        "widget": "button",
+        "text": "ارتباط با واتس‌اپ چرم کارن"
+      },
+      {
+        "widget": "heading",
+        "text": "شماره تماس:"
+      },
+      {
+        "widget": "heading",
+        "text": "00989144199935"
+      }
+    ],
+    "modified": "2023-02-14 07:57:15"
+  },
+  {
+    "id": 1535,
+    "title": "فروشگاه",
+    "slug": "elementor-1535",
+    "url": "/elementor-1535/",
+    "content_text": "",
+    "elementor": [],
+    "modified": "2023-02-21 09:31:29"
+  },
+  {
+    "id": 1738,
+    "title": "aboutme",
+    "slug": "aboutme",
+    "url": "/aboutme/",
+    "content_text": "چرم کارن\n \n لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.\n \n \n \n سال تاسیس \n\n \n سال تاسیس چرم کارن \n\n چرم کارن در سال 1380 راه اندازی شده و به کمک 18 نفر نیرو کار در حال تولید محص.لات چرمی میباشد \n \n کارگاه تولیدی \n\n \n کارگاه تولید چرم کارن \n\n کارگاه تولیدی چرم کارن با پیشرفته ترین دستگاه های تولیدی در عرصه محصولات چرمی توانسه است جایگاه ویژه ای در حوزه محصولات چرمی ایجاد کند \n \n کیفیت \n\n \n ضمانت \n\n تمامی محصولات کارن بنا به کیفیت بالایی که دارند با ضمانت فروخته میشوند \n چرا کارن چرم ؟\n تمامی محصولات کارن چرم با کیفیت و ظرافت خاصی طراحی شده اند.\n   \n \n\n محصولات\n محصولات ما شامل انواع کیف ، کفش ، کمربند و … میباشد.",
+    "elementor": [
+      {
+        "widget": "heading",
+        "text": "چرم کارن"
+      },
+      {
+        "widget": "text-editor",
+        "text": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2023/02/clem-onojeghuo-OuxPfti70I0-unsplash.jpg",
+        "text": ""
+      },
+      {
+        "widget": "accordion",
+        "text": "چرا کارن چرم ؟\nتمامی محصولات کارن چرم با کیفیت و ظرافت خاصی طراحی شده اند.\nمحصولات\nمحصولات ما شامل انواع کیف ، کفش ، کمربند و ... میباشد."
+      }
+    ],
+    "modified": "2023-02-25 10:27:24"
+  },
+  {
+    "id": 1775,
+    "title": "contact_us",
+    "slug": "contact_us",
+    "url": "/contact_us/",
+    "content_text": "تماس با ما\n \n شما مشتریان عزیز میتوانید تمامی سولات مربوط به محصولات ما را در این قسمت پرسیده و جواب های مربوطه را در سریع ترین زمان ممکن دریافت کنید.",
+    "elementor": [
+      {
+        "widget": "heading",
+        "text": "تماس با ما"
+      },
+      {
+        "widget": "text-editor",
+        "text": "شما مشتریان عزیز میتوانید تمامی سولات مربوط به محصولات ما را در این قسمت پرسیده و جواب های مربوطه را در سریع ترین زمان ممکن دریافت کنید."
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/cropped-کارن-لوگو-2-e1673109391206.png",
+        "text": ""
+      },
+      {
+        "widget": "form",
+        "text": "ارسال"
+      }
+    ],
+    "modified": "2023-02-25 14:00:46"
+  },
+  {
+    "id": 2307,
+    "title": "Contact Us",
+    "slug": "contact-us-2",
+    "url": "/contact-us-2/",
+    "content_text": "Learn More About Our Features\n\nView Our Support Documentation\n\nTalk to a Human\n\nWe promise, your message won't disappear into the abyss. We're standing by and ready to help with any questions, comments, or thoughts you may have. \n\nLet's Chat!",
+    "elementor": [],
+    "modified": "2024-06-24 12:50:26"
+  },
+  {
+    "id": 2372,
+    "title": "Book Now",
+    "slug": "book-now",
+    "url": "/book-now/",
+    "content_text": "Because you deserve an experience just for you.\n\nAll of our staff are certified and receive annual training - so you can rest assured we're up to speed on the latest trends. Our goal is to help you feel better by looking your best. Book an appointment today!\n\nVIEW SERVICE MENU\n\nBOOK APPOINTMENT\n\nWhat are the benefits of our services? \n\nhttps://www.youtube.com/watch?v=eiQ3viAGung\n\nBook before this weekend and take 20% off!*\n\nSCHEDULE YOUR APPOINTMENT NOW\n\nKelsey - Owner\n\nBook Now\n\nSteve - Senior Stylist\n\nBook Now\n\nMary Kate - Eyelash Specialist\n\nBook Now\n\nTina - Brow Master\n\nBook Now\n\nBecky - Stylist\n\nBook Now\n\nRosa - Junior Stylist\n\nBook Now\n\nRoss - Apprentice Stylist\n\nBook Now\n\nOur Business\n\n56203 Maribel Peaks Road\n\nSuite 180\n\nBig Bear Lake, CA 92333\n\n904-555-3092\n\nOur Hours\n\nMonday: 10:00am – 7:00pmTuesday: 9:00am – 8:00pmWednesday: 9:00am – 8:00pmThursday: 9:00am – 8:00pmFriday: 9:00am – 8:00pmSaturday: 9:00am – 6:00pmSunday: 10:00am – 5:00pm",
+    "elementor": [],
+    "modified": "2024-06-24 12:50:16"
+  },
+  {
+    "id": 2493,
+    "title": "FAQ",
+    "slug": "faq",
+    "url": "/faq/",
+    "content_text": "Got Questions? We’re Here to Help Get You Started With Our Product.\n\nFrequently Asked Questions\n\nWhat if I change my mind?\n\nNo problem! We're confident you'll love our product. We offer a 14-day money-back guarantee, no questions asked. \n\nIs your product eco-friendly?\n\nIt sure is. We're 100% biodegradable and sustainable. Plus, we're Leaping Bunny certified.\n\nDo you offer any discounts?\n\nAlthough we don't currently have any active coupon codes, we occasionally run seasonal sales - join our newsletter to stay updated!\n\nStill Need Help? We're Here!\n\nContact Us Now",
+    "elementor": [],
+    "modified": "2024-06-24 12:50:28"
+  },
+  {
+    "id": 2495,
+    "title": "Portfolio",
+    "slug": "portfolio",
+    "url": "/portfolio/",
+    "content_text": "We've helped thousands of businesses to thrive and grow. Read about our awesome customers to find out exactly how we helped them.\n\nGusto Burgers\n\nAurora Flowers\n\nAcme helped Gusto Burgers to pivot rapidly to online ordering and take-away during 2020. Our team worked with the brand to add interactive menus to its website covering its entire menu. We also developed a branded app to support speedy ordering, collection and delivery. \n\nRead the case study\n\nOur marketing team helped Aurora Flowers to develop a coherent social media strategy, focusing on visual channels like Instagram and Pinterest. We improved post engagement and integrated its online store, resulting in a 10% increase in sales over the Christmas season.\n\nRead the case study",
+    "elementor": [],
+    "modified": "2024-06-24 12:50:34"
+  },
+  {
+    "id": 2497,
+    "title": "Shop",
+    "slug": "shop-2",
+    "url": "/shop-2/",
+    "content_text": "RESOURCES THAT WILL HELP YOU\n\nMake Your Life Easier\n\nCheck out our latest tools, products, and services to help you do the things you need to do.\n\nFREEBIES\n\nPRODUCTS\nCOURSES\nCONSULTING\n\nThe Reviews Are In\n\nReal Customers. Real Results.\n\n\"Seriously magic.\"\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\"\n-Marcus Tran\n\n\"My favorite tool!\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\"\n-Sarah Jackson\n\n\"Game-changer.\"\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\"\n-Susan Hartley",
+    "elementor": [],
+    "modified": "2024-06-24 12:50:49"
+  },
+  {
+    "id": 2498,
+    "title": "Testimonials",
+    "slug": "testimonials",
+    "url": "/testimonials/",
+    "content_text": "Acme Marketing provided the tools and strategies we needed to build PPC campaigns with great ROI.\nJohn Doe, ABC Corp\n\nI wouldn't hesitate to recommend Acme for marketing support. Their team of experts have assisted us with everything from keyword research to getting our social media strategy on the right track.\nJane Doe, XYZ Interiors\n\nOur team is free to work on the tasks they do best.\nVasu Sameer, AK Consulting\n\nFrom day one, the team at Acme become partners and friends. They immediately got to know the business are driven to help small businesses succeed.\nAmanda Smith, Awesome Software",
+    "elementor": [],
+    "modified": "2024-06-24 12:50:51"
+  }
+]

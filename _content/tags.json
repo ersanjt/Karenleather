@@ -1,0 +1,290 @@
+[
+  {
+    "term_id": 20,
+    "name": "کیف زنانه چرم اصل",
+    "slug": "%da%a9%db%8c%d9%81-%d8%b2%d9%86%d8%a7%d9%86%d9%87-%da%86%d8%b1%d9%85-%d8%a7%d8%b5%d9%84",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 21,
+    "name": "چرم تبریز",
+    "slug": "%da%86%d8%b1%d9%85-%d8%aa%d8%a8%d8%b1%db%8c%d8%b2",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 22,
+    "name": "چرم شترمرغ",
+    "slug": "%da%86%d8%b1%d9%85-%d8%b4%d8%aa%d8%b1%d9%85%d8%b1%d8%ba",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 27,
+    "name": "چرم طبیعی",
+    "slug": "%da%86%d8%b1%d9%85-%d8%b7%d8%a8%db%8c%d8%b9%db%8c",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 28,
+    "name": "کیف",
+    "slug": "%da%a9%db%8c%d9%81",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 29,
+    "name": "کیف چرم",
+    "slug": "%da%a9%db%8c%d9%81-%da%86%d8%b1%d9%85",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 34,
+    "name": "کیف چرم طبیعی",
+    "slug": "%da%a9%db%8c%d9%81-%da%86%d8%b1%d9%85-%d8%b7%d8%a8%db%8c%d8%b9%db%8c",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 35,
+    "name": "چرم گاوی",
+    "slug": "%da%86%d8%b1%d9%85-%da%af%d8%a7%d9%88%db%8c",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 37,
+    "name": "کیف مجلسی",
+    "slug": "%da%a9%db%8c%d9%81-%d9%85%d8%ac%d9%84%d8%b3%db%8c",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 38,
+    "name": "کیف چرم گاوی",
+    "slug": "%da%a9%db%8c%d9%81-%da%86%d8%b1%d9%85-%da%af%d8%a7%d9%88%db%8c",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 39,
+    "name": "چرم",
+    "slug": "%da%86%d8%b1%d9%85",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 79,
+    "name": "کفش چرم اصل",
+    "slug": "%da%a9%d9%81%d8%b4-%da%86%d8%b1%d9%85-%d8%a7%d8%b5%d9%84",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 80,
+    "name": "کفش چرم طبیعی",
+    "slug": "%da%a9%d9%81%d8%b4-%da%86%d8%b1%d9%85-%d8%b7%d8%a8%db%8c%d8%b9%db%8c",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 81,
+    "name": "کفش چرم گاوی اصل",
+    "slug": "%da%a9%d9%81%d8%b4-%da%86%d8%b1%d9%85-%da%af%d8%a7%d9%88%db%8c-%d8%a7%d8%b5%d9%84",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 83,
+    "name": "کیف چرم تبریز",
+    "slug": "%da%a9%db%8c%d9%81-%da%86%d8%b1%d9%85-%d8%aa%d8%a8%d8%b1%db%8c%d8%b2",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 84,
+    "name": "چرم طبیعی تبریز",
+    "slug": "%da%86%d8%b1%d9%85-%d8%b7%d8%a8%db%8c%d8%b9%db%8c-%d8%aa%d8%a8%d8%b1%db%8c%d8%b2",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 85,
+    "name": "کیف چرم گاوی تبریز",
+    "slug": "%da%a9%db%8c%d9%81-%da%86%d8%b1%d9%85-%da%af%d8%a7%d9%88%db%8c-%d8%aa%d8%a8%d8%b1%db%8c%d8%b2",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 86,
+    "name": "هرمس",
+    "slug": "%d9%87%d8%b1%d9%85%d8%b3",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 87,
+    "name": "بیرکین",
+    "slug": "%d8%a8%db%8c%d8%b1%da%a9%db%8c%d9%86",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 89,
+    "name": "کفش مجلسی مردانه",
+    "slug": "%da%a9%d9%81%d8%b4-%d9%85%d8%ac%d9%84%d8%b3%db%8c-%d9%85%d8%b1%d8%af%d8%a7%d9%86%d9%87",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 88,
+    "name": "کفش تبریز",
+    "slug": "%da%a9%d9%81%d8%b4-%d8%aa%d8%a8%d8%b1%db%8c%d8%b2",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 92,
+    "name": "فلوتر",
+    "slug": "%d9%81%d9%84%d9%88%d8%aa%d8%b1",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 93,
+    "name": "بوت",
+    "slug": "%d8%a8%d9%88%d8%aa",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 94,
+    "name": "پوتین",
+    "slug": "%d9%be%d9%88%d8%aa%db%8c%d9%86",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 95,
+    "name": "وجیتال",
+    "slug": "%d9%88%d8%ac%db%8c%d8%aa%d8%a7%d9%84",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 96,
+    "name": "کروکو",
+    "slug": "%da%a9%d8%b1%d9%88%da%a9%d9%88",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 97,
+    "name": "کالج",
+    "slug": "%da%a9%d8%a7%d9%84%d8%ac",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 98,
+    "name": "لوفر",
+    "slug": "%d9%84%d9%88%d9%81%d8%b1",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 99,
+    "name": "پامپ",
+    "slug": "%d9%be%d8%a7%d9%85%d9%be",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 100,
+    "name": "چرم ترکیه",
+    "slug": "%da%86%d8%b1%d9%85-%d8%aa%d8%b1%da%a9%db%8c%d9%87",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 101,
+    "name": "پاشنه دار",
+    "slug": "%d9%be%d8%a7%d8%b4%d9%86%d9%87-%d8%af%d8%a7%d8%b1",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  },
+  {
+    "term_id": 102,
+    "name": "نیم بوت",
+    "slug": "%d9%86%db%8c%d9%85-%d8%a8%d9%88%d8%aa",
+    "taxonomy": "product_tag",
+    "parent": 0,
+    "count": 0,
+    "description": ""
+  }
+]

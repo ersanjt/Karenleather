@@ -1,0 +1,12 @@
+{
+  "settings": {
+    "showPrices": false,
+    "whatsappPhone": "989144199935",
+    "whatsappMessage": "سلام، از فروشگاه چرم کارن پیام می‌دهم.",
+    "adminEmail": "admin@karenleather.com",
+    "siteName": "چرم کارن"
+  },
+  "orders": [],
+  "productEdits": {},
+  "hiddenProductIds": []
+}

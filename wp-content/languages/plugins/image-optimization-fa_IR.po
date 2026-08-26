@@ -1,0 +1,597 @@
+# Translation of Plugins - Image Optimizer &#8211; Optimize Images and Convert to WebP or AVIF - Stable (latest release) in Persian
+# This file is distributed under the same license as the Plugins - Image Optimizer &#8211; Optimize Images and Convert to WebP or AVIF - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-02-23 17:12:20+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: fa\n"
+"Project-Id-Version: Plugins - Image Optimizer &#8211; Optimize Images and Convert to WebP or AVIF - Stable (latest release)\n"
+
+#. Description of the plugin
+#: image-optimization.php
+msgid "Automatically resize, optimize, and convert images to WebP and AVIF. Compress images in bulk or on upload to boost your WordPress site performance."
+msgstr "به‌طور خودکار اندازه، بهینه‌سازی و تبدیل تصاویر به فرمت‌های WebP و AVIF را انجام دهید. تصاویر را به‌صورت عمده یا هنگام بارگذاری فشرده کنید تا عملکرد سایت وردپرس خود را بهبود بخشید."
+
+#. Plugin Name of the plugin
+#: image-optimization.php
+msgid "Image Optimizer - Compress, Resize and Optimize Images"
+msgstr "بهینه‌ساز تصویر - فشرده‌سازی، تغییر اندازه و بهینه‌سازی تصاویر"
+
+#: modules/optimization/classes/validate-image.php:109
+msgid "Unsupported file format. Only %1$s, or %2$s are supported"
+msgstr "فرمت فایل پشتیبانی نمی‌شود. فقط %1$s یا %2$s پشتیبانی می‌شوند."
+
+#: modules/core/module.php:116 assets/build/admin.js:11
+#: assets/build/admin.js:37
+msgid "Fix mismatched URL"
+msgstr "رفع مغایرت URL"
+
+#: modules/core/module.php:110
+msgid "This is most likely due to a change in the domain URL of your site (including HTTP/SSL migration)."
+msgstr "این احتمالاً به دلیل تغییر در URL دامنه سایت شما (شامل مهاجرت HTTP/SSL) است."
+
+#: modules/core/module.php:103
+msgid "Your license key does not match your current domain, causing a mismatch."
+msgstr "کلید مجوز شما با دامنه فعلی شما مطابقت ندارد و باعث ایجاد مغایرت شده است."
+
+#: modules/connect/rest/switch-domain.php:52
+msgid "Domain updated!"
+msgstr "دامنه به‌روزرسانی شد!"
+
+#: modules/connect/rest/switch-domain.php:44
+msgid "Client ID not found"
+msgstr "شناسه مشتری پیدا نشد."
+
+#: modules/connect/rest/authorize.php:60
+msgid "Connected domain mismatch"
+msgstr "مغایرت دامنه متصل شده."
+
+#. Author URI of the plugin
+#: image-optimization.php
+msgid "https://go.elementor.com/author-uri-io/"
+msgstr "https://go.elementor.com/author-uri-io/"
+
+#: modules/optimization/templates/details-view/optimized.php:43
+#: modules/optimization/templates/list-view/optimized.php:26
+#: modules/optimization/templates/meta-box/optimized.php:37
+msgid "Requested WebP format is larger than the original file. Switch to Lossy in settings to convert this image in an optimized manner."
+msgstr "فرمت WebP درخواستی بزرگ‌تر از فایل اصلی است. برای تبدیل این تصویر به صورت بهینه، به تنظیمات رفته و گزینه Lossy را انتخاب کنید."
+
+#: modules/core/components/not-connected-modal.php:24
+#: modules/core/components/not-connected.php:41
+msgid "Connect now"
+msgstr "اکنون متصل شوید"
+
+#: modules/core/components/not-connected.php:33
+msgid "Image Optimizer is not connected right now. To start optimizing your images, please connect your account."
+msgstr "بهینه‌ساز تصویر در حال حاضر متصل نیست. برای شروع بهینه‌سازی تصاویر خود، لطفاً حساب خود را متصل کنید."
+
+#: modules/connect/classes/service.php:190
+msgid "Missing JWKS URL"
+msgstr "آدرس JWKS گم شده است"
+
+#: image-optimization.php:78
+msgid "Show me how"
+msgstr "به من نشان بده چگونه"
+
+#. translators: %s: PHP version.
+#: image-optimization.php:75
+msgid "Update to PHP version %s and get back to optimizing!"
+msgstr "به نسخه PHP %s به‌روزرسانی کنید و دوباره به بهینه‌سازی برگردید!"
+
+#: classes/rest/route.php:286
+msgid "No route was found matching the URL and request method"
+msgstr "مسیر مناسبی برای URL و روش درخواست پیدا نشد."
+
+#: modules/optimization/components/bulk-optimization.php:168
+msgid "Bulk optimizing may take a lot of processing and server time, depending on the number of images. Your site will still work smoothly until the processing is all done, without any downtime."
+msgstr "بهینه‌سازی دسته‌ای ممکن است زمان زیادی از پردازش و زمان سرور را بگیرد، بسته به تعداد تصاویر. سایت شما تا زمانی که پردازش کامل شود، به‌طور روان کار خواهد کرد و هیچ وقفه‌ای نخواهد داشت."
+
+#: modules/optimization/components/bulk-optimization.php:161
+msgid "Heads up!"
+msgstr "هشدار!"
+
+#: modules/core/components/user-feedback.php:168
+msgid "Thanks for using Image Optimizer!"
+msgstr "از اینکه از بهینه‌ساز تصویر استفاده کردید، متشکریم!"
+
+#: modules/core/components/user-feedback.php:96
+msgid "Your image has been optimized!"
+msgstr "تصویر شما بهینه‌سازی شده است!"
+
+#: modules/core/components/user-feedback.php:236
+msgid ""
+"<b>Found Image Optimizer helpful?</b> Leave us a <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">★★★★★</a> rating!"
+msgstr "<b>آیا بهینه‌ساز تصویر برای شما مفید بود؟</b> برای ما یک امتیاز <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">★★★★★</a> بگذارید!"
+
+#: modules/core/components/user-feedback.php:176
+msgid ""
+"If you've enjoyed it, consider leaving a <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">★★★★★</a> review to spread the word."
+msgstr "اگر از آن لذت بردید، در نظر داشته باشید که یک بررسی <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">★★★★★</a> بگذارید تا این خبر را پخش کنید."
+
+#: modules/core/components/user-feedback.php:104
+msgid ""
+"If you enjoyed using Image Optimizer, consider leaving a <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\"\n"
+"\t\t\t\trel=\"noopener noreferrer\">★★★★★</a> review to spread the word."
+msgstr "اگر از آن لذت بردید، در نظر داشته باشید که یک بررسی <a href=\"%1$s\" aria-label=\"%2$s\" target=\"_blank\" rel=\"noopener noreferrer\">★★★★★</a> بگذارید تا این خبر را پخش کنید."
+
+#: modules/core/components/user-feedback.php:110
+#: modules/core/components/user-feedback.php:182
+#: modules/core/components/user-feedback.php:241
+msgid "Five stars"
+msgstr "پنج ستاره"
+
+#: image-optimization.php:162
+msgid "Image Optimizer isn’t running because:"
+msgstr "بهینه‌ساز تصویر در حال اجرا نیست زیرا:"
+
+#: image-optimization.php:112
+msgid "Your site doesn’t have the necessary read/write permissions for your file system to use this plugin. Please contact your hosting provider to resolve this matter."
+msgstr "سایت شما مجوزهای لازم برای خواندن/نوشتن در سیستم فایل خود برای استفاده از این افزونه را ندارد. لطفاً با ارائه‌دهنده هاست خود تماس بگیرید تا این مشکل را حل کند."
+
+#. translators: 1: MySQL minimum version. 2: MariaDB minimum version.
+#: image-optimization.php:98
+msgid "The database server version is outdated. Update to MySQL version %1$s or MariaDB version %2$s."
+msgstr "نسخه سرور پایگاه داده قدیمی است. به نسخه MySQL %1$s یا نسخه MariaDB %2$s به‌روزرسانی کنید."
+
+#: image-optimization.php:88
+msgid "The following required PHP extensions are missing: %s"
+msgstr "افزونه‌های PHP مورد نیاز زیر گم شده‌اند: %s"
+
+#: modules/optimization/rest/get-bulk-optimization-images.php:34
+msgid "Missed operation id"
+msgstr "شناسه عملیات از دست رفته است."
+
+#: modules/optimization/classes/optimize-image.php:212
+#: modules/optimization/classes/optimize-image.php:223
+msgid "Service response is incorrect"
+msgstr "پاسخ سرویس نادرست است."
+
+#: modules/optimization/classes/optimization-error-message.php:28
+msgid "File with this name already exists"
+msgstr "فایلی با این نام از قبل وجود دارد"
+
+#: modules/core/module.php:80
+msgid "Upgrade plan now"
+msgstr "اکنون طرح خود را ارتقا دهید"
+
+#: modules/core/module.php:74
+msgid "You have no images left to optimize in your current plan."
+msgstr "شما هیچ تصویری برای بهینه‌سازی در طرح فعلی خود ندارید."
+
+#: modules/core/module.php:67
+msgid "You’ve reached your plan quota."
+msgstr "شما به حد مجاز طرح خود رسیده‌اید."
+
+#: classes/client/client-response.php:43
+msgid "Image already optimized"
+msgstr "تصویر قبلاً بهینه‌سازی شده است"
+
+#: classes/client/client-response.php:42
+msgid "Bulk token expired"
+msgstr "توکن دسته‌ای منقضی شده است"
+
+#: modules/optimization/templates/details-view/optimized.php:45
+#: modules/optimization/templates/list-view/optimized.php:28
+#: modules/optimization/templates/meta-box/optimized.php:39
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:131
+#: modules/optimization/assets/js/templates/list-view/index.js:74
+#: modules/optimization/assets/js/templates/meta-box/index.js:103
+msgid "Image is fully optimized"
+msgstr "تصویر کاملا بهینه شده است"
+
+#: modules/optimization/classes/single-optimization.php:45
+msgid "Optimization is already in progress"
+msgstr "بهینه سازی در حال حاضر در حال انجام است"
+
+#: classes/client/client-response.php:41
+#: modules/optimization/classes/optimization-error-message.php:29
+msgid "Plan quota reached"
+msgstr "به سهمیه طرح رسید"
+
+#. Plugin URI of the plugin
+#: image-optimization.php
+msgid "https://go.elementor.com/wp-repo-description-tab-io-product-page/"
+msgstr "https://go.elementor.com/wp-repo-description-tab-io-product-page/"
+
+#: modules/core/components/conflicts.php:38
+msgid "Having more than one may result in unexpected results."
+msgstr "داشتن بیش از یک ممکن است منجر به نتایج غیرمنتظره شود."
+
+#: modules/core/components/conflicts.php:31
+msgid "Image optimizer has detected multiple active image optimization plugins."
+msgstr "بهینه ساز تصویر چندین افزونه فعال بهینه سازی تصویر را شناسایی کرده است."
+
+#: classes/rest/route.php:390 classes/rest/route.php:401 classes/route.php:364
+msgid "You do not have sufficient permissions to access this data."
+msgstr "شما مجوز کافی برای دسترسی به این داده ها را ندارید."
+
+#: classes/rest/route.php:367 classes/route.php:339
+msgid "Both `message` and `code` keys must be provided"
+msgstr "هر دو کلید \"پیام\" و \"کد\" باید ارائه شوند"
+
+#: classes/module-base.php:122 classes/module-base.php:133
+msgid "Something went wrong."
+msgstr "مشکلی پیش آمده است."
+
+#: classes/rest/route.php:374 classes/route.php:346
+#: modules/optimization/components/media-control.php:287
+msgid "Internal server error"
+msgstr "خطای سرور داخلی"
+
+#: modules/backups/rest/restore-single.php:40
+#: modules/optimization/rest/optimize-single-image.php:52
+msgid "Invalid image id"
+msgstr "شناسه تصویر نامعتبر است"
+
+#. Author of the plugin
+#: image-optimization.php
+msgid "Elementor.com"
+msgstr "Elementor.com"
+
+#: modules/optimization/classes/optimize-image.php:105
+#: modules/optimization/classes/validate-image.php:55
+#: modules/optimization/classes/validate-image.php:66
+msgid "File is missing. Verify the upload"
+msgstr "فایل موجود نیست بارگذاری را تأیید کنید"
+
+#: modules/optimization/classes/optimization-error-message.php:16
+msgid "Image reoptimizing failed"
+msgstr "بهینه سازی مجدد تصویر انجام نشد"
+
+#: modules/optimization/classes/optimization-status.php:43
+msgid "Image restoring failed"
+msgstr "بازیابی تصویر ناموفق بود"
+
+#: modules/optimization/classes/bulk-optimization-controller.php:250
+msgid "Images quota exceeded"
+msgstr "از سهمیه تصاویر فراتر رفت"
+
+#: modules/connect/rest/authorize.php:43 modules/oauth/rest/connect-init.php:38
+msgid "You are already connected"
+msgstr "شما قبلاً متصل شده اید"
+
+#: modules/oauth/components/connect.php:155
+#: modules/oauth/components/connect.php:231
+#: modules/oauth/components/connect.php:273
+#: modules/oauth/components/connect.php:301
+msgid "Invalid response from server"
+msgstr "پاسخ نامعتبر از طرف سرور"
+
+#: modules/oauth/rest/activate.php:52 modules/oauth/rest/deactivate.php:45
+msgid "Missing license key"
+msgstr "کلید مجوز وجود ندارد"
+
+#: modules/oauth/rest/activate.php:38 modules/oauth/rest/deactivate.php:38
+#: modules/oauth/rest/get-subscriptions.php:38
+msgid "Please connect first"
+msgstr "لطفا ابتدا وصل شوید"
+
+#: modules/oauth/components/connect-pointer.php:23
+msgid "You’re one click away from improving your site’s performance dramatically!"
+msgstr "شما با یک کلیک تا بهبود چشمگیر عملکرد سایت خود فاصله دارید!"
+
+#: modules/oauth/components/connect-pointer.php:22
+msgid "Start by connecting your license"
+msgstr "با اتصال مجوز خود شروع کنید"
+
+#: modules/optimization/components/list-view-pointer.php:23
+msgid "Get the most out of your optimizing options. Use the List view to quickly optimize your uploaded images with Image Optimizer."
+msgstr "از گزینه های بهینه سازی خود بیشترین بهره را ببرید. از نمای فهرست برای بهینه سازی سریع تصاویر آپلود شده خود با بهینه ساز تصویر استفاده کنید."
+
+#: modules/optimization/components/list-view-pointer.php:22
+msgid "Switch to list view"
+msgstr "به نمای فهرست تغییر دهید"
+
+#: modules/optimization/components/bulk-optimization.php:49
+#: modules/optimization/components/bulk-optimization.php:50
+msgid "Bulk Optimization"
+msgstr "بهینه سازی انبوه"
+
+#: modules/optimization/components/admin-filter.php:28
+msgid "Filter by optimization status"
+msgstr "فیلتر بر اساس وضعیت بهینه سازی"
+
+#: modules/optimization/classes/validate-image.php:74
+#: modules/optimization/classes/validate-image.php:83
+msgid "File is too large. Max size is %s"
+msgstr "فایل خیلی بزرگ است حداکثر اندازه %s است"
+
+#: modules/optimization/classes/validate-image.php:39
+msgid "Can't optimize this file. If the issue persists, Contact Support"
+msgstr "نمی توان این فایل را بهینه کرد. اگر مشکل همچنان ادامه داشت، با پشتیبانی تماس بگیرید"
+
+#: modules/optimization/components/admin-filter.php:18
+msgid "All Media Files"
+msgstr "همه فایل های رسانه ای"
+
+#: modules/optimization/templates/details-view/optimized.php:28
+#: modules/optimization/templates/list-view/optimized.php:17
+#: modules/optimization/templates/meta-box/optimized.php:25
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:111
+#: modules/optimization/assets/js/templates/list-view/index.js:66
+#: modules/optimization/assets/js/templates/meta-box/index.js:88
+msgid "Image sizes optimized"
+msgstr "اندازه های تصویر بهینه شده است"
+
+#: modules/optimization/rest/optimize-bulk.php:90
+msgid "Bulk re-optimization is already in progress"
+msgstr "بهینه‌سازی مجدد انبوه از قبل در حال انجام است"
+
+#: modules/optimization/rest/optimize-bulk.php:72
+msgid "Bulk optimization is already in progress"
+msgstr "بهینه سازی انبوه در حال حاضر در حال انجام است"
+
+#: modules/optimization/rest/cancel-bulk-optimization.php:49
+msgid "Bulk optimization is not in progress"
+msgstr "بهینه سازی انبوه در حال انجام نیست"
+
+#: modules/optimization/components/media-control.php:256
+msgid "Image restoring error"
+msgstr "خطای بازیابی تصویر"
+
+#: modules/settings/components/settings-pointer.php:29
+msgid "Head over to the Image Optimization Settings to fine-tune how your media uploads are managed."
+msgstr "برای تنظیم دقیق نحوه مدیریت آپلودهای رسانه خود، به تنظیمات بهینه سازی تصویر بروید."
+
+#: modules/settings/components/settings-pointer.php:28
+msgid "Image Optimization settings"
+msgstr "تنظیمات بهینه سازی تصویر"
+
+#: modules/optimization/templates/list-view/loading.php:31
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/list-view/index.js:32
+msgid "Loading…"
+msgstr "بارگذاری…"
+
+#: modules/optimization/templates/list-view/loading.php:27
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/list-view/index.js:28
+msgid "Reoptimizing…"
+msgstr "بهینه‌سازی مجدد..."
+
+#: modules/optimization/templates/details-view/optimized.php:57
+#: modules/optimization/templates/list-view/optimized.php:38
+#: modules/optimization/templates/meta-box/optimized.php:49
+msgid "%1$s%% (%2$s)"
+msgstr "%1$s%% (%2$s)"
+
+#: modules/core/components/not-connected-modal.php:34 assets/build/admin.js:11
+#: assets/build/admin.js:37
+msgid "Connect to start"
+msgstr "برای شروع وصل شوید"
+
+#: modules/settings/module.php:98 modules/settings/module.php:99
+#: assets/build/admin.js:37
+msgid "Image Optimizer"
+msgstr "بهینه ساز تصویر"
+
+#: modules/settings/components/settings-pointer.php:34
+msgid "Take me there"
+msgstr "مرا به آنجا ببر"
+
+#: modules/optimization/templates/list-view/loading.php:23
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/list-view/index.js:24
+msgid "Optimizing…"
+msgstr "در حال بهینه سازی…"
+
+#: modules/optimization/templates/list-view/loading.php:19
+#: assets/build/admin.js:29 assets/build/control.js:11
+#: modules/optimization/assets/js/templates/list-view/index.js:20
+msgid "Restoring…"
+msgstr "در حال بازیابی…"
+
+#: modules/optimization/templates/details-view/optimized.php:72
+#: modules/optimization/templates/list-view/optimized.php:57
+#: modules/optimization/templates/meta-box/optimized.php:68
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:141
+#: modules/optimization/assets/js/templates/list-view/index.js:87
+#: modules/optimization/assets/js/templates/meta-box/index.js:118
+msgid "Reoptimize"
+msgstr "بهینه سازی مجدد"
+
+#: modules/optimization/templates/details-view/optimized.php:51
+#: modules/optimization/templates/list-view/optimized.php:33
+#: modules/optimization/templates/meta-box/optimized.php:44
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:122
+#: modules/optimization/assets/js/templates/list-view/index.js:73
+#: modules/optimization/assets/js/templates/meta-box/index.js:99
+msgid "Overall saving"
+msgstr "صرفه جویی کلی"
+
+#: modules/optimization/templates/details-view/not-optimized.php:27
+#: modules/optimization/templates/list-view/not-optimized.php:13
+#: modules/optimization/templates/meta-box/not-optimized.php:22
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:24
+#: modules/optimization/assets/js/templates/list-view/index.js:10
+#: modules/optimization/assets/js/templates/meta-box/index.js:19
+msgid "Optimize now"
+msgstr "اکنون بهینه سازی کنید"
+
+#: modules/optimization/templates/details-view/not-optimized.php:17
+#: modules/optimization/templates/meta-box/not-optimized.php:15
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:14
+#: modules/optimization/assets/js/templates/meta-box/index.js:12
+msgid "Not optimized"
+msgstr "بهینه نشده است"
+
+#: modules/optimization/templates/details-view/loading.php:18
+#: modules/optimization/templates/meta-box/loading.php:16
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:39
+#: modules/optimization/assets/js/templates/meta-box/index.js:31
+msgid "In Progress"
+msgstr "در حال پیش رفت"
+
+#: modules/optimization/classes/optimization-error-message.php:30
+msgid "Optimization error"
+msgstr "خطای بهینه سازی"
+
+#: modules/optimization/rest/cancel-bulk-optimization.php:39
+#: modules/optimization/rest/optimize-bulk.php:42
+#: modules/optimization/rest/optimize-single-image.php:42
+msgid "Invalid activation"
+msgstr "فعال سازی نامعتبر است"
+
+#: modules/optimization/templates/details-view/error.php:25
+#: modules/optimization/templates/meta-box/error.php:22
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:67
+#: modules/optimization/assets/js/templates/meta-box/index.js:52
+msgid "Reason"
+msgstr "دلیل"
+
+#: modules/optimization/templates/details-view/error.php:19
+#: modules/optimization/templates/meta-box/error.php:17
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:61
+#: modules/optimization/assets/js/templates/meta-box/index.js:47
+msgid "Error"
+msgstr "خطا"
+
+#: modules/optimization/templates/details-view/error.php:15
+#: modules/optimization/templates/details-view/loading.php:14
+#: modules/optimization/templates/details-view/not-optimized.php:13
+#: modules/optimization/templates/details-view/optimized.php:18
+#: modules/optimization/templates/meta-box/error.php:14
+#: modules/optimization/templates/meta-box/loading.php:13
+#: modules/optimization/templates/meta-box/not-optimized.php:12
+#: modules/optimization/templates/meta-box/optimized.php:17
+#: assets/build/admin.js:31 assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:10
+#: modules/optimization/assets/js/templates/details-view/index.js:35
+#: modules/optimization/assets/js/templates/details-view/index.js:57
+#: modules/optimization/assets/js/templates/details-view/index.js:101
+#: modules/optimization/assets/js/templates/meta-box/index.js:9
+#: modules/optimization/assets/js/templates/meta-box/index.js:28
+#: modules/optimization/assets/js/templates/meta-box/index.js:44
+#: modules/optimization/assets/js/templates/meta-box/index.js:80
+msgid "Status"
+msgstr "وضعیت"
+
+#: modules/optimization/components/media-control.php:57
+#: modules/optimization/components/media-control.php:85
+msgid "Image optimization"
+msgstr "بهینه سازی تصویر"
+
+#: modules/optimization/templates/details-view/error.php:47
+#: modules/optimization/templates/list-view/error.php:40
+#: modules/optimization/templates/meta-box/error.php:40 assets/build/admin.js:1
+#: assets/build/admin.js:11 assets/build/admin.js:29 assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:88
+#: modules/optimization/assets/js/templates/list-view/index.js:56
+#: modules/optimization/assets/js/templates/meta-box/index.js:69
+msgid "Try again"
+msgstr "تلاش دوباره"
+
+#: modules/optimization/components/media-control.php:279
+#: assets/build/admin.js:13 assets/build/admin.js:15 assets/build/admin.js:21
+#: assets/build/admin.js:23 assets/build/admin.js:25 assets/build/admin.js:27
+msgid "N/A"
+msgstr "نامشخص"
+
+#: modules/optimization/components/admin-filter.php:20
+msgid "Unoptimized"
+msgstr "بهینه نشده"
+
+#: modules/optimization/components/admin-filter.php:19
+#: modules/optimization/templates/details-view/optimized.php:22
+#: modules/optimization/templates/meta-box/optimized.php:20
+#: assets/build/admin.js:1 assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:105
+#: modules/optimization/assets/js/templates/meta-box/index.js:83
+msgid "Optimized"
+msgstr "بهینه شده است"
+
+#: modules/optimization/components/admin-bulk-actions.php:19
+#: modules/optimization/templates/details-view/optimized.php:84
+#: modules/optimization/templates/list-view/optimized.php:51
+#: modules/optimization/templates/meta-box/optimized.php:62
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:153
+#: modules/optimization/assets/js/templates/list-view/index.js:81
+#: modules/optimization/assets/js/templates/meta-box/index.js:112
+msgid "Restore original"
+msgstr "بازیابی اصلی"
+
+#: modules/optimization/components/admin-bulk-actions.php:18
+msgid "Optimize"
+msgstr "بهینه سازی کنید"
+
+#: modules/oauth/rest/activate.php:45
+msgid "Already activated"
+msgstr "قبلاً فعال شده است"
+
+#: modules/core/module.php:146
+#: modules/optimization/templates/details-view/error.php:42
+#: modules/optimization/templates/list-view/error.php:35
+#: modules/optimization/templates/meta-box/error.php:35
+#: assets/build/control.js:11
+#: modules/optimization/assets/js/templates/details-view/index.js:83
+#: modules/optimization/assets/js/templates/list-view/index.js:51
+#: modules/optimization/assets/js/templates/meta-box/index.js:64
+msgid "Upgrade"
+msgstr "ارتقا دهید"
+
+#: modules/core/module.php:152
+msgid "Connect"
+msgstr "متصل کردن"
+
+#: modules/core/module.php:136 assets/build/admin.js:29
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: modules/core/components/conflicts.php:58
+msgid "Deactivate All"
+msgstr "غیرفعال کردن همه"
+
+#: classes/rest/route.php:381 classes/route.php:353
+msgid "Invalid nonce"
+msgstr "غیر معتبر"
+
+#. translators: %s: file size in gigabytes
+#: classes/file-utils.php:93 assets/build/admin.js:9 assets/build/control.js:9
+#: modules/optimization/assets/js/utils/index.js:12
+msgid "%s Gb"
+msgstr "%s گیگابایت"
+
+#: modules/optimization/components/admin-filter.php:22
+msgid "Errors"
+msgstr "خطاها"
+
+#: modules/optimization/components/admin-filter.php:21 assets/build/admin.js:1
+msgid "In progress"
+msgstr "در حال پیش رفت"
+
+#. translators: %s: file size in megabytes
+#: classes/file-utils.php:92 assets/build/admin.js:7 assets/build/control.js:7
+#: modules/optimization/assets/js/utils/index.js:10
+msgid "%s Mb"
+msgstr "%s مگابایت"
+
+#. translators: %s: file size in kilobytes
+#: classes/file-utils.php:91 assets/build/admin.js:5 assets/build/control.js:5
+#: modules/optimization/assets/js/utils/index.js:8
+msgid "%s Kb"
+msgstr "%s کیلوبایت"
+
+#. translators: %s: file size in bytes
+#: classes/file-utils.php:90 assets/build/admin.js:3 assets/build/admin.js:11
+#: assets/build/control.js:3 assets/build/control.js:11
+#: modules/optimization/assets/js/utils/index.js:6
+#: modules/optimization/assets/js/utils/index.js:17
+msgid "%s Bytes"
+msgstr "%s بایت"

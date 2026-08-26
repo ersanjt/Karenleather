@@ -1,0 +1,148 @@
+[
+  {
+    "id": 6,
+    "title": "بسته ابزار پیش‌فرض",
+    "slug": "%d8%a8%d8%b3%d8%aa%d9%87-%d8%a7%d8%a8%d8%b2%d8%a7%d8%b1-%d9%be%db%8c%d8%b4%d9%81%d8%b1%d8%b6",
+    "template_type": "kit",
+    "content_text": "",
+    "elementor": []
+  },
+  {
+    "id": 126,
+    "title": "پاورقی کارن",
+    "slug": "%d9%be%d8%a7%d9%88%d8%b1%d9%82%db%8c-%da%a9%d8%a7%d8%b1%d9%86",
+    "template_type": "footer",
+    "content_text": "خدمات مشتریان\n \n \n \n ارتباط با دفتر مرکزی\n \n\n \n مزایای باشگاه مشتریان\n \n\n \n \n خدمات پس از فروش\n \n \n\n \n سوالات متداول\n \n\n \n فروشگاه ها\n \n \n \n هتل شهریار\n \n\n \n استدیو\n \n\n \n کارگاه\n \n\n \n دفتر مرکزی\n \n\n \n شرکت کارن\n \n \n \n تاریخچه برند کارن\n \n\n \n بنیان‌ گذاران \n \n\n \n همکاری با ما\n \n\n \n \n اخذ نمایندگی\n \n \n\n \n خرید عمده\n \n\n \n طراحی و توسعه توسط آژانس دیجیتال مارکتینگ بیزده وآر",
+    "elementor": [
+      {
+        "widget": "heading",
+        "text": "خدمات مشتریان"
+      },
+      {
+        "widget": "icon-list",
+        "text": "ارتباط با دفتر مرکزی\nمزایای باشگاه مشتریان\nخدمات پس از فروش\nسوالات متداول"
+      },
+      {
+        "widget": "heading",
+        "text": "فروشگاه ها"
+      },
+      {
+        "widget": "icon-list",
+        "text": "هتل شهریار\nاستدیو\nکارگاه\nدفتر مرکزی"
+      },
+      {
+        "widget": "heading",
+        "text": "شرکت کارن"
+      },
+      {
+        "widget": "icon-list",
+        "text": "تاریخچه برند کارن\nبنیان‌ گذاران\nهمکاری با ما\nاخذ نمایندگی\nخرید عمده"
+      },
+      {
+        "widget": "heading",
+        "text": "طراحی و توسعه توسط آژانس دیجیتال مارکتینگ بیزده وآر"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "title": "هدرکارن",
+    "slug": "%d9%87%d8%af%d8%b1%da%a9%d8%a7%d8%b1%d9%86",
+    "template_type": "header",
+    "content_text": "",
+    "elementor": [
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/cropped-کارن-لوگو-2-e1673109391206.png",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "id": 156,
+    "title": "کارن پاپ آپ",
+    "slug": "%da%a9%d8%a7%d8%b1%d9%86-%d9%be%d8%a7%d9%be-%d8%a2%d9%be",
+    "template_type": "popup",
+    "content_text": "همین آلان خرید کن\n \n خوشحالیم هر روز از ساعت 9 صبح تا 9 شب\n \n \n \n \n\n \n \n\n \n \n\n \n \n\n \n \n\n \n \n\n \n \n\n \n چرم طبیعی- چرم کارن\n \n هر ساعت یه تخفیف",
+    "elementor": [
+      {
+        "widget": "section",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/HappyHour-CTA-BG-Popup_170520.png",
+        "text": ""
+      },
+      {
+        "widget": "background",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/HappyHour-CTA-BG-Popup_170520.png"
+      },
+      {
+        "widget": "heading",
+        "text": "همین آلان خرید کن"
+      },
+      {
+        "widget": "heading",
+        "text": "خوشحالیم هر روز از ساعت 9 صبح تا 9 شب"
+      },
+      {
+        "widget": "divider",
+        "text": "Divider"
+      },
+      {
+        "widget": "text-editor",
+        "text": "چرم طبیعی- چرم کارن"
+      },
+      {
+        "widget": "heading",
+        "text": "هر ساعت یه تخفیف"
+      }
+    ]
+  },
+  {
+    "id": 248,
+    "title": "اخذ نمایندگی",
+    "slug": "%d8%a7%d8%ae%d8%b0-%d9%86%d9%85%d8%a7%db%8c%d9%86%d8%af%da%af%db%8c",
+    "template_type": "page",
+    "content_text": "",
+    "elementor": [
+      {
+        "widget": "section",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/Untitled-1-2.jpg",
+        "text": ""
+      },
+      {
+        "widget": "background",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/Untitled-1-2.jpg"
+      },
+      {
+        "widget": "image",
+        "image": "https://karenleather.com/wp-content/uploads/2021/02/فرم-شرایط-نمایندگی-scaled.jpg",
+        "text": ""
+      }
+    ]
+  },
+  {
+    "id": 1668,
+    "title": "Products_category",
+    "slug": "products_category",
+    "template_type": "product-archive",
+    "content_text": "",
+    "elementor": [
+      {
+        "widget": "theme-archive-title",
+        "text": "متن سربرگ خود را وارد کنید"
+      }
+    ]
+  },
+  {
+    "id": 1712,
+    "title": "المنتور Single Product #1712",
+    "slug": "%d8%a7%d9%84%d9%85%d9%86%d8%aa%d9%88%d8%b1-single-product-1712",
+    "template_type": "product",
+    "content_text": "",
+    "elementor": [
+      {
+        "widget": "woocommerce-product-title",
+        "text": "متن سربرگ خود را وارد کنید"
+      }
+    ]
+  }
+]

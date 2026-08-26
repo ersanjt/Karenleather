@@ -1,0 +1,36 @@
+# Secrets — هرگز commit نشود
+wp-config.php
+_content/admin-credentials.json
+.env
+.env.*
+*.pem
+*.key
+
+# Node
+karenleather-web/node_modules/
+karenleather-web/dist/
+karenleather-web/dist-dev/
+
+# Logs
+error_log
+*.log
+npm-debug.log*
+
+# WordPress plugins (React app از _content و uploads استفاده می‌کند)
+wp-content/plugins/
+
+# Cache
+wp-content/cache/
+wp-content/litespeed/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Server-local
+.user.ini
+php.ini
+.litespeed_flag
