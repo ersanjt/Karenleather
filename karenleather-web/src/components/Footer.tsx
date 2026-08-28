@@ -19,6 +19,9 @@ export function Footer() {
             (از سال {siteBrand.since})
           </p>
           <p className="kl-footer__tagline">{siteBrand.tagline}</p>
+          <a href={siteBrand.url} className="kl-footer__domain">
+            {siteBrand.domain}
+          </a>
           <a href={`tel:${siteContact.phoneTel}`} className="kl-footer__phone">
             {siteContact.phoneDisplay}
           </a>

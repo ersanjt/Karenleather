@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
+import { Breadcrumbs } from "../components/Breadcrumbs";
 import { storeHotel } from "../content/media";
+import { staticPageSeo } from "../content/seo";
 import { contactCopy, siteContact, storeCopy } from "../content/siteCopy";
+import { usePageSeo } from "../context/SeoContext";
 import { INSTAGRAM, WHATSAPP_LINK } from "../lib/utils";
 import { SmartImage } from "../components/SmartImage";
 
 export function ContactPage() {
+  usePageSeo(staticPageSeo["/contact"]);
+
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage src={storeHotel.hero} alt="" className="kl-page-hero__bg" />
+        <SmartImage src={storeHotel.hero} alt="فروشگاه چرم کارن — تماس و آدرس" className="kl-page-hero__bg" />
         <div className="kl-page-hero__veil" />
         <div className="container kl-page-hero__content">
           <p className="kl-eyebrow">{contactCopy.subtitle}</p>
@@ -17,6 +22,7 @@ export function ContactPage() {
       </section>
 
       <div className="container section">
+        <Breadcrumbs items={[{ label: "خانه", to: "/" }, { label: "تماس با ما" }]} />
         <div className="kl-contact-grid">
           {contactCopy.offices.map((office) => (
             <article
@@ -59,7 +65,7 @@ export function ContactPage() {
                     : "kl-store-showcase__cell"
                 }
               >
-                <SmartImage src={src} alt="" loading="lazy" />
+                <SmartImage src={src} alt={`فروشگاه چرم کارن — تصویر ${(i + 1).toLocaleString("fa-IR")}`} loading="lazy" />
               </figure>
             ))}
           </div>

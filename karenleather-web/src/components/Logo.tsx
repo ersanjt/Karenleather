@@ -2,7 +2,7 @@ import { logoAsset, type LogoVariant } from "../content/brandLogos";
 import { SmartImage } from "./SmartImage";
 
 interface LogoProps {
-  /** نسخه لوگو — header | hero | footer | mark | classic */
+  /** نسخه لوگو — header | hero | footer | mark | text | loader | classic */
   variant?: LogoVariant;
   /** @deprecated از variant="mark" استفاده کنید */
   compact?: boolean;

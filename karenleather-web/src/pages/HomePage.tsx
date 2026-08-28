@@ -16,7 +16,12 @@ import { quickShopLinks } from "../content/menu";
 import { featuredProducts } from "../data";
 import { SmartImage } from "../components/SmartImage";
 
-const slides = [storeHotel.hero, ostrichShoes.hero, hero.main, hero.slide2];
+const slides = [
+  { src: storeHotel.hero, alt: "فروشگاه چرم کارن — شعبه هتل شهریار تبریز" },
+  { src: ostrichShoes.hero, alt: "کفش چرم شترمرغ — کلکسیون چرم کارن" },
+  { src: hero.main, alt: "کیف و کفش چرم طبیعی — چرم کارن" },
+  { src: hero.slide2, alt: "محصولات چرم دست‌ساز — کارگاه چرم کارن تبریز" },
+];
 
 export function HomePage() {
   const [slide, setSlide] = useState(0);
@@ -32,11 +37,11 @@ export function HomePage() {
     <>
       <section className="kl-hero" aria-label="صفحه اصلی">
         <div className="kl-hero__stage">
-          {slides.map((src, i) => (
+          {slides.map((item, i) => (
             <SmartImage
-              key={src}
-              src={src}
-              alt=""
+              key={item.src}
+              src={item.src}
+              alt={item.alt}
               className={`kl-hero__slide${i === slide ? " is-active" : ""}`}
             />
           ))}
@@ -123,7 +128,7 @@ export function HomePage() {
             </Link>
           </div>
           <div className="kl-manifesto__visual">
-            <SmartImage src={aboutMedia.workshop} alt="" loading="lazy" />
+            <SmartImage src={aboutMedia.workshop} alt="کارگاه تولید چرم کارن — دوخت دست‌ساز تبریز" loading="lazy" />
             <div className="kl-manifesto__badge">
               <strong>{siteBrand.tagline}</strong>
             </div>
@@ -149,7 +154,7 @@ export function HomePage() {
                   {(i + 1).toLocaleString("fa-IR", { minimumIntegerDigits: 2 })}
                 </span>
                 {cat.image && (
-                  <SmartImage src={cat.image} alt="" loading="lazy" />
+                  <SmartImage src={cat.image} alt={`${cat.name} — چرم کارن`} loading="lazy" />
                 )}
                 <div className="kl-cat-card__body">
                   <strong>{cat.name}</strong>
@@ -164,7 +169,7 @@ export function HomePage() {
       <section className="kl-craft">
         <div className="container kl-craft__grid">
           <Link to="/shop" className="kl-craft__tile kl-craft__tile--wide">
-            <SmartImage src={banners.shop} alt="" loading="lazy" />
+            <SmartImage src={banners.shop} alt="فروشگاه آنلاین چرم کارن — کیف و کفش چرم" loading="lazy" />
             <div>
               <span className="kl-section-label">فروشگاه</span>
               <h3>کلکسیون آنلاین</h3>
@@ -183,7 +188,7 @@ export function HomePage() {
             </Link>
           </div>
           <Link to="/about" className="kl-craft__tile">
-            <SmartImage src={banners.craft} alt="" loading="lazy" />
+            <SmartImage src={banners.craft} alt="هنر چرم‌سازی در کارگاه چرم کارن" loading="lazy" />
             <div>
               <span className="kl-section-label">کارگاه</span>
               <h3>هنر چرم‌سازی</h3>
@@ -191,7 +196,7 @@ export function HomePage() {
             </div>
           </Link>
           <Link to={homeCopy.ostrichShoes.shopLink} className="kl-craft__tile">
-            <SmartImage src={ostrichShoes.brown} alt="" loading="lazy" />
+            <SmartImage src={ostrichShoes.brown} alt="کفش چرم شترمرغ قهوه‌ای — چرم کارن" loading="lazy" />
             <div>
               <span className="kl-section-label">جدید</span>
               <h3>کلکسیون شترمرغ</h3>
@@ -245,16 +250,16 @@ export function HomePage() {
           </div>
           <div className="kl-store__gallery">
             <figure className="kl-store__figure kl-store__figure--hero">
-              <SmartImage src={storeHotel.wide} alt="" loading="lazy" />
+              <SmartImage src={storeHotel.wide} alt="نمای داخلی فروشگاه چرم کارن — هتل شهریار" loading="lazy" />
             </figure>
             <figure className="kl-store__figure">
-              <SmartImage src={storeHotel.shelves} alt="" loading="lazy" />
+              <SmartImage src={storeHotel.shelves} alt="قفسه کیف و اکسسوری چرم — فروشگاه کارن" loading="lazy" />
             </figure>
             <figure className="kl-store__figure">
-              <SmartImage src={storeHotel.consultation} alt="" loading="lazy" />
+              <SmartImage src={storeHotel.consultation} alt="میز مشاوره خرید — فروشگاه چرم کارن" loading="lazy" />
             </figure>
             <figure className="kl-store__figure">
-              <SmartImage src={storeHotel.hero} alt="" loading="lazy" />
+              <SmartImage src={storeHotel.hero} alt="نمای فروشگاه چرم کارن — تبریز" loading="lazy" />
             </figure>
           </div>
         </div>
@@ -279,7 +284,7 @@ export function HomePage() {
                   i === 0 ? "kl-atelier__cell kl-atelier__cell--hero" : "kl-atelier__cell"
                 }
               >
-                <SmartImage src={src} alt="" loading="lazy" />
+                <SmartImage src={src} alt={`گالری چرم کارن — تصویر ${(i + 1).toLocaleString("fa-IR")}`} loading="lazy" />
               </figure>
             ))}
           </div>
@@ -289,7 +294,7 @@ export function HomePage() {
       <section className="kl-dual-cta">
         <div className="container kl-dual-cta__grid">
           <Link to={homeCopy.ostrichShoes.shopLink} className="kl-dual-cta__card kl-dual-cta__card--shop">
-            <SmartImage src={ostrichShoes.cognac} alt="" loading="lazy" />
+            <SmartImage src={ostrichShoes.cognac} alt="کفش چرم شترمرغ کهنه‌ای — چرم کارن" loading="lazy" />
             <div>
               <span className="kl-section-label">خرید</span>
               <h3>فروشگاه آنلاین چرم کارن</h3>

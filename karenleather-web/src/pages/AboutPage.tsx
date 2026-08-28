@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
+import { Breadcrumbs } from "../components/Breadcrumbs";
 import { aboutMedia, storeHotel } from "../content/media";
+import { staticPageSeo } from "../content/seo";
 import { aboutCopy, storeCopy, wholesaleCopy } from "../content/siteCopy";
+import { usePageSeo } from "../context/SeoContext";
 import { Logo } from "../components/Logo";
 import { SmartImage } from "../components/SmartImage";
 
 export function AboutPage() {
+  usePageSeo(staticPageSeo["/about"]);
+
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage src={aboutMedia.hero} alt="" className="kl-page-hero__bg" />
+        <SmartImage src={aboutMedia.hero} alt="کارگاه و تولید چرم کارن — تبریز" className="kl-page-hero__bg" />
         <div className="kl-page-hero__veil" />
         <div className="container kl-page-hero__content">
           <Logo variant="classic" />
@@ -29,6 +34,7 @@ export function AboutPage() {
       </section>
 
       <div className="container section">
+        <Breadcrumbs items={[{ label: "خانه", to: "/" }, { label: "درباره ما" }]} />
         <div className="kl-about-intro">
           <p className="kl-about-intro__lead">{aboutCopy.intro}</p>
         </div>
@@ -55,7 +61,7 @@ export function AboutPage() {
                         ? aboutMedia.detail
                         : aboutMedia.workshop
                   }
-                  alt=""
+                  alt={block.title}
                   loading="lazy"
                 />
               </div>
@@ -65,7 +71,7 @@ export function AboutPage() {
 
         <section className="kl-about-store">
           <div className="kl-about-store__media">
-            <SmartImage src={storeHotel.wide} alt="" loading="lazy" />
+            <SmartImage src={storeHotel.wide} alt="فروشگاه حضوری چرم کارن — تبریز" loading="lazy" />
           </div>
           <div className="kl-about-store__text">
             <span className="kl-section-label">فروشگاه حضوری</span>

@@ -3,7 +3,7 @@ import esbuild from "esbuild";
 import fs from "node:fs";
 import http from "node:http";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -99,6 +99,10 @@ const indexHtml = fs.readFileSync(path.join(root, "index.html"), "utf8").replace
     </script>`,
 );
 
+const devOut = path.join(root, "dist-dev");
+const { generateSeoFiles } = await import(pathToFileURL(path.join(__dirname, "generate-seo.mjs")).href);
+generateSeoFiles(devOut);
+
 http
   .createServer(async (req, res) => {
     const url = new URL(req.url ?? "/", `http://127.0.0.1:${port}`);
@@ -121,6 +125,14 @@ http
       clients.add(res);
       req.on("close", () => clients.delete(res));
       return;
+    }
+
+    if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
+      const filePath = path.join(devOut, pathname.slice(1));
+      if (fs.existsSync(filePath)) {
+        sendFile(res, filePath);
+        return;
+      }
     }
 
     if (pathname.startsWith("/uploads/")) {

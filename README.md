@@ -1,5 +1,7 @@
 # چرم کارن — Karen Leather
 
+**دامنه:** [karenleather.com](https://karenleather.com)
+
 وب‌سایت مدرن React برای برند **چرم کارن** (صنایع چرم کارن افق نو).
 
 ## ساختار

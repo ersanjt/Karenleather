@@ -1,9 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { Breadcrumbs } from "../components/Breadcrumbs";
 import { ProductCard } from "../components/ProductCard";
 import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { ShopCatalogBar } from "../components/ShopCatalogBar";
 import { ShopSidebar } from "../components/ShopSidebar";
+import { breadcrumbJsonLd, shopPageSeo } from "../content/seo";
+import { siteBrand } from "../content/siteCopy";
+import { usePageSeo } from "../context/SeoContext";
 import { getCategoryBySlug } from "../data";
 import {
   buildShopCategoryTree,
@@ -29,12 +33,12 @@ export function ShopPage() {
   const urlFilter = params.get("filter") as ShopFilter | null;
   const sort = (params.get("sort") as ShopSort) || "newest";
   const dense = params.get("view") === "dense";
+  const q = params.get("q") ?? "";
 
   const [filter, setFilter] = useState<ShopFilter>(() => {
     if (urlFilter && URL_FILTERS.has(urlFilter)) return urlFilter;
     return "new";
   });
-  const [q, setQ] = useState("");
   const [categoriesOpen, setCategoriesOpen] = useState(false);
 
   const categoryTree = useMemo(() => buildShopCategoryTree(), []);
@@ -46,6 +50,23 @@ export function ShopPage() {
   );
 
   const catalogIds = useMemo(() => filtered.map((p) => p.id), [filtered]);
+
+  const seo = useMemo(
+    () => shopPageSeo(activeCat?.name, filter, q),
+    [activeCat?.name, filter, q],
+  );
+
+  const jsonLd = useMemo(
+    () =>
+      breadcrumbJsonLd([
+        { name: "خانه", path: "/" },
+        { name: "فروشگاه", path: "/shop" },
+        ...(activeCat ? [{ name: activeCat.name, path: `/shop?cat=${encodeURIComponent(activeCat.slug)}` }] : []),
+      ]),
+    [activeCat],
+  );
+
+  usePageSeo(seo, jsonLd);
 
   useEffect(() => {
     if (catSlug) setFilter(filterFromSlug(catSlug));
@@ -101,6 +122,20 @@ export function ShopPage() {
     updateParams({ view: dense ? null : "dense" });
   };
 
+  const setQuery = (value: string) => {
+    updateParams({ q: value || null });
+  };
+
+  const pageTitle = activeCat
+    ? `${activeCat.name} — ${siteBrand.name}`
+    : q.trim()
+      ? `جستجو: ${q.trim()}`
+      : `فروشگاه ${siteBrand.name}`;
+
+  const pageLead = activeCat
+    ? `خرید ${activeCat.name} از چرم کارن — چرم طبیعی دست‌ساز با گارانتی ۲ ساله. ${filtered.length.toLocaleString("fa-IR")} محصول در این دسته.`
+    : `کلکسیون ${siteBrand.productCount.toLocaleString("fa-IR")}+ مدل کیف، کفش و اکسسوری چرم طبیعی — ${filtered.length.toLocaleString("fa-IR")} نتیجه`;
+
   return (
     <div className="shop-catalog">
       <ShopCatalogBar
@@ -108,25 +143,25 @@ export function ShopPage() {
         catSlug={catSlug}
         dense={dense}
         resultCount={filtered.length}
+        query={q}
+        activeCategoryLabel={activeCat?.name}
         onFilter={setFilterPill}
         onToggleDense={toggleDense}
         onOpenCategories={() => setCategoriesOpen(true)}
+        onQueryChange={setQuery}
+        onClearCategory={() => setCategory(null)}
       />
 
-      <div className="catalog-toolbar-minimal">
-        <input
-          type="search"
-          placeholder="جستجو..."
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          className="catalog-search"
-          aria-label="جستجوی محصول"
+      <div className="catalog-intro container">
+        <Breadcrumbs
+          items={[
+            { label: "خانه", to: "/" },
+            { label: "فروشگاه", to: "/shop" },
+            ...(activeCat ? [{ label: activeCat.name }] : []),
+          ]}
         />
-        {activeCat && (
-          <button type="button" className="catalog-active-cat" onClick={() => setCategory(null)}>
-            {activeCat.name} ×
-          </button>
-        )}
+        <h1 className="catalog-intro-title">{pageTitle}</h1>
+        <p className="catalog-intro-lead">{pageLead}</p>
       </div>
 
       {filter === "footwear" && !q && <OstrichShoesShowcase variant="shop" />}
@@ -143,13 +178,13 @@ export function ShopPage() {
         </section>
       ) : (
         <div className="shop-empty catalog-empty">
-          <h3>محصولی پیدا نشد</h3>
-          <p>فیلتر دیگری امتحان کنید.</p>
+          <h2>محصولی پیدا نشد</h2>
+          <p>فیلتر دیگری امتحان کنید یا عبارت جستجو را تغییر دهید.</p>
           <button
             type="button"
             className="btn btn-gold"
             onClick={() => {
-              setQ("");
+              setQuery("");
               setCategory(null);
               setFilter("new");
             }}
@@ -183,10 +218,6 @@ export function ShopPage() {
           </div>
         </>
       )}
-
-      <h1 className="visually-hidden">
-        فروشگاه چرم کارن — {filtered.length.toLocaleString("fa-IR")} محصول
-      </h1>
     </div>
   );
 }

@@ -6,7 +6,15 @@ export const siteBrand = {
   tagline: "چرم طبیعی · شترمرغ · دست‌ساز",
   since: "۱۳۹۴",
   productCount: 116,
+  domain: "karenleather.com",
+  url: "https://karenleather.com",
 };
+
+/** آدرس کامل با دامنه production */
+export function absoluteUrl(path = "/"): string {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${siteBrand.url}${normalized === "/" ? "/" : normalized}`;
+}
 
 export const siteContact = {
   phone: "09144199935",
@@ -26,7 +34,7 @@ export const navLinks = {
     { to: "/contact", label: "تماس با ما" },
   ],
   shop: { to: "/shop", label: "فروشگاه" },
-  cta: { to: "/contact", label: "تماس با ما" },
+  cta: { to: "/shop", label: "خرید آنلاین" },
 };
 
 export const footerContent = {
@@ -174,14 +182,14 @@ export const wholesaleCopy = {
     {
       id: "body",
       title: "چرم تنه شترمرغ",
-      subtitle: "بافت نقاط · Quill",
+      subtitle: "بافت نقاط شترمرغ",
       body:
         "بافت مشخص نقاط شترمرغ — مناسب تولید کیف، کفش، پوشاک و اکسسوری. یکی از لوکس‌ترین چرم‌های تزئینی جهان با دوام و ظاهر ممتاز.",
     },
     {
       id: "leg",
       title: "چرم ساق شترمرغ",
-      subtitle: "بافت پوست‌مار · Scale",
+      subtitle: "بافت پوست‌مار ساق",
       body:
         "بافت پوست‌مار و صفحه‌ای ساق — ایده‌آل برای جزئیات تزئینی، کمربند، نوار، ترکیب با تنه و پروژه‌های سفارشی با تضاد رنگی.",
     },

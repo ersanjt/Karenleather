@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { megaPromo } from "../content/media";
 import { megaMenuColumns, quickShopLinks } from "../content/menu";
 import { SmartImage } from "./SmartImage";
@@ -13,10 +14,29 @@ interface Props {
 export function MegaMenu({ onNavigate, mobile }: Props) {
   const [open, setOpen] = useState(false);
   const [activeCol, setActiveCol] = useState(megaMenuColumns[0]?.id ?? "");
-  const wrapRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const closeTimerRef = useRef<number | null>(null);
   const panelId = useId();
 
   const close = useCallback(() => setOpen(false), []);
+
+  const cancelClose = useCallback(() => {
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  }, []);
+
+  const scheduleClose = useCallback(() => {
+    cancelClose();
+    closeTimerRef.current = window.setTimeout(() => setOpen(false), 140);
+  }, [cancelClose]);
+
+  const openMenu = useCallback(() => {
+    cancelClose();
+    setOpen(true);
+  }, [cancelClose]);
 
   useEffect(() => {
     if (!open || mobile) return;
@@ -24,9 +44,9 @@ export function MegaMenu({ onNavigate, mobile }: Props) {
       if (e.key === "Escape") close();
     };
     const onClick = (e: MouseEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
-        close();
-      }
+      const target = e.target as Node;
+      if (triggerRef.current?.contains(target) || panelRef.current?.contains(target)) return;
+      close();
     };
     document.addEventListener("keydown", onKey);
     document.addEventListener("mousedown", onClick);
@@ -35,6 +55,8 @@ export function MegaMenu({ onNavigate, mobile }: Props) {
       document.removeEventListener("mousedown", onClick);
     };
   }, [open, mobile, close]);
+
+  useEffect(() => () => cancelClose(), [cancelClose]);
 
   useEffect(() => {
     if (open) document.body.classList.add("mega-open");
@@ -86,13 +108,119 @@ export function MegaMenu({ onNavigate, mobile }: Props) {
 
   const column = megaMenuColumns.find((c) => c.id === activeCol) ?? megaMenuColumns[0];
 
+  const panel = (
+    <>
+      {open && <div className="mega-backdrop" aria-hidden onClick={close} />}
+      <div
+        ref={panelRef}
+        id={panelId}
+        className={`mega-panel ${open ? "is-visible" : ""}`}
+        role="region"
+        aria-label="منوی فروشگاه"
+        aria-hidden={!open}
+        onMouseEnter={openMenu}
+        onMouseLeave={scheduleClose}
+      >
+        <div className="mega-panel-inner container">
+          <aside className="mega-tabs" role="tablist" aria-label="دسته‌های اصلی">
+            {megaMenuColumns.map((col) => (
+              <button
+                key={col.id}
+                type="button"
+                role="tab"
+                aria-selected={activeCol === col.id}
+                className={`mega-tab ${activeCol === col.id ? "active" : ""}`}
+                onMouseEnter={() => setActiveCol(col.id)}
+                onFocus={() => setActiveCol(col.id)}
+                onClick={() => setActiveCol(col.id)}
+              >
+                {col.banner && (
+                  <SmartImage src={col.banner} alt="" className="mega-tab-img" loading="lazy" />
+                )}
+                <span className="mega-tab-text">
+                  <strong>{col.title}</strong>
+                  <small>{col.totalProducts.toLocaleString("fa-IR")} محصول</small>
+                </span>
+              </button>
+            ))}
+          </aside>
+
+          <div className="mega-content">
+            {column && (
+              <div className="mega-content-main">
+                <header className="mega-content-head">
+                  <div>
+                    <h3>{column.title}</h3>
+                    <p>انتخاب از بین {column.totalProducts.toLocaleString("fa-IR")} محصول</p>
+                  </div>
+                  <Link to={column.href} className="mega-view-all" onClick={handleNavigate}>
+                    مشاهده همه {column.title}
+                    <span aria-hidden>←</span>
+                  </Link>
+                </header>
+
+                <div className="mega-sections">
+                  {column.sections.map((sec) => (
+                    <div key={sec.href} className="mega-section">
+                      <Link to={sec.href} className="mega-section-title" onClick={handleNavigate}>
+                        {sec.title}
+                      </Link>
+                      <ul className="mega-links">
+                        {sec.items.map((item) => (
+                          <li key={item.id}>
+                            <Link to={item.href} className="mega-link" onClick={handleNavigate}>
+                              <span className="mega-link-label">{item.name}</span>
+                              <span className="mega-link-count">
+                                {item.count.toLocaleString("fa-IR")}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <aside className="mega-promo">
+              <SmartImage src={megaPromo.image} alt="" className="mega-promo-img" loading="lazy" />
+              <div className="mega-promo-body">
+                <span className="mega-promo-tag">پیشنهاد ویژه</span>
+                <h4>{megaPromo.title}</h4>
+                <p>{megaPromo.subtitle}</p>
+                <Link to={megaPromo.cta} className="btn btn-gold" onClick={handleNavigate}>
+                  مشاهده
+                </Link>
+              </div>
+            </aside>
+          </div>
+
+          <footer className="mega-footer">
+            <Link to="/shop" className="mega-footer-all" onClick={handleNavigate}>
+              مشاهده همه محصولات
+            </Link>
+            <div className="mega-quick">
+              <span>پرطرفدار:</span>
+              {quickShopLinks.map((link) => (
+                <Link key={link.href} to={link.href} onClick={handleNavigate}>
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </footer>
+        </div>
+      </div>
+    </>
+  );
+
   return (
     <>
       <div
-        ref={wrapRef}
+        ref={triggerRef}
         className={`mega-wrap ${open ? "is-open" : ""}`}
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
+        onMouseEnter={openMenu}
+        onMouseLeave={scheduleClose}
       >
         <div className={`mega-trigger nav-link ${open ? "active" : ""}`}>
           <Link to="/shop" onClick={handleNavigate}>
@@ -105,112 +233,18 @@ export function MegaMenu({ onNavigate, mobile }: Props) {
             aria-haspopup="true"
             aria-controls={panelId}
             aria-label={open ? "بستن منوی فروشگاه" : "باز کردن منوی فروشگاه"}
-            onClick={() => setOpen((v) => !v)}
+            onClick={(e) => {
+              e.preventDefault();
+              cancelClose();
+              setOpen((v) => !v);
+            }}
           >
             <span aria-hidden>▾</span>
           </button>
         </div>
-
-        <div
-          id={panelId}
-          className={`mega-panel ${open ? "is-visible" : ""}`}
-          role="region"
-          aria-label="منوی فروشگاه"
-          aria-hidden={!open}
-        >
-          <div className="mega-panel-inner container">
-            <aside className="mega-tabs" role="tablist" aria-label="دسته‌های اصلی">
-              {megaMenuColumns.map((col) => (
-                <button
-                  key={col.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={activeCol === col.id}
-                  className={`mega-tab ${activeCol === col.id ? "active" : ""}`}
-                  onMouseEnter={() => setActiveCol(col.id)}
-                  onFocus={() => setActiveCol(col.id)}
-                  onClick={() => setActiveCol(col.id)}
-                >
-                  {col.banner && (
-                    <SmartImage src={col.banner} alt="" className="mega-tab-img" loading="lazy" />
-                  )}
-                  <span className="mega-tab-text">
-                    <strong>{col.title}</strong>
-                    <small>{col.totalProducts.toLocaleString("fa-IR")} محصول</small>
-                  </span>
-                </button>
-              ))}
-            </aside>
-
-            <div className="mega-content">
-              {column && (
-                <>
-                  <header className="mega-content-head">
-                    <div>
-                      <h3>{column.title}</h3>
-                      <p>انتخاب از بین {column.totalProducts.toLocaleString("fa-IR")} محصول</p>
-                    </div>
-                    <Link to={column.href} className="mega-view-all" onClick={handleNavigate}>
-                      مشاهده همه {column.title}
-                      <span aria-hidden>←</span>
-                    </Link>
-                  </header>
-
-                  <div className="mega-sections">
-                    {column.sections.map((sec) => (
-                      <div key={sec.href} className="mega-section">
-                        <Link to={sec.href} className="mega-section-title" onClick={handleNavigate}>
-                          {sec.title}
-                        </Link>
-                        <ul className="mega-links">
-                          {sec.items.map((item) => (
-                            <li key={item.id}>
-                              <Link to={item.href} className="mega-link" onClick={handleNavigate}>
-                                {item.name}
-                                <span className="mega-link-count">
-                                  {item.count.toLocaleString("fa-IR")}
-                                </span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-
-              <aside className="mega-promo">
-                <SmartImage src={megaPromo.image} alt="" className="mega-promo-img" loading="lazy" />
-                <div className="mega-promo-body">
-                  <span className="mega-promo-tag">پیشنهاد ویژه</span>
-                  <h4>{megaPromo.title}</h4>
-                  <p>{megaPromo.subtitle}</p>
-                  <Link to={megaPromo.cta} className="btn btn-gold" onClick={handleNavigate}>
-                    مشاهده
-                  </Link>
-                </div>
-              </aside>
-            </div>
-
-            <footer className="mega-footer">
-              <Link to="/shop" className="mega-footer-all" onClick={handleNavigate}>
-                مشاهده همه محصولات
-              </Link>
-              <div className="mega-quick">
-                <span>پرطرفدار:</span>
-                {quickShopLinks.map((link) => (
-                  <Link key={link.href} to={link.href} onClick={handleNavigate}>
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </footer>
-          </div>
-        </div>
       </div>
 
-      {open && <div className="mega-backdrop" aria-hidden onClick={close} />}
+      {createPortal(panel, document.body)}
     </>
   );
 }

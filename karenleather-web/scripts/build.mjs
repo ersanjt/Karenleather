@@ -1,7 +1,7 @@
 import esbuild from "esbuild";
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -42,4 +42,8 @@ function copyUploads(src, dest) {
 
 console.log("Copying uploads (this may take a moment)...");
 copyUploads(uploadsRoot, path.join(outDir, "uploads"));
+
+const { generateSeoFiles } = await import(pathToFileURL(path.join(__dirname, "generate-seo.mjs")).href);
+generateSeoFiles(outDir);
+
 console.log("Build complete:", outDir);

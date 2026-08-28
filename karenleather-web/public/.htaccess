@@ -1,0 +1,14 @@
+Options -MultiViews
+RewriteEngine On
+
+# HTTPS (اختیاری — اگر SSL فعال است)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# فایل/پوشه موجود را مستقیم سرو کن
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA: بقیه مسیرها → index.html
+RewriteRule ^ index.html [L]

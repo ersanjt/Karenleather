@@ -27,8 +27,9 @@
       content="کیف، کفش و اکسسوری چرم طبیعی — کلکسیون زنانه و مردانه"
     />
     <meta property="og:locale" content="fa_IR" />
-    <meta property="og:image" content="/uploads/2025/03/logo-pnz.png" />
-    <meta property="og:image:alt" content="چرم کارن — Karen Leather" />
+    <meta property="og:url" content="https://karenleather.com/" />
+    <meta property="og:image" content="https://karenleather.com/uploads/brand/05-wordmark-alt.png" />
+    <meta property="og:image:alt" content="چرم کارن — لوگوی برند" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="چرم کارن | Karen Leather" />
@@ -36,10 +37,35 @@
       name="twitter:description"
       content="فروشگاه آنلاین کیف و کفش چرم طبیعی"
     />
-    <meta name="twitter:image" content="/uploads/2025/03/logo-pnz.png" />
+    <meta name="twitter:image" content="https://karenleather.com/uploads/brand/05-wordmark-alt.png" />
 
-    <link rel="icon" href="/uploads/2025/03/logo-pnz-150x150.png" type="image/png" />
-    <link rel="apple-touch-icon" href="/uploads/2025/03/logo-pnz-150x150.png" />
+    <link rel="canonical" href="https://karenleather.com/" />
+
+    <link rel="icon" href="/uploads/brand/02-mark-icon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/uploads/brand/02-mark-icon.png" />
+    <link rel="preload" href="/uploads/brand/05-wordmark-alt.png" as="image" type="image/png" />
+    <link rel="preload" href="/uploads/brand/02-mark-icon.png" as="image" type="image/png" />
+
+    <style>
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: grid;
+        place-items: center;
+        background: #000;
+      }
+      #initial-loader img {
+        width: min(148px, 42vw);
+        height: auto;
+        object-fit: contain;
+        animation: kl-loader-pulse 1.4s ease-in-out infinite;
+      }
+      @keyframes kl-loader-pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.04); opacity: 0.92; }
+      }
+    </style>
 
     <script type="application/ld+json">
       {
@@ -48,28 +74,65 @@
           {
             "@type": "Organization",
             "name": "صنایع چرم کارن افق نو",
-            "alternateName": "Karen Leather",
+            "alternateName": ["چرم کارن", "Karen Leather"],
             "url": "https://karenleather.com/",
-            "logo": "/uploads/2025/03/logo-pnz.png",
-            "description": "تولیدکننده کیف، کفش و اکسسوری چرم طبیعی و شترمرغ"
+            "logo": "https://karenleather.com/uploads/brand/02-mark-icon.png",
+            "email": "admin@karenleather.com",
+            "telephone": "+989144199935",
+            "description": "تولیدکننده کیف، کفش و اکسسوری چرم طبیعی و شترمرغ در تبریز",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "میدان ارغوان، جنب بانک ملی، باغمیشه",
+              "addressLocality": "تبریز",
+              "addressRegion": "آذربایجان شرقی",
+              "addressCountry": "IR"
+            },
+            "sameAs": ["https://www.instagram.com/karen_leatherr"]
           },
           {
             "@type": "WebSite",
             "name": "چرم کارن",
             "url": "https://karenleather.com/",
-            "inLanguage": "fa"
+            "inLanguage": "fa",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://karenleather.com/shop?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
           },
           {
             "@type": "ClothingStore",
             "name": "چرم کارن",
+            "url": "https://karenleather.com/",
+            "telephone": "+989144199935",
             "priceRange": "$$",
-            "currenciesAccepted": "IRR"
+            "currenciesAccepted": "IRR",
+            "address": [
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "میدان ارغوان، جنب بانک ملی، باغمیشه",
+                "addressLocality": "تبریز",
+                "addressRegion": "آذربایجان شرقی",
+                "addressCountry": "IR"
+              },
+              {
+                "@type": "PostalAddress",
+                "streetAddress": "اول جاده شاهگلی، لابی هتل شهریار",
+                "addressLocality": "تبریز",
+                "addressRegion": "آذربایجان شرقی",
+                "addressCountry": "IR"
+              }
+            ],
+            "sameAs": ["https://www.instagram.com/karen_leatherr"]
           }
         ]
       }
     </script>
   </head>
   <body>
+    <div id="initial-loader" aria-hidden="true">
+      <img src="/uploads/brand/05-wordmark-alt.png" alt="چرم کارن" />
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

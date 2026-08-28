@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { Breadcrumbs } from "../components/Breadcrumbs";
+import { staticPageSeo } from "../content/seo";
 import { representationCopy } from "../content/siteCopy";
+import { usePageSeo } from "../context/SeoContext";
 
 export function RepresentationPage() {
+  usePageSeo(staticPageSeo["/representation"]);
+
   return (
     <>
       <section className="kl-page-hero kl-page-hero--short kl-page-hero--plain">
@@ -13,6 +18,7 @@ export function RepresentationPage() {
       </section>
 
       <div className="container section">
+        <Breadcrumbs items={[{ label: "خانه", to: "/" }, { label: "نمایندگی" }]} />
         <div className="prose page-prose">
           <p className="page-prose__lead">{representationCopy.intro}</p>
 

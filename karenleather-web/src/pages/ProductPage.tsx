@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Breadcrumbs } from "../components/Breadcrumbs";
+import { SmartImage } from "../components/SmartImage";
+import {
+  breadcrumbJsonLd,
+  productBodyHtml,
+  productImageAlt,
+  productJsonLd,
+  productPageSeo,
+} from "../content/seo";
+import { siteBrand } from "../content/siteCopy";
+import { usePageSeo } from "../context/SeoContext";
 import { getProduct } from "../data";
 import { useCart } from "../lib/cart";
-import { SmartImage } from "../components/SmartImage";
 import { useShowPrices } from "../context/StoreSettings";
 import { formatPrice, WHATSAPP_LINK } from "../lib/utils";
 
@@ -14,9 +24,37 @@ export function ProductPage() {
   const [qty, setQty] = useState(1);
   const [imgIdx, setImgIdx] = useState(0);
 
+  const seo = useMemo(
+    () =>
+      product
+        ? productPageSeo(product)
+        : {
+            title: `محصول یافت نشد — ${siteBrand.name}`,
+            description: "این محصول در فروشگاه چرم کارن موجود نیست.",
+            robots: "noindex, nofollow",
+          },
+    [product],
+  );
+
+  const jsonLd = useMemo(() => {
+    if (!product) return null;
+    const crumbs = breadcrumbJsonLd([
+      { name: "خانه", path: "/" },
+      { name: "فروشگاه", path: "/shop" },
+      ...(product.categories[0]
+        ? [{ name: product.categories[0].name, path: `/shop?cat=${encodeURIComponent(product.categories[0].slug)}` }]
+        : []),
+      { name: product.title, path: `/product/${product.id}/${product.slug}` },
+    ]);
+    return [productJsonLd(product), crumbs];
+  }, [product]);
+
+  usePageSeo(seo, jsonLd);
+
   if (!product) {
     return (
       <div className="container section">
+        <Breadcrumbs items={[{ label: "خانه", to: "/" }, { label: "فروشگاه", to: "/shop" }, { label: "محصول یافت نشد" }]} />
         <p>محصول یافت نشد.</p>
         <Link to="/shop">بازگشت به فروشگاه</Link>
       </div>
@@ -25,13 +63,25 @@ export function ProductPage() {
 
   const images = product.images.map((img) => img.file);
   const waText = encodeURIComponent(`سلام، درباره محصول «${product.title}» سوال دارم.`);
+  const bodyHtml = productBodyHtml(product);
 
   return (
     <div className="container section product-page">
+      <Breadcrumbs
+        items={[
+          { label: "خانه", to: "/" },
+          { label: "فروشگاه", to: "/shop" },
+          ...(product.categories[0]
+            ? [{ label: product.categories[0].name, to: `/shop?cat=${encodeURIComponent(product.categories[0].slug)}` }]
+            : []),
+          { label: product.title.replace(/^مدل:\s*/i, "") },
+        ]}
+      />
+
       <div className="product-layout">
         <div>
           <div className="product-gallery-main">
-            <SmartImage src={images[imgIdx] ?? images[0] ?? ""} alt={product.title} />
+            <SmartImage src={images[imgIdx] ?? images[0] ?? ""} alt={productImageAlt(product, imgIdx)} />
           </div>
           {images.length > 1 && (
             <div className="product-thumbs">
@@ -41,8 +91,9 @@ export function ProductPage() {
                   type="button"
                   className={i === imgIdx ? "active" : ""}
                   onClick={() => setImgIdx(i)}
+                  aria-label={`تصویر ${(i + 1).toLocaleString("fa-IR")}`}
                 >
-                  <SmartImage src={src} alt="" />
+                  <SmartImage src={src} alt={productImageAlt(product, i)} />
                 </button>
               ))}
             </div>
@@ -50,9 +101,6 @@ export function ProductPage() {
         </div>
 
         <div className="product-info">
-          <Link to="/shop" className="back-link">
-            ← بازگشت به فروشگاه
-          </Link>
           <h1>{product.title}</h1>
           {product.categories.length > 0 && (
             <div className="tag-row">
@@ -88,12 +136,7 @@ export function ProductPage() {
             </a>
           </div>
 
-          {product.description && (
-            <div
-              className="prose product-desc"
-              dangerouslySetInnerHTML={{ __html: product.description }}
-            />
-          )}
+          <div className="prose product-desc" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
         </div>
       </div>
     </div>
