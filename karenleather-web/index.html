@@ -14,7 +14,7 @@
     />
     <meta name="author" content="صنایع چرم کارن افق نو" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#001428" />
+    <meta name="theme-color" content="#041434" />
     <meta name="color-scheme" content="light" />
     <meta name="application-name" content="چرم کارن" />
     <meta name="apple-mobile-web-app-title" content="چرم کارن" />
@@ -39,12 +39,19 @@
     />
     <meta name="twitter:image" content="https://karenleather.com/uploads/brand/05-wordmark-alt.png" />
 
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+    />
+
     <link rel="canonical" href="https://karenleather.com/" />
 
     <link rel="icon" href="/uploads/brand/02-mark-icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/uploads/brand/02-mark-icon.png" />
     <link rel="preload" href="/uploads/brand/05-wordmark-alt.png" as="image" type="image/png" />
     <link rel="preload" href="/uploads/brand/02-mark-icon.png" as="image" type="image/png" />
+    <link rel="preload" href="/uploads/brand/01-primary-full.png" as="image" type="image/png" />
 
     <style>
       #initial-loader {
@@ -53,13 +60,27 @@
         z-index: 99999;
         display: grid;
         place-items: center;
-        background: #000;
+        background: #041434;
       }
       #initial-loader img {
         width: min(148px, 42vw);
-        height: auto;
+        height: min(148px, 42vw);
         object-fit: contain;
         animation: kl-loader-pulse 1.4s ease-in-out infinite;
+      }
+      /* اسکلت ثابت تا React mount — جلوگیری از CLS بزرگ */
+      .app-shell {
+        min-height: 100vh;
+        background: #041434;
+      }
+      .app-shell__header {
+        height: 124px;
+        background: #041434;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .app-shell__hero {
+        min-height: min(88vh, 820px);
+        background: #031028;
       }
       @keyframes kl-loader-pulse {
         0%, 100% { transform: scale(1); opacity: 1; }
@@ -133,7 +154,12 @@
     <div id="initial-loader" aria-hidden="true">
       <img src="/uploads/brand/05-wordmark-alt.png" alt="چرم کارن" />
     </div>
-    <div id="root"></div>
+    <div id="root">
+      <div class="app-shell" aria-hidden="true">
+        <div class="app-shell__header"></div>
+        <div class="app-shell__hero"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

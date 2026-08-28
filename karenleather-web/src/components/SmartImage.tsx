@@ -7,7 +7,7 @@ type SmartImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   fallbacks?: string[];
 };
 
-export function SmartImage({ src, fallback, fallbacks, onError, ...props }: SmartImageProps) {
+export function SmartImage({ src, fallback, fallbacks, onError, loading = "lazy", decoding = "async", ...props }: SmartImageProps) {
   const candidates = useMemo(() => {
     const list = uploadCandidates(src);
     if (fallback) list.push(...uploadCandidates(fallback));
@@ -22,6 +22,8 @@ export function SmartImage({ src, fallback, fallbacks, onError, ...props }: Smar
     <img
       {...props}
       src={candidates[Math.min(idx, candidates.length - 1)]}
+      loading={loading}
+      decoding={decoding}
       onError={(e) => {
         if (idx < candidates.length - 1) setIdx((i) => i + 1);
         onError?.(e);

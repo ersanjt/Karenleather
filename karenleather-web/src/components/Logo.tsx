@@ -20,7 +20,10 @@ export function Logo({ variant, compact = false }: LogoProps) {
         fallbacks={asset.fallbacks}
         alt={asset.alt}
         className="logo-frame__img"
+        loading="eager"
         decoding="async"
+        width={resolved === "mark" ? 48 : 220}
+        height={resolved === "mark" ? 48 : 72}
       />
     </div>
   );

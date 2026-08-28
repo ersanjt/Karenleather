@@ -43,6 +43,9 @@ export function HomePage() {
               src={item.src}
               alt={item.alt}
               className={`kl-hero__slide${i === slide ? " is-active" : ""}`}
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : "auto"}
+              decoding={i === 0 ? "sync" : "async"}
             />
           ))}
           <div className="kl-hero__veil" />
