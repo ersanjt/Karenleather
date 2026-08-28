@@ -61,6 +61,15 @@
         place-items: center;
         background: #041434;
       }
+      #initial-loader .loader-plate {
+        display: grid;
+        place-items: center;
+        width: min(200px, 56vw);
+        height: min(200px, 56vw);
+        background: #fff;
+        border-radius: 28px;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+      }
       #initial-loader img {
         width: min(148px, 42vw);
         height: min(148px, 42vw);
@@ -151,7 +160,9 @@
   </head>
   <body>
     <div id="initial-loader" aria-hidden="true">
-      <img src="/uploads/brand/05-wordmark-alt.png" alt="چرم کارن" />
+      <div class="loader-plate">
+        <img src="/uploads/brand/05-wordmark-alt.png" alt="چرم کارن" width="148" height="148" />
+      </div>
     </div>
     <div id="root">
       <div class="app-shell" aria-hidden="true">

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AdminGuard } from "./components/AdminGuard";
 import { AdminLayout } from "./components/AdminLayout";
@@ -7,9 +8,18 @@ import { AdminLoginPage } from "./pages/AdminLoginPage";
 import { AdminOrdersPage } from "./pages/AdminOrdersPage";
 import { AdminProductsPage } from "./pages/AdminProductsPage";
 import { AdminSettingsPage } from "./pages/AdminSettingsPage";
-import "./admin.css";
 
 export function AdminApp() {
+  useEffect(() => {
+    const id = "admin-css";
+    if (document.getElementById(id)) return;
+    const link = document.createElement("link");
+    link.id = id;
+    link.rel = "stylesheet";
+    link.href = "/assets/admin.css";
+    document.head.appendChild(link);
+  }, []);
+
   return (
     <AdminToastProvider>
       <Routes>
