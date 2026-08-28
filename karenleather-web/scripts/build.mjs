@@ -74,7 +74,11 @@ function copyUploads(src, dest) {
 }
 
 console.log("Copying uploads (this may take a moment)...");
-copyUploads(uploadsRoot, path.join(outDir, "uploads"));
+if (process.env.SKIP_UPLOADS === "1") {
+  console.log("SKIP_UPLOADS=1 — uploads not copied into dist (server deploy mode)");
+} else {
+  copyUploads(uploadsRoot, path.join(outDir, "uploads"));
+}
 
 const { generateSeoFiles } = await import(pathToFileURL(path.join(__dirname, "generate-seo.mjs")).href);
 generateSeoFiles(outDir);
