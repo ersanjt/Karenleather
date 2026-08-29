@@ -18,24 +18,24 @@ export default function App() {
   return (
     <BrowserRouter>
       <StoreSettingsProvider>
-      <CartUIProvider>
-        <ProductPreviewProvider>
-          <Routes>
-            <Route path="/admin/*" element={<AdminApp />} />
-            <Route element={<Layout />}>
-              <Route index element={<HomePage />} />
-              <Route path="shop" element={<ShopPage />} />
-              <Route path="product/:id/:slug?" element={<ProductPage />} />
-              <Route path="about" element={<AboutPage />} />
-              <Route path="contact" element={<ContactPage />} />
-              <Route path="representation" element={<RepresentationPage />} />
-              <Route path="wholesale" element={<WholesalePage />} />
-              <Route path="cart" element={<CartPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Route>
-          </Routes>
-        </ProductPreviewProvider>
-      </CartUIProvider>
+        <CartUIProvider>
+          <ProductPreviewProvider>
+            <Routes>
+              <Route path="/admin/*" element={<AdminApp />} />
+              <Route element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="shop" element={<ShopPage />} />
+                <Route path="product/:id/:slug?" element={<ProductPage />} />
+                <Route path="about" element={<AboutPage />} />
+                <Route path="contact" element={<ContactPage />} />
+                <Route path="representation" element={<RepresentationPage />} />
+                <Route path="wholesale" element={<WholesalePage />} />
+                <Route path="cart" element={<CartPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Route>
+            </Routes>
+          </ProductPreviewProvider>
+        </CartUIProvider>
       </StoreSettingsProvider>
     </BrowserRouter>
   );

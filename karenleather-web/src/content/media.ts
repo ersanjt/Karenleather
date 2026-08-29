@@ -12,6 +12,17 @@ export type MediaShot = {
   height: number;
 };
 
+/** نسبت واقعی عکس برای قاب contain — بدون برش */
+export function shotVars(shot: Pick<MediaShot, "width" | "height">): {
+  "--shot-w": number;
+  "--shot-h": number;
+} {
+  return {
+    "--shot-w": shot.width,
+    "--shot-h": shot.height,
+  };
+}
+
 const TABRIZ = "/uploads/campaign/karen-tabriz";
 const MEN = "/uploads/campaign/lookbook-men";
 
@@ -247,7 +258,12 @@ export const aboutMedia = {
     height: 960,
   },
   service: storeHotel.consultation,
-  workshop: campaign.yellowBagDome,
+  workshop: {
+    src: `${MEN}/mens-monk-strap-atelier.jpg`,
+    alt: "ساخت کفش چرم کارن در کارگاه تبریز — مانک‌استرپ و چرم خام روی میز کار",
+    width: 576,
+    height: 1024,
+  },
 };
 
 export const ostrichShoes = {
@@ -265,8 +281,21 @@ export const ostrichShoes = {
   },
 };
 
+const WHOLESALE = "/uploads/campaign/wholesale";
+
 export const ostrichLeather = {
-  swatchRack: aboutMedia.ostrich,
+  hero: {
+    src: `${WHOLESALE}/01-hides-fan.jpg`,
+    alt: "چرم شترمرغ تنه و ساق کارن — رنگ‌بندی شکلاتی، کهنه‌ای، مشکی، خردلی و زرشکی",
+    width: 1536,
+    height: 1024,
+  },
+  bodyLeg: {
+    src: `${WHOLESALE}/02-body-leg-detail.jpg`,
+    alt: "بافت نقاط چرم تنه شترمرغ در کنار فلس پوست‌مار چرم ساق",
+    width: 1536,
+    height: 1024,
+  },
 };
 
 export const megaPromo = {

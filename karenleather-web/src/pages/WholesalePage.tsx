@@ -23,11 +23,14 @@ export function WholesalePage() {
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage src={ostrichLeather.swatchRack} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
-        <div className="kl-page-hero__veil" />
-        <div className="container kl-page-hero__content">
-          <p className="kl-eyebrow">{wholesaleCopy.subtitle}</p>
-          <h1>{wholesaleCopy.title}</h1>
+        <div className="container">
+          <div className="kl-page-hero__frame kl-page-hero__frame--cover">
+            <SmartImage src={ostrichLeather.hero} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
+            <div className="kl-page-hero__content">
+              <p className="kl-eyebrow">{wholesaleCopy.subtitle}</p>
+              <h1>{wholesaleCopy.title}</h1>
+            </div>
+          </div>
         </div>
       </section>
 

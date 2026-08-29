@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import type { CSSProperties } from "react";
 import { Breadcrumbs } from "../components/Breadcrumbs";
-import { storeHotel, storeHotelGallery } from "../content/media";
+import { shotVars, storeHotel, storeHotelGallery } from "../content/media";
 import { staticPageSeo } from "../content/seo";
 import { contactCopy, siteContact, storeCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
@@ -13,11 +14,14 @@ export function ContactPage() {
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage src={storeHotel.hero} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
-        <div className="kl-page-hero__veil" />
-        <div className="container kl-page-hero__content">
-          <p className="kl-eyebrow">{contactCopy.subtitle}</p>
-          <h1>{contactCopy.title}</h1>
+        <div className="container">
+          <div className="kl-page-hero__frame">
+            <SmartImage src={storeHotel.hero} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
+            <div className="kl-page-hero__content">
+              <p className="kl-eyebrow">{contactCopy.subtitle}</p>
+              <h1>{contactCopy.title}</h1>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -64,6 +68,7 @@ export function ContactPage() {
                     ? "kl-store-showcase__cell kl-store-showcase__cell--wide"
                     : "kl-store-showcase__cell"
                 }
+                style={shotVars(shot) as CSSProperties}
               >
                 <SmartImage src={shot} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
               </figure>

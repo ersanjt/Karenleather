@@ -6,8 +6,6 @@ import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { MensLookbook } from "../components/MensLookbook";
 import { ShopCatalogBar } from "../components/ShopCatalogBar";
 import { ShopSidebar } from "../components/ShopSidebar";
-import { SmartImage } from "../components/SmartImage";
-import { campaign } from "../content/media";
 import { breadcrumbJsonLd, canonicalPath, collectionPageJsonLd, shopFilterCopy, shopPageSeo } from "../content/seo";
 import { categorySeoDescription, categorySeoTitle } from "../content/taxonomy";
 import { siteBrand } from "../content/siteCopy";
@@ -146,23 +144,6 @@ export function ShopPage() {
 
   return (
     <div className="shop-catalog">
-      {!catSlug && !q.trim() && (
-        <section className="shop-hero" aria-label="کمپین فروشگاه">
-          <SmartImage
-            src={campaign.yellowSet}
-            className="shop-hero-bg"
-            loading="eager"
-            fetchPriority="high"
-            sizes="100vw"
-          />
-          <div className="shop-hero-overlay" />
-          <div className="container shop-hero-content">
-            <p className="kl-eyebrow">کمپین</p>
-            <p className="shop-hero-tag">کارن تبریز</p>
-          </div>
-        </section>
-      )}
-
       <ShopCatalogBar
         filter={filter}
         catSlug={catSlug}

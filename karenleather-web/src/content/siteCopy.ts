@@ -23,6 +23,8 @@ export const siteContact = {
   whatsapp: "00989144199935",
   instagram: "https://www.instagram.com/karen_leatherr",
   city: "تبریز",
+  address: "تبریز، اول جاده شاهگلی، لابی هتل شهریار",
+  streetAddress: "اول جاده شاهگلی، لابی هتل شهریار",
 };
 
 export const navLinks = {
@@ -83,8 +85,8 @@ export const homeCopy = {
   },
     atelier: {
     title: "نگاه کارن تبریز",
-    subtitle: "کمپین · لایف‌استایل · استودیو",
-    caption: "تصاویر تبلیغاتی برند کنار تولید تبریز",
+    subtitle: "سه قاب از کمپین و لایف‌استایل",
+    caption: "کفش مجلسی، استایل کلاسیک و استودیو",
   },
 };
 
@@ -146,14 +148,9 @@ export const contactCopy = {
   subtitle: "دفتر مرکزی و فروشگاه — تبریز",
   offices: [
     {
-      id: "hq",
-      kind: "دفتر مرکزی",
-      address: "تبریز، باغمیشه، میدان ارغوان، جنب بانک ملی",
-    },
-    {
       id: "store",
-      kind: "فروشگاه هتل شهریار",
-      address: "تبریز، اول جاده شاهگلی، لابی هتل شهریار",
+      kind: "دفتر مرکزی و فروشگاه",
+      address: siteContact.address,
     },
   ],
   phone: siteContact.phoneDisplay,
@@ -162,7 +159,7 @@ export const contactCopy = {
 export const storeCopy = {
   title: "فروشگاه شعبه هتل شهریار",
   subtitle: "تبریز · لابی هتل شهریار",
-  address: "تبریز، اول جاده شاهگلی، لابی هتل شهریار",
+  address: siteContact.address,
   lead:
     "ویترین کامل چرم کارن — کیف، کفش و اکسسوری زنانه و مردانه در فضایی لوکس با مشاوره حضوری و امکان انتخاب مستقیم محصولات.",
   highlights: [

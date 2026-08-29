@@ -125,25 +125,27 @@ export function ProductPage() {
             <div className="product-price-lg">{formatPrice(product.price || product.regular_price)}</div>
           )}
 
-          <div className="product-qty-row">
-            <label>
-              تعداد
+          <div className="product-buy">
+            <div className="product-qty-row">
+              <label htmlFor="product-qty">تعداد</label>
               <input
+                id="product-qty"
+                name="qty"
                 type="number"
                 min={1}
+                inputMode="numeric"
                 value={qty}
                 onChange={(e) => setQty(Math.max(1, Number(e.target.value) || 1))}
               />
-            </label>
-          </div>
-
-          <div className="product-actions">
-            <button type="button" className="btn btn-primary" onClick={() => add(product.id, qty)}>
-              افزودن به سبد
-            </button>
-            <a href={`${WHATSAPP_LINK}?text=${waText}`} target="_blank" rel="noreferrer" className="btn btn-gold">
-              سفارش در واتساپ
-            </a>
+            </div>
+            <div className="product-actions">
+              <button type="button" className="btn btn-primary" onClick={() => add(product.id, qty)}>
+                افزودن به سبد
+              </button>
+              <a href={`${WHATSAPP_LINK}?text=${waText}`} target="_blank" rel="noreferrer" className="btn btn-gold">
+                سفارش در واتساپ
+              </a>
+            </div>
           </div>
 
           <div className="prose product-desc" dangerouslySetInnerHTML={{ __html: bodyHtml }} />

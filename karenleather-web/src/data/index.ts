@@ -1,7 +1,7 @@
 import products from "@content/products.json";
 import categories from "@content/categories.json";
 import summary from "@content/summary.json";
-import type { Category, Product } from "./types";
+import type { Category, Product } from "../types";
 
 export let allProducts = products as Product[];
 

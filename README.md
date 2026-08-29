@@ -6,11 +6,22 @@
 
 ## ساختار
 
-| پوشه | توضیح |
+سایت زنده **React** است (`karenleather-web`). هستهٔ وردپرس فقط آرشیو و منبع تصویر است؛ روی دامنه سرو نمی‌شود.
+
+| مسیر | نقش |
 |------|--------|
-| `karenleather-web/` | اپ React — فروشگاه، ادمین، صفحات برند |
-| `_content/` | محتوای استخراج‌شده از وردپرس (محصولات، دسته‌ها، صفحات) |
-| `wp-content/uploads/` | تصاویر و مدia برند |
+| `karenleather-web/` | فروشگاه + پنل ادمین (Vite / React / TypeScript) |
+| `karenleather-web/src/pages/` | صفحات عمومی |
+| `karenleather-web/src/admin/` | پنل `/admin` |
+| `karenleather-web/src/components/` | UI مشترک |
+| `karenleather-web/src/content/` | متن، منو، سئو، رسانه |
+| `karenleather-web/src/data/` | کاتالوگ محصولات و دسته‌ها |
+| `karenleather-web/src/lib/` | سبد، فیلتر فروشگاه، تصویر، API |
+| `karenleather-web/src/types/` | تایپ‌های دامنه |
+| `karenleather-web/scripts/` | dev، build، SEO، ادمین API |
+| `_content/` | JSON استخراج‌شده از ووکامرس |
+| `wp-content/uploads/` | تصاویر برند و محصول |
+| `deploy-whm.sh` | انتشار روی cPanel |
 
 ## اجرای محلی
 

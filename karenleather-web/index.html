@@ -57,9 +57,11 @@
 
     <link rel="icon" href="/uploads/brand/02-mark-icon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/uploads/brand/02-mark-icon.png" />
-    <link rel="preload" href="/uploads/campaign/karen-tabriz/01-yellow-set-street.jpg" as="image" fetchpriority="high" />
 
     <style>
+      html.kl-ready #initial-loader {
+        display: none !important;
+      }
       #initial-loader {
         position: fixed;
         inset: 0;
@@ -120,7 +122,7 @@
             "keywords": "چرم کارن, کیف چرم طبیعی, کفش چرم, چرم شترمرغ, فروشگاه چرم تبریز",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "میدان ارغوان، جنب بانک ملی، باغمیشه",
+              "streetAddress": "اول جاده شاهگلی، لابی هتل شهریار",
               "addressLocality": "تبریز",
               "addressRegion": "آذربایجان شرقی",
               "addressCountry": "IR"
@@ -148,22 +150,13 @@
             "telephone": "+989144199935",
             "priceRange": "$$",
             "currenciesAccepted": "IRR",
-            "address": [
-              {
-                "@type": "PostalAddress",
-                "streetAddress": "میدان ارغوان، جنب بانک ملی، باغمیشه",
-                "addressLocality": "تبریز",
-                "addressRegion": "آذربایجان شرقی",
-                "addressCountry": "IR"
-              },
-              {
-                "@type": "PostalAddress",
-                "streetAddress": "اول جاده شاهگلی، لابی هتل شهریار",
-                "addressLocality": "تبریز",
-                "addressRegion": "آذربایجان شرقی",
-                "addressCountry": "IR"
-              }
-            ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "اول جاده شاهگلی، لابی هتل شهریار",
+              "addressLocality": "تبریز",
+              "addressRegion": "آذربایجان شرقی",
+              "addressCountry": "IR"
+            },
             "sameAs": ["https://www.instagram.com/karen_leatherr"]
           }
         ]

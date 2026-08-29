@@ -86,6 +86,8 @@ export function ShopCatalogBar({
               </svg>
             </span>
             <input
+              id="catalog-search"
+              name="q"
               type="search"
               className="catalog-search"
               placeholder="جستجو در محصولات…"

@@ -12,12 +12,16 @@ import { AdminSettingsPage } from "./pages/AdminSettingsPage";
 export function AdminApp() {
   useEffect(() => {
     const id = "admin-css";
-    if (document.getElementById(id)) return;
-    const link = document.createElement("link");
-    link.id = id;
-    link.rel = "stylesheet";
-    link.href = "/assets/admin.css";
-    document.head.appendChild(link);
+    const isDev = Boolean(document.querySelector('script[src*="dist-dev"]'));
+    const href = isDev ? "/src/admin/admin.css" : "/assets/admin.css";
+    let link = document.getElementById(id) as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement("link");
+      link.id = id;
+      link.rel = "stylesheet";
+      document.head.appendChild(link);
+    }
+    link.href = href;
   }, []);
 
   return (

@@ -97,7 +97,7 @@ export function Footer() {
           ))}
           <a href="/sitemap.html">نقشه سایت</a>
         </nav>
-        <p className="footer-mobile__address">{contactCopy.offices[1]?.address}</p>
+        <p className="footer-mobile__address">{contactCopy.offices[0]?.address}</p>
       </div>
 
       <div className="container footer-bottom">

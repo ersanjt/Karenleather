@@ -63,6 +63,16 @@ function resolveUpload(relPath) {
   return null;
 }
 
+const ignoreCssPlugin = {
+  name: "ignore-css",
+  setup(build) {
+    build.onLoad({ filter: /\.css$/ }, () => ({
+      contents: "export default {};",
+      loader: "js",
+    }));
+  },
+};
+
 const ctx = await esbuild.context({
   entryPoints: [path.join(root, "src/main.tsx")],
   outfile: outFile,
@@ -70,11 +80,12 @@ const ctx = await esbuild.context({
   format: "esm",
   sourcemap: true,
   treeShaking: false,
-  loader: { ".json": "json", ".css": "css" },
+  loader: { ".json": "json" },
   alias: {
     "@content": path.resolve(root, "../_content"),
   },
   plugins: [
+    ignoreCssPlugin,
     {
       name: "live-reload",
       setup(build) {
@@ -97,15 +108,33 @@ if (first.errors.length) {
 const indexHtml = fs.readFileSync(path.join(root, "index.html"), "utf8").replace(
   '<script type="module" src="/src/main.tsx"></script>',
   `<link rel="stylesheet" href="/src/index.css" />
-    <script type="module" src="/dist-dev/bundle.js"></script>
+    <script type="module" src="/dist-dev/bundle.js" onerror="window.__klBundleFailed&&window.__klBundleFailed()"></script>
     <script>
-      new EventSource("/esbuild-events").addEventListener("message", () => location.reload());
+      window.__klBundleFailed = function () {
+        var el = document.getElementById("initial-loader");
+        if (el) {
+          el.innerHTML = '<p style="color:#fff;font-family:Tahoma,sans-serif;text-align:center;padding:1rem">بارگذاری ناموفق شد. Ctrl+Shift+R را بزنید.</p>';
+        }
+      };
+      var reloadTimer;
+      new EventSource("/esbuild-events").addEventListener("message", function () {
+        clearTimeout(reloadTimer);
+        reloadTimer = setTimeout(function () { location.reload(); }, 400);
+      });
     </script>`,
 );
 
-function renderIndex() {
+function renderIndex(pathname = "/") {
   const bust = fs.existsSync(outFile) ? fs.statSync(outFile).mtimeMs : Date.now();
-  return indexHtml.replace("/dist-dev/bundle.js", `/dist-dev/bundle.js?v=${bust}`);
+  const cssFile = path.join(root, "src/index.css");
+  const cssBust = fs.existsSync(cssFile) ? fs.statSync(cssFile).mtimeMs : Date.now();
+  let html = indexHtml
+    .replace("/dist-dev/bundle.js", `/dist-dev/bundle.js?v=${bust}`)
+    .replace("/src/index.css", `/src/index.css?v=${cssBust}`);
+  if (pathname.startsWith("/admin")) {
+    html = html.replace("</head>", '    <link rel="stylesheet" href="/src/admin/admin.css" />\n  </head>');
+  }
+  return html;
 }
 
 const devOut = path.join(root, "dist-dev");
@@ -173,9 +202,14 @@ http
       return;
     }
 
+    if (pathname === "/assets/admin.css") {
+      sendFile(res, path.join(root, "src/admin/admin.css"));
+      return;
+    }
+
     if (pathname === "/" || pathname === "/index.html") {
       res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
-      res.end(renderIndex());
+      res.end(renderIndex(pathname));
       return;
     }
 
@@ -186,7 +220,7 @@ http
     }
 
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
-    res.end(renderIndex());
+    res.end(renderIndex(pathname));
   })
   .listen(port, "127.0.0.1", () => {
     console.log(`Karen Leather dev server: http://127.0.0.1:${port}`);

@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { lookbookMen } from "../content/media";
 import { SmartImage } from "./SmartImage";
@@ -7,7 +8,7 @@ interface MensLookbookProps {
 }
 
 export function MensLookbook({ variant = "home" }: MensLookbookProps) {
-  const shots = variant === "shop" ? lookbookMen.slice(5) : lookbookMen.slice(0, 5);
+  const shots = variant === "shop" ? lookbookMen.slice(5) : lookbookMen.slice(0, 4);
 
   return (
     <section
@@ -31,8 +32,20 @@ export function MensLookbook({ variant = "home" }: MensLookbookProps) {
               key={item.src}
               to={item.href ?? "/shop"}
               className={`kl-mens__shot${item.wide ? " kl-mens__shot--wide" : ""}`}
+              style={
+                item.wide
+                  ? ({
+                      "--shot-w": item.width,
+                      "--shot-h": item.height,
+                    } as CSSProperties)
+                  : undefined
+              }
             >
-              <SmartImage src={item} loading="lazy" sizes="(max-width: 768px) 100vw, 25vw" />
+              <SmartImage
+                src={item}
+                loading="lazy"
+                sizes={item.wide ? "(max-width: 960px) 100vw, 100vw" : "(max-width: 960px) 50vw, 25vw"}
+              />
               <span>{item.title}</span>
             </Link>
           ))}

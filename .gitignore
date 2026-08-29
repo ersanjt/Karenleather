@@ -16,6 +16,9 @@ error_log
 *.log
 npm-debug.log*
 
+# استخراج موقت محتوا — خروجی اسکریپت‌های آدیت
+_content_audit/
+
 # WordPress plugins (React app از _content و uploads استفاده می‌کند)
 wp-content/plugins/
 

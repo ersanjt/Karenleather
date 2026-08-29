@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import type { CSSProperties } from "react";
 import { Breadcrumbs } from "../components/Breadcrumbs";
-import { aboutMedia, ostrichLeather, storeHotel } from "../content/media";
+import { aboutMedia, ostrichLeather, shotVars, storeHotel } from "../content/media";
 import { staticPageSeo } from "../content/seo";
 import { aboutCopy, storeCopy, wholesaleCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
@@ -13,7 +14,7 @@ const storyBlocks = [
   },
   {
     ...aboutCopy.sections[1],
-    shot: ostrichLeather.swatchRack,
+    shot: ostrichLeather.bodyLeg,
   },
   {
     ...aboutCopy.sections[2],
@@ -27,11 +28,14 @@ export function AboutPage() {
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage src={aboutMedia.hero} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
-        <div className="kl-page-hero__veil" />
-        <div className="container kl-page-hero__content">
-          <p className="kl-eyebrow">{aboutCopy.subtitle}</p>
-          <h1>{aboutCopy.title}</h1>
+        <div className="container">
+          <div className="kl-page-hero__frame">
+            <SmartImage src={aboutMedia.hero} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
+            <div className="kl-page-hero__content">
+              <p className="kl-eyebrow">{aboutCopy.subtitle}</p>
+              <h1>{aboutCopy.title}</h1>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -73,7 +77,7 @@ export function AboutPage() {
         </div>
 
         <section className="kl-about-store">
-          <div className="kl-about-store__media">
+          <div className="kl-about-store__media" style={shotVars(storeHotel.wide) as CSSProperties}>
             <SmartImage src={storeHotel.wide} loading="lazy" sizes="(max-width: 900px) 100vw, 50vw" />
           </div>
           <div className="kl-about-store__text">

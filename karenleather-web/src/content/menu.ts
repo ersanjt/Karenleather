@@ -4,6 +4,7 @@ import { allProducts } from "../data";
 import { primaryUpload } from "../lib/images";
 import { shopCatHref } from "../lib/utils";
 import type { Category } from "../types";
+import { campaign, lookbookMen, type MediaShot } from "./media";
 
 export interface MenuLink {
   id: number;
@@ -24,6 +25,7 @@ export interface MegaColumn {
   title: string;
   href: string;
   banner?: string;
+  promo?: MediaShot & { subtitle: string; cta: string };
   sections: MegaSection[];
   totalProducts: number;
 }
@@ -122,10 +124,23 @@ function buildAccessoriesColumn(): MegaColumn | null {
   };
 }
 
+function withPromo(
+  col: MegaColumn | null,
+  shot: MediaShot,
+  subtitle: string,
+): MegaColumn | null {
+  if (!col) return null;
+  return {
+    ...col,
+    banner: shot.src,
+    promo: { ...shot, subtitle, cta: col.href },
+  };
+}
+
 export const megaMenuColumns: MegaColumn[] = [
-  buildGenderColumn(18),
-  buildGenderColumn(19),
-  buildAccessoriesColumn(),
+  withPromo(buildGenderColumn(18), campaign.yellowSet, "کمپین کارن تبریز · چرم طبیعی"),
+  withPromo(buildGenderColumn(19), lookbookMen[0], "لوفر، مانک‌استرپ و اسنیکر"),
+  withPromo(buildAccessoriesColumn(), campaign.burgundyCircle, "کیف و چرم کارن تبریز"),
 ].filter((c): c is MegaColumn => c !== null);
 
 export const quickShopLinks = allCats

@@ -1,7 +1,7 @@
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { megaPromo } from "../content/media";
 import { megaMenuColumns, quickShopLinks } from "../content/menu";
 import { SmartImage } from "./SmartImage";
 
@@ -183,17 +183,29 @@ export function MegaMenu({ onNavigate, mobile }: Props) {
               </div>
             )}
 
-            <aside className="mega-promo">
-              <SmartImage src={megaPromo} className="mega-promo-img" loading="lazy" sizes="240px" />
-              <div className="mega-promo-body">
-                <span className="mega-promo-tag">پیشنهاد ویژه</span>
-                <h4>{megaPromo.title}</h4>
-                <p>{megaPromo.subtitle}</p>
-                <Link to={megaPromo.cta} className="btn btn-gold" onClick={handleNavigate}>
-                  مشاهده
+            {column?.promo && (
+              <aside className="mega-promo">
+                <Link to={column.promo.cta} className="mega-promo-hit" onClick={handleNavigate}>
+                  <span
+                    className="mega-promo-media"
+                    style={
+                      {
+                        "--shot-w": column.promo.width,
+                        "--shot-h": column.promo.height,
+                      } as CSSProperties
+                    }
+                  >
+                    <SmartImage src={column.promo} className="mega-promo-img" loading="lazy" sizes="280px" />
+                  </span>
+                  <span className="mega-promo-body">
+                    <span className="mega-promo-tag">پیشنهاد ویژه</span>
+                    <h4>{column.promo.title}</h4>
+                    <p>{column.promo.subtitle}</p>
+                    <span className="mega-promo-go">مشاهده ←</span>
+                  </span>
                 </Link>
-              </div>
-            </aside>
+              </aside>
+            )}
           </div>
 
           <footer className="mega-footer">

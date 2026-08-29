@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { ProductCard } from "../components/ProductCard";
 import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { OstrichWholesaleSection } from "../components/OstrichWholesaleSection";
 import { MensLookbook } from "../components/MensLookbook";
-import { aboutMedia, banners, campaign, campaignBanners, campaignHeels, campaignStudio, lookbookMen, storeHotel } from "../content/media";
+import {
+  aboutMedia,
+  banners,
+  campaign,
+  campaignBanners,
+  campaignHeels,
+  campaignStudio,
+  lookbookMen,
+  shotVars,
+  storeHotel,
+} from "../content/media";
 import {
   homeCopy,
   siteBrand,
@@ -24,26 +34,36 @@ const slides = [
 ];
 
 const lookbook = [
-  campaignBanners[0],
-  campaignHeels,
-  campaignStudio[2],
-  lookbookMen[3],
-  campaignBanners[2],
+  { ...campaignHeels, kicker: "کمپین" },
+  { ...lookbookMen[5], kicker: "لایف‌استایل" },
+  { ...lookbookMen[9], kicker: "استودیو" },
 ];
 
 export function HomePage() {
   const [slide, setSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    if (paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
       setSlide((s) => (s + 1) % slides.length);
     }, 6500);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [paused]);
 
   return (
     <>
-      <section className="kl-hero" aria-label="صفحه اصلی">
+      <section
+        className="kl-hero"
+        aria-label="صفحه اصلی"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocusCapture={() => setPaused(true)}
+        onBlurCapture={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setPaused(false);
+        }}
+      >
         <div className="kl-hero__stage">
           {slides.map((item, i) => (
             <SmartImage
@@ -144,7 +164,7 @@ export function HomePage() {
               <Link
                 key={item.src}
                 to={item.href ?? "/shop"}
-                className={`kl-campaign__shot${item.wide ? " kl-campaign__shot--wide" : ""}`}
+                className="kl-campaign__shot"
               >
                 <SmartImage src={item} loading="lazy" sizes="(max-width: 900px) 100vw, 48vw" />
                 <span>{item.title}</span>
@@ -153,7 +173,12 @@ export function HomePage() {
           </div>
           <div className="kl-campaign__studio">
             {campaignStudio.map((item) => (
-              <Link key={item.src} to={item.href ?? "/shop"} className="kl-campaign__shot kl-campaign__shot--studio">
+              <Link
+                key={item.src}
+                to={item.href ?? "/shop"}
+                className="kl-campaign__shot kl-campaign__shot--studio"
+                style={shotVars(item) as CSSProperties}
+              >
                 <SmartImage src={item} loading="lazy" sizes="(max-width: 900px) 100vw, 33vw" />
                 <span>{item.title}</span>
               </Link>
@@ -296,13 +321,14 @@ export function HomePage() {
           </div>
           <div className="kl-store__gallery">
             <figure className="kl-store__figure kl-store__figure--hero">
-              <SmartImage src={storeHotel.wide} loading="lazy" sizes="(max-width: 900px) 100vw, 45vw" />
+              <SmartImage src={storeHotel.hero} loading="lazy" sizes="(max-width: 900px) 100vw, 50vw" />
+              <figcaption>{storeCopy.subtitle}</figcaption>
             </figure>
             <figure className="kl-store__figure">
-              <SmartImage src={storeHotel.shelves} loading="lazy" sizes="(max-width: 900px) 50vw, 22vw" />
+              <SmartImage src={storeHotel.wide} loading="lazy" sizes="(max-width: 900px) 50vw, 25vw" />
             </figure>
             <figure className="kl-store__figure">
-              <SmartImage src={storeHotel.consultation} loading="lazy" sizes="(max-width: 900px) 50vw, 22vw" />
+              <SmartImage src={storeHotel.consultation} loading="lazy" sizes="(max-width: 900px) 50vw, 25vw" />
             </figure>
           </div>
         </div>
@@ -320,15 +346,18 @@ export function HomePage() {
             </div>
           </div>
           <div className="kl-atelier__mosaic">
-            {lookbook.map((item, i) => (
-              <figure
+            {lookbook.map((item) => (
+              <Link
                 key={item.src}
-                className={
-                  i === 0 ? "kl-atelier__cell kl-atelier__cell--hero" : "kl-atelier__cell"
-                }
+                to={item.href ?? "/shop"}
+                className="kl-atelier__cell"
               >
-                <SmartImage src={item} loading="lazy" sizes="(max-width: 768px) 100vw, 25vw" />
-              </figure>
+                <SmartImage src={item} loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" />
+                <span>
+                  <small>{item.kicker}</small>
+                  {item.title}
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -337,7 +366,9 @@ export function HomePage() {
       <section className="kl-dual-cta">
         <div className="container kl-dual-cta__grid">
           <Link to="/shop?filter=women" className="kl-dual-cta__card kl-dual-cta__card--shop">
-            <SmartImage src={campaign.burgundyCircle} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
+            <span className="kl-dual-cta__media">
+              <SmartImage src={campaign.burgundyCircle} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
+            </span>
             <div>
               <span className="kl-section-label">خرید</span>
               <h3>کیف‌های کارن تبریز</h3>
@@ -345,7 +376,9 @@ export function HomePage() {
             </div>
           </Link>
           <Link to="/shop?filter=men" className="kl-dual-cta__card kl-dual-cta__card--shop">
-            <SmartImage src={lookbookMen[1]} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
+            <span className="kl-dual-cta__media">
+              <SmartImage src={lookbookMen[1]} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
+            </span>
             <div>
               <span className="kl-section-label">مردانه</span>
               <h3>کفش چرم کارن</h3>
