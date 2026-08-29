@@ -68,7 +68,7 @@ STAMP=$(date +%Y%m%d_%H%M%S)
 LIGHT_BACKUP="${BACKUP_DIR}/site_core_${STAMP}"
 echo "==> Light backup (no uploads) → ${LIGHT_BACKUP}"
 mkdir -p "${LIGHT_BACKUP}"
-for f in index.html .htaccess robots.txt sitemap.xml share.php share-pages.json; do
+for f in index.html .htaccess robots.txt sitemap.xml sitemap.php sitemap.html share.php share-pages.json; do
   [[ -f "${PUBLIC_HTML}/${f}" ]] && cp -a "${PUBLIC_HTML}/${f}" "${LIGHT_BACKUP}/" || true
 done
 [[ -d "${PUBLIC_HTML}/assets" ]] && cp -a "${PUBLIC_HTML}/assets" "${LIGHT_BACKUP}/" || true
@@ -78,7 +78,7 @@ mkdir -p "${PUBLIC_HTML}/assets"
 rsync -a --delete \
   "${REPO_DIR}/karenleather-web/dist/assets/" "${PUBLIC_HTML}/assets/"
 
-for f in index.html .htaccess robots.txt sitemap.xml share.php share-pages.json; do
+for f in index.html .htaccess robots.txt sitemap.xml sitemap.php sitemap.html share.php share-pages.json; do
   [[ -f "${REPO_DIR}/karenleather-web/dist/${f}" ]] && cp -a "${REPO_DIR}/karenleather-web/dist/${f}" "${PUBLIC_HTML}/${f}"
 done
 if [[ ! -f "${PUBLIC_HTML}/share.php" || ! -f "${PUBLIC_HTML}/share-pages.json" ]]; then
@@ -86,12 +86,16 @@ if [[ ! -f "${PUBLIC_HTML}/share.php" || ! -f "${PUBLIC_HTML}/share-pages.json" 
   exit 1
 fi
 
-if [[ ! -f "${PUBLIC_HTML}/sitemap.xml" ]]; then
-  echo "ERROR: sitemap.xml missing after publish — do not go live without it"
+if [[ ! -f "${PUBLIC_HTML}/sitemap.xml" || ! -f "${PUBLIC_HTML}/sitemap.php" ]]; then
+  echo "ERROR: sitemap.xml / sitemap.php missing after publish — do not go live without them"
   exit 1
 fi
 if ! grep -q "urlset" "${PUBLIC_HTML}/sitemap.xml"; then
   echo "ERROR: sitemap.xml is not a valid urlset"
+  exit 1
+fi
+if [[ ! -f "${PUBLIC_HTML}/sitemap.html" ]]; then
+  echo "ERROR: sitemap.html missing — crawlers need a JS-free product index"
   exit 1
 fi
 

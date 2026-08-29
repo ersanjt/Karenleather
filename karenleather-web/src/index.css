@@ -1855,6 +1855,9 @@ body.shop-catalog-mode .site-header.is-scrolled {
   background: none;
   cursor: pointer;
   text-align: inherit;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
 }
 .catalog-tile-media {
   aspect-ratio: 1;
@@ -2106,6 +2109,7 @@ body.shop-catalog-mode .site-header.is-scrolled {
 }
 .product-card-hit {
   display: block; width: 100%; padding: 0; border: none; background: none; cursor: pointer; text-align: inherit;
+  color: inherit; font: inherit; text-decoration: none;
 }
 .product-card-quick {
   position: absolute; bottom: 10px; left: 10px; width: 36px; height: 36px;

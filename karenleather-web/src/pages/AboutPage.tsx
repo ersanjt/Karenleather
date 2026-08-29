@@ -4,7 +4,6 @@ import { aboutMedia, ostrichLeather, storeHotel } from "../content/media";
 import { staticPageSeo } from "../content/seo";
 import { aboutCopy, storeCopy, wholesaleCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
-import { Logo } from "../components/Logo";
 import { SmartImage } from "../components/SmartImage";
 
 const storyBlocks = [
@@ -31,7 +30,6 @@ export function AboutPage() {
         <SmartImage src={aboutMedia.hero} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
         <div className="kl-page-hero__veil" />
         <div className="container kl-page-hero__content">
-          <Logo variant="hero" />
           <p className="kl-eyebrow">{aboutCopy.subtitle}</p>
           <h1>{aboutCopy.title}</h1>
         </div>

@@ -9,8 +9,11 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.karenleather\.com [NC]
 RewriteRule ^ https://karenleather.com%{REQUEST_URI} [L,R=301]
 
-# نقشه سایت و robots را هرگز به SPA نفرست
-RewriteRule ^(sitemap\.xml|robots\.txt|share\.php|share-pages\.json)$ - [L]
+# نقشه سایت XML از PHP — فایل استاتیک .xml روی بعضی هاست‌ها ۵۰۰ می‌شود
+RewriteRule ^(sitemap\.xml|wp-sitemap\.xml)$ sitemap.php [L]
+
+# robots، اشتراک و نقشه HTML را هرگز به SPA نفرست
+RewriteRule ^(robots\.txt|share\.php|share-pages\.json|sitemap\.html)$ - [L]
 
 # فایل‌های استاتیک را هرگز به SPA نفرست
 RewriteRule ^uploads/ - [L]

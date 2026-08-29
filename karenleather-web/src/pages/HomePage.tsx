@@ -4,7 +4,6 @@ import { ProductCard } from "../components/ProductCard";
 import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { OstrichWholesaleSection } from "../components/OstrichWholesaleSection";
 import { MensLookbook } from "../components/MensLookbook";
-import { Logo } from "../components/Logo";
 import { aboutMedia, banners, campaign, campaignBanners, campaignHeels, campaignStudio, lookbookMen, storeHotel } from "../content/media";
 import {
   homeCopy,
@@ -62,9 +61,6 @@ export function HomePage() {
 
         <div className="container kl-hero__grid">
           <div className="kl-hero__copy">
-            <div className="kl-hero__logo">
-              <Logo variant="hero" />
-            </div>
             <p className="kl-eyebrow">{homeCopy.hero.eyebrow}</p>
             <h1>{homeCopy.hero.title}</h1>
             <p className="kl-hero__lead">{homeCopy.hero.lead}</p>

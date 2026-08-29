@@ -41,6 +41,9 @@ export function Footer() {
                 <Link to={l.to}>{l.label}</Link>
               </li>
             ))}
+            <li>
+              <a href="/sitemap.html">نقشه سایت</a>
+            </li>
           </ul>
         </div>
 
@@ -92,6 +95,7 @@ export function Footer() {
               {l.label}
             </Link>
           ))}
+          <a href="/sitemap.html">نقشه سایت</a>
         </nav>
         <p className="footer-mobile__address">{contactCopy.offices[1]?.address}</p>
       </div>

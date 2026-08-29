@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import type { MouseEvent } from "react";
 import type { Product } from "../types";
 import { useShowPrices } from "../context/StoreSettings";
 import { useProductPreview } from "../context/ProductPreview";
 import { productImageAlt, cleanProductTitle } from "../content/seo";
 import { SmartImage } from "./SmartImage";
 import { formatPrice, productPath, uniqueProductImages } from "../lib/utils";
+
+function isPlainLeftClick(e: MouseEvent) {
+  return e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
+}
 
 interface Props {
   product: Product;
@@ -29,14 +34,18 @@ export function ProductCard({ product, catalog = false, catalogIds }: Props) {
 
   const name = cleanProductTitle(product.title);
 
-  const handleOpen = () => {
+  const href = productPath(product);
+
+  const openPreviewOnTile = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!isPlainLeftClick(e)) return;
+    e.preventDefault();
     openPreview(product.id, catalogIds ?? [product.id]);
   };
 
   if (catalog) {
     return (
       <article className="catalog-tile">
-        <button type="button" className="catalog-tile-hit" onClick={handleOpen} aria-label={name}>
+        <Link to={href} className="catalog-tile-hit" onClick={openPreviewOnTile} aria-label={name}>
           <div className={`catalog-tile-media${hoverSrc ? " has-hover" : ""}`}>
             <SmartImage src={imageSrc} alt={productImageAlt(product)} loading="lazy" sizes="(max-width: 640px) 50vw, 220px" />
             {hoverSrc && (
@@ -69,22 +78,22 @@ export function ProductCard({ product, catalog = false, catalogIds }: Props) {
               +
             </span>
           </div>
-        </button>
+        </Link>
       </article>
     );
   }
 
   return (
     <article className="product-card">
-      <button type="button" className="product-card-hit" onClick={handleOpen} aria-label={`پیش‌نمایش ${name}`}>
+      <Link to={href} className="product-card-hit" onClick={openPreviewOnTile} aria-label={`پیش‌نمایش ${name}`}>
         <div className="product-card-media">
           <SmartImage src={imageSrc} alt={productImageAlt(product)} loading="lazy" sizes="(max-width: 640px) 50vw, 260px" />
           {onSale && <span className="sale-pill">حراج</span>}
           <span className="product-card-quick">+</span>
         </div>
-      </button>
+      </Link>
       <div className="product-card-body">
-        <Link to={productPath(product)} className="product-card-title">
+        <Link to={href} className="product-card-title">
           {name}
         </Link>
         {product.categories[0] && <span className="badge">{product.categories[0].name}</span>}

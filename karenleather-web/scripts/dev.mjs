@@ -34,7 +34,9 @@ const mime = {
 
 function sendFile(res, filePath) {
   const ext = path.extname(filePath).toLowerCase();
-  res.writeHead(200, { "Content-Type": mime[ext] || "application/octet-stream", "Cache-Control": "public, max-age=86400" });
+  const cache =
+    ext === ".js" || ext === ".css" ? "no-store" : "public, max-age=86400";
+  res.writeHead(200, { "Content-Type": mime[ext] || "application/octet-stream", "Cache-Control": cache });
   fs.createReadStream(filePath).pipe(res);
 }
 
@@ -101,6 +103,11 @@ const indexHtml = fs.readFileSync(path.join(root, "index.html"), "utf8").replace
     </script>`,
 );
 
+function renderIndex() {
+  const bust = fs.existsSync(outFile) ? fs.statSync(outFile).mtimeMs : Date.now();
+  return indexHtml.replace("/dist-dev/bundle.js", `/dist-dev/bundle.js?v=${bust}`);
+}
+
 const devOut = path.join(root, "dist-dev");
 const { generateSeoFiles, isShareCrawler, lookupSharePage, renderShareHtml } = await import(pathToFileURL(path.join(__dirname, "generate-seo.mjs")).href);
 generateSeoFiles(devOut);
@@ -130,7 +137,7 @@ http
       return;
     }
 
-    if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
+    if (pathname === "/robots.txt" || pathname === "/sitemap.xml" || pathname === "/sitemap.html") {
       const filePath = path.join(devOut, pathname.slice(1));
       if (fs.existsSync(filePath)) {
         sendFile(res, filePath);
@@ -167,8 +174,8 @@ http
     }
 
     if (pathname === "/" || pathname === "/index.html") {
-      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-      res.end(indexHtml);
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
+      res.end(renderIndex());
       return;
     }
 
@@ -178,8 +185,8 @@ http
       return;
     }
 
-    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-    res.end(indexHtml);
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
+    res.end(renderIndex());
   })
   .listen(port, "127.0.0.1", () => {
     console.log(`Karen Leather dev server: http://127.0.0.1:${port}`);

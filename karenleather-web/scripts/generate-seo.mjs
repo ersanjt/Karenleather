@@ -45,6 +45,7 @@ const staticRoutes = [
   { loc: `${SITE}/contact`, priority: "0.8", changefreq: "monthly", lastmod: today },
   { loc: `${SITE}/wholesale`, priority: "0.85", changefreq: "monthly", lastmod: today },
   { loc: `${SITE}/representation`, priority: "0.75", changefreq: "monthly", lastmod: today },
+  { loc: `${SITE}/sitemap.html`, priority: "0.4", changefreq: "weekly", lastmod: today },
 ];
 
 for (const r of staticRoutes) urls.push(r);
@@ -95,12 +96,77 @@ if (fs.existsSync(publicDir)) {
 }
 
 fs.writeFileSync(path.join(outDir, "sitemap.xml"), xml);
+writeHtmlSitemap(outDir, SITE, urls, products, categories);
 writeSharePages(outDir, SITE, products, categories, seoPages);
 
 console.log(`SEO files: ${urls.length} URLs → ${path.join(outDir, "sitemap.xml")}`);
 }
 
 const OG_SIZE = { width: 1200, height: 630 };
+
+function writeHtmlSitemap(outDir, SITE, urls, products, categories) {
+  const esc = (s) =>
+    String(s ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  const productHref = (p) => `${SITE}/product/${p.id}/${encodeURIComponent(safeDecode(p.slug))}`;
+  const catHref = (c) => `${SITE}/shop?cat=${encodeURIComponent(safeDecode(c.slug))}`;
+  const staticLinks = [
+    ["صفحه اصلی", `${SITE}/`],
+    ["فروشگاه", `${SITE}/shop`],
+    ["درباره ما", `${SITE}/about`],
+    ["تماس با ما", `${SITE}/contact`],
+    ["فروش عمده", `${SITE}/wholesale`],
+    ["نمایندگی", `${SITE}/representation`],
+  ];
+  const catLinks = categories
+    .filter((c) => [18, 19, 40].includes(c.term_id) || (c.count && c.count > 0))
+    .map((c) => [c.name, catHref(c)]);
+  const productLinks = products.map((p) => [cleanTitle(p.title), productHref(p)]);
+
+  const list = (items) =>
+    items
+      .map(([label, href]) => `      <li><a href="${esc(href)}">${esc(label)}</a></li>`)
+      .join("\n");
+
+  const html = `<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>نقشه سایت — چرم کارن</title>
+    <meta name="description" content="فهرست صفحات، دسته‌ها و ${products.length} محصول فروشگاه چرم کارن تبریز." />
+    <link rel="canonical" href="${SITE}/sitemap.html" />
+    <style>
+      body { font-family: Tahoma, sans-serif; margin: 0 auto; max-width: 52rem; padding: 1.5rem; color: #041434; }
+      h1 { font-size: 1.4rem; }
+      h2 { font-size: 1.1rem; margin-top: 2rem; }
+      ul { line-height: 1.9; padding-right: 1.2rem; }
+      a { color: #041434; }
+    </style>
+  </head>
+  <body>
+    <h1>نقشه سایت چرم کارن</h1>
+    <p>فهرست صفحات ایندکس‌شونده فروشگاه — ${urls.length.toLocaleString("fa-IR")} آدرس.</p>
+    <h2>صفحات اصلی</h2>
+    <ul>
+${list(staticLinks)}
+    </ul>
+    <h2>دسته‌ها</h2>
+    <ul>
+${list(catLinks)}
+    </ul>
+    <h2>محصولات</h2>
+    <ul>
+${list(productLinks)}
+    </ul>
+  </body>
+</html>
+`;
+  fs.writeFileSync(path.join(outDir, "sitemap.html"), html);
+}
 
 function ogCard(site, file, alt) {
   return {
