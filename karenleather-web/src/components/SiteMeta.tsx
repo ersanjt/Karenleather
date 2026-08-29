@@ -6,6 +6,8 @@ import {
   canonicalUrl,
   defaultOgImage,
   defaultOgImageAlt,
+  defaultOgImageHeight,
+  defaultOgImageWidth,
   notFoundSeo,
   shopPageSeo,
   staticPageSeo,
@@ -30,6 +32,20 @@ function upsertMeta(attr: "name" | "property", key: string, content: string) {
   if (!el) {
     el = document.createElement("meta");
     el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
+function removeMeta(attr: "name" | "property", key: string) {
+  document.querySelector(`meta[${attr}="${key}"]`)?.remove();
+}
+
+function upsertItemprop(key: string, content: string) {
+  let el = document.querySelector(`meta[itemprop="${key}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute("itemprop", key);
     document.head.appendChild(el);
   }
   el.setAttribute("content", content);
@@ -65,7 +81,7 @@ function resolveStaticSeo(pathname: string, params: URLSearchParams): PageSeo {
     const query = params.get("q") ?? "";
     const cat = catSlug ? getCategoryBySlug(catSlug) : undefined;
     const validFilter = filter && URL_FILTERS.has(filter) ? filter : undefined;
-    return shopPageSeo(cat?.name, validFilter, query);
+    return shopPageSeo(cat, validFilter, query);
   }
 
   if (pathname.startsWith("/admin")) {
@@ -109,6 +125,11 @@ export function SiteMeta() {
 
     upsertMeta("name", "description", seo.description);
     upsertMeta("name", "robots", robots);
+    if (seo.keywords && !robots.includes("noindex")) {
+      upsertMeta("name", "keywords", seo.keywords);
+    } else {
+      removeMeta("name", "keywords");
+    }
 
     upsertMeta("property", "og:type", seo.ogType ?? "website");
     upsertMeta("property", "og:site_name", siteBrand.name);
@@ -116,8 +137,31 @@ export function SiteMeta() {
     upsertMeta("property", "og:description", seo.description);
     upsertMeta("property", "og:url", canonical);
     upsertMeta("property", "og:image", ogImage);
+    upsertMeta("property", "og:image:url", ogImage);
+    upsertMeta("property", "og:image:secure_url", ogImage);
     upsertMeta("property", "og:image:alt", ogAlt);
+    upsertItemprop("image", ogImage);
+    upsertLink("image_src", ogImage);
+    const ogW = seo.ogImageWidth ?? (ogImage === defaultOgImage ? defaultOgImageWidth : undefined);
+    const ogH = seo.ogImageHeight ?? (ogImage === defaultOgImage ? defaultOgImageHeight : undefined);
+    if (ogW && ogH) {
+      upsertMeta("property", "og:image:width", String(ogW));
+      upsertMeta("property", "og:image:height", String(ogH));
+      upsertMeta("property", "og:image:type", "image/jpeg");
+    } else {
+      upsertMeta("property", "og:image:type", ogImage.toLowerCase().includes(".png") ? "image/png" : "image/jpeg");
+      removeMeta("property", "og:image:width");
+      removeMeta("property", "og:image:height");
+    }
     upsertMeta("property", "og:locale", "fa_IR");
+
+    if (seo.ogType === "product") {
+      upsertMeta("property", "product:brand", siteBrand.name);
+      upsertMeta("property", "product:condition", "new");
+    } else {
+      removeMeta("property", "product:brand");
+      removeMeta("property", "product:condition");
+    }
 
     upsertMeta("name", "twitter:card", "summary_large_image");
     upsertMeta("name", "twitter:title", seo.title);

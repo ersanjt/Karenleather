@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import { ProductCard } from "../components/ProductCard";
 import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { OstrichWholesaleSection } from "../components/OstrichWholesaleSection";
+import { MensLookbook } from "../components/MensLookbook";
 import { Logo } from "../components/Logo";
-import { aboutMedia, banners, gallery, ostrichShoes, storeHotel } from "../content/media";
+import { aboutMedia, banners, campaign, campaignBanners, campaignHeels, campaignStudio, lookbookMen, storeHotel } from "../content/media";
 import {
   homeCopy,
   siteBrand,
@@ -17,10 +18,18 @@ import { featuredProducts } from "../data";
 import { SmartImage } from "../components/SmartImage";
 
 const slides = [
-  { src: storeHotel.hero, alt: "فروشگاه چرم کارن — شعبه هتل شهریار تبریز" },
-  { src: ostrichShoes.hero, alt: "کفش چرم شترمرغ — کلکسیون چرم کارن" },
-  { src: storeHotel.wide, alt: "نمای داخلی فروشگاه چرم کارن تبریز" },
-  { src: ostrichShoes.brown, alt: "اسنیکر چرم شترمرغ قهوه‌ای — چرم کارن" },
+  campaign.yellowSet,
+  lookbookMen[0],
+  campaign.yellowBagDome,
+  campaign.redBagDome,
+];
+
+const lookbook = [
+  campaignBanners[0],
+  campaignHeels,
+  campaignStudio[2],
+  lookbookMen[3],
+  campaignBanners[2],
 ];
 
 export function HomePage() {
@@ -40,12 +49,12 @@ export function HomePage() {
           {slides.map((item, i) => (
             <SmartImage
               key={item.src}
-              src={item.src}
-              alt={item.alt}
+              src={item}
               className={`kl-hero__slide${i === slide ? " is-active" : ""}`}
               loading={i === 0 ? "eager" : "lazy"}
               fetchPriority={i === 0 ? "high" : "auto"}
               decoding={i === 0 ? "sync" : "async"}
+              sizes="100vw"
             />
           ))}
           <div className="kl-hero__veil" />
@@ -107,6 +116,7 @@ export function HomePage() {
             ))}
           </div>
         </div>
+        <div className="kl-hero__overlap" aria-hidden="true" />
       </section>
 
       <section className="kl-pillars">
@@ -121,6 +131,41 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="kl-campaign" aria-label="کمپین کارن تبریز">
+        <div className="container">
+          <div className="kl-section-head">
+            <div>
+              <span className="kl-section-label">کمپین</span>
+              <h2 className="section-title">کارن تبریز</h2>
+              <p className="section-sub">چرم طبیعی، از خیابان‌های تبریز تا ویترین استودیو</p>
+            </div>
+            <Link to="/shop" className="link-more">
+              خرید کلکسیون
+            </Link>
+          </div>
+          <div className="kl-campaign__banners">
+            {campaignBanners.map((item) => (
+              <Link
+                key={item.src}
+                to={item.href ?? "/shop"}
+                className={`kl-campaign__shot${item.wide ? " kl-campaign__shot--wide" : ""}`}
+              >
+                <SmartImage src={item} loading="lazy" sizes="(max-width: 900px) 100vw, 48vw" />
+                <span>{item.title}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="kl-campaign__studio">
+            {campaignStudio.map((item) => (
+              <Link key={item.src} to={item.href ?? "/shop"} className="kl-campaign__shot kl-campaign__shot--studio">
+                <SmartImage src={item} loading="lazy" sizes="(max-width: 900px) 100vw, 33vw" />
+                <span>{item.title}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="kl-manifesto">
         <div className="container kl-manifesto__grid">
           <div className="kl-manifesto__quote">
@@ -131,7 +176,7 @@ export function HomePage() {
             </Link>
           </div>
           <div className="kl-manifesto__visual">
-            <SmartImage src={aboutMedia.workshop} alt="نمای فروشگاه چرم کارن — از کارگاه تبریز تا ویترین" loading="lazy" />
+            <SmartImage src={aboutMedia.workshop} loading="lazy" sizes="(max-width: 900px) 100vw, 50vw" />
             <div className="kl-manifesto__badge">
               <strong>{siteBrand.tagline}</strong>
             </div>
@@ -157,7 +202,7 @@ export function HomePage() {
                   {(i + 1).toLocaleString("fa-IR", { minimumIntegerDigits: 2 })}
                 </span>
                 {cat.image && (
-                  <SmartImage src={cat.image} alt={`${cat.name} — چرم کارن`} loading="lazy" />
+                  <SmartImage src={cat.image} alt={`${cat.name} چرم کارن`} loading="lazy" sizes="160px" />
                 )}
                 <div className="kl-cat-card__body">
                   <strong>{cat.name}</strong>
@@ -172,7 +217,7 @@ export function HomePage() {
       <section className="kl-craft">
         <div className="container kl-craft__grid">
           <Link to="/shop" className="kl-craft__tile kl-craft__tile--wide">
-            <SmartImage src={banners.shop} alt="فروشگاه آنلاین چرم کارن — کیف و کفش چرم" loading="lazy" />
+            <SmartImage src={banners.shop} loading="lazy" sizes="(max-width: 900px) 100vw, 60vw" />
             <div>
               <span className="kl-section-label">فروشگاه</span>
               <h3>کلکسیون آنلاین</h3>
@@ -191,25 +236,27 @@ export function HomePage() {
             </Link>
           </div>
           <Link to="/about" className="kl-craft__tile">
-            <SmartImage src={banners.craft} alt="هنر چرم‌سازی در کارگاه چرم کارن" loading="lazy" />
+            <SmartImage src={banners.craft} loading="lazy" sizes="(max-width: 900px) 100vw, 40vw" />
             <div>
               <span className="kl-section-label">کارگاه</span>
               <h3>هنر چرم‌سازی</h3>
               <p>از برش تا دوخت — تبریز</p>
             </div>
           </Link>
-          <Link to={homeCopy.ostrichShoes.shopLink} className="kl-craft__tile">
-            <SmartImage src={ostrichShoes.brown} alt="کفش چرم شترمرغ قهوه‌ای — چرم کارن" loading="lazy" />
+          <Link to="/shop?filter=footwear" className="kl-craft__tile">
+            <SmartImage src={campaign.blackOxford} loading="lazy" sizes="(max-width: 900px) 100vw, 40vw" />
             <div>
-              <span className="kl-section-label">جدید</span>
-              <h3>کلکسیون شترمرغ</h3>
-              <p>کفش و اکسسوری بافت‌دار</p>
+              <span className="kl-section-label">مردانه</span>
+              <h3>کفش چرم کلاسیک</h3>
+              <p>آکسفورد مشکی کارن تبریز</p>
             </div>
           </Link>
         </div>
       </section>
 
       <OstrichShoesShowcase />
+
+      <MensLookbook />
 
       <OstrichWholesaleSection />
 
@@ -253,13 +300,13 @@ export function HomePage() {
           </div>
           <div className="kl-store__gallery">
             <figure className="kl-store__figure kl-store__figure--hero">
-              <SmartImage src={storeHotel.wide} alt="نمای داخلی فروشگاه چرم کارن — هتل شهریار" loading="lazy" />
+              <SmartImage src={storeHotel.wide} loading="lazy" sizes="(max-width: 900px) 100vw, 45vw" />
             </figure>
             <figure className="kl-store__figure">
-              <SmartImage src={storeHotel.shelves} alt="قفسه کیف و اکسسوری چرم — فروشگاه کارن" loading="lazy" />
+              <SmartImage src={storeHotel.shelves} loading="lazy" sizes="(max-width: 900px) 50vw, 22vw" />
             </figure>
             <figure className="kl-store__figure">
-              <SmartImage src={storeHotel.consultation} alt="میز مشاوره خرید — فروشگاه چرم کارن" loading="lazy" />
+              <SmartImage src={storeHotel.consultation} loading="lazy" sizes="(max-width: 900px) 50vw, 22vw" />
             </figure>
           </div>
         </div>
@@ -277,14 +324,14 @@ export function HomePage() {
             </div>
           </div>
           <div className="kl-atelier__mosaic">
-            {gallery.map((src, i) => (
+            {lookbook.map((item, i) => (
               <figure
-                key={src}
+                key={item.src}
                 className={
                   i === 0 ? "kl-atelier__cell kl-atelier__cell--hero" : "kl-atelier__cell"
                 }
               >
-                <SmartImage src={src} alt={`گالری چرم کارن — تصویر ${(i + 1).toLocaleString("fa-IR")}`} loading="lazy" />
+                <SmartImage src={item} loading="lazy" sizes="(max-width: 768px) 100vw, 25vw" />
               </figure>
             ))}
           </div>
@@ -293,20 +340,20 @@ export function HomePage() {
 
       <section className="kl-dual-cta">
         <div className="container kl-dual-cta__grid">
-          <Link to={homeCopy.ostrichShoes.shopLink} className="kl-dual-cta__card kl-dual-cta__card--shop">
-            <SmartImage src={ostrichShoes.cognac} alt="کفش چرم شترمرغ کهنه‌ای — چرم کارن" loading="lazy" />
+          <Link to="/shop?filter=women" className="kl-dual-cta__card kl-dual-cta__card--shop">
+            <SmartImage src={campaign.burgundyCircle} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
             <div>
               <span className="kl-section-label">خرید</span>
-              <h3>فروشگاه آنلاین چرم کارن</h3>
+              <h3>کیف‌های کارن تبریز</h3>
               <span className="kl-dual-cta__go">ورود ←</span>
             </div>
           </Link>
-          <Link to="/representation" className="kl-dual-cta__card kl-dual-cta__card--partner">
+          <Link to="/shop?filter=men" className="kl-dual-cta__card kl-dual-cta__card--shop">
+            <SmartImage src={lookbookMen[1]} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
             <div>
-              <span className="kl-section-label">همکاری</span>
-              <h3>اخذ نمایندگی فروش</h3>
-              <p>شبکه فروشگاهی با برندینگ یکپارچه و پشتیبانی شرکت</p>
-              <span className="kl-dual-cta__go">شرایط نمایندگی ←</span>
+              <span className="kl-section-label">مردانه</span>
+              <h3>کفش چرم کارن</h3>
+              <span className="kl-dual-cta__go">ورود ←</span>
             </div>
           </Link>
         </div>

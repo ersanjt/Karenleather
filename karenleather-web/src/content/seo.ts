@@ -1,58 +1,112 @@
-import type { Product } from "../types";
+import type { Category, Product } from "../types";
 import { absoluteUrl, siteBrand, siteContact, wholesaleCopy, representationCopy } from "./siteCopy";
 import { brandLogos } from "./brandLogos";
+import { ogShare, type MediaShot } from "./media";
 import { primaryImage, productPath } from "../lib/utils";
+import seoPages from "./seoPages.json";
+import {
+  categoryKeywords,
+  categorySeoDescription,
+  categorySeoTitle,
+  productFacts,
+  productKeywords,
+  productSeoDescription as buildProductDescription,
+} from "./taxonomy";
 
-/** تصویر اجتماعی — ویترین واقعی، نه لوگوی کوچک */
-export const defaultOgImage = absoluteUrl("/uploads/2026/07/store-hotel/01-showroom-wide.jpg");
-export const defaultOgImageAlt = "فروشگاه چرم کارن — شعبه هتل شهریار تبریز";
+export {
+  categoryKeywords,
+  categorySeoDescription,
+  categorySeoTitle,
+  cleanProductTitle,
+  detectMaterial,
+  productBodyHtml,
+  productDisplayTags,
+  productKeywords,
+  productSeoDescription,
+} from "./taxonomy";
+
+/** تصویر اجتماعی — ۱۲۰۰×۶۳۰ برای پیش‌نمایش لینک در واتساپ، تلگرام، فیسبوک */
+export const defaultOgImage = absoluteUrl(ogShare.home.src);
+export const defaultOgImageAlt = ogShare.home.alt;
+export const defaultOgImageWidth = ogShare.home.width;
+export const defaultOgImageHeight = ogShare.home.height;
+
+function withOg(seo: Omit<PageSeo, "ogImage" | "ogImageAlt" | "ogImageWidth" | "ogImageHeight">, shot: MediaShot): PageSeo {
+  return {
+    ...seo,
+    ogImage: absoluteUrl(shot.src),
+    ogImageAlt: shot.alt,
+    ogImageWidth: shot.width,
+    ogImageHeight: shot.height,
+  };
+}
 
 const INDEXABLE_SHOP_FILTERS = new Set(["new", "sale", "footwear", "women", "men", "accessories"]);
 
 export interface PageSeo {
   title: string;
   description: string;
+  keywords?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   ogType?: "website" | "product";
   robots?: string;
 }
 
 export const staticPageSeo: Record<string, PageSeo> = {
-  "/": {
-    title: `چرم کارن | فروشگاه کیف و کفش چرم طبیعی — تبریز`,
-    description:
-      "فروشگاه آنلاین چرم کارن — تولیدکننده کیف، کفش، کمربند و اکسسوری از چرم طبیعی و شترمرغ. ۱۱۶+ مدل، گارانتی ۲ ساله، ارسال سراسری. تبریز.",
-    ogImage: defaultOgImage,
-  },
-  "/shop": {
-    title: `فروشگاه آنلاین — ${siteBrand.name} | کیف و کفش چرم`,
-    description:
-      "خرید آنلاین کیف، کفش و اکسسوری چرم طبیعی — کلکسیون زنانه، مردانه، کفش مجلسی، بوت و چرم شترمرغ. فیلتر دسته‌بندی و جستجو.",
-  },
-  "/about": {
-    title: `درباره چرم کارن — تولیدکننده چرم طبیعی از ${siteBrand.since}`,
-    description:
-      "شرکت صنایع چرم کارن افق نو — تولید کیف، کفش و اکسسوری چرم طبیعی و شترمرغ در تبریز از سال ۱۳۹۴. گارانتی ۲ ساله و خدمات پس از فروش.",
-  },
-  "/contact": {
-    title: `تماس با چرم کارن — دفتر مرکزی و فروشگاه تبریز`,
-    description:
-      `تماس با چرم کارن: ${siteContact.phoneDisplay} — دفتر مرکزی باغمیشه و فروشگاه هتل شهریار تبریز. مشاوره خرید و خدمات پس از فروش.`,
-  },
-  "/wholesale": {
-    title: `فروش عمده چرم شترمرغ — تنه و ساق | ${siteBrand.name}`,
-    description:
-      "فروش عمده چرم شترمرغ تنه و ساق برای کارگاه‌ها و برندها — طیف رنگ‌بندی اختصاصی، بافت نقاط و پوست‌مار. استعلام از چرم کارن.",
-  },
-  "/representation": {
-    title: `اخذ نمایندگی چرم کارن — شبکه فروشگاهی`,
-    description:
-      "شرایط اخذ نمایندگی فروش چرم کارن — برندینگ یکپارچه، نرم‌افزار فروش، پشتیبانی شرکت. درخواست نمایندگی در شهرهای مختلف.",
-  },
+  "/": withOg(
+    {
+      title: seoPages.home.title,
+      description: seoPages.home.description,
+      keywords: seoPages.home.keywords,
+    },
+    ogShare.home,
+  ),
+  "/shop": withOg(
+    {
+      title: seoPages.shop.title,
+      description: seoPages.shop.description,
+      keywords: seoPages.shop.keywords,
+    },
+    ogShare.shop,
+  ),
+  "/about": withOg(
+    {
+      title: seoPages.about.title,
+      description: seoPages.about.description,
+      keywords: seoPages.about.keywords,
+    },
+    ogShare.about,
+  ),
+  "/contact": withOg(
+    {
+      title: seoPages.contact.title,
+      description: seoPages.contact.description,
+      keywords: seoPages.contact.keywords,
+    },
+    ogShare.contact,
+  ),
+  "/wholesale": withOg(
+    {
+      title: seoPages.wholesale.title,
+      description: seoPages.wholesale.description,
+      keywords: seoPages.wholesale.keywords,
+    },
+    ogShare.wholesale,
+  ),
+  "/representation": withOg(
+    {
+      title: seoPages.representation.title,
+      description: seoPages.representation.description,
+      keywords: seoPages.representation.keywords,
+    },
+    ogShare.home,
+  ),
   "/cart": {
-    title: `سبد خرید — ${siteBrand.name}`,
-    description: "سبد خرید فروشگاه چرم کارن.",
+    title: seoPages.cart.title,
+    description: seoPages.cart.description,
     robots: "noindex, nofollow",
   },
 };
@@ -83,34 +137,16 @@ export function canonicalUrl(pathname: string, searchParams: URLSearchParams): s
   return absoluteUrl(canonicalPath(pathname, searchParams));
 }
 
-const FILTER_SEO: Record<string, { title: string; description: string }> = {
-  new: {
-    title: "جدیدترین محصولات",
-    description: "جدیدترین کیف، کفش و اکسسوری چرم کارن — چرم طبیعی دست‌ساز با گارانتی ۲ ساله.",
-  },
-  footwear: {
-    title: "کفش چرم",
-    description: "خرید کفش چرم مردانه و زنانه — مجلسی، بوت، لوفر، صندل و کفش شترمرغ از چرم کارن.",
-  },
-  women: {
-    title: "محصولات زنانه",
-    description: "کلکسیون زنانه چرم کارن — کیف، کفش و اکسسوری چرم طبیعی.",
-  },
-  men: {
-    title: "محصولات مردانه",
-    description: "کلکسیون مردانه چرم کارن — کفش، کیف و اکسسوری چرم طبیعی.",
-  },
-  accessories: {
-    title: "اکسسوری چرم",
-    description: "اکسسوری چرم طبیعی — کمربند، جاکارتی، پاسپورتی و محصولات چرم شترمرغ.",
-  },
-  sale: {
-    title: "حراج و تخفیف",
-    description: "محصولات تخفیف‌دار چرم کارن — فرصت خرید کیف و کفش چرم با قیمت ویژه.",
-  },
+const FILTER_SEO: Record<string, { title: string; description: string; keywords: string; og: MediaShot }> = {
+  new: { ...seoPages.filters.new, og: ogShare.shop },
+  footwear: { ...seoPages.filters.footwear, og: ogShare.men },
+  women: { ...seoPages.filters.women, og: ogShare.home },
+  men: { ...seoPages.filters.men, og: ogShare.men },
+  accessories: { ...seoPages.filters.accessories, og: ogShare.shop },
+  sale: { ...seoPages.filters.sale, og: ogShare.shop },
 };
 
-export function shopPageSeo(catName?: string, filter?: string, query?: string): PageSeo {
+export function shopPageSeo(cat?: Category | null, filter?: string, query?: string): PageSeo {
   if (query?.trim()) {
     const q = query.trim();
     return {
@@ -119,28 +155,38 @@ export function shopPageSeo(catName?: string, filter?: string, query?: string): 
       robots: "noindex, follow",
     };
   }
-  if (catName) {
-    return {
-      title: `${catName} — خرید آنلاین | ${siteBrand.name}`,
-      description: `خرید ${catName} از چرم کارن — چرم طبیعی دست‌ساز، گارانتی ۲ ساله، ارسال سراسری. مشاهده و سفارش آنلاین.`,
-    };
+  if (cat) {
+    return withOg(
+      {
+        title: `${categorySeoTitle(cat)} — خرید آنلاین | ${siteBrand.name}`,
+        description: categorySeoDescription(cat),
+        keywords: categoryKeywords(cat),
+      },
+      /کفش|لوفر|بوت|اسنیکر|footwear|men|مردانه/i.test(`${cat.name} ${cat.slug}`) ? ogShare.men : ogShare.shop,
+    );
   }
   if (filter && FILTER_SEO[filter]) {
     const f = FILTER_SEO[filter];
-    return {
-      title: `${f.title} — ${siteBrand.name}`,
-      description: f.description,
-    };
+    return withOg(
+      { title: `${f.title} — ${siteBrand.name}`, description: f.description, keywords: f.keywords },
+      f.og,
+    );
   }
   return staticPageSeo["/shop"];
 }
 
+export function shopFilterCopy(filter?: string): { title: string; description: string } | undefined {
+  if (filter && FILTER_SEO[filter]) return FILTER_SEO[filter];
+  return undefined;
+}
+
 export function productPageSeo(product: Product): PageSeo {
-  const cats = product.categories.map((c) => c.name).join("، ");
-  const cleanTitle = product.title.replace(/^مدل:\s*/i, "");
+  const facts = productFacts(product);
+  const catLabel = facts.leafCategory?.name ?? facts.type;
   return {
-    title: `${cleanTitle}${cats ? ` | ${cats}` : ""} — ${siteBrand.name}`,
-    description: productSeoDescription(product),
+    title: `${facts.name} | ${catLabel} — ${siteBrand.name}`,
+    description: buildProductDescription(product),
+    keywords: productKeywords(product),
     ogImage: product.images[0]
       ? absoluteUrl(`/uploads/${product.images[0].file.split("?")[0]}`)
       : defaultOgImage,
@@ -149,37 +195,11 @@ export function productPageSeo(product: Product): PageSeo {
   };
 }
 
-export function productSeoDescription(product: Product): string {
-  if (product.excerpt?.trim()) return product.excerpt.trim();
-  const cats = product.categories.map((c) => c.name).join("، ");
-  const cleanTitle = product.title.replace(/^مدل:\s*/i, "");
-  return `خرید ${cleanTitle} از فروشگاه ${siteBrand.name}${cats ? ` — دسته ${cats}` : ""}. چرم طبیعی دست‌ساز، گارانتی ۲ ساله، ارسال به سراسر ایران. تولید ${siteContact.city}.`;
-}
-
-export function productBodyHtml(product: Product): string {
-  if (product.description?.trim()) return product.description;
-  const cats = product.categories.map((c) => c.name).join("، ");
-  const cleanTitle = product.title.replace(/^مدل:\s*/i, "");
-  const material = detectMaterial(cleanTitle);
-  return `<p><strong>${cleanTitle}</strong> از مجموعه ${siteBrand.name}${cats ? ` — ${cats}` : ""}.</p>
-<p>این محصول با ${material} و دوخت دست‌ساز در کارگاه ${siteContact.city} تولید شده است. تمامی محصولات چرم کارن دارای <strong>گارانتی ۲ ساله</strong> اصالت و کیفیت هستند.</p>
-<p>برای مشاوره خرید، سفارش اختصاصی یا اطلاع از موجودی با ${siteContact.phoneDisplay} تماس بگیرید.</p>`;
-}
-
-function detectMaterial(title: string): string {
-  if (/شترمرغ|ostrich/i.test(title)) return "چرم طبیعی شترمرغ";
-  if (/کروکو|croc/i.test(title)) return "چرم کروکودیل";
-  if (/پیتون|python/i.test(title)) return "چرم پیتون";
-  if (/وجیتال|veg/i.test(title)) return "چرم وجیتال";
-  if (/فلوتر|floater/i.test(title)) return "چرم فلوتر";
-  if (/نابوک|nubuck/i.test(title)) return "چرم نابوک";
-  return "چرم طبیعی گاوی";
-}
-
 export function productJsonLd(product: Product, opts?: { includePrice?: boolean }) {
   const url = absoluteUrl(productPath(product));
   const img = primaryImage(product.images);
   const imgUrl = img ? absoluteUrl(img) : defaultOgImage;
+  const facts = productFacts(product);
   const offers: Record<string, unknown> = {
     "@type": "Offer",
     url,
@@ -203,28 +223,57 @@ export function productJsonLd(product: Product, opts?: { includePrice?: boolean 
     }
   }
 
+  const extra: Record<string, unknown> = {};
+  extra.material = facts.material;
+  extra.keywords = productKeywords(product);
+  extra.category = facts.leafCategory?.name ?? facts.type;
+  extra.additionalProperty = [
+    { "@type": "PropertyValue", name: "جنس", value: facts.material },
+    ...(facts.colors.length
+      ? [{ "@type": "PropertyValue", name: "رنگ", value: facts.colors.join("، ") }]
+      : []),
+    ...(facts.gender
+      ? [{ "@type": "PropertyValue", name: "کلکسیون", value: facts.gender }]
+      : []),
+  ];
+  if (facts.colors[0]) extra.color = facts.colors.join(" / ");
+  if (facts.gender === "زنانه" || facts.gender === "مردانه") {
+    extra.audience = {
+      "@type": "PeopleAudience",
+      suggestedGender: facts.gender === "زنانه" ? "female" : "male",
+    };
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: product.title.replace(/^مدل:\s*/i, ""),
-    description: productSeoDescription(product),
-    image: imgUrl,
+    name: facts.name,
+    description: buildProductDescription(product),
+    image: imgUrl
+      ? {
+          "@type": "ImageObject",
+          url: imgUrl,
+          caption: productImageAlt(product),
+        }
+      : defaultOgImage,
     sku: product.sku || String(product.id),
     brand: {
       "@type": "Brand",
       name: siteBrand.name,
     },
     offers,
+    ...extra,
   };
 }
 
-export function collectionPageJsonLd(name: string, path: string, description: string) {
+export function collectionPageJsonLd(name: string, path: string, description: string, keywords?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name,
     description,
     url: absoluteUrl(path),
+    ...(keywords ? { keywords } : {}),
     isPartOf: {
       "@type": "WebSite",
       name: siteBrand.name,
@@ -296,7 +345,13 @@ export function organizationJsonLd() {
     legalName: siteBrand.legalName,
     url: siteBrand.url,
     logo: absoluteUrl(brandLogos.mark.src),
-    image: defaultOgImage,
+    image: {
+      "@type": "ImageObject",
+      url: defaultOgImage,
+      width: defaultOgImageWidth,
+      height: defaultOgImageHeight,
+      caption: defaultOgImageAlt,
+    },
     telephone: siteContact.phoneTel,
     email: "admin@karenleather.com",
     address: [
@@ -316,6 +371,7 @@ export function organizationJsonLd() {
       },
     ],
     sameAs: [siteContact.instagram],
+    keywords: seoPages.home.keywords,
     priceRange: "$$",
     currenciesAccepted: "IRR",
     areaServed: {
@@ -329,8 +385,11 @@ export function organizationJsonLd() {
 export function productImageAlt(product: Product, index = 0): string {
   const img = product.images[index];
   if (img?.alt?.trim()) return img.alt.trim();
-  const cats = product.categories[0]?.name ?? "چرم";
-  return `${product.title.replace(/^مدل:\s*/i, "")} — ${cats} — ${siteBrand.name}`;
+  const facts = productFacts(product);
+  const cats = facts.leafCategory?.name ?? facts.type;
+  const base = `${facts.name} — ${cats} — ${siteBrand.name}`;
+  if (index > 0) return `${base} — نمای ${(index + 1).toLocaleString("fa-IR")}`;
+  return base;
 }
 
 export function decodeProductSlug(slug: string): string {

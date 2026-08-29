@@ -135,7 +135,7 @@ export function MegaMenu({ onNavigate, mobile }: Props) {
                 onClick={() => setActiveCol(col.id)}
               >
                 {col.banner && (
-                  <SmartImage src={col.banner} alt="" className="mega-tab-img" loading="lazy" />
+                  <SmartImage src={col.banner} alt={col.title} className="mega-tab-img" loading="lazy" sizes="72px" />
                 )}
                 <span className="mega-tab-text">
                   <strong>{col.title}</strong>
@@ -184,7 +184,7 @@ export function MegaMenu({ onNavigate, mobile }: Props) {
             )}
 
             <aside className="mega-promo">
-              <SmartImage src={megaPromo.image} alt="" className="mega-promo-img" loading="lazy" />
+              <SmartImage src={megaPromo} className="mega-promo-img" loading="lazy" sizes="240px" />
               <div className="mega-promo-body">
                 <span className="mega-promo-tag">پیشنهاد ویژه</span>
                 <h4>{megaPromo.title}</h4>

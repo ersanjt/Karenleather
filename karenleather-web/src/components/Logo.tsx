@@ -29,6 +29,7 @@ export function Logo({ variant, compact = false }: LogoProps) {
           decoding="async"
           width={48}
           height={48}
+          sizes="48px"
         />
       </span>
     );
@@ -40,12 +41,13 @@ export function Logo({ variant, compact = false }: LogoProps) {
         <SmartImage
           src={mark.src}
           fallbacks={mark.fallbacks}
-          alt={siteBrand.name}
+          alt=""
           className="logo-lockup__mark"
           loading="eager"
           decoding="async"
           width={96}
           height={96}
+          sizes="96px"
         />
         <span className="logo-lockup__text">{siteBrand.name}</span>
       </span>
@@ -63,6 +65,7 @@ export function Logo({ variant, compact = false }: LogoProps) {
         decoding="async"
         width={48}
         height={48}
+        sizes="48px"
       />
       <span className="logo-lockup__text">{siteBrand.name}</span>
     </span>

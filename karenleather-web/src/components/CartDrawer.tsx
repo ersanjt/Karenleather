@@ -5,6 +5,7 @@ import { useCart } from "../lib/cart";
 import { buildCartWhatsAppMessage } from "../lib/cartMessage";
 import { useCartUI } from "../context/CartUI";
 import { formatPrice, productPath, WHATSAPP_LINK } from "../lib/utils";
+import { productImageAlt, cleanProductTitle } from "../content/seo";
 import { SmartImage } from "./SmartImage";
 
 export function CartDrawer() {
@@ -29,7 +30,7 @@ export function CartDrawer() {
 
   const waMessage = encodeURIComponent(
     buildCartWhatsAppMessage(
-      lines.map((l) => ({ title: l.product.title, qty: l.item.qty, lineTotal: l.lineTotal })),
+      lines.map((l) => ({ title: cleanProductTitle(l.product.title), qty: l.item.qty, lineTotal: l.lineTotal })),
       total,
     ),
   );
@@ -61,11 +62,11 @@ export function CartDrawer() {
               {lines.map(({ item, product, lineTotal }) => (
                 <article key={item.productId} className="cart-line">
                   <Link to={productPath(product)} onClick={closeDrawer} className="cart-line-thumb">
-                    <SmartImage src={product.images[0]?.file ?? ""} alt="" />
+                    <SmartImage src={product.images[0]?.file ?? ""} alt={productImageAlt(product)} sizes="72px" />
                   </Link>
                   <div className="cart-line-info">
                     <Link to={productPath(product)} onClick={closeDrawer} className="cart-line-title">
-                      {product.title}
+                      {cleanProductTitle(product.title)}
                     </Link>
                     {showPrices && <div className="cart-line-price">{formatPrice(lineTotal)}</div>}
                     <div className="cart-line-actions">

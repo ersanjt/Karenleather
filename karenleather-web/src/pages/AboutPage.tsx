@@ -10,18 +10,15 @@ import { SmartImage } from "../components/SmartImage";
 const storyBlocks = [
   {
     ...aboutCopy.sections[0],
-    src: aboutMedia.iranianCraft,
-    alt: "ویترین کیف و کفش تولید ایران — فروشگاه چرم کارن تبریز",
+    shot: aboutMedia.iranianCraft,
   },
   {
     ...aboutCopy.sections[1],
-    src: ostrichLeather.swatchRack,
-    alt: "نمونه رنگ چرم تنه و ساق شترمرغ در خط تولید چرم کارن",
+    shot: ostrichLeather.swatchRack,
   },
   {
     ...aboutCopy.sections[2],
-    src: aboutMedia.service,
-    alt: "فضای مشاوره حضوری و خدمات پس از فروش — چرم کارن",
+    shot: aboutMedia.service,
   },
 ];
 
@@ -31,11 +28,7 @@ export function AboutPage() {
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage
-          src={aboutMedia.hero}
-          alt="نمای فروشگاه چرم کارن — تبریز"
-          className="kl-page-hero__bg"
-        />
+        <SmartImage src={aboutMedia.hero} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
         <div className="kl-page-hero__veil" />
         <div className="container kl-page-hero__content">
           <Logo variant="hero" />
@@ -75,7 +68,7 @@ export function AboutPage() {
                 <p>{block.body}</p>
               </div>
               <div className="kl-about-block__media">
-                <SmartImage src={block.src} alt={block.alt} loading="lazy" />
+                <SmartImage src={block.shot} loading="lazy" sizes="(max-width: 900px) 100vw, 50vw" />
               </div>
             </article>
           ))}
@@ -83,11 +76,7 @@ export function AboutPage() {
 
         <section className="kl-about-store">
           <div className="kl-about-store__media">
-            <SmartImage
-              src={storeHotel.wide}
-              alt="فضای داخلی فروشگاه شعبه هتل شهریار — تبریز"
-              loading="lazy"
-            />
+            <SmartImage src={storeHotel.wide} loading="lazy" sizes="(max-width: 900px) 100vw, 50vw" />
           </div>
           <div className="kl-about-store__text">
             <span className="kl-section-label">فروشگاه حضوری</span>

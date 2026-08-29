@@ -81,10 +81,10 @@ export const homeCopy = {
     cta: "مشاهده کفش‌ها",
     shopLink: "/shop?filter=footwear",
   },
-  atelier: {
-    title: "کارگاه و تولید",
-    subtitle: "تبریز · صنعت چرم ایران",
-    caption: "تصاویر واقعی از خط تولید و نمونه‌های کارگاه چرم کارن",
+    atelier: {
+    title: "نگاه کارن تبریز",
+    subtitle: "کمپین · لایف‌استایل · استودیو",
+    caption: "تصاویر تبلیغاتی برند کنار تولید تبریز",
   },
 };
 

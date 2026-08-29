@@ -33,6 +33,9 @@ export function PageLoader({ visible, leaving = false }: Props) {
           className="page-loader-logo"
           decoding="sync"
           fetchPriority="high"
+          width={148}
+          height={148}
+          sizes="148px"
         />
       </div>
     </div>

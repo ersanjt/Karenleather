@@ -3,9 +3,13 @@ import { useSearchParams } from "react-router-dom";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { ProductCard } from "../components/ProductCard";
 import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
+import { MensLookbook } from "../components/MensLookbook";
 import { ShopCatalogBar } from "../components/ShopCatalogBar";
 import { ShopSidebar } from "../components/ShopSidebar";
-import { breadcrumbJsonLd, canonicalPath, collectionPageJsonLd, shopPageSeo } from "../content/seo";
+import { SmartImage } from "../components/SmartImage";
+import { campaign } from "../content/media";
+import { breadcrumbJsonLd, canonicalPath, collectionPageJsonLd, shopFilterCopy, shopPageSeo } from "../content/seo";
+import { categorySeoDescription, categorySeoTitle } from "../content/taxonomy";
 import { siteBrand } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
 import { getCategoryBySlug } from "../data";
@@ -53,8 +57,8 @@ export function ShopPage() {
   const catalogIds = useMemo(() => filtered.map((p) => p.id), [filtered]);
 
   const seo = useMemo(
-    () => shopPageSeo(activeCat?.name, filter, q),
-    [activeCat?.name, filter, q],
+    () => shopPageSeo(activeCat, filter, q),
+    [activeCat, filter, q],
   );
 
   const jsonLd = useMemo(() => {
@@ -64,8 +68,8 @@ export function ShopPage() {
       { name: "فروشگاه", path: "/shop" },
       ...(activeCat ? [{ name: activeCat.name, path: shopCatHref(activeCat.slug) }] : []),
     ]);
-    return [crumbs, collectionPageJsonLd(seo.title, path, seo.description)];
-  }, [activeCat, params, seo.title, seo.description]);
+    return [crumbs, collectionPageJsonLd(seo.title, path, seo.description, seo.keywords)];
+  }, [activeCat, params, seo.title, seo.description, seo.keywords]);
 
   usePageSeo(seo, jsonLd);
 
@@ -128,17 +132,37 @@ export function ShopPage() {
   };
 
   const pageTitle = activeCat
-    ? `${activeCat.name} — ${siteBrand.name}`
+    ? `${categorySeoTitle(activeCat)} — ${siteBrand.name}`
     : q.trim()
       ? `جستجو: ${q.trim()}`
       : `فروشگاه ${siteBrand.name}`;
 
   const pageLead = activeCat
-    ? `خرید ${activeCat.name} از چرم کارن — چرم طبیعی دست‌ساز با گارانتی ۲ ساله. ${filtered.length.toLocaleString("fa-IR")} محصول در این دسته.`
-    : `کلکسیون ${siteBrand.productCount.toLocaleString("fa-IR")}+ مدل کیف، کفش و اکسسوری چرم طبیعی — ${filtered.length.toLocaleString("fa-IR")} نتیجه`;
+    ? `${categorySeoDescription(activeCat)} ${filtered.length.toLocaleString("fa-IR")} محصول در این دسته.`
+    : q.trim()
+      ? `نتایج جستجو برای «${q.trim()}» — ${filtered.length.toLocaleString("fa-IR")} محصول.`
+      : shopFilterCopy(filter)?.description ??
+        `کلکسیون ${siteBrand.productCount.toLocaleString("fa-IR")}+ مدل کیف، کفش و اکسسوری چرم طبیعی — ${filtered.length.toLocaleString("fa-IR")} نتیجه`;
 
   return (
     <div className="shop-catalog">
+      {!catSlug && !q.trim() && (
+        <section className="shop-hero" aria-label="کمپین فروشگاه">
+          <SmartImage
+            src={campaign.yellowSet}
+            className="shop-hero-bg"
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
+          />
+          <div className="shop-hero-overlay" />
+          <div className="container shop-hero-content">
+            <p className="kl-eyebrow">کمپین</p>
+            <p className="shop-hero-tag">کارن تبریز</p>
+          </div>
+        </section>
+      )}
+
       <ShopCatalogBar
         filter={filter}
         catSlug={catSlug}
@@ -165,6 +189,7 @@ export function ShopPage() {
         <p className="catalog-intro-lead">{pageLead}</p>
       </div>
 
+      {(filter === "footwear" || filter === "men") && !q && <MensLookbook variant="shop" />}
       {filter === "footwear" && !q && <OstrichShoesShowcase variant="shop" />}
 
       {filtered.length > 0 ? (

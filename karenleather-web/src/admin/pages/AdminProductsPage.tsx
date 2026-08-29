@@ -120,8 +120,9 @@ export function AdminProductsPage() {
                         <td>
                           <SmartImage
                             src={p.images[0]?.file ?? ""}
-                            alt=""
+                            alt={p.title}
                             className="admin-thumb"
+                            sizes="56px"
                           />
                         </td>
                         <td>{p.title}</td>

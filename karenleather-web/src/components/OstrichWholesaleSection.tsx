@@ -19,11 +19,7 @@ export function OstrichWholesaleSection({ variant = "home" }: OstrichWholesaleSe
     >
       <div className="container kl-wholesale__grid">
         <div className="kl-wholesale__visual">
-          <SmartImage
-            src={ostrichLeather.swatchRack}
-            alt="نمونه رنگ‌بندی چرم تنه و ساق شترمرغ"
-            loading="lazy"
-          />
+          <SmartImage src={ostrichLeather.swatchRack} loading="lazy" sizes="(max-width: 900px) 100vw, 40vw" />
           {!isFull && (
             <div className="kl-wholesale__badge">
               <strong>تنه + ساق</strong>

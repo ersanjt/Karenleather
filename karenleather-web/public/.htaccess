@@ -10,11 +10,15 @@ RewriteCond %{HTTP_HOST} ^www\.karenleather\.com [NC]
 RewriteRule ^ https://karenleather.com%{REQUEST_URI} [L,R=301]
 
 # نقشه سایت و robots را هرگز به SPA نفرست
-RewriteRule ^(sitemap\.xml|robots\.txt)$ - [L]
+RewriteRule ^(sitemap\.xml|robots\.txt|share\.php|share-pages\.json)$ - [L]
 
 # فایل‌های استاتیک را هرگز به SPA نفرست
 RewriteRule ^uploads/ - [L]
 RewriteRule ^assets/ - [L]
+
+# خزنده شبکه‌های اجتماعی — تصویر شاخص و عنوان واقعی همان URL
+RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Facebot|WhatsApp|TelegramBot|Twitterbot|LinkedInBot|Slackbot|Pinterest|Discordbot|SkypeUriPreview|redditbot|Embedly|Iframely|vkShare|meta-externalagent|meta-externalfetcher|QQBot|MicroMessenger) [NC]
+RewriteRule ^ share.php [L]
 
 # فایل/پوشه موجود را مستقیم سرو کن
 RewriteCond %{REQUEST_FILENAME} -f [OR]

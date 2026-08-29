@@ -23,7 +23,7 @@ export function WholesalePage() {
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage src={ostrichLeather.swatchRack} alt="نمونه رنگ چرم شترمرغ — فروش عمده کارن" className="kl-page-hero__bg" />
+        <SmartImage src={ostrichLeather.swatchRack} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
         <div className="kl-page-hero__veil" />
         <div className="container kl-page-hero__content">
           <p className="kl-eyebrow">{wholesaleCopy.subtitle}</p>

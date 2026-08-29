@@ -68,7 +68,7 @@ STAMP=$(date +%Y%m%d_%H%M%S)
 LIGHT_BACKUP="${BACKUP_DIR}/site_core_${STAMP}"
 echo "==> Light backup (no uploads) → ${LIGHT_BACKUP}"
 mkdir -p "${LIGHT_BACKUP}"
-for f in index.html .htaccess robots.txt sitemap.xml; do
+for f in index.html .htaccess robots.txt sitemap.xml share.php share-pages.json; do
   [[ -f "${PUBLIC_HTML}/${f}" ]] && cp -a "${PUBLIC_HTML}/${f}" "${LIGHT_BACKUP}/" || true
 done
 [[ -d "${PUBLIC_HTML}/assets" ]] && cp -a "${PUBLIC_HTML}/assets" "${LIGHT_BACKUP}/" || true
@@ -78,9 +78,13 @@ mkdir -p "${PUBLIC_HTML}/assets"
 rsync -a --delete \
   "${REPO_DIR}/karenleather-web/dist/assets/" "${PUBLIC_HTML}/assets/"
 
-for f in index.html .htaccess robots.txt sitemap.xml; do
+for f in index.html .htaccess robots.txt sitemap.xml share.php share-pages.json; do
   [[ -f "${REPO_DIR}/karenleather-web/dist/${f}" ]] && cp -a "${REPO_DIR}/karenleather-web/dist/${f}" "${PUBLIC_HTML}/${f}"
 done
+if [[ ! -f "${PUBLIC_HTML}/share.php" || ! -f "${PUBLIC_HTML}/share-pages.json" ]]; then
+  echo "ERROR: share.php / share-pages.json missing — social preview cards will be wrong"
+  exit 1
+fi
 
 if [[ ! -f "${PUBLIC_HTML}/sitemap.xml" ]]; then
   echo "ERROR: sitemap.xml missing after publish — do not go live without it"

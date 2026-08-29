@@ -4,7 +4,9 @@ import { Breadcrumbs } from "../components/Breadcrumbs";
 import { SmartImage } from "../components/SmartImage";
 import {
   breadcrumbJsonLd,
+  cleanProductTitle,
   productBodyHtml,
+  productDisplayTags,
   productImageAlt,
   productJsonLd,
   productPageSeo,
@@ -14,7 +16,7 @@ import { usePageSeo } from "../context/SeoContext";
 import { getProduct } from "../data";
 import { useCart } from "../lib/cart";
 import { useShowPrices } from "../context/StoreSettings";
-import { formatPrice, shopCatHref, WHATSAPP_LINK } from "../lib/utils";
+import { formatPrice, shopCatHref, uniqueProductImages, WHATSAPP_LINK } from "../lib/utils";
 import { NotFoundView } from "./NotFoundPage";
 
 export function ProductPage() {
@@ -45,7 +47,7 @@ export function ProductPage() {
       ...(product.categories[0]
         ? [{ name: product.categories[0].name, path: shopCatHref(product.categories[0].slug) }]
         : []),
-      { name: product.title, path: `/product/${product.id}/${product.slug}` },
+      { name: cleanProductTitle(product.title), path: `/product/${product.id}/${product.slug}` },
     ]);
     return [productJsonLd(product, { includePrice: showPrices }), crumbs];
   }, [product, showPrices]);
@@ -61,9 +63,13 @@ export function ProductPage() {
     );
   }
 
-  const images = product.images.map((img) => img.file);
-  const waText = encodeURIComponent(`سلام، درباره محصول «${product.title}» سوال دارم.`);
+  const gallery = uniqueProductImages(product);
+  const images = gallery.map((g) => g.file);
+  const safeIdx = Math.min(imgIdx, Math.max(0, images.length - 1));
+  const displayName = cleanProductTitle(product.title);
+  const waText = encodeURIComponent(`سلام، درباره محصول «${displayName}» سوال دارم.`);
   const bodyHtml = productBodyHtml(product);
+  const tags = productDisplayTags(product);
 
   return (
     <div className="container section product-page">
@@ -74,26 +80,26 @@ export function ProductPage() {
           ...(product.categories[0]
             ? [{ label: product.categories[0].name, to: shopCatHref(product.categories[0].slug) }]
             : []),
-          { label: product.title.replace(/^مدل:\s*/i, "") },
+          { label: displayName },
         ]}
       />
 
       <div className="product-layout">
         <div>
           <div className="product-gallery-main">
-            <SmartImage src={images[imgIdx] ?? images[0] ?? ""} alt={productImageAlt(product, imgIdx)} />
+            <SmartImage src={images[safeIdx] ?? images[0] ?? ""} alt={productImageAlt(product, gallery[safeIdx]?.index ?? 0)} sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           {images.length > 1 && (
             <div className="product-thumbs">
-              {images.map((src, i) => (
+              {gallery.map((shot, i) => (
                 <button
-                  key={`${src}-${i}`}
+                  key={`${shot.file}-${i}`}
                   type="button"
-                  className={i === imgIdx ? "active" : ""}
+                  className={i === safeIdx ? "active" : ""}
                   onClick={() => setImgIdx(i)}
                   aria-label={`تصویر ${(i + 1).toLocaleString("fa-IR")}`}
                 >
-                  <SmartImage src={src} alt={productImageAlt(product, i)} />
+                  <SmartImage src={shot.file} alt={productImageAlt(product, shot.index)} sizes="80px" />
                 </button>
               ))}
             </div>
@@ -101,15 +107,19 @@ export function ProductPage() {
         </div>
 
         <div className="product-info">
-          <h1>{product.title}</h1>
-          {product.categories.length > 0 && (
-            <div className="tag-row">
-              {product.categories.map((c) => (
-                <Link key={c.id} to={shopCatHref(c.slug)} className="badge">
-                  {c.name}
-                </Link>
+          <h1>{displayName}</h1>
+          {tags.length > 0 && (
+            <ul className="product-tags" aria-label="برچسب‌های محصول">
+              {tags.map((tag) => (
+                <li key={tag.label}>
+                  {tag.href ? (
+                    <Link to={tag.href}>{tag.label}</Link>
+                  ) : (
+                    <span>{tag.label}</span>
+                  )}
+                </li>
               ))}
-            </div>
+            </ul>
           )}
           {showPrices && (
             <div className="product-price-lg">{formatPrice(product.price || product.regular_price)}</div>

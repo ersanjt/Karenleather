@@ -3,5 +3,7 @@ Allow: /
 Disallow: /admin
 Disallow: /cart
 Disallow: /shop?q=
+Disallow: /share.php
+Disallow: /share-pages.json
 
 Sitemap: https://karenleather.com/sitemap.xml

@@ -33,6 +33,27 @@ export function primaryImage(images: ProductImage[]): string {
   return primaryUpload(images[0].file);
 }
 
+function imageDedupeKey(file: string): string {
+  return file
+    .split("?")[0]
+    .replace(/-scaled(?=\.)/i, "")
+    .replace(/-\d+x\d+(?=\.)/i, "")
+    .toLowerCase();
+}
+
+/** تصاویر یکتا — ووکامرس اغلب یک فایل را چند بار در گالری تکرار می‌کند */
+export function uniqueProductImages(product: Product): { file: string; index: number }[] {
+  const seen = new Set<string>();
+  const out: { file: string; index: number }[] = [];
+  product.images.forEach((img, index) => {
+    const key = imageDedupeKey(img.file);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    out.push({ file: img.file, index });
+  });
+  return out;
+}
+
 export function allImageUrls(images: ProductImage[]): string[] {
   return images.map((img) => primaryUpload(img.file));
 }

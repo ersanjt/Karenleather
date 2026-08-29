@@ -3,6 +3,7 @@ import { useShowPrices } from "../context/StoreSettings";
 import { getProduct } from "../data";
 import { useCart } from "../lib/cart";
 import { buildCartWhatsAppMessage } from "../lib/cartMessage";
+import { productImageAlt, cleanProductTitle } from "../content/seo";
 import { SmartImage } from "../components/SmartImage";
 import { formatPrice, productPath, WHATSAPP_LINK } from "../lib/utils";
 
@@ -27,7 +28,7 @@ export function CartPage() {
 
   const waMessage = encodeURIComponent(
     buildCartWhatsAppMessage(
-      lines.map((l) => ({ title: l.product.title, qty: l.item.qty, lineTotal: l.lineTotal })),
+      lines.map((l) => ({ title: cleanProductTitle(l.product.title), qty: l.item.qty, lineTotal: l.lineTotal })),
       total,
     ),
   );
@@ -63,13 +64,14 @@ export function CartPage() {
                 <Link to={productPath(product)}>
                   <SmartImage
                     src={product.images[0]?.file ?? ""}
-                    alt=""
+                    alt={productImageAlt(product)}
+                    sizes="80px"
                     style={{ width: 80, height: 80, objectFit: "cover", borderRadius: 8 }}
                   />
                 </Link>
                 <div>
                   <Link to={productPath(product)} style={{ fontWeight: 700 }}>
-                    {product.title}
+                    {cleanProductTitle(product.title)}
                   </Link>
                   {showPrices && (
                     <div style={{ color: "var(--muted)", fontSize: "0.9rem" }}>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Breadcrumbs } from "../components/Breadcrumbs";
-import { storeHotel } from "../content/media";
+import { storeHotel, storeHotelGallery } from "../content/media";
 import { staticPageSeo } from "../content/seo";
 import { contactCopy, siteContact, storeCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
@@ -13,7 +13,7 @@ export function ContactPage() {
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage src={storeHotel.hero} alt="فروشگاه چرم کارن — تماس و آدرس" className="kl-page-hero__bg" />
+        <SmartImage src={storeHotel.hero} className="kl-page-hero__bg" sizes="100vw" loading="eager" />
         <div className="kl-page-hero__veil" />
         <div className="container kl-page-hero__content">
           <p className="kl-eyebrow">{contactCopy.subtitle}</p>
@@ -56,16 +56,16 @@ export function ContactPage() {
             </Link>
           </div>
           <div className="kl-store-showcase__grid">
-            {storeHotel.gallery.map((src, i) => (
+            {storeHotelGallery.map((shot, i) => (
               <figure
-                key={src}
+                key={shot.src}
                 className={
                   i === 0
                     ? "kl-store-showcase__cell kl-store-showcase__cell--wide"
                     : "kl-store-showcase__cell"
                 }
               >
-                <SmartImage src={src} alt={`فروشگاه چرم کارن — تصویر ${(i + 1).toLocaleString("fa-IR")}`} loading="lazy" />
+                <SmartImage src={shot} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" />
               </figure>
             ))}
           </div>

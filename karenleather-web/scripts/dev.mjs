@@ -102,8 +102,9 @@ const indexHtml = fs.readFileSync(path.join(root, "index.html"), "utf8").replace
 );
 
 const devOut = path.join(root, "dist-dev");
-const { generateSeoFiles } = await import(pathToFileURL(path.join(__dirname, "generate-seo.mjs")).href);
+const { generateSeoFiles, isShareCrawler, lookupSharePage, renderShareHtml } = await import(pathToFileURL(path.join(__dirname, "generate-seo.mjs")).href);
 generateSeoFiles(devOut);
+const shareData = JSON.parse(fs.readFileSync(path.join(devOut, "share-pages.json"), "utf8"));
 
 http
   .createServer(async (req, res) => {
@@ -144,6 +145,25 @@ http
         sendFile(res, filePath);
         return;
       }
+    }
+
+    const ua = req.headers["user-agent"] ?? "";
+    if (
+      !pathname.startsWith("/src/") &&
+      !pathname.startsWith("/dist-dev/") &&
+      (isShareCrawler(ua) || url.searchParams.has("ogpreview"))
+    ) {
+      const page = lookupSharePage(shareData, pathname, url.searchParams);
+      let canonical = `https://karenleather.com${pathname === "/" ? "/" : pathname}`;
+      if (pathname === "/shop") {
+        const cat = url.searchParams.get("cat");
+        const filter = url.searchParams.get("filter");
+        if (cat) canonical += `?cat=${encodeURIComponent(cat)}`;
+        else if (filter) canonical += `?filter=${encodeURIComponent(filter)}`;
+      }
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
+      res.end(renderShareHtml(page, canonical));
+      return;
     }
 
     if (pathname === "/" || pathname === "/index.html") {
