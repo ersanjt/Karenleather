@@ -6,12 +6,18 @@ import {
   siteContact,
   siteCredit,
 } from "../content/siteCopy";
+import { WHATSAPP_LINK } from "../lib/utils";
 import { Logo } from "./Logo";
+
+const mobileLinks = [
+  ...footerContent.serviceLinks,
+  ...footerContent.companyLinks.filter((l) => !footerContent.serviceLinks.some((s) => s.to === l.to)),
+];
 
 export function Footer() {
   return (
     <footer className="site-footer kl-footer">
-      <div className="container section footer-grid">
+      <div className="container section footer-grid footer-desktop">
         <div className="kl-footer__brand">
           <Logo variant="footer" />
           <p>
@@ -67,19 +73,38 @@ export function Footer() {
         </div>
       </div>
 
+      <div className="footer-mobile">
+        <Logo variant="footer" />
+        <p className="footer-mobile__name">{siteBrand.legalName}</p>
+        <p className="footer-mobile__tag">{siteBrand.tagline}</p>
+        <div className="footer-mobile__actions">
+          <a href={`tel:${siteContact.phoneTel}`}>تماس</a>
+          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+            واتساپ
+          </a>
+          <a href={siteContact.instagram} target="_blank" rel="noreferrer">
+            اینستاگرام
+          </a>
+        </div>
+        <nav className="footer-mobile__nav" aria-label="لینک‌های فوتر">
+          {mobileLinks.map((l) => (
+            <Link key={`${l.to}-${l.label}`} to={l.to}>
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+        <p className="footer-mobile__address">{contactCopy.offices[1]?.address}</p>
+      </div>
+
       <div className="container footer-bottom">
         <span>
           © {new Date().getFullYear()} {siteBrand.name} — {siteBrand.legalName}
         </span>
-        <span className="footer-social">
+        <span className="footer-social footer-desktop">
           <a href={siteContact.instagram} target="_blank" rel="noreferrer">
             اینستاگرام
           </a>
-          <a
-            href={`https://wa.me/98${siteContact.phone.slice(1)}`}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
             واتساپ
           </a>
         </span>

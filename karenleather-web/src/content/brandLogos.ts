@@ -18,26 +18,26 @@ const B = "/uploads/brand";
 export const brandLogos: Record<LogoVariant, LogoAsset> = {
   /** لوگوی اصلی ۲۰۲۵ — هدر سایت */
   header: {
-    src: `${B}/01-primary-full.png`,
-    fallbacks: ["/uploads/2025/03/logo-pnz.png", `${B}/06-classic-v2.png`],
+    src: `${B}/02-mark-icon.png`,
+    fallbacks: [`${B}/04-wordmark-cropped.png`],
     alt: "چرم کارن — لوگوی اصلی",
   },
-  /** وردمارک — هیرو صفحه اصلی (آیکون + متن) */
+  /** وردمارک هیرو — نشان KL + متن CSS */
   hero: {
-    src: `${B}/05-wordmark-alt.png`,
-    fallbacks: [`${B}/01-primary-full.png`, `${B}/06-classic-v2.png`],
+    src: `${B}/02-mark-icon.png`,
+    fallbacks: [`${B}/04-wordmark-cropped.png`],
     alt: "چرم کارن — وردمارک",
   },
-  /** نسخه کلاسیک — فوتر تیره */
+  /** فوتر تیره — فقط نشان KL (فایل‌های classic اشتباه/برند دیگرند) */
   footer: {
-    src: `${B}/06-classic-v2.png`,
-    fallbacks: [`${B}/03-classic-demo.png`, `${B}/05-wordmark-alt.png`],
-    alt: "چرم کارن — لوگوی کلاسیک",
+    src: `${B}/02-mark-icon.png`,
+    fallbacks: [`${B}/04-wordmark-cropped.png`],
+    alt: "چرم کارن — نشان برند",
   },
-  /** نشان دایره‌ای KL — favicon، ادمین و آیکون سایت */
+  /** نشان دایره‌ای KL — هدر، فاوآیکون و آیکون سایت */
   mark: {
     src: `${B}/02-mark-icon.png`,
-    fallbacks: [`${B}/04-wordmark-cropped.png`, "/uploads/2025/03/logo-pnz-150x150.png"],
+    fallbacks: [`${B}/04-wordmark-cropped.png`],
     alt: "چرم کارن — نشان برند",
   },
   /** لوگوی متنی فارسی — تک‌تک (legacy) */
@@ -46,17 +46,17 @@ export const brandLogos: Record<LogoVariant, LogoAsset> = {
     fallbacks: [`${B}/05-wordmark-alt.png`, `${B}/01-primary-full.png`],
     alt: "چرم کارن — لوگوی متنی",
   },
-  /** آیکون + متن — preloader و splash */
+  /** آیکون — preloader (wordmark پس‌زمینه تیره دارد) */
   loader: {
-    src: `${B}/05-wordmark-alt.png`,
-    fallbacks: [`${B}/01-primary-full.png`, `${B}/02-mark-icon.png`, `${B}/07-text-fa.png`],
+    src: `${B}/02-mark-icon.png`,
+    fallbacks: [`${B}/04-wordmark-cropped.png`],
     alt: "چرم کارن — Karen Leather",
   },
-  /** نسخه قدیمی — درباره ما و صفحات محتوا */
+  /** نسخه کلاسیک — فقط نشان KL */
   classic: {
-    src: `${B}/06-classic-v2.png`,
-    fallbacks: [`${B}/03-classic-demo.png`, `${B}/01-primary-full.png`],
-    alt: "چرم کارن — لوگوی کلاسیک",
+    src: `${B}/02-mark-icon.png`,
+    fallbacks: [`${B}/04-wordmark-cropped.png`],
+    alt: "چرم کارن — نشان برند",
   },
 };
 

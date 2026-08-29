@@ -1,14 +1,19 @@
 import type { Product } from "../types";
-import { absoluteUrl, siteBrand, siteContact } from "./siteCopy";
+import { absoluteUrl, siteBrand, siteContact, wholesaleCopy, representationCopy } from "./siteCopy";
 import { brandLogos } from "./brandLogos";
 import { primaryImage, productPath } from "../lib/utils";
 
-export const defaultOgImage = absoluteUrl(brandLogos.loader.src);
+/** تصویر اجتماعی — ویترین واقعی، نه لوگوی کوچک */
+export const defaultOgImage = absoluteUrl("/uploads/2026/07/store-hotel/01-showroom-wide.jpg");
+export const defaultOgImageAlt = "فروشگاه چرم کارن — شعبه هتل شهریار تبریز";
+
+const INDEXABLE_SHOP_FILTERS = new Set(["new", "sale", "footwear", "women", "men", "accessories"]);
 
 export interface PageSeo {
   title: string;
   description: string;
   ogImage?: string;
+  ogImageAlt?: string;
   ogType?: "website" | "product";
   robots?: string;
 }
@@ -52,6 +57,32 @@ export const staticPageSeo: Record<string, PageSeo> = {
   },
 };
 
+export const notFoundSeo: PageSeo = {
+  title: `صفحه یافت نشد — ${siteBrand.name}`,
+  description: "این صفحه در فروشگاه چرم کارن وجود ندارد. به فروشگاه یا صفحه اصلی برگردید.",
+  robots: "noindex, follow",
+};
+
+/** مسیر کنونیکال: queryهای مرتب‌سازی/نمایش/جستجو ایندکس نشوند */
+export function canonicalPath(pathname: string, searchParams: URLSearchParams): string {
+  const clean = pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname || "/";
+
+  if (clean === "/shop") {
+    if (searchParams.get("q")?.trim()) return "/shop";
+    const cat = searchParams.get("cat");
+    if (cat) return `/shop?cat=${encodeURIComponent(cat)}`;
+    const filter = searchParams.get("filter");
+    if (filter && INDEXABLE_SHOP_FILTERS.has(filter)) return `/shop?filter=${encodeURIComponent(filter)}`;
+    return "/shop";
+  }
+
+  return clean;
+}
+
+export function canonicalUrl(pathname: string, searchParams: URLSearchParams): string {
+  return absoluteUrl(canonicalPath(pathname, searchParams));
+}
+
 const FILTER_SEO: Record<string, { title: string; description: string }> = {
   new: {
     title: "جدیدترین محصولات",
@@ -85,6 +116,7 @@ export function shopPageSeo(catName?: string, filter?: string, query?: string): 
     return {
       title: `جستجو «${q}» — فروشگاه ${siteBrand.name}`,
       description: `نتایج جستجو برای «${q}» در فروشگاه آنلاین چرم کارن — کیف، کفش و اکسسوری چرم طبیعی.`,
+      robots: "noindex, follow",
     };
   }
   if (catName) {
@@ -112,6 +144,7 @@ export function productPageSeo(product: Product): PageSeo {
     ogImage: product.images[0]
       ? absoluteUrl(`/uploads/${product.images[0].file.split("?")[0]}`)
       : defaultOgImage,
+    ogImageAlt: productImageAlt(product),
     ogType: "product",
   };
 }
@@ -143,15 +176,37 @@ function detectMaterial(title: string): string {
   return "چرم طبیعی گاوی";
 }
 
-export function productJsonLd(product: Product) {
+export function productJsonLd(product: Product, opts?: { includePrice?: boolean }) {
   const url = absoluteUrl(productPath(product));
   const img = primaryImage(product.images);
   const imgUrl = img ? absoluteUrl(img) : defaultOgImage;
+  const offers: Record<string, unknown> = {
+    "@type": "Offer",
+    url,
+    availability:
+      product.stock === "instock"
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+    itemCondition: "https://schema.org/NewCondition",
+    seller: {
+      "@type": "Organization",
+      name: siteBrand.legalName,
+    },
+  };
+
+  if (opts?.includePrice) {
+    const raw = product.price || product.regular_price;
+    const n = typeof raw === "string" ? Number(raw) : raw;
+    if (n && !Number.isNaN(n)) {
+      offers.price = String(n);
+      offers.priceCurrency = "IRR";
+    }
+  }
 
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: product.title,
+    name: product.title.replace(/^مدل:\s*/i, ""),
     description: productSeoDescription(product),
     image: imgUrl,
     sku: product.sku || String(product.id),
@@ -159,21 +214,66 @@ export function productJsonLd(product: Product) {
       "@type": "Brand",
       name: siteBrand.name,
     },
-    offers: {
-      "@type": "Offer",
-      url,
-      priceCurrency: "IRR",
-      availability:
-        product.stock === "instock"
-          ? "https://schema.org/InStock"
-          : "https://schema.org/OutOfStock",
-      seller: {
-        "@type": "Organization",
-        name: siteBrand.legalName,
-      },
-    },
+    offers,
   };
 }
+
+export function collectionPageJsonLd(name: string, path: string, description: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url: absoluteUrl(path),
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteBrand.name,
+      url: siteBrand.url,
+    },
+    inLanguage: "fa-IR",
+  };
+}
+
+export function faqJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export const wholesaleFaq = [
+  {
+    question: "آیا چرم کارن فروش عمده چرم شترمرغ دارد؟",
+    answer: wholesaleCopy.lead,
+  },
+  {
+    question: "تفاوت چرم تنه و ساق شترمرغ چیست؟",
+    answer: `${wholesaleCopy.types[0].title}: ${wholesaleCopy.types[0].body} ${wholesaleCopy.types[1].title}: ${wholesaleCopy.types[1].body}`,
+  },
+  {
+    question: "چه رنگ‌هایی از چرم شترمرغ به‌صورت عمده موجود است؟",
+    answer: wholesaleCopy.colors.body,
+  },
+];
+
+export const representationFaq = [
+  {
+    question: "شرایط اخذ نمایندگی چرم کارن چیست؟",
+    answer: `${representationCopy.intro} ${representationCopy.requirements.slice(0, 4).join(" ")}`,
+  },
+  {
+    question: "مزیت نمایندگی فروش چرم کارن چیست؟",
+    answer: representationCopy.benefits.join("؛ "),
+  },
+];
 
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {
@@ -218,6 +318,11 @@ export function organizationJsonLd() {
     sameAs: [siteContact.instagram],
     priceRange: "$$",
     currenciesAccepted: "IRR",
+    areaServed: {
+      "@type": "Country",
+      name: "IR",
+    },
+    inLanguage: "fa-IR",
   };
 }
 

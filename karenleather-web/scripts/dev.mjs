@@ -25,6 +25,8 @@ const mime = {
   ".webp": "image/webp",
   ".gif": "image/gif",
   ".svg": "image/svg+xml",
+  ".xml": "application/xml; charset=utf-8",
+  ".txt": "text/plain; charset=utf-8",
   ".woff2": "font/woff2",
   ".ttf": "font/ttf",
   ".ico": "image/x-icon",

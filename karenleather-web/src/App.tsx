@@ -1,5 +1,5 @@
 import { AdminApp } from "./admin/AdminApp";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartUIProvider } from "./context/CartUI";
 import { StoreSettingsProvider } from "./context/StoreSettings";
 import { ProductPreviewProvider } from "./context/ProductPreview";
@@ -8,6 +8,7 @@ import { AboutPage } from "./pages/AboutPage";
 import { CartPage } from "./pages/CartPage";
 import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 import { ProductPage } from "./pages/ProductPage";
 import { RepresentationPage } from "./pages/RepresentationPage";
 import { WholesalePage } from "./pages/WholesalePage";
@@ -30,7 +31,7 @@ export default function App() {
               <Route path="representation" element={<RepresentationPage />} />
               <Route path="wholesale" element={<WholesalePage />} />
               <Route path="cart" element={<CartPage />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
         </ProductPreviewProvider>

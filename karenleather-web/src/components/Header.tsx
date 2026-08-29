@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { navLinks, siteBrand, siteContact } from "../content/siteCopy";
 import { useCart } from "../lib/cart";
 import { useCartUI } from "../context/CartUI";
+import { WHATSAPP_LINK } from "../lib/utils";
 import { Logo } from "./Logo";
 import { MegaMenu } from "./MegaMenu";
 
@@ -32,18 +33,14 @@ export function Header() {
 
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`} role="banner">
-      <div className="header-top">
+      <div className="header-top header-desktop-only">
         <div className="container header-top-inner">
           <p className="header-tagline">
             <span className="header-tagline-dot" aria-hidden="true" />
             {siteBrand.tagline} · گارانتی ۲ ساله
           </p>
           <div className="header-top-links">
-            <a
-              href={`https://wa.me/98${siteContact.phone.slice(1)}`}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
               واتساپ
             </a>
             <span className="header-top-sep" aria-hidden="true">
@@ -73,21 +70,17 @@ export function Header() {
             <Logo />
           </Link>
 
-          <nav className={`main-nav ${mobileOpen ? "open" : ""}`} aria-label="ناوبری اصلی">
+          <nav className="main-nav main-nav--desktop" aria-label="ناوبری اصلی">
             <NavLink
               to={homeLink.to}
               end={homeLink.end}
               className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
-              onClick={closeMobile}
             >
               {homeLink.label}
             </NavLink>
 
             <div className="mega-desktop">
-              <MegaMenu onNavigate={closeMobile} />
-            </div>
-            <div className="mega-mobile-only">
-              <MegaMenu mobile onNavigate={closeMobile} />
+              <MegaMenu />
             </div>
 
             {otherLinks.map((item) => (
@@ -95,7 +88,6 @@ export function Header() {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
-                onClick={closeMobile}
               >
                 {item.label}
               </NavLink>
@@ -103,7 +95,21 @@ export function Header() {
           </nav>
 
           <div className="header-actions">
-            <Link to={navLinks.cta.to} className="header-cta" onClick={closeMobile}>
+            <a
+              href={`tel:${siteContact.phoneTel}`}
+              className="header-call header-mobile-only"
+              aria-label="تماس تلفنی"
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M7 3.5h3.2l1.1 3.2-2 1.6a12.5 12.5 0 0 0 6.4 6.4l1.6-2 3.2 1.1V18a1.5 1.5 0 0 1-1.5 1.5A15.5 15.5 0 0 1 5.5 5 1.5 1.5 0 0 1 7 3.5Z"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+            <Link to={navLinks.cta.to} className="header-cta header-desktop-only" onClick={closeMobile}>
               {navLinks.cta.label}
             </Link>
             <button type="button" className="cart-icon-btn" onClick={openDrawer} aria-label="سبد خرید">
@@ -130,6 +136,44 @@ export function Header() {
               <span />
             </button>
           </div>
+        </div>
+      </div>
+
+      <div className={`mobile-sheet ${mobileOpen ? "is-open" : ""}`} id="mobile-nav">
+        <div className="mobile-sheet__brand">
+          <Logo variant="header" />
+        </div>
+        <nav className="mobile-sheet__nav" aria-label="منوی موبایل">
+          <NavLink
+            to={homeLink.to}
+            end={homeLink.end}
+            className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+            onClick={closeMobile}
+          >
+            {homeLink.label}
+          </NavLink>
+          <MegaMenu mobile onNavigate={closeMobile} />
+          {otherLinks.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+              onClick={closeMobile}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+        <div className="mobile-sheet__cta">
+          <Link to="/shop" className="btn btn-gold" onClick={closeMobile}>
+            {navLinks.cta.label}
+          </Link>
+          <a href={`tel:${siteContact.phoneTel}`} className="btn btn-ghost">
+            {siteContact.phoneDisplay}
+          </a>
+          <a href={WHATSAPP_LINK} className="btn btn-ghost" target="_blank" rel="noreferrer">
+            واتساپ
+          </a>
         </div>
       </div>
 

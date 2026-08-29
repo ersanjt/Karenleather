@@ -1,11 +1,29 @@
 import { Link } from "react-router-dom";
 import { Breadcrumbs } from "../components/Breadcrumbs";
-import { aboutMedia, storeHotel } from "../content/media";
+import { aboutMedia, ostrichLeather, storeHotel } from "../content/media";
 import { staticPageSeo } from "../content/seo";
 import { aboutCopy, storeCopy, wholesaleCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
 import { Logo } from "../components/Logo";
 import { SmartImage } from "../components/SmartImage";
+
+const storyBlocks = [
+  {
+    ...aboutCopy.sections[0],
+    src: aboutMedia.iranianCraft,
+    alt: "ویترین کیف و کفش تولید ایران — فروشگاه چرم کارن تبریز",
+  },
+  {
+    ...aboutCopy.sections[1],
+    src: ostrichLeather.swatchRack,
+    alt: "نمونه رنگ چرم تنه و ساق شترمرغ در خط تولید چرم کارن",
+  },
+  {
+    ...aboutCopy.sections[2],
+    src: aboutMedia.service,
+    alt: "فضای مشاوره حضوری و خدمات پس از فروش — چرم کارن",
+  },
+];
 
 export function AboutPage() {
   usePageSeo(staticPageSeo["/about"]);
@@ -13,10 +31,14 @@ export function AboutPage() {
   return (
     <>
       <section className="kl-page-hero">
-        <SmartImage src={aboutMedia.hero} alt="کارگاه و تولید چرم کارن — تبریز" className="kl-page-hero__bg" />
+        <SmartImage
+          src={aboutMedia.hero}
+          alt="نمای فروشگاه چرم کارن — تبریز"
+          className="kl-page-hero__bg"
+        />
         <div className="kl-page-hero__veil" />
         <div className="container kl-page-hero__content">
-          <Logo variant="classic" />
+          <Logo variant="hero" />
           <p className="kl-eyebrow">{aboutCopy.subtitle}</p>
           <h1>{aboutCopy.title}</h1>
         </div>
@@ -40,7 +62,7 @@ export function AboutPage() {
         </div>
 
         <div className="kl-about-story">
-          {aboutCopy.sections.map((block, i) => (
+          {storyBlocks.map((block, i) => (
             <article
               key={block.title}
               className={`kl-about-block${i % 2 === 1 ? " kl-about-block--reverse" : ""}`}
@@ -53,17 +75,7 @@ export function AboutPage() {
                 <p>{block.body}</p>
               </div>
               <div className="kl-about-block__media">
-                <SmartImage
-                  src={
-                    i === 0
-                      ? aboutMedia.portrait
-                      : i === 1
-                        ? aboutMedia.detail
-                        : aboutMedia.workshop
-                  }
-                  alt={block.title}
-                  loading="lazy"
-                />
+                <SmartImage src={block.src} alt={block.alt} loading="lazy" />
               </div>
             </article>
           ))}
@@ -71,7 +83,11 @@ export function AboutPage() {
 
         <section className="kl-about-store">
           <div className="kl-about-store__media">
-            <SmartImage src={storeHotel.wide} alt="فروشگاه حضوری چرم کارن — تبریز" loading="lazy" />
+            <SmartImage
+              src={storeHotel.wide}
+              alt="فضای داخلی فروشگاه شعبه هتل شهریار — تبریز"
+              loading="lazy"
+            />
           </div>
           <div className="kl-about-store__text">
             <span className="kl-section-label">فروشگاه حضوری</span>

@@ -16,20 +16,33 @@ function esc(s) {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+function safeDecode(s) {
+  try {
+    return decodeURIComponent(s);
+  } catch {
+    return s;
+  }
+}
+
 function productLoc(p) {
-  const slug = encodeURIComponent(decodeURIComponent(p.slug));
+  const slug = encodeURIComponent(safeDecode(p.slug));
   return `${SITE}/product/${p.id}/${slug}`;
 }
 
+function catLoc(c) {
+  return `${SITE}/shop?cat=${encodeURIComponent(safeDecode(c.slug))}`;
+}
+
+const today = new Date().toISOString().slice(0, 10);
 const urls = [];
 
 const staticRoutes = [
-  { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly" },
-  { loc: `${SITE}/shop`, priority: "0.95", changefreq: "daily" },
-  { loc: `${SITE}/about`, priority: "0.8", changefreq: "monthly" },
-  { loc: `${SITE}/contact`, priority: "0.8", changefreq: "monthly" },
-  { loc: `${SITE}/wholesale`, priority: "0.85", changefreq: "monthly" },
-  { loc: `${SITE}/representation`, priority: "0.75", changefreq: "monthly" },
+  { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly", lastmod: today },
+  { loc: `${SITE}/shop`, priority: "0.95", changefreq: "daily", lastmod: today },
+  { loc: `${SITE}/about`, priority: "0.8", changefreq: "monthly", lastmod: today },
+  { loc: `${SITE}/contact`, priority: "0.8", changefreq: "monthly", lastmod: today },
+  { loc: `${SITE}/wholesale`, priority: "0.85", changefreq: "monthly", lastmod: today },
+  { loc: `${SITE}/representation`, priority: "0.75", changefreq: "monthly", lastmod: today },
 ];
 
 for (const r of staticRoutes) urls.push(r);
@@ -46,7 +59,7 @@ for (const p of products) {
 for (const c of categories) {
   if (!c.count || c.count <= 0) continue;
   urls.push({
-    loc: `${SITE}/shop?cat=${encodeURIComponent(c.slug)}`,
+    loc: catLoc(c),
     priority: "0.65",
     changefreq: "weekly",
   });
@@ -67,17 +80,19 @@ ${urls
 `;
 
 fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, "sitemap.xml"), xml);
 
 const publicDir = path.join(root, "public");
 if (fs.existsSync(publicDir)) {
   for (const name of fs.readdirSync(publicDir)) {
+    if (name === "sitemap.xml") continue;
     const from = path.join(publicDir, name);
     if (fs.statSync(from).isFile()) {
       fs.copyFileSync(from, path.join(outDir, name));
     }
   }
 }
+
+fs.writeFileSync(path.join(outDir, "sitemap.xml"), xml);
 
 console.log(`SEO files: ${urls.length} URLs → ${path.join(outDir, "sitemap.xml")}`);
 }

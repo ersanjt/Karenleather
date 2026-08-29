@@ -5,10 +5,11 @@ import { ProductCard } from "../components/ProductCard";
 import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { ShopCatalogBar } from "../components/ShopCatalogBar";
 import { ShopSidebar } from "../components/ShopSidebar";
-import { breadcrumbJsonLd, shopPageSeo } from "../content/seo";
+import { breadcrumbJsonLd, canonicalPath, collectionPageJsonLd, shopPageSeo } from "../content/seo";
 import { siteBrand } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
 import { getCategoryBySlug } from "../data";
+import { shopCatHref } from "../lib/utils";
 import {
   buildShopCategoryTree,
   filterFromSlug,
@@ -56,15 +57,15 @@ export function ShopPage() {
     [activeCat?.name, filter, q],
   );
 
-  const jsonLd = useMemo(
-    () =>
-      breadcrumbJsonLd([
-        { name: "خانه", path: "/" },
-        { name: "فروشگاه", path: "/shop" },
-        ...(activeCat ? [{ name: activeCat.name, path: `/shop?cat=${encodeURIComponent(activeCat.slug)}` }] : []),
-      ]),
-    [activeCat],
-  );
+  const jsonLd = useMemo(() => {
+    const path = canonicalPath("/shop", params);
+    const crumbs = breadcrumbJsonLd([
+      { name: "خانه", path: "/" },
+      { name: "فروشگاه", path: "/shop" },
+      ...(activeCat ? [{ name: activeCat.name, path: shopCatHref(activeCat.slug) }] : []),
+    ]);
+    return [crumbs, collectionPageJsonLd(seo.title, path, seo.description)];
+  }, [activeCat, params, seo.title, seo.description]);
 
   usePageSeo(seo, jsonLd);
 

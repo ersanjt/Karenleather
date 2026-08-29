@@ -1,7 +1,7 @@
 const PLACEHOLDER =
   "data:image/svg+xml," +
   encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect fill="#f0f2f6" width="400" height="400"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="18">چرم کارن</text></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect fill="#041434" width="800" height="600"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#e9e40c" font-family="Tahoma,sans-serif" font-size="28">چرم کارن</text></svg>`,
   );
 
 function stripWpSizes(name: string): string[] {

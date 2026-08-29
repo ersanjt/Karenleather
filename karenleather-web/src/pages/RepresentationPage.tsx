@@ -1,11 +1,22 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Breadcrumbs } from "../components/Breadcrumbs";
-import { staticPageSeo } from "../content/seo";
+import { breadcrumbJsonLd, faqJsonLd, representationFaq, staticPageSeo } from "../content/seo";
 import { representationCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
 
 export function RepresentationPage() {
-  usePageSeo(staticPageSeo["/representation"]);
+  const jsonLd = useMemo(
+    () => [
+      breadcrumbJsonLd([
+        { name: "خانه", path: "/" },
+        { name: "نمایندگی", path: "/representation" },
+      ]),
+      faqJsonLd(representationFaq),
+    ],
+    [],
+  );
+  usePageSeo(staticPageSeo["/representation"], jsonLd);
 
   return (
     <>

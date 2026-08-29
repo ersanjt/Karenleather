@@ -1,13 +1,24 @@
+import { useMemo } from "react";
 import { OstrichWholesaleSection } from "../components/OstrichWholesaleSection";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { ostrichLeather } from "../content/media";
-import { staticPageSeo } from "../content/seo";
+import { breadcrumbJsonLd, faqJsonLd, staticPageSeo, wholesaleFaq } from "../content/seo";
 import { wholesaleCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
 import { SmartImage } from "../components/SmartImage";
 
 export function WholesalePage() {
-  usePageSeo(staticPageSeo["/wholesale"]);
+  const jsonLd = useMemo(
+    () => [
+      breadcrumbJsonLd([
+        { name: "خانه", path: "/" },
+        { name: "فروش عمده", path: "/wholesale" },
+      ]),
+      faqJsonLd(wholesaleFaq),
+    ],
+    [],
+  );
+  usePageSeo(staticPageSeo["/wholesale"], jsonLd);
 
   return (
     <>

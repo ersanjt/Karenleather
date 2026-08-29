@@ -18,6 +18,12 @@ export function decodeSlug(slug: string): string {
   }
 }
 
+/** اسلاگ دسته‌ها در JSON گاهی از قبل percent-encoded است — دوباره encode نکن */
+export function shopCatHref(slug: string): string {
+  const raw = /%[0-9A-Fa-f]{2}/.test(slug) ? decodeSlug(slug) : slug;
+  return `/shop?cat=${encodeURIComponent(raw)}`;
+}
+
 export function productPath(product: Product): string {
   return `/product/${product.id}/${decodeSlug(product.slug)}`;
 }

@@ -2,6 +2,7 @@ import categories from "@content/categories.json";
 import { navLinks } from "./siteCopy";
 import { allProducts } from "../data";
 import { primaryUpload } from "../lib/images";
+import { shopCatHref } from "../lib/utils";
 import type { Category } from "../types";
 
 export interface MenuLink {
@@ -30,7 +31,7 @@ export interface MegaColumn {
 const allCats = categories as Category[];
 
 function catHref(slug: string) {
-  return `/shop?cat=${encodeURIComponent(slug)}`;
+  return shopCatHref(slug);
 }
 
 function categoryImage(termId: number): string | undefined {

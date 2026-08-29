@@ -4,7 +4,7 @@ import { ProductCard } from "../components/ProductCard";
 import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { OstrichWholesaleSection } from "../components/OstrichWholesaleSection";
 import { Logo } from "../components/Logo";
-import { aboutMedia, banners, gallery, hero, ostrichShoes, storeHotel } from "../content/media";
+import { aboutMedia, banners, gallery, ostrichShoes, storeHotel } from "../content/media";
 import {
   homeCopy,
   siteBrand,
@@ -19,8 +19,8 @@ import { SmartImage } from "../components/SmartImage";
 const slides = [
   { src: storeHotel.hero, alt: "فروشگاه چرم کارن — شعبه هتل شهریار تبریز" },
   { src: ostrichShoes.hero, alt: "کفش چرم شترمرغ — کلکسیون چرم کارن" },
-  { src: hero.main, alt: "کیف و کفش چرم طبیعی — چرم کارن" },
-  { src: hero.slide2, alt: "محصولات چرم دست‌ساز — کارگاه چرم کارن تبریز" },
+  { src: storeHotel.wide, alt: "نمای داخلی فروشگاه چرم کارن تبریز" },
+  { src: ostrichShoes.brown, alt: "اسنیکر چرم شترمرغ قهوه‌ای — چرم کارن" },
 ];
 
 export function HomePage() {
@@ -131,7 +131,7 @@ export function HomePage() {
             </Link>
           </div>
           <div className="kl-manifesto__visual">
-            <SmartImage src={aboutMedia.workshop} alt="کارگاه تولید چرم کارن — دوخت دست‌ساز تبریز" loading="lazy" />
+            <SmartImage src={aboutMedia.workshop} alt="نمای فروشگاه چرم کارن — از کارگاه تبریز تا ویترین" loading="lazy" />
             <div className="kl-manifesto__badge">
               <strong>{siteBrand.tagline}</strong>
             </div>
@@ -260,9 +260,6 @@ export function HomePage() {
             </figure>
             <figure className="kl-store__figure">
               <SmartImage src={storeHotel.consultation} alt="میز مشاوره خرید — فروشگاه چرم کارن" loading="lazy" />
-            </figure>
-            <figure className="kl-store__figure">
-              <SmartImage src={storeHotel.hero} alt="نمای فروشگاه چرم کارن — تبریز" loading="lazy" />
             </figure>
           </div>
         </div>

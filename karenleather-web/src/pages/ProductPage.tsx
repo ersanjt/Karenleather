@@ -14,7 +14,8 @@ import { usePageSeo } from "../context/SeoContext";
 import { getProduct } from "../data";
 import { useCart } from "../lib/cart";
 import { useShowPrices } from "../context/StoreSettings";
-import { formatPrice, WHATSAPP_LINK } from "../lib/utils";
+import { formatPrice, shopCatHref, WHATSAPP_LINK } from "../lib/utils";
+import { NotFoundView } from "./NotFoundPage";
 
 export function ProductPage() {
   const showPrices = useShowPrices();
@@ -42,22 +43,21 @@ export function ProductPage() {
       { name: "خانه", path: "/" },
       { name: "فروشگاه", path: "/shop" },
       ...(product.categories[0]
-        ? [{ name: product.categories[0].name, path: `/shop?cat=${encodeURIComponent(product.categories[0].slug)}` }]
+        ? [{ name: product.categories[0].name, path: shopCatHref(product.categories[0].slug) }]
         : []),
       { name: product.title, path: `/product/${product.id}/${product.slug}` },
     ]);
-    return [productJsonLd(product), crumbs];
-  }, [product]);
+    return [productJsonLd(product, { includePrice: showPrices }), crumbs];
+  }, [product, showPrices]);
 
   usePageSeo(seo, jsonLd);
 
   if (!product) {
     return (
-      <div className="container section">
-        <Breadcrumbs items={[{ label: "خانه", to: "/" }, { label: "فروشگاه", to: "/shop" }, { label: "محصول یافت نشد" }]} />
-        <p>محصول یافت نشد.</p>
-        <Link to="/shop">بازگشت به فروشگاه</Link>
-      </div>
+      <NotFoundView
+        title="محصول یافت نشد"
+        description="این محصول در فروشگاه چرم کارن موجود نیست یا از کاتالوگ حذف شده است."
+      />
     );
   }
 
@@ -72,7 +72,7 @@ export function ProductPage() {
           { label: "خانه", to: "/" },
           { label: "فروشگاه", to: "/shop" },
           ...(product.categories[0]
-            ? [{ label: product.categories[0].name, to: `/shop?cat=${encodeURIComponent(product.categories[0].slug)}` }]
+            ? [{ label: product.categories[0].name, to: shopCatHref(product.categories[0].slug) }]
             : []),
           { label: product.title.replace(/^مدل:\s*/i, "") },
         ]}
@@ -105,7 +105,7 @@ export function ProductPage() {
           {product.categories.length > 0 && (
             <div className="tag-row">
               {product.categories.map((c) => (
-                <Link key={c.id} to={`/shop?cat=${encodeURIComponent(c.slug)}`} className="badge">
+                <Link key={c.id} to={shopCatHref(c.slug)} className="badge">
                   {c.name}
                 </Link>
               ))}

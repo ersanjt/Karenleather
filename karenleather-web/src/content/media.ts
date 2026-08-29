@@ -9,17 +9,18 @@ export const hero = {
 };
 
 export const banners = {
-  shop: "/uploads/2023/01/cropped-cropped-WhatsApp-Image-2022-09-14-at-2.53.23-PM-1.jpeg",
-  craft: "/uploads/2021/02/2-4-scaled.jpg",
+  shop: "/uploads/2026/07/store-hotel/01-showroom-wide.jpg",
+  craft: "/uploads/2026/07/ostrich-shoes/01-ostrich-sneaker-brown.jpg",
   collection: "/uploads/2026/07/ostrich-shoes/02-ostrich-sneaker-cognac.jpg",
-  about: "/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.24-PM-1.jpeg",
+  about: "/uploads/2026/07/store-hotel/03-consultation-area.jpg",
 };
 
 export const aboutMedia = {
-  hero: banners.craft,
-  workshop: "/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.21-PM.jpeg",
-  detail: "/uploads/2023/01/msg59263463-649732.jpg",
-  portrait: "/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.17-PM-1.jpeg",
+  hero: "/uploads/2026/07/store-hotel/04-storefront.jpg",
+  iranianCraft: "/uploads/2026/07/store-hotel/02-shelves-bags.jpg",
+  ostrich: "/uploads/2026/07/ostrich-leather/01-color-swatch-rack.jpg",
+  service: "/uploads/2026/07/store-hotel/03-consultation-area.jpg",
+  workshop: "/uploads/2026/07/store-hotel/04-storefront.jpg",
 };
 
 /** تصاویر فروشگاه شعبه هتل شهریار — تبریز */
@@ -48,12 +49,11 @@ export const ostrichShoes = {
 };
 
 export const gallery = [
-  "/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.17-PM.jpeg",
-  "/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.21-PM.jpeg",
-  "/uploads/2023/01/WhatsApp-Image-2022-09-14-at-2.53.24-PM-1.jpeg",
-  "/uploads/2023/01/cropped-WhatsApp-Image-2022-09-14-at-2.53.23-PM-1.jpeg",
-  "/uploads/2023/01/msg59263463-649732.jpg",
-  "/uploads/2021/02/2-4-scaled.jpg",
+  "/uploads/2026/07/store-hotel/01-showroom-wide.jpg",
+  "/uploads/2026/07/ostrich-shoes/02-ostrich-sneaker-cognac.jpg",
+  "/uploads/2026/07/store-hotel/02-shelves-bags.jpg",
+  "/uploads/2026/07/ostrich-shoes/01-ostrich-sneaker-brown.jpg",
+  "/uploads/2026/07/store-hotel/03-consultation-area.jpg",
 ];
 
 export const megaPromo = {

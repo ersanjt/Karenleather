@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /cart
+Disallow: /shop?q=
 
 Sitemap: https://karenleather.com/sitemap.xml

@@ -82,6 +82,15 @@ for f in index.html .htaccess robots.txt sitemap.xml; do
   [[ -f "${REPO_DIR}/karenleather-web/dist/${f}" ]] && cp -a "${REPO_DIR}/karenleather-web/dist/${f}" "${PUBLIC_HTML}/${f}"
 done
 
+if [[ ! -f "${PUBLIC_HTML}/sitemap.xml" ]]; then
+  echo "ERROR: sitemap.xml missing after publish — do not go live without it"
+  exit 1
+fi
+if ! grep -q "urlset" "${PUBLIC_HTML}/sitemap.xml"; then
+  echo "ERROR: sitemap.xml is not a valid urlset"
+  exit 1
+fi
+
 # uploads: یک کپی از ریپو — بدون duplicate در dist
 UPLOADS_SRC="${REPO_DIR}/wp-content/uploads"
 UPLOADS_DST="${PUBLIC_HTML}/uploads"

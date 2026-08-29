@@ -1,9 +1,20 @@
 Options -MultiViews
 RewriteEngine On
 
-# HTTPS (اختیاری — اگر SSL فعال است)
-# RewriteCond %{HTTPS} off
-# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# www → دامنه اصلی
+RewriteCond %{HTTP_HOST} ^www\.karenleather\.com [NC]
+RewriteRule ^ https://karenleather.com%{REQUEST_URI} [L,R=301]
+
+# نقشه سایت و robots را هرگز به SPA نفرست
+RewriteRule ^(sitemap\.xml|robots\.txt)$ - [L]
+
+# فایل‌های استاتیک را هرگز به SPA نفرست
+RewriteRule ^uploads/ - [L]
+RewriteRule ^assets/ - [L]
 
 # فایل/پوشه موجود را مستقیم سرو کن
 RewriteCond %{REQUEST_FILENAME} -f [OR]

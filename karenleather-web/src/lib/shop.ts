@@ -1,5 +1,6 @@
 import categories from "@content/categories.json";
 import { allProducts, getCategoryBySlug, productsByCategory } from "../data";
+import { shopCatHref } from "./utils";
 import type { Category, Product } from "../types";
 
 const allCats = categories as Category[];
@@ -53,7 +54,7 @@ export interface ShopCategoryGroup {
 }
 
 function catHref(slug: string) {
-  return `/shop?cat=${encodeURIComponent(slug)}`;
+  return shopCatHref(slug);
 }
 
 function nodeFromCategory(cat: Category): ShopCategoryNode {

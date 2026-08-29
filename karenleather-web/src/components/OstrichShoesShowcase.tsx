@@ -16,8 +16,8 @@ export function OstrichShoesShowcase({ variant = "home" }: OstrichShoesShowcaseP
       <section className="kl-ostrich kl-ostrich--compact" aria-label={copy.title}>
         <div className="kl-ostrich__compact-grid">
           <div className="kl-ostrich__compact-visual">
-            <SmartImage src={ostrichShoes.cognac} alt="" loading="lazy" />
-            <SmartImage src={ostrichShoes.brown} alt="" loading="lazy" />
+            <SmartImage src={ostrichShoes.cognac} alt="اسنیکر چرم شترمرغ کهنه‌ای" loading="lazy" />
+            <SmartImage src={ostrichShoes.brown} alt="اسنیکر چرم شترمرغ قهوه‌ای" loading="lazy" />
           </div>
           <div className="kl-ostrich__compact-copy">
             <span className="kl-section-label">{copy.subtitle}</span>
@@ -34,11 +34,11 @@ export function OstrichShoesShowcase({ variant = "home" }: OstrichShoesShowcaseP
       <div className="container kl-ostrich__grid">
         <div className="kl-ostrich__visual">
           <figure className="kl-ostrich__shot kl-ostrich__shot--main">
-            <SmartImage src={ostrichShoes.cognac} alt="" loading="lazy" />
+            <SmartImage src={ostrichShoes.cognac} alt="اسنیکر چرم شترمرغ کهنه‌ای — چرم کارن" loading="lazy" />
             <figcaption>{copy.models[1].name}</figcaption>
           </figure>
           <figure className="kl-ostrich__shot kl-ostrich__shot--alt">
-            <SmartImage src={ostrichShoes.brown} alt="" loading="lazy" />
+            <SmartImage src={ostrichShoes.brown} alt="اسنیکر چرم شترمرغ قهوه‌ای — چرم کارن" loading="lazy" />
             <figcaption>{copy.models[0].name}</figcaption>
           </figure>
         </div>

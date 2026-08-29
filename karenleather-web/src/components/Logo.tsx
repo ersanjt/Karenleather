@@ -1,4 +1,5 @@
-import { logoAsset, type LogoVariant } from "../content/brandLogos";
+import { brandLogos, type LogoVariant } from "../content/brandLogos";
+import { siteBrand } from "../content/siteCopy";
 import { SmartImage } from "./SmartImage";
 
 interface LogoProps {
@@ -8,23 +9,62 @@ interface LogoProps {
   compact?: boolean;
 }
 
-/** لوگوی رسمی برند — هر variant فایل جداگانه، داخل کادر بدون برش */
+/**
+ * لوگوی هدر/هیرو/فوتر: نشان دایره‌ای KL + متن CSS
+ * فایل‌های wordmark پس‌زمینهٔ تیره/اشتباه دارند و داخل کادر سفید خوانا نیستند.
+ */
 export function Logo({ variant, compact = false }: LogoProps) {
   const resolved: LogoVariant = variant ?? (compact ? "mark" : "header");
-  const asset = logoAsset(resolved);
+  const mark = brandLogos.mark;
+
+  if (resolved === "mark") {
+    return (
+      <span className="logo-lockup logo-lockup--mark">
+        <SmartImage
+          src={mark.src}
+          fallbacks={mark.fallbacks}
+          alt={mark.alt}
+          className="logo-lockup__mark"
+          loading="eager"
+          decoding="async"
+          width={48}
+          height={48}
+        />
+      </span>
+    );
+  }
+
+  if (resolved === "footer") {
+    return (
+      <span className="logo-lockup logo-lockup--footer">
+        <SmartImage
+          src={mark.src}
+          fallbacks={mark.fallbacks}
+          alt={siteBrand.name}
+          className="logo-lockup__mark"
+          loading="eager"
+          decoding="async"
+          width={96}
+          height={96}
+        />
+        <span className="logo-lockup__text">{siteBrand.name}</span>
+      </span>
+    );
+  }
 
   return (
-    <div className={`logo-frame logo-frame--${resolved}`}>
+    <span className={`logo-lockup logo-lockup--${resolved}`}>
       <SmartImage
-        src={asset.src}
-        fallbacks={asset.fallbacks}
-        alt={asset.alt}
-        className="logo-frame__img"
+        src={mark.src}
+        fallbacks={mark.fallbacks}
+        alt=""
+        className="logo-lockup__mark"
         loading="eager"
         decoding="async"
-        width={resolved === "mark" ? 48 : 220}
-        height={resolved === "mark" ? 48 : 72}
+        width={48}
+        height={48}
       />
-    </div>
+      <span className="logo-lockup__text">{siteBrand.name}</span>
+    </span>
   );
 }
