@@ -1,7 +1,6 @@
 <?php
 /**
- * Serve sitemap.xml with an explicit XML content-type.
- * Static .xml on some cPanel/LiteSpeed + leftover WordPress rewrite returns HTTP 500.
+ * نقشه سایت XML فقط از PHP. فایل استاتیک sitemap.xml روی بعضی هاست‌ها ۵۰۰ می‌شود.
  */
 declare(strict_types=1);
 
@@ -9,7 +8,7 @@ header('Content-Type: application/xml; charset=UTF-8');
 header('X-Content-Type-Options: nosniff');
 header('Cache-Control: public, max-age=3600');
 
-$file = __DIR__ . '/sitemap.xml';
+$file = __DIR__ . '/sitemap-data.xml';
 if (is_readable($file)) {
   readfile($file);
   exit;

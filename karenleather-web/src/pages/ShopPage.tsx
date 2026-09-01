@@ -6,12 +6,12 @@ import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { MensLookbook } from "../components/MensLookbook";
 import { ShopCatalogBar } from "../components/ShopCatalogBar";
 import { ShopSidebar } from "../components/ShopSidebar";
-import { breadcrumbJsonLd, canonicalPath, collectionPageJsonLd, shopFilterCopy, shopPageSeo } from "../content/seo";
+import { breadcrumbJsonLd, canonicalPath, cleanProductTitle, collectionPageJsonLd, itemListJsonLd, shopFilterCopy, shopPageSeo } from "../content/seo";
 import { categorySeoDescription, categorySeoTitle } from "../content/taxonomy";
 import { siteBrand } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
 import { getCategoryBySlug } from "../data";
-import { shopCatHref } from "../lib/utils";
+import { productPath, shopCatHref } from "../lib/utils";
 import {
   buildShopCategoryTree,
   filterFromSlug,
@@ -55,8 +55,8 @@ export function ShopPage() {
   const catalogIds = useMemo(() => filtered.map((p) => p.id), [filtered]);
 
   const seo = useMemo(
-    () => shopPageSeo(activeCat, filter, q),
-    [activeCat, filter, q],
+    () => shopPageSeo(activeCat, urlFilter && URL_FILTERS.has(urlFilter) ? urlFilter : undefined, q),
+    [activeCat, urlFilter, q],
   );
 
   const jsonLd = useMemo(() => {
@@ -66,8 +66,15 @@ export function ShopPage() {
       { name: "فروشگاه", path: "/shop" },
       ...(activeCat ? [{ name: activeCat.name, path: shopCatHref(activeCat.slug) }] : []),
     ]);
-    return [crumbs, collectionPageJsonLd(seo.title, path, seo.description, seo.keywords)];
-  }, [activeCat, params, seo.title, seo.description, seo.keywords]);
+    return [
+      crumbs,
+      collectionPageJsonLd(seo.title, path, seo.description, seo.keywords),
+      itemListJsonLd(
+        seo.title,
+        filtered.slice(0, 12).map((p) => ({ name: cleanProductTitle(p.title), path: productPath(p) })),
+      ),
+    ];
+  }, [activeCat, params, seo.title, seo.description, seo.keywords, filtered]);
 
   usePageSeo(seo, jsonLd);
 

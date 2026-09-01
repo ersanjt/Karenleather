@@ -82,10 +82,10 @@ export function Footer() {
         <p className="footer-mobile__tag">{siteBrand.tagline}</p>
         <div className="footer-mobile__actions">
           <a href={`tel:${siteContact.phoneTel}`}>تماس</a>
-          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
             واتساپ
           </a>
-          <a href={siteContact.instagram} target="_blank" rel="noreferrer">
+          <a href={siteContact.instagram} target="_blank" rel="noopener noreferrer">
             اینستاگرام
           </a>
         </div>
@@ -105,10 +105,10 @@ export function Footer() {
           © {new Date().getFullYear()} {siteBrand.name} — {siteBrand.legalName}
         </span>
         <span className="footer-social footer-desktop">
-          <a href={siteContact.instagram} target="_blank" rel="noreferrer">
+          <a href={siteContact.instagram} target="_blank" rel="noopener noreferrer">
             اینستاگرام
           </a>
-          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
             واتساپ
           </a>
         </span>
@@ -116,7 +116,7 @@ export function Footer() {
 
       <div className="container footer-credit">
         <span>{siteCredit.label}</span>
-        <a href={siteCredit.url} target="_blank" rel="noreferrer noopener">
+        <a href={siteCredit.url} target="_blank" rel="noopener noreferrer">
           {siteCredit.name}
         </a>
       </div>

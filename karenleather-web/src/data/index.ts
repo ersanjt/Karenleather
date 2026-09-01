@@ -56,3 +56,27 @@ export const topCategories = [...allCategories]
   .slice(0, 8);
 
 export const featuredProducts = allProducts.filter((p) => p.images.length).slice(0, 8);
+
+/** محصولات هم‌دسته برای لینک داخلی صفحه محصول */
+export function relatedProducts(product: Product, limit = 4): Product[] {
+  const catIds = new Set(product.categories.map((c) => c.id));
+  const colorHint = product.title.match(/قهوه|مشکی|عسلی|زرشکی|طوسی|سرمه‌ای|کرم|قرمز|آبی|یشمی|بنفش|خردلی|فیروزه|کاربنی|کهنه|سفید|زرد/);
+  const scored = allProducts
+    .filter((p) => p.id !== product.id && p.images.length)
+    .map((p) => {
+      let score = 0;
+      if (p.categories.some((c) => catIds.has(c.id))) score += 20;
+      if (colorHint && colorHint[0] && p.title.includes(colorHint[0])) score += 4;
+      return { p, score };
+    })
+    .filter((row) => row.score > 0)
+    .sort((a, b) => b.score - a.score || a.p.id - b.p.id);
+
+  const picked = scored.map((row) => row.p);
+  if (picked.length >= limit) return picked.slice(0, limit);
+
+  const extra = featuredProducts.filter(
+    (p) => p.id !== product.id && !picked.some((r) => r.id === p.id),
+  );
+  return [...picked, ...extra].slice(0, limit);
+}

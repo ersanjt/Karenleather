@@ -126,7 +126,7 @@ export const lookbookMen: MediaShot[] = [
   },
   {
     src: `${MEN}/mens-monk-strap-atelier.jpg`,
-    alt: "کفش مانک‌استرپ چرم مشکی کارن در کارگاه تولید",
+    alt: "ساخت کفش چرم کارن در کارگاه تبریز — مانک‌استرپ و چرم خام روی میز کار",
     title: "مانک‌استرپ",
     href: "/shop?filter=footwear",
     width: 576,

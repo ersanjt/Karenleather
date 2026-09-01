@@ -1,8 +1,9 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import type { CSSProperties } from "react";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { aboutMedia, ostrichLeather, shotVars, storeHotel } from "../content/media";
-import { staticPageSeo } from "../content/seo";
+import { breadcrumbJsonLd, staticPageSeo } from "../content/seo";
 import { aboutCopy, storeCopy, wholesaleCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
 import { SmartImage } from "../components/SmartImage";
@@ -23,7 +24,15 @@ const storyBlocks = [
 ];
 
 export function AboutPage() {
-  usePageSeo(staticPageSeo["/about"]);
+  const jsonLd = useMemo(
+    () =>
+      breadcrumbJsonLd([
+        { name: "خانه", path: "/" },
+        { name: "درباره ما", path: "/about" },
+      ]),
+    [],
+  );
+  usePageSeo(staticPageSeo["/about"], jsonLd);
 
   return (
     <>

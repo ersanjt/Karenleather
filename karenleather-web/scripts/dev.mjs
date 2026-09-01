@@ -138,9 +138,23 @@ function renderIndex(pathname = "/") {
 }
 
 const devOut = path.join(root, "dist-dev");
-const { generateSeoFiles, isShareCrawler, lookupSharePage, renderShareHtml } = await import(pathToFileURL(path.join(__dirname, "generate-seo.mjs")).href);
+const { generateSeoFiles, isShareCrawler, lookupSharePage, renderShareHtml, isKnownSpaPath, applySpaHtml, notFoundSharePage } = await import(pathToFileURL(path.join(__dirname, "generate-seo.mjs")).href);
 generateSeoFiles(devOut);
 const shareData = JSON.parse(fs.readFileSync(path.join(devOut, "share-pages.json"), "utf8"));
+
+function sendSpa(res, pathname) {
+  const known = isKnownSpaPath(pathname, shareData);
+  const html = applySpaHtml(renderIndex(pathname), { pathname, known });
+  const headers = {
+    "Content-Type": "text/html; charset=utf-8",
+    "Cache-Control": "no-store",
+  };
+  if (!known || pathname === "/cart" || pathname.startsWith("/admin")) {
+    headers["X-Robots-Tag"] = "noindex, nofollow";
+  }
+  res.writeHead(known ? 200 : 404, headers);
+  res.end(html);
+}
 
 http
   .createServer(async (req, res) => {
@@ -166,10 +180,22 @@ http
       return;
     }
 
-    if (pathname === "/robots.txt" || pathname === "/sitemap.xml" || pathname === "/sitemap.html") {
+    if (pathname === "/robots.txt" || pathname === "/sitemap.html") {
       const filePath = path.join(devOut, pathname.slice(1));
       if (fs.existsSync(filePath)) {
         sendFile(res, filePath);
+        return;
+      }
+    }
+
+    if (pathname === "/sitemap.xml" || pathname === "/sitemap.php") {
+      const dataPath = path.join(devOut, "sitemap-data.xml");
+      if (fs.existsSync(dataPath)) {
+        res.writeHead(200, {
+          "Content-Type": "application/xml; charset=utf-8",
+          "Cache-Control": "public, max-age=3600",
+        });
+        fs.createReadStream(dataPath).pipe(res);
         return;
       }
     }
@@ -190,15 +216,26 @@ http
       (isShareCrawler(ua) || url.searchParams.has("ogpreview"))
     ) {
       const page = lookupSharePage(shareData, pathname, url.searchParams);
-      let canonical = `https://karenleather.com${pathname === "/" ? "/" : pathname}`;
-      if (pathname === "/shop") {
+      const known = isKnownSpaPath(pathname, shareData);
+      let canonical = page?.url || `https://karenleather.com${pathname === "/" ? "/" : pathname}`;
+      if (!page?.url && pathname === "/shop") {
         const cat = url.searchParams.get("cat");
         const filter = url.searchParams.get("filter");
         if (cat) canonical += `?cat=${encodeURIComponent(cat)}`;
         else if (filter) canonical += `?filter=${encodeURIComponent(filter)}`;
       }
-      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
-      res.end(renderShareHtml(page, canonical));
+      const payload = page || (known ? null : notFoundSharePage(canonical));
+      if (!payload) {
+        sendSpa(res, pathname);
+        return;
+      }
+      const status = page ? 200 : 404;
+      const headers = { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" };
+      if (String(payload.robots || "").includes("noindex")) {
+        headers["X-Robots-Tag"] = payload.robots;
+      }
+      res.writeHead(status, headers);
+      res.end(renderShareHtml(payload, payload.url || canonical));
       return;
     }
 
@@ -208,8 +245,7 @@ http
     }
 
     if (pathname === "/" || pathname === "/index.html") {
-      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
-      res.end(renderIndex(pathname));
+      sendSpa(res, "/");
       return;
     }
 
@@ -219,8 +255,7 @@ http
       return;
     }
 
-    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
-    res.end(renderIndex(pathname));
+    sendSpa(res, pathname);
   })
   .listen(port, "127.0.0.1", () => {
     console.log(`Karen Leather dev server: http://127.0.0.1:${port}`);

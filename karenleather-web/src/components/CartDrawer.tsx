@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useShowPrices } from "../context/StoreSettings";
 import { getProduct } from "../data";
 import { useCart } from "../lib/cart";
 import { buildCartWhatsAppMessage } from "../lib/cartMessage";
+import { submitStoreOrder } from "../lib/storeOrder";
 import { useCartUI } from "../context/CartUI";
 import { formatPrice, productPath, WHATSAPP_LINK } from "../lib/utils";
 import { productImageAlt, cleanProductTitle } from "../content/seo";
@@ -27,6 +29,15 @@ export function CartDrawer() {
   }[];
 
   const total = lines.reduce((s, l) => s + l.lineTotal, 0);
+
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeDrawer();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [drawerOpen, closeDrawer]);
 
   const waMessage = encodeURIComponent(
     buildCartWhatsAppMessage(
@@ -98,9 +109,22 @@ export function CartDrawer() {
             <a
               href={`${WHATSAPP_LINK}?text=${waMessage}`}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn btn-gold cart-checkout-btn"
-              onClick={closeDrawer}
+              onClick={() => {
+                submitStoreOrder({
+                  customer: { name: "مهمان" },
+                  items: lines.map((l) => ({
+                    productId: l.product.id,
+                    title: l.product.title,
+                    qty: l.item.qty,
+                    price: l.lineTotal / l.item.qty,
+                  })),
+                  total,
+                  note: "سفارش از واتساپ",
+                });
+                closeDrawer();
+              }}
             >
               ثبت سفارش در واتساپ
             </a>

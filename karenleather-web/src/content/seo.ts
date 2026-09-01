@@ -9,8 +9,10 @@ import {
   categorySeoDescription,
   categorySeoTitle,
   productFacts,
+  productHeading,
   productKeywords,
   productSeoDescription as buildProductDescription,
+  productSeoTitle,
 } from "./taxonomy";
 
 export {
@@ -21,8 +23,10 @@ export {
   detectMaterial,
   productBodyHtml,
   productDisplayTags,
+  productHeading,
   productKeywords,
   productSeoDescription,
+  productSeoTitle,
 } from "./taxonomy";
 
 /** تصویر اجتماعی — ۱۲۰۰×۶۳۰ برای پیش‌نمایش لینک در واتساپ، تلگرام، فیسبوک */
@@ -53,6 +57,8 @@ export interface PageSeo {
   ogImageHeight?: number;
   ogType?: "website" | "product";
   robots?: string;
+  /** اگر باشد، به‌جای مسیر درخواست در کنونیکال می‌آید */
+  canonicalPath?: string;
 }
 
 export const staticPageSeo: Record<string, PageSeo> = {
@@ -181,10 +187,8 @@ export function shopFilterCopy(filter?: string): { title: string; description: s
 }
 
 export function productPageSeo(product: Product): PageSeo {
-  const facts = productFacts(product);
-  const catLabel = facts.leafCategory?.name ?? facts.type;
   return {
-    title: `${facts.name} | ${catLabel} — ${siteBrand.name}`,
+    title: productSeoTitle(product, siteBrand.name),
     description: buildProductDescription(product),
     keywords: productKeywords(product),
     ogImage: product.images[0]
@@ -192,6 +196,7 @@ export function productPageSeo(product: Product): PageSeo {
       : defaultOgImage,
     ogImageAlt: productImageAlt(product),
     ogType: "product",
+    canonicalPath: productPath(product),
   };
 }
 
@@ -247,7 +252,7 @@ export function productJsonLd(product: Product, opts?: { includePrice?: boolean 
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: facts.name,
+    name: productHeading(product),
     description: buildProductDescription(product),
     image: imgUrl
       ? {
@@ -263,6 +268,21 @@ export function productJsonLd(product: Product, opts?: { includePrice?: boolean 
     },
     offers,
     ...extra,
+  };
+}
+
+export function itemListJsonLd(name: string, items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: absoluteUrl(item.path),
+      name: item.name,
+    })),
   };
 }
 
@@ -363,6 +383,7 @@ export function organizationJsonLd() {
     },
     sameAs: [siteContact.instagram],
     keywords: seoPages.home.keywords,
+    isAccessibleForFree: true,
     priceRange: "$$",
     currenciesAccepted: "IRR",
     areaServed: {

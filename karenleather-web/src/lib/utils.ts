@@ -28,6 +28,10 @@ export function productPath(product: Product): string {
   return `/product/${product.id}/${decodeSlug(product.slug)}`;
 }
 
+export function isProductInStock(product: Pick<Product, "stock">): boolean {
+  return product.stock !== "outofstock" && product.stock !== "out_of_stock";
+}
+
 export function primaryImage(images: ProductImage[]): string {
   if (!images.length) return "";
   return primaryUpload(images[0].file);

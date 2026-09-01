@@ -6,7 +6,6 @@
 declare(strict_types=1);
 
 header('Content-Type: text/html; charset=utf-8');
-header('Cache-Control: public, max-age=600');
 
 $SITE = 'https://karenleather.com';
 $dataFile = __DIR__ . '/share-pages.json';
@@ -26,20 +25,13 @@ function h(string $s): string {
   return htmlspecialchars($s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 }
 
-function lookup_share(array $data, string $path, array $get): array {
+function lookup_share(array $data, string $path, array $get): ?array {
   $pages = $data['pages'] ?? [];
-  $home = $pages['/'] ?? [
-    'title' => 'چرم کارن',
-    'description' => 'فروشگاه کیف و کفش چرم طبیعی — تبریز',
-    'image' => 'https://karenleather.com/uploads/campaign/og/og-home-1200x630.jpg',
-    'imageAlt' => 'ست کیف و بوت چرم زرد کارن تبریز روی سنگفرش',
-    'width' => 1200,
-    'height' => 630,
-    'type' => 'website',
-  ];
+  $products = $data['products'] ?? [];
 
   if (preg_match('#^/product/(\d+)#', $path, $m)) {
-    return $data['products'][$m[1]] ?? $home;
+    $hit = $products[$m[1]] ?? null;
+    return is_array($hit) ? $hit : null;
   }
 
   $keys = [];
@@ -56,17 +48,17 @@ function lookup_share(array $data, string $path, array $get): array {
     $keys[] = '/shop';
   }
   $keys[] = $path;
-  $keys[] = '/';
 
   foreach ($keys as $k) {
     if (isset($pages[$k]) && is_array($pages[$k])) {
       return $pages[$k];
     }
   }
-  return $home;
+  return null;
 }
 
 $page = lookup_share($data, $path, $_GET);
+$found = is_array($page);
 
 $ogUrl = $SITE . ($path === '/' ? '/' : $path);
 if ($path === '/shop') {
@@ -81,9 +73,39 @@ if ($path === '/shop') {
   }
 }
 
+if (!$found) {
+  http_response_code(404);
+  header('Cache-Control: no-store');
+  header('X-Robots-Tag: noindex, follow');
+  $page = [
+    'title' => 'صفحه یافت نشد — چرم کارن',
+    'description' => 'این صفحه در فروشگاه چرم کارن وجود ندارد. به فروشگاه یا صفحه اصلی برگردید.',
+    'robots' => 'noindex, follow',
+    'image' => $SITE . '/uploads/campaign/og/og-home-1200x630.jpg',
+    'imageAlt' => 'ست کیف و بوت چرم زرد کارن تبریز روی سنگفرش',
+    'width' => 1200,
+    'height' => 630,
+    'type' => 'website',
+    'url' => $ogUrl,
+  ];
+} else {
+  $robotsHeader = (string) ($page['robots'] ?? '');
+  if (strpos($robotsHeader, 'noindex') !== false) {
+    header('Cache-Control: no-store');
+    header('X-Robots-Tag: ' . $robotsHeader);
+  } else {
+    header('Cache-Control: public, max-age=600');
+  }
+}
+
+if (!empty($page['url']) && is_string($page['url'])) {
+  $ogUrl = $page['url'];
+}
+
 $title = (string) ($page['title'] ?? 'چرم کارن');
 $desc = (string) ($page['description'] ?? '');
 $keywords = (string) ($page['keywords'] ?? '');
+$robots = (string) ($page['robots'] ?? 'index, follow, max-image-preview:large');
 $image = (string) ($page['image'] ?? $SITE . '/uploads/campaign/og/og-home-1200x630.jpg');
 $alt = (string) ($page['imageAlt'] ?? $title);
 $width = (int) ($page['width'] ?? 1200);
@@ -97,10 +119,13 @@ $mime = strtolower(substr($image, -4)) === '.png' ? 'image/png' : 'image/jpeg';
     <meta charset="UTF-8" />
     <title><?= h($title) ?></title>
     <meta name="description" content="<?= h($desc) ?>" />
+    <meta name="robots" content="<?= h($robots) ?>" />
     <?php if ($keywords !== '') : ?>
     <meta name="keywords" content="<?= h($keywords) ?>" />
     <?php endif; ?>
     <link rel="canonical" href="<?= h($ogUrl) ?>" />
+    <link rel="alternate" hreflang="fa-IR" href="<?= h($ogUrl) ?>" />
+    <link rel="alternate" hreflang="x-default" href="<?= h($ogUrl) ?>" />
     <link rel="image_src" href="<?= h($image) ?>" />
     <meta itemprop="image" content="<?= h($image) ?>" />
 

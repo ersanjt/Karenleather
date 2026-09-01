@@ -9,6 +9,11 @@ const storePath = path.join(contentRoot, "admin-store.json");
 const credsPath = path.join(contentRoot, "admin-credentials.json");
 
 const sessions = new Map();
+const loginAttempts = new Map();
+
+const PRODUCT_EDIT_FIELDS = ["title", "price", "regular_price", "sale_price", "stock", "hidden", "description"];
+const SETTINGS_FIELDS = ["showPrices", "whatsappPhone", "whatsappMessage", "adminEmail", "siteName"];
+const ORDER_STATUSES = new Set(["pending", "processing", "completed", "cancelled"]);
 
 function readJson(filePath, fallback) {
   try {
@@ -102,6 +107,36 @@ function newOrderId() {
   return `KL-${Date.now().toString(36).toUpperCase()}`;
 }
 
+function clientIp(req) {
+  return req.socket?.remoteAddress || "local";
+}
+
+function isRateLimited(key, max, windowMs) {
+  const now = Date.now();
+  const rec = loginAttempts.get(key);
+  if (!rec || rec.reset < now) {
+    loginAttempts.set(key, { count: 1, reset: now + windowMs });
+    return false;
+  }
+  rec.count += 1;
+  return rec.count > max;
+}
+
+function clipText(value, max) {
+  return String(value ?? "")
+    .replace(/[<>]/g, "")
+    .slice(0, max)
+    .trim();
+}
+
+function pickFields(source, keys) {
+  const out = {};
+  for (const key of keys) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) out[key] = source[key];
+  }
+  return out;
+}
+
 function productGender(product) {
   const womenRoots = new Set([18, 47, 46, 53, 52]);
   const menRoots = new Set([19, 54, 59]);
@@ -129,15 +164,38 @@ export async function handleAdminApi(req, res, pathname) {
   if (pathname === "/api/store/orders" && req.method === "POST") {
     try {
       const body = await parseBody(req);
+      const catalog = mergeProducts();
+      const byId = new Map(catalog.map((p) => [p.id, p]));
+      const rawItems = Array.isArray(body.items) ? body.items : [];
+      const items = [];
+      for (const raw of rawItems) {
+        const id = Number(raw.productId ?? raw.id);
+        const product = byId.get(id);
+        if (!product) continue;
+        const qty = Math.min(20, Math.max(1, Number(raw.qty) || 1));
+        const unit = Number(product.price || product.regular_price) || 0;
+        items.push({
+          productId: product.id,
+          title: product.title,
+          qty,
+          price: unit,
+        });
+      }
+      if (!items.length) return json(res, 400, { error: "Empty order" });
+
       const store = readStore();
       const order = {
         id: newOrderId(),
         status: "pending",
         payment: "whatsapp",
-        customer: body.customer ?? { name: "مهمان", phone: "", email: "" },
-        items: body.items ?? [],
-        total: body.total ?? 0,
-        note: body.note ?? "",
+        customer: {
+          name: clipText(body.customer?.name, 80) || "مهمان",
+          phone: clipText(body.customer?.phone, 20),
+          email: clipText(body.customer?.email, 120),
+        },
+        items,
+        total: items.reduce((sum, item) => sum + item.price * item.qty, 0),
+        note: clipText(body.note, 500),
         createdAt: new Date().toISOString(),
       };
       store.orders = [order, ...(store.orders ?? [])].slice(0, 500);
@@ -150,6 +208,9 @@ export async function handleAdminApi(req, res, pathname) {
 
   if (pathname === "/api/admin/login" && req.method === "POST") {
     try {
+      if (isRateLimited(`login:${clientIp(req)}`, 8, 15 * 60 * 1000)) {
+        return json(res, 429, { error: "Too many attempts" });
+      }
       const body = await parseBody(req);
       const creds = readJson(credsPath, null);
       if (!creds) return json(res, 500, { error: "Admin not configured" });
@@ -229,10 +290,16 @@ export async function handleAdminApi(req, res, pathname) {
       const body = await parseBody(req);
       const store = readStore();
       const key = String(id);
+      const patch = pickFields(body, PRODUCT_EDIT_FIELDS);
+      if (patch.stock && patch.stock !== "instock" && patch.stock !== "outofstock") {
+        delete patch.stock;
+      }
+      if (typeof patch.title === "string") patch.title = clipText(patch.title, 200);
+      if (typeof patch.description === "string") patch.description = String(patch.description).slice(0, 20_000);
       store.productEdits = store.productEdits ?? {};
       store.productEdits[key] = {
         ...(store.productEdits[key] ?? {}),
-        ...body,
+        ...patch,
         modified: new Date().toISOString(),
       };
       if (body.hidden === true) {
@@ -258,9 +325,11 @@ export async function handleAdminApi(req, res, pathname) {
     try {
       const id = decodeURIComponent(orderMatch[1]);
       const body = await parseBody(req);
+      const status = typeof body.status === "string" ? body.status : "";
+      if (!ORDER_STATUSES.has(status)) return json(res, 400, { error: "Invalid status" });
       const store = readStore();
       store.orders = (store.orders ?? []).map((o) =>
-        o.id === id ? { ...o, ...body, updatedAt: new Date().toISOString() } : o,
+        o.id === id ? { ...o, status, updatedAt: new Date().toISOString() } : o,
       );
       writeStore(store);
       return json(res, 200, { ok: true });
@@ -278,7 +347,13 @@ export async function handleAdminApi(req, res, pathname) {
     try {
       const body = await parseBody(req);
       const store = readStore();
-      store.settings = { ...(store.settings ?? {}), ...body };
+      const patch = pickFields(body, SETTINGS_FIELDS);
+      if (typeof patch.siteName === "string") patch.siteName = clipText(patch.siteName, 80);
+      if (typeof patch.adminEmail === "string") patch.adminEmail = clipText(patch.adminEmail, 120);
+      if (typeof patch.whatsappPhone === "string") patch.whatsappPhone = String(patch.whatsappPhone).replace(/\D/g, "").slice(0, 20);
+      if (typeof patch.whatsappMessage === "string") patch.whatsappMessage = clipText(patch.whatsappMessage, 500);
+      if ("showPrices" in patch) patch.showPrices = Boolean(patch.showPrices);
+      store.settings = { ...(store.settings ?? {}), ...patch };
       writeStore(store);
       return json(res, 200, { settings: store.settings });
     } catch {

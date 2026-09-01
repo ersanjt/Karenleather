@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { ProductCard } from "../components/ProductCard";
 import { OstrichShoesShowcase } from "../components/OstrichShoesShowcase";
 import { OstrichWholesaleSection } from "../components/OstrichWholesaleSection";
@@ -22,8 +22,11 @@ import {
   storeCopy,
   trustPillars,
 } from "../content/siteCopy";
+import { breadcrumbJsonLd, cleanProductTitle, itemListJsonLd, staticPageSeo } from "../content/seo";
+import { usePageSeo } from "../context/SeoContext";
 import { quickShopLinks } from "../content/menu";
 import { featuredProducts } from "../data";
+import { productPath } from "../lib/utils";
 import { SmartImage } from "../components/SmartImage";
 
 const slides = [
@@ -42,6 +45,18 @@ const lookbook = [
 export function HomePage() {
   const [slide, setSlide] = useState(0);
   const [paused, setPaused] = useState(false);
+
+  const jsonLd = useMemo(
+    () => [
+      breadcrumbJsonLd([{ name: "خانه", path: "/" }]),
+      itemListJsonLd(
+        "محصولات برجسته چرم کارن",
+        featuredProducts.map((p) => ({ name: cleanProductTitle(p.title), path: productPath(p) })),
+      ),
+    ],
+    [],
+  );
+  usePageSeo(staticPageSeo["/"], jsonLd);
 
   useEffect(() => {
     if (paused) return;
@@ -187,20 +202,20 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="kl-manifesto">
+      <section className="kl-manifesto" aria-label={homeCopy.manifesto.label}>
         <div className="container kl-manifesto__grid">
           <div className="kl-manifesto__quote">
-            <span className="kl-section-label">۰۱ — فلسفه برند</span>
-            <blockquote>{homeCopy.manifesto}</blockquote>
+            <span className="kl-section-label">{homeCopy.manifesto.label}</span>
+            <blockquote>{homeCopy.manifesto.quote}</blockquote>
             <Link to="/about" className="kl-text-link">
-              بیشتر درباره کارن ←
+              {homeCopy.manifesto.cta}
             </Link>
           </div>
           <div className="kl-manifesto__visual">
             <SmartImage src={aboutMedia.workshop} loading="lazy" sizes="(max-width: 900px) 100vw, 50vw" />
-            <div className="kl-manifesto__badge">
-              <strong>{siteBrand.tagline}</strong>
-            </div>
+            <p className="kl-manifesto__badge">
+              <strong>{homeCopy.manifesto.badge}</strong>
+            </p>
           </div>
         </div>
       </section>

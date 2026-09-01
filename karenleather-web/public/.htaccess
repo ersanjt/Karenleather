@@ -1,6 +1,13 @@
 Options -MultiViews
 RewriteEngine On
 
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
 # HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -12,8 +19,8 @@ RewriteRule ^ https://karenleather.com%{REQUEST_URI} [L,R=301]
 # نقشه سایت XML از PHP — فایل استاتیک .xml روی بعضی هاست‌ها ۵۰۰ می‌شود
 RewriteRule ^(sitemap\.xml|wp-sitemap\.xml)$ sitemap.php [L]
 
-# robots، اشتراک و نقشه HTML را هرگز به SPA نفرست
-RewriteRule ^(robots\.txt|share\.php|share-pages\.json|sitemap\.html)$ - [L]
+# robots، اشتراک، نقشه HTML و ورودی SPA را بازنویسی نکن
+RewriteRule ^(robots\.txt|share\.php|share-pages\.json|sitemap\.html|sitemap\.php|spa\.php)$ - [L]
 
 # فایل‌های استاتیک را هرگز به SPA نفرست
 RewriteRule ^uploads/ - [L]
@@ -28,5 +35,5 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# SPA: بقیه مسیرها → index.html
-RewriteRule ^ index.html [L]
+# SPA: مسیر شناخته‌شده ۲۰۰، بقیه ۴۰۴ واقعی
+RewriteRule ^ spa.php [L]

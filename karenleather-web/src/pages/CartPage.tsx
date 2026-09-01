@@ -3,13 +3,16 @@ import { useShowPrices } from "../context/StoreSettings";
 import { getProduct } from "../data";
 import { useCart } from "../lib/cart";
 import { buildCartWhatsAppMessage } from "../lib/cartMessage";
-import { productImageAlt, cleanProductTitle } from "../content/seo";
+import { submitStoreOrder } from "../lib/storeOrder";
+import { productImageAlt, cleanProductTitle, staticPageSeo } from "../content/seo";
 import { SmartImage } from "../components/SmartImage";
+import { usePageSeo } from "../context/SeoContext";
 import { formatPrice, productPath, WHATSAPP_LINK } from "../lib/utils";
 
 export function CartPage() {
   const showPrices = useShowPrices();
   const { items, setQty, remove, clear, count } = useCart();
+  usePageSeo(staticPageSeo["/cart"]);
 
   const lines = items
     .map((item) => {
@@ -38,53 +41,45 @@ export function CartPage() {
       <h1 className="section-title">سبد خرید</h1>
 
       {!count ? (
-        <div>
-          <p style={{ color: "var(--muted)" }}>سبد خرید شما خالی است.</p>
-          <Link to="/shop" className="btn btn-primary" style={{ marginTop: "1rem" }}>
+        <div className="cart-page-empty">
+          <p>سبد خرید شما خالی است.</p>
+          <Link to="/shop" className="btn btn-primary">
             رفتن به فروشگاه
           </Link>
         </div>
       ) : (
         <>
-          <div style={{ display: "grid", gap: "1rem" }}>
+          <div className="cart-page-lines">
             {lines.map(({ item, product, lineTotal }) => (
               <div
                 key={item.productId}
-                className="cart-page-line"
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: showPrices ? "80px 1fr auto" : "80px 1fr",
-                  gap: "1rem",
-                  alignItems: "center",
-                  padding: "1rem",
-                  border: "1px solid var(--border)",
-                  borderRadius: "var(--radius)",
-                }}
+                className={`cart-page-line${showPrices ? "" : " cart-page-line--noprice"}`}
               >
                 <Link to={productPath(product)}>
                   <SmartImage
                     src={product.images[0]?.file ?? ""}
                     alt={productImageAlt(product)}
                     sizes="80px"
-                    style={{ width: 80, height: 80, objectFit: "cover", borderRadius: 8 }}
+                    className="cart-page-line__thumb"
                   />
                 </Link>
                 <div>
-                  <Link to={productPath(product)} style={{ fontWeight: 700 }}>
+                  <Link to={productPath(product)} className="cart-page-line__title">
                     {cleanProductTitle(product.title)}
                   </Link>
                   {showPrices && (
-                    <div style={{ color: "var(--muted)", fontSize: "0.9rem" }}>
+                    <div className="cart-page-line__meta">
                       {formatPrice(product.price || product.regular_price)}
                     </div>
                   )}
-                  <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.5rem", alignItems: "center" }}>
+                  <div className="cart-page-line__qty">
+                    <label htmlFor={`cart-qty-${item.productId}`}>تعداد</label>
                     <input
+                      id={`cart-qty-${item.productId}`}
                       type="number"
                       min={1}
                       value={item.qty}
                       onChange={(e) => setQty(item.productId, Number(e.target.value) || 0)}
-                      style={{ width: 56, padding: "0.25rem", borderRadius: 6, border: "1px solid var(--border)" }}
                     />
                     <button type="button" className="btn btn-outline" onClick={() => remove(item.productId)}>
                       حذف
@@ -92,32 +87,20 @@ export function CartPage() {
                   </div>
                 </div>
                 {showPrices && (
-                  <div style={{ fontWeight: 800 }}>{formatPrice(lineTotal)}</div>
+                  <div className="cart-page-line__total">{formatPrice(lineTotal)}</div>
                 )}
               </div>
             ))}
           </div>
 
-          <div
-            style={{
-              marginTop: "2rem",
-              padding: "1.5rem",
-              background: "var(--surface)",
-              borderRadius: "var(--radius)",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "1rem",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <div className="cart-page-summary">
             <div>
-              <div style={{ color: "var(--muted)" }}>
+              <div className="cart-page-line__meta">
                 {count.toLocaleString("fa-IR")} قلم در سبد
               </div>
               {showPrices && (
                 <>
-                  <div style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--navy)" }}>
+                  <div className="cart-page-line__total" style={{ fontSize: "1.5rem" }}>
                     {formatPrice(total)}
                   </div>
                   {total >= 1_000_000 && (
@@ -128,30 +111,27 @@ export function CartPage() {
                 </>
               )}
             </div>
-            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <div className="cart-page-summary__actions">
               <button type="button" className="btn btn-outline" onClick={clear}>
                 خالی کردن سبد
               </button>
               <a
                 href={`${WHATSAPP_LINK}?text=${waMessage}`}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn btn-gold"
                 onClick={() => {
-                  fetch("/api/store/orders", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                      customer: { name: "مهمان" },
-                      items: lines.map((l) => ({
-                        title: l.product.title,
-                        qty: l.item.qty,
-                        price: l.lineTotal / l.item.qty,
-                      })),
-                      total,
-                      note: "سفارش از واتساپ",
-                    }),
-                  }).catch(() => {});
+                  submitStoreOrder({
+                    customer: { name: "مهمان" },
+                    items: lines.map((l) => ({
+                      productId: l.product.id,
+                      title: l.product.title,
+                      qty: l.item.qty,
+                      price: l.lineTotal / l.item.qty,
+                    })),
+                    total,
+                    note: "سفارش از واتساپ",
+                  });
                 }}
               >
                 ثبت سفارش در واتساپ

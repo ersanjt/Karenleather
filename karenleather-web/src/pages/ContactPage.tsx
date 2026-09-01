@@ -1,15 +1,24 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import type { CSSProperties } from "react";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { shotVars, storeHotel, storeHotelGallery } from "../content/media";
-import { staticPageSeo } from "../content/seo";
+import { breadcrumbJsonLd, staticPageSeo } from "../content/seo";
 import { contactCopy, siteContact, storeCopy } from "../content/siteCopy";
 import { usePageSeo } from "../context/SeoContext";
 import { INSTAGRAM, WHATSAPP_LINK } from "../lib/utils";
 import { SmartImage } from "../components/SmartImage";
 
 export function ContactPage() {
-  usePageSeo(staticPageSeo["/contact"]);
+  const jsonLd = useMemo(
+    () =>
+      breadcrumbJsonLd([
+        { name: "خانه", path: "/" },
+        { name: "تماس با ما", path: "/contact" },
+      ]),
+    [],
+  );
+  usePageSeo(staticPageSeo["/contact"], jsonLd);
 
   return (
     <>
@@ -77,10 +86,10 @@ export function ContactPage() {
         </section>
 
         <div className="kl-contact-actions">
-          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn btn-gold">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
             ارتباط با واتساپ
           </a>
-          <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="btn btn-primary">
+          <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             اینستاگرام چرم کارن
           </a>
           <a href={`tel:${siteContact.phoneTel}`} className="btn btn-outline">

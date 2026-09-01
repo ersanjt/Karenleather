@@ -29,6 +29,15 @@ export function Header() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
+
   const [homeLink, ...otherLinks] = navLinks.primary;
 
   return (
@@ -40,13 +49,13 @@ export function Header() {
             {siteBrand.tagline} · گارانتی ۲ ساله
           </p>
           <div className="header-top-links">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
               واتساپ
             </a>
             <span className="header-top-sep" aria-hidden="true">
               |
             </span>
-            <a href={siteContact.instagram} target="_blank" rel="noreferrer">
+            <a href={siteContact.instagram} target="_blank" rel="noopener noreferrer">
               اینستاگرام
             </a>
             <span className="header-top-sep" aria-hidden="true">
@@ -171,7 +180,7 @@ export function Header() {
           <a href={`tel:${siteContact.phoneTel}`} className="btn btn-ghost">
             {siteContact.phoneDisplay}
           </a>
-          <a href={WHATSAPP_LINK} className="btn btn-ghost" target="_blank" rel="noreferrer">
+          <a href={WHATSAPP_LINK} className="btn btn-ghost" target="_blank" rel="noopener noreferrer">
             واتساپ
           </a>
         </div>

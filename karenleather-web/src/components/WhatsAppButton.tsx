@@ -5,7 +5,7 @@ export function WhatsAppButton() {
     <a
       href={WHATSAPP_LINK}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="گفتگو در واتساپ"
       className="whatsapp-fab"
     >

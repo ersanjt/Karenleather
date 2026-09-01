@@ -5,7 +5,7 @@ import { useShowPrices } from "../context/StoreSettings";
 import { useProductPreview } from "../context/ProductPreview";
 import { productImageAlt, cleanProductTitle } from "../content/seo";
 import { SmartImage } from "./SmartImage";
-import { formatPrice, productPath, uniqueProductImages } from "../lib/utils";
+import { formatPrice, isProductInStock, productPath, uniqueProductImages } from "../lib/utils";
 
 function isPlainLeftClick(e: MouseEvent) {
   return e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
@@ -16,9 +16,11 @@ interface Props {
   /** MARVISPACE-style minimal catalog tile */
   catalog?: boolean;
   catalogIds?: number[];
+  /** اگر false باشد کلیک به صفحه محصول می‌رود، نه پیش‌نمایش */
+  previewOnClick?: boolean;
 }
 
-export function ProductCard({ product, catalog = false, catalogIds }: Props) {
+export function ProductCard({ product, catalog = false, catalogIds, previewOnClick = true }: Props) {
   const { openPreview } = useProductPreview();
   const showPrices = useShowPrices();
   const onSale =
@@ -33,10 +35,12 @@ export function ProductCard({ product, catalog = false, catalogIds }: Props) {
   const extraCount = gallery.length;
 
   const name = cleanProductTitle(product.title);
+  const inStock = isProductInStock(product);
 
   const href = productPath(product);
 
   const openPreviewOnTile = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!previewOnClick) return;
     if (!isPlainLeftClick(e)) return;
     e.preventDefault();
     openPreview(product.id, catalogIds ?? [product.id]);
@@ -63,6 +67,7 @@ export function ProductCard({ product, catalog = false, catalogIds }: Props) {
               </span>
             )}
             {onSale && <span className="catalog-sale">حراج</span>}
+            {!inStock && <span className="catalog-oos">ناموجود</span>}
           </div>
           <div className="catalog-tile-meta">
             <span className="catalog-tile-name">{name}</span>
@@ -85,10 +90,11 @@ export function ProductCard({ product, catalog = false, catalogIds }: Props) {
 
   return (
     <article className="product-card">
-      <Link to={href} className="product-card-hit" onClick={openPreviewOnTile} aria-label={`پیش‌نمایش ${name}`}>
+      <Link to={href} className="product-card-hit" onClick={openPreviewOnTile} aria-label={previewOnClick ? `پیش‌نمایش ${name}` : name}>
         <div className="product-card-media">
           <SmartImage src={imageSrc} alt={productImageAlt(product)} loading="lazy" sizes="(max-width: 640px) 50vw, 260px" />
           {onSale && <span className="sale-pill">حراج</span>}
+          {!inStock && <span className="oos-pill">ناموجود</span>}
           <span className="product-card-quick">+</span>
         </div>
       </Link>

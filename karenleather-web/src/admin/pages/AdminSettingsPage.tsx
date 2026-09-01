@@ -115,7 +115,7 @@ export function AdminSettingsPage() {
                 <a
                   href={waTest}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="admin-btn admin-btn-ghost"
                 >
                   تست واتساپ

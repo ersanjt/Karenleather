@@ -14,6 +14,10 @@ function safeDecode(s) {
   }
 }
 
+function toFaDigits(s) {
+  return String(s).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
+}
+
 export function generateSeoFiles(outDir) {
 
 const SITE = "https://karenleather.com";
@@ -41,6 +45,12 @@ const urls = [];
 const staticRoutes = [
   { loc: `${SITE}/`, priority: "1.0", changefreq: "weekly", lastmod: today },
   { loc: `${SITE}/shop`, priority: "0.95", changefreq: "daily", lastmod: today },
+  { loc: `${SITE}/shop?filter=women`, priority: "0.85", changefreq: "weekly", lastmod: today },
+  { loc: `${SITE}/shop?filter=men`, priority: "0.85", changefreq: "weekly", lastmod: today },
+  { loc: `${SITE}/shop?filter=footwear`, priority: "0.85", changefreq: "weekly", lastmod: today },
+  { loc: `${SITE}/shop?filter=accessories`, priority: "0.8", changefreq: "weekly", lastmod: today },
+  { loc: `${SITE}/shop?filter=new`, priority: "0.75", changefreq: "daily", lastmod: today },
+  { loc: `${SITE}/shop?filter=sale`, priority: "0.65", changefreq: "weekly", lastmod: today },
   { loc: `${SITE}/about`, priority: "0.8", changefreq: "monthly", lastmod: today },
   { loc: `${SITE}/contact`, priority: "0.8", changefreq: "monthly", lastmod: today },
   { loc: `${SITE}/wholesale`, priority: "0.85", changefreq: "monthly", lastmod: today },
@@ -51,11 +61,15 @@ const staticRoutes = [
 for (const r of staticRoutes) urls.push(r);
 
 for (const p of products) {
+  const firstImage = p.images?.[0]?.file;
   urls.push({
     loc: productLoc(p),
     lastmod: p.modified?.slice(0, 10) || undefined,
     priority: "0.7",
     changefreq: "weekly",
+    image: firstImage
+      ? { loc: uploadAbs(SITE, firstImage), title: cleanTitle(p.title) }
+      : undefined,
   });
 }
 
@@ -69,13 +83,24 @@ for (const c of categories) {
 }
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls
   .map(
     (u) => `  <url>
     <loc>${esc(u.loc)}</loc>${u.lastmod ? `\n    <lastmod>${u.lastmod}</lastmod>` : ""}
     <changefreq>${u.changefreq}</changefreq>
     <priority>${u.priority}</priority>
+    <xhtml:link rel="alternate" hreflang="fa-IR" href="${esc(u.loc)}" />${
+      u.image
+        ? `
+    <image:image>
+      <image:loc>${esc(u.image.loc)}</image:loc>
+      <image:title>${esc(u.image.title)}</image:title>
+    </image:image>`
+        : ""
+    }
   </url>`,
   )
   .join("\n")}
@@ -87,7 +112,7 @@ fs.mkdirSync(outDir, { recursive: true });
 const publicDir = path.join(root, "public");
 if (fs.existsSync(publicDir)) {
   for (const name of fs.readdirSync(publicDir)) {
-    if (name === "sitemap.xml") continue;
+    if (name === "sitemap.xml" || name === "sitemap-data.xml") continue;
     const from = path.join(publicDir, name);
     if (fs.statSync(from).isFile()) {
       fs.copyFileSync(from, path.join(outDir, name));
@@ -95,11 +120,13 @@ if (fs.existsSync(publicDir)) {
   }
 }
 
-fs.writeFileSync(path.join(outDir, "sitemap.xml"), xml);
+fs.writeFileSync(path.join(outDir, "sitemap-data.xml"), xml);
+const staleSitemap = path.join(outDir, "sitemap.xml");
+if (fs.existsSync(staleSitemap)) fs.unlinkSync(staleSitemap);
 writeHtmlSitemap(outDir, SITE, urls, products, categories);
 writeSharePages(outDir, SITE, products, categories, seoPages);
 
-console.log(`SEO files: ${urls.length} URLs → ${path.join(outDir, "sitemap.xml")}`);
+console.log(`SEO files: ${urls.length} URLs → ${path.join(outDir, "sitemap-data.xml")}`);
 }
 
 const OG_SIZE = { width: 1200, height: 630 };
@@ -116,6 +143,10 @@ function writeHtmlSitemap(outDir, SITE, urls, products, categories) {
   const staticLinks = [
     ["صفحه اصلی", `${SITE}/`],
     ["فروشگاه", `${SITE}/shop`],
+    ["کلکسیون زنانه", `${SITE}/shop?filter=women`],
+    ["کلکسیون مردانه", `${SITE}/shop?filter=men`],
+    ["کفش چرم", `${SITE}/shop?filter=footwear`],
+    ["اکسسوری", `${SITE}/shop?filter=accessories`],
     ["درباره ما", `${SITE}/about`],
     ["تماس با ما", `${SITE}/contact`],
     ["فروش عمده", `${SITE}/wholesale`],
@@ -250,13 +281,22 @@ function productShareMeta(p, catById) {
   }
   const material = detectMaterial(name);
   const who = gender && gender !== "اکسسوری" ? ` ${gender}` : "";
+  const heading = toFaDigits(
+    type && type !== "محصول چرم" && gender && gender !== "اکسسوری" && !name.includes(type)
+      ? `${type} ${gender} ${name}`
+      : type && type !== "محصول چرم" && gender && gender !== "اکسسوری" && name.includes(type) && !name.includes(gender)
+        ? name.replace(type, `${type} ${gender}`)
+        : type && type !== "محصول چرم" && !name.includes(type)
+          ? `${type} ${name}`
+          : name,
+  );
   const description = p.excerpt?.trim()
     ? p.excerpt.trim()
-    : `خرید ${name} از چرم کارن تبریز — ${type}${who}. ${material} دست‌ساز، گارانتی ۲ ساله، ارسال سراسری.`;
-  const keywords = [name, `${type} چرم`, gender, material, "چرم کارن", "تبریز", `خرید ${type}`]
+    : `خرید ${heading} از کارگاه چرم کارن تبریز — ${type}${who}. ${material}. دست‌ساز، گارانتی ۲ ساله، ارسال سراسری.`;
+  const keywords = [heading, name, `${type} چرم`, gender, material, "چرم کارن", "تبریز", `خرید ${type}`]
     .filter(Boolean)
     .join(", ");
-  return { name, type, description, keywords, leaf };
+  return { name, type, heading, description, keywords, leaf };
 }
 
 function writeSharePages(outDir, SITE, products, categories, seoPages) {
@@ -275,6 +315,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.home.description,
       keywords: seoPages.home.keywords,
       type: "website",
+      url: `${SITE}/`,
       ...homeOg,
     },
     "/shop": {
@@ -282,6 +323,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.shop.description,
       keywords: seoPages.shop.keywords,
       type: "website",
+      url: `${SITE}/shop`,
       ...shopOg,
     },
     "/shop?filter=women": {
@@ -289,6 +331,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.filters.women.description,
       keywords: seoPages.filters.women.keywords,
       type: "website",
+      url: `${SITE}/shop?filter=women`,
       ...homeOg,
     },
     "/shop?filter=men": {
@@ -296,6 +339,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.filters.men.description,
       keywords: seoPages.filters.men.keywords,
       type: "website",
+      url: `${SITE}/shop?filter=men`,
       ...menOg,
     },
     "/shop?filter=footwear": {
@@ -303,6 +347,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.filters.footwear.description,
       keywords: seoPages.filters.footwear.keywords,
       type: "website",
+      url: `${SITE}/shop?filter=footwear`,
       ...menOg,
     },
     "/shop?filter=accessories": {
@@ -310,6 +355,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.filters.accessories.description,
       keywords: seoPages.filters.accessories.keywords,
       type: "website",
+      url: `${SITE}/shop?filter=accessories`,
       ...shopOg,
     },
     "/shop?filter=new": {
@@ -317,6 +363,24 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.filters.new.description,
       keywords: seoPages.filters.new.keywords,
       type: "website",
+      url: `${SITE}/shop?filter=new`,
+      ...shopOg,
+    },
+    "/shop?filter=sale": {
+      title: `${seoPages.filters.sale.title} — چرم کارن`,
+      description: seoPages.filters.sale.description,
+      keywords: seoPages.filters.sale.keywords,
+      type: "website",
+      url: `${SITE}/shop?filter=sale`,
+      ...shopOg,
+    },
+    "/cart": {
+      title: seoPages.cart.title,
+      description: seoPages.cart.description,
+      keywords: seoPages.cart.keywords,
+      type: "website",
+      url: `${SITE}/cart`,
+      robots: "noindex, nofollow",
       ...shopOg,
     },
     "/about": {
@@ -324,6 +388,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.about.description,
       keywords: seoPages.about.keywords,
       type: "website",
+      url: `${SITE}/about`,
       ...aboutOg,
     },
     "/contact": {
@@ -331,6 +396,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.contact.description,
       keywords: seoPages.contact.keywords,
       type: "website",
+      url: `${SITE}/contact`,
       ...contactOg,
     },
     "/wholesale": {
@@ -338,6 +404,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.wholesale.description,
       keywords: seoPages.wholesale.keywords,
       type: "website",
+      url: `${SITE}/wholesale`,
       ...wholesaleOg,
     },
     "/representation": {
@@ -345,6 +412,7 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
       description: seoPages.representation.description,
       keywords: seoPages.representation.keywords,
       type: "website",
+      url: `${SITE}/representation`,
       ...homeOg,
     },
   };
@@ -360,11 +428,13 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
     const keywords = copy?.keywords || `${c.name} چرم, خرید ${c.name}, چرم کارن تبریز`;
     const isShoes = /کفش|لوفر|بوت|اسنیکر|footwear|men|مردانه/i.test(`${c.name} ${decoded}`);
     const heading = copy?.title || c.name;
+    const catUrl = `${SITE}/shop?cat=${encodeURIComponent(decoded)}`;
     const entry = {
       title: `${heading} — خرید آنلاین | چرم کارن`,
       description,
       keywords,
       type: "website",
+      url: catUrl,
       ...(isShoes ? menOg : shopOg),
     };
     const keys = new Set([
@@ -379,14 +449,18 @@ function writeSharePages(outDir, SITE, products, categories, seoPages) {
   const productMap = {};
   for (const p of products) {
     const meta = productShareMeta(p, catById);
-    const catLabel = meta.leaf?.name ?? meta.type;
+    const title =
+      [...`${meta.heading} — چرم کارن`].length <= 62
+        ? `${meta.heading} — چرم کارن`
+        : `${meta.name} | ${meta.leaf?.name ?? meta.type} — چرم کارن`;
     productMap[String(p.id)] = {
-      title: `${meta.name} | ${catLabel} — چرم کارن`,
+      title,
       description: meta.description,
       keywords: meta.keywords,
       image: uploadAbs(SITE, p.images?.[0]?.file),
-      imageAlt: `${meta.name} — ${catLabel} — چرم کارن`,
+      imageAlt: `${meta.heading} — چرم کارن`,
       type: "product",
+      url: `${SITE}/product/${p.id}/${encodeURIComponent(safeDecode(p.slug))}`,
     };
   }
 
@@ -399,12 +473,58 @@ export function isShareCrawler(ua) {
   );
 }
 
+export const STATIC_SPA_PATHS = ["/", "/shop", "/about", "/contact", "/wholesale", "/representation", "/cart"];
+
+export function normalizeSpaPath(pathname) {
+  const path = pathname || "/";
+  if (path.length > 1 && path.endsWith("/")) return path.slice(0, -1);
+  return path || "/";
+}
+
+export function isKnownSpaPath(pathname, shareData) {
+  const path = normalizeSpaPath(pathname);
+  if (STATIC_SPA_PATHS.includes(path)) return true;
+  if (path.startsWith("/admin")) return true;
+  const product = path.match(/^\/product\/(\d+)/);
+  if (product) return Boolean(shareData?.products?.[product[1]]);
+  return false;
+}
+
+export function applySpaHtml(html, { pathname, known }) {
+  const path = normalizeSpaPath(pathname);
+  const noindex = !known || path === "/cart" || path.startsWith("/admin");
+  let out = html;
+  if (noindex) {
+    out = out.replace(
+      /<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i,
+      '<meta name="robots" content="noindex, nofollow" />',
+    );
+  }
+  if (!known) {
+    out = out.replace(/<title>[^<]*<\/title>/i, "<title>صفحه یافت نشد — چرم کارن</title>");
+  }
+  return out;
+}
+
+export function notFoundSharePage(canonical) {
+  return {
+    title: "صفحه یافت نشد — چرم کارن",
+    description: "این صفحه در فروشگاه چرم کارن وجود ندارد. به فروشگاه یا صفحه اصلی برگردید.",
+    robots: "noindex, follow",
+    type: "website",
+    url: canonical,
+    image: "https://karenleather.com/uploads/campaign/og/og-home-1200x630.jpg",
+    imageAlt: "ست کیف و بوت چرم زرد کارن تبریز روی سنگفرش",
+    width: 1200,
+    height: 630,
+  };
+}
+
 export function lookupSharePage(data, pathname, searchParams) {
   const pages = data?.pages || {};
-  const home = pages["/"] || null;
   const path = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname || "/";
   const product = path.match(/^\/product\/(\d+)/);
-  if (product) return data?.products?.[product[1]] || home;
+  if (product) return data?.products?.[product[1]] || null;
 
   const keys = [];
   if (path === "/shop") {
@@ -414,11 +534,11 @@ export function lookupSharePage(data, pathname, searchParams) {
     if (cat) keys.push(`/shop?cat=${encodeURIComponent(cat)}`, `/shop?cat=${cat}`);
     keys.push("/shop");
   }
-  keys.push(path, "/");
+  keys.push(path);
   for (const k of keys) {
     if (pages[k]) return pages[k];
   }
-  return home;
+  return null;
 }
 
 export function renderShareHtml(page, canonical) {
@@ -431,6 +551,7 @@ export function renderShareHtml(page, canonical) {
   const title = page?.title || "چرم کارن";
   const desc = page?.description || "";
   const keywords = page?.keywords || "";
+  const robots = page?.robots || "index, follow, max-image-preview:large";
   const image = page?.image || "https://karenleather.com/uploads/campaign/og/og-home-1200x630.jpg";
   const alt = page?.imageAlt || title;
   const width = page?.width || "";
@@ -454,8 +575,11 @@ export function renderShareHtml(page, canonical) {
     <meta charset="UTF-8" />
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(desc)}" />
+    <meta name="robots" content="${esc(robots)}" />
     ${kw}
     <link rel="canonical" href="${esc(canonical)}" />
+    <link rel="alternate" hreflang="fa-IR" href="${esc(canonical)}" />
+    <link rel="alternate" hreflang="x-default" href="${esc(canonical)}" />
     <link rel="image_src" href="${esc(image)}" />
     <meta itemprop="image" content="${esc(image)}" />
     <meta property="og:type" content="${esc(type)}" />

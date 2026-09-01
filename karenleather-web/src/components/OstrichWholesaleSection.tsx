@@ -71,7 +71,7 @@ export function OstrichWholesaleSection({ variant = "home" }: OstrichWholesaleSe
           )}
 
           <div className="kl-wholesale__actions">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="btn btn-gold">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
               {wholesaleCopy.cta}
             </a>
             {!isFull && (

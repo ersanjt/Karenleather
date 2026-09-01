@@ -44,6 +44,7 @@ export interface ProductFacts {
   type: string;
   material: string;
   colors: string[];
+  details: string[];
   leafCategory?: { name: string; slug: string };
   tags: ProductTag[];
   keywords: string[];
@@ -51,6 +52,10 @@ export interface ProductFacts {
 
 export function cleanProductTitle(title: string): string {
   return title.replace(/^مدل:\s*/i, "").replace(/\s+/g, " ").trim();
+}
+
+function toFaDigits(value: string): string {
+  return value.replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[Number(d)]);
 }
 
 export function normalizeSlug(slug: string): string {
@@ -163,6 +168,114 @@ function productType(product: Product, title: string): string {
   return typeFromTitle(title) || leafCategory(product)?.name || "محصول چرم";
 }
 
+function productDetails(title: string): string[] {
+  const details: string[] = [];
+  const push = (label: string) => {
+    if (!details.includes(label)) details.push(label);
+  };
+  if (/۳[.\s]?۵|3[.\s]?5/.test(title)) push("عرض ۳٫۵ سانتی‌متر");
+  else if (/۲[.\s]?۵|2[.\s]?5/.test(title)) push("عرض ۲٫۵ سانتی‌متر");
+  if (/بندی/.test(title)) push("بندی");
+  if (/زیپ/.test(title)) push("زیپ‌دار");
+  if (/کش[‌\s-]*دار/.test(title)) push("کش‌دار");
+  if (/منگوله/.test(title)) push("منگوله‌دار");
+  if (/دوسگک|دو[\s‌]*سگک/.test(title)) push("دوسگک");
+  else if (/سگک/.test(title)) push("سگک‌دار");
+  if (/یراق ایتالیایی/.test(title)) push("یراق ایتالیایی");
+  if (/آلبوم/.test(title)) push("آلبوم‌دار");
+  if (/رگلاژ/.test(title)) push("رگلاژی");
+  if (/کراواتی/.test(title)) push("کراواتی");
+  if (/تک[\s‌]*قفل/.test(title)) push("تک‌قفل");
+  if (/دو[\s‌]*قفل/.test(title)) push("دو قفل");
+  if (/باریک/.test(title)) push("مدل باریک");
+  return details;
+}
+
+function typeUseCopy(type: string, gender: ProductGender): string {
+  switch (type) {
+    case "کفش مجلسی":
+      return gender === "زنانه"
+        ? "برای مجلس، مهمانی و استایل رسمی زنانه طراحی شده است."
+        : "برای محل کار، مجلس و استایل رسمی مردانه مناسب است.";
+    case "لوفر":
+    case "کالج":
+      return "سبک کالج و لوفر برای استفاده روزانه و استایل کژوال‌رسمی.";
+    case "بوت":
+      return "پوشش ساق و دوام بیشتر در فصل سرد — مناسب پیاده‌روی شهری.";
+    case "اسنیکر":
+      return "ترکیب راحتی روزمره با رویه چرم طبیعی برای استایل شهری.";
+    case "صندل":
+      return "مدل تابستانه با رویه چرم؛ سبک و مناسب گردش روزانه.";
+    case "کفش تخت":
+      return "کفش تخت چرم برای راحتی روزمره بدون پاشنه بلند.";
+    case "کمربند":
+      return "کمربند چرم کارن برای شلوار رسمی و کژوال؛ بافت و عرض در عنوان مدل مشخص است.";
+    case "کیف اداری":
+    case "سامسونت":
+      return "برای حمل مدارک و لوازم کار با دوخت کارگاهی و یراق مقاوم.";
+    case "جاکارتی":
+      return "جاکارتی جمع‌وجور برای کارت بانکی و شناسایی.";
+    case "کیف پاسپورتی":
+      return "کیف پاسپورتی برای مدارک سفر و کارت‌ها.";
+    case "کاور موبایل":
+      return "کاور تمام‌چرم برای محافظت از گوشی با بافت طبیعی شترمرغ.";
+    case "کیف":
+      return gender === "زنانه"
+        ? "کیف زنانه برای همراهی روزانه، مجلس یا استفاده رودوشی."
+        : "کیف مردانه برای مدارک و استفاده روزانه.";
+    default:
+      return "دست‌دوز کارگاه تبریز با چرم طبیعی و استاندارد کارن.";
+  }
+}
+
+function materialCopy(material: string): string {
+  if (material.includes("تنه شترمرغ")) {
+    return "چرم تنه شترمرغ با بافت نقاط طبیعی — از لوکس‌ترین چرم‌های تزئینی جهان.";
+  }
+  if (material.includes("ساق شترمرغ")) {
+    return "چرم ساق شترمرغ با بافت پوست‌مار؛ مناسب جزئیات و کمربند.";
+  }
+  if (material.includes("شترمرغ")) {
+    return "چرم طبیعی شترمرغ با بافت نقاط مشخص؛ امضای کلکسیون کارن.";
+  }
+  if (material.includes("وجیتال")) {
+    return "چرم وجیتال گیاه‌دباغی با سطحی طبیعی و تنفس‌پذیر.";
+  }
+  if (material.includes("فلوتر")) {
+    return "چرم فلوتر با دانه درشت و مقاومت بالا در برابر خط و خش.";
+  }
+  if (material.includes("نابوک")) {
+    return "چرم نابوک با سطح جیرمانند و ظاهر مات.";
+  }
+  if (material.includes("ورنی")) {
+    return "چرم ورنی براق برای استایل رسمی و مجلسی.";
+  }
+  if (material.includes("کروکو")) {
+    return "بافت کروکو پرس‌شده روی چرم گاوی — ظاهر لاکچری بدون پوست کروکودیل.";
+  }
+  if (material.includes("پیتون")) {
+    return "بافت پیتون چاپ‌شده روی چرم طبیعی؛ نقش فلس مشخص.";
+  }
+  return "چرم طبیعی گاوی دباغی‌شده در خط تولید تبریز.";
+}
+
+/** H1 و عنوان سئو: نوع + جنسیت + نام مدل، بدون تکرار */
+export function productHeading(product: Product): string {
+  const { name, gender, type } = productFacts(product);
+  const genderPart = gender && gender !== "اکسسوری" ? gender : "";
+  const hasType = Boolean(type && type !== "محصول چرم" && name.includes(type));
+  const hasGender = Boolean(genderPart && name.includes(genderPart));
+
+  if (hasType && hasGender) return toFaDigits(name);
+  if (hasType && genderPart) {
+    return toFaDigits(name.replace(type, `${type} ${genderPart}`));
+  }
+  if (!hasType && type && type !== "محصول چرم" && genderPart) return toFaDigits(`${type} ${genderPart} ${name}`);
+  if (!hasType && type && type !== "محصول چرم") return toFaDigits(`${type} ${name}`);
+  if (genderPart && !hasGender) return toFaDigits(`${genderPart} ${name}`);
+  return toFaDigits(name);
+}
+
 function genderHref(gender: ProductGender): string | undefined {
   if (gender === "مردانه") return "/shop?cat=men";
   if (gender === "زنانه") return `/shop?cat=${encodeURIComponent("زنانه")}`;
@@ -176,6 +289,7 @@ export function productFacts(product: Product): ProductFacts {
   const type = productType(product, name);
   const material = detectMaterial(name);
   const colors = productColors(name);
+  const details = productDetails(name);
   const leaf = leafCategory(product);
   const seen = new Set<string>();
   const tags: ProductTag[] = [];
@@ -213,7 +327,17 @@ export function productFacts(product: Product): ProductFacts {
   addKw("تبریز");
   addKw(`خرید ${type}`);
 
-  return { name, gender, type, material, colors, leafCategory: leaf, tags: tags.slice(0, 10), keywords: keywords.slice(0, 12) };
+  return {
+    name,
+    gender,
+    type,
+    material,
+    colors,
+    details,
+    leafCategory: leaf,
+    tags: tags.slice(0, 10),
+    keywords: keywords.slice(0, 12),
+  };
 }
 
 export function joinKeywords(list: string[]): string {
@@ -251,12 +375,23 @@ export function categoryKeywords(cat: { name: string; slug: string }): string {
   return `${cat.name} چرم, خرید ${cat.name}, چرم کارن تبریز`;
 }
 
+export function productSeoTitle(product: Product, brand: string): string {
+  const heading = productHeading(product);
+  const branded = `${heading} — ${brand}`;
+  if ([...branded].length <= 62) return branded;
+  const { name, type } = productFacts(product);
+  return `${name} | ${type} — ${brand}`;
+}
+
 export function productSeoDescription(product: Product): string {
   if (product.excerpt?.trim()) return clampMeta(product.excerpt.trim());
-  const { name, gender, type, material } = productFacts(product);
+  const { gender, type, material, colors, details } = productFacts(product);
+  const heading = productHeading(product);
   const who = gender && gender !== "اکسسوری" ? ` ${gender}` : "";
+  const color = colors.length ? ` رنگ ${colors.join(" و ")}` : "";
+  const extra = details.length ? ` ${details.slice(0, 3).join("، ")}.` : "";
   return clampMeta(
-    `خرید ${name} از چرم کارن تبریز — ${type}${who}. ${material} دست‌ساز، گارانتی ۲ ساله، ارسال سراسری.`,
+    `خرید ${heading} از کارگاه چرم کارن تبریز — ${type}${who}${color}. ${material}.${extra} دست‌ساز، گارانتی ۲ ساله، ارسال سراسری.`,
   );
 }
 
@@ -264,15 +399,38 @@ export function productKeywords(product: Product): string {
   return joinKeywords(productFacts(product).keywords);
 }
 
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 export function productBodyHtml(product: Product): string {
   if (product.description?.trim()) return product.description;
-  const { name, gender, type, material, colors, leafCategory } = productFacts(product);
+  const { name, gender, type, material, colors, details, leafCategory } = productFacts(product);
+  const heading = productHeading(product);
   const catLine = leafCategory?.name ?? type;
-  const colorLine = colors.length ? ` رنگ ${colors.join(" و ")}` : "";
-  const who = gender ? ` ${gender}` : "";
-  return `<p><strong>${name}</strong> از مجموعه چرم کارن — ${catLine}${who}.</p>
-<p>این محصول با <strong>${material}</strong>${colorLine} در کارگاه تبریز دوخته شده است. تمامی محصولات چرم کارن دارای <strong>گارانتی ۲ ساله</strong> اصالت و کیفیت هستند.</p>
-<p>برای مشاوره خرید، سفارش اختصاصی یا موجودی با ۰۹۱۴-۴۱۹-۹۹۳۵ تماس بگیرید.</p>`;
+  const colorLine = colors.length ? ` در رنگ ${colors.join(" و ")}` : "";
+  const detailLine = details.length ? ` جزئیات ساخت: ${details.join("، ")}.` : "";
+  const catHref = leafCategory
+    ? `/shop?cat=${encodeURIComponent(normalizeSlug(leafCategory.slug))}`
+    : "/shop";
+  const genderLink = genderHref(gender);
+  const genderHtml = gender && genderLink
+    ? ` در <a href="${genderLink}">کلکسیون ${escapeHtml(gender)}</a>`
+    : gender
+      ? ` در کلکسیون ${escapeHtml(gender)}`
+      : "";
+  const ostrichLink = /شترمرغ/.test(material)
+    ? ` برای خرید پوست و چرم خام، <a href="/wholesale">فروش عمده تنه و ساق</a> را ببینید.`
+    : "";
+
+  return `<p><strong>${escapeHtml(heading)}</strong> — مدل «${escapeHtml(name)}» از <a href="${catHref}">${escapeHtml(catLine)}</a>${genderHtml} چرم کارن تبریز.</p>
+<p>${escapeHtml(materialCopy(material))}${escapeHtml(colorLine)}. ${escapeHtml(typeUseCopy(type, gender))}${escapeHtml(detailLine)}</p>
+<p>این ${escapeHtml(type)} در کارگاه تبریز دوخته می‌شود و با <strong>گارانتی ۲ ساله</strong> اصالت و کیفیت عرضه می‌گردد. ساخت ایران، رنگرزی استاندارد، ارسال به سراسر کشور.</p>
+<p>مشاهده <a href="/shop">فروشگاه آنلاین چرم کارن</a>، <a href="${catHref}">سایر مدل‌های ${escapeHtml(catLine)}</a> یا <a href="/contact">تماس برای مشاوره خرید</a>.${ostrichLink}</p>`;
 }
 
 export function productDisplayTags(product: Product): ProductTag[] {

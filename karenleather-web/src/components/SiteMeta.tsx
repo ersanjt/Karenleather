@@ -51,14 +51,22 @@ function upsertItemprop(key: string, content: string) {
   el.setAttribute("content", content);
 }
 
-function upsertLink(rel: string, href: string) {
-  let el = document.querySelector(`link[rel="${rel}"]`);
+function upsertLink(rel: string, href: string, extra?: Record<string, string>) {
+  const extraSel = extra
+    ? Object.entries(extra)
+        .map(([k, v]) => `[${k}="${v}"]`)
+        .join("")
+    : "";
+  let el = document.querySelector(`link[rel="${rel}"]${extraSel}`);
   if (!el) {
     el = document.createElement("link");
     el.setAttribute("rel", rel);
     document.head.appendChild(el);
   }
   el.setAttribute("href", href);
+  if (extra) {
+    for (const [k, v] of Object.entries(extra)) el.setAttribute(k, v);
+  }
 }
 
 function removeJsonLdScript(id: string) {
@@ -113,18 +121,22 @@ export function SiteMeta() {
   useEffect(() => {
     const base = resolveStaticSeo(pathname, params);
     const seo: PageSeo = override ?? base;
-    const canonical = canonicalUrl(pathname, params);
+    const canonical = seo.canonicalPath ? `${siteBrand.url}${seo.canonicalPath}` : canonicalUrl(pathname, params);
     const ogImage = seo.ogImage ?? defaultOgImage;
     const ogAlt = seo.ogImageAlt ?? defaultOgImageAlt;
     const robots = seo.robots ?? "index, follow, max-image-preview:large";
 
     document.title = seo.title;
     upsertLink("canonical", canonical);
+    upsertLink("alternate", canonical, { hreflang: "fa-IR" });
+    upsertLink("alternate", canonical, { hreflang: "x-default" });
     upsertLink("icon", brandFavicon);
     upsertLink("apple-touch-icon", brandIcon);
 
     upsertMeta("name", "description", seo.description);
     upsertMeta("name", "robots", robots);
+    upsertMeta("name", "geo.region", "IR-EA");
+    upsertMeta("name", "geo.placename", "تبریز");
     if (seo.keywords && !robots.includes("noindex")) {
       upsertMeta("name", "keywords", seo.keywords);
     } else {
